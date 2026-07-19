@@ -10,6 +10,18 @@ interface ServiceAreasProps {
   locale: Locale;
 }
 
+const PRICING_BADGES: Record<string, { weekday: string; weekend: string }> = {
+  en: { weekday: "€130 (Mon-Fri)", weekend: "€140 (Weekends)" },
+  es: { weekday: "€130 (Lun-Vie)", weekend: "€140 (Fines de semana)" },
+  de: { weekday: "€130 (Mo-Fr)", weekend: "€140 (Wochenenden)" },
+  fr: { weekday: "130 € (Lun-Ven)", weekend: "140 € (Week-ends)" },
+  fi: { weekday: "130 € (Ma-Pe)", weekend: "140 € (Viikonloput)" },
+  ar: { weekday: "€130 (الاثنين-الجمعة)", weekend: "€140 (عطلات نهاية الأسبوع)" },
+  no: { weekday: "€130 (Man-Fre)", weekend: "€140 (Helger)" },
+  da: { weekday: "€130 (Man-Fre)", weekend: "€140 (Weekender)" },
+  sv: { weekday: "€130 (Mån-Fre)", weekend: "€140 (Helger)" },
+};
+
 export default function ServiceAreas({ title, subtitle, locale }: ServiceAreasProps) {
   const [visibleCards, setVisibleCards] = useState<boolean[]>(
     new Array(CITIES.length).fill(false)
@@ -73,6 +85,8 @@ export default function ServiceAreas({ title, subtitle, locale }: ServiceAreasPr
                 ? `/${localeSlug}/`
                 : `/${locale}/${localeSlug}/`;
 
+            const tBadge = PRICING_BADGES[locale] || PRICING_BADGES["en"];
+
             return (
               <li
                 key={city.slug}
@@ -106,21 +120,31 @@ export default function ServiceAreas({ title, subtitle, locale }: ServiceAreasPr
                   </div>
 
                   {/* Text content */}
-                  <div className="p-5 flex flex-col flex-1">
+                  <div className="p-5 flex flex-col flex-1 w-full">
 
-                  {/* City name — bigger */}
-                  <span className="font-800 text-xl text-slate-900 group-hover:text-[#0A6EBD] transition-colors duration-300 mb-2 leading-tight">
-                    {city.name}
-                  </span>
+                    {/* City name — bigger */}
+                    <span className="font-800 text-xl text-slate-900 group-hover:text-[#0A6EBD] transition-colors duration-300 mb-2 leading-tight">
+                      {city.name}
+                    </span>
 
-                  {/* Description — bigger */}
-                  <p className="text-sm text-slate-500 leading-relaxed">
-                    {city.description[locale].split(".")[0]}
-                  </p>
+                    {/* Description — bigger */}
+                    <p className="text-sm text-slate-500 leading-relaxed mb-4">
+                      {city.description[locale].split(".")[0]}
+                    </p>
+
+                    {/* Prices */}
+                    <div className="mt-auto mb-4 flex flex-col xl:flex-row gap-2 w-full">
+                      <span className="text-xs font-600 text-[#1da851] bg-[#1da851]/10 px-2 py-1.5 rounded-md border border-[#1da851]/20 flex-1 text-center truncate">
+                        {tBadge.weekday}
+                      </span>
+                      <span className="text-xs font-600 text-[#0A6EBD] bg-[#0A6EBD]/10 px-2 py-1.5 rounded-md border border-[#0A6EBD]/20 flex-1 text-center truncate">
+                        {tBadge.weekend}
+                      </span>
+                    </div>
 
                     {/* Arrow indicator on hover */}
                     <span
-                      className="mt-auto pt-3 text-[#0A6EBD] text-sm font-600 opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-y-1 group-hover:translate-y-0 flex items-center gap-1"
+                      className="text-[#0A6EBD] text-sm font-600 opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-y-1 group-hover:translate-y-0 flex items-center gap-1"
                     >
                       Ver más
                       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

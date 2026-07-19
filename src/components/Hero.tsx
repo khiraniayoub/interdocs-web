@@ -112,12 +112,12 @@ export default function Hero({
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 w-full">
         <div className="max-w-3xl flex flex-col items-center text-center lg:items-start lg:text-left mx-auto lg:mx-0">
           {/* Badge */}
-          <div className="hero-fade-in hero-fade-in-delay-1 inline-flex items-center justify-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full mb-6 border border-white/20">
-            <span
-              className="w-2 h-2 rounded-full bg-green-400"
-              aria-hidden="true"
-            />
-            <span className="text-sm font-600 text-white shadow-sm">
+          <div className="hero-fade-in hero-fade-in-delay-1 inline-flex items-center justify-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full mb-6 border border-white/20 shadow-lg hover:bg-white/20 hover:scale-105 transition-all duration-300 cursor-default">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+            </span>
+            <span className="text-sm font-600 text-white shadow-sm tracking-wide">
               Available 24/7 · Costa del Sol
             </span>
           </div>
@@ -136,24 +136,24 @@ export default function Hero({
           </p>
 
           {/* Pricing Info */}
-          <div className="hero-fade-in hero-fade-in-delay-4 mb-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-6 bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:px-6 border border-white/20 shadow-xl w-full sm:w-auto">
-            <div className="flex items-center gap-3">
-              <div className="bg-[#25D366]/20 p-2 rounded-xl border border-[#25D366]/30">
-                <span className="text-2xl font-800 text-white tracking-tight">€130</span>
+          <div className="hero-fade-in hero-fade-in-delay-4 mb-10 inline-flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 bg-white/10 backdrop-blur-md rounded-2xl p-5 sm:px-6 border border-white/20 shadow-xl">
+            <div className="flex items-center gap-4">
+              <div className="bg-[#25D366]/20 p-2.5 rounded-xl border border-[#25D366]/30 w-16 flex justify-center">
+                <span className="text-xl font-800 text-white tracking-tight">€130</span>
               </div>
               <div className="flex flex-col text-left">
                 <span className="text-white font-600 leading-tight">{t.weekday}</span>
-                <span className="text-slate-300 text-xs font-500">{t.desc}</span>
+                <span className="text-slate-300 text-sm font-500">{t.desc}</span>
               </div>
             </div>
             <div className="hidden sm:block w-px h-10 bg-white/20" />
-            <div className="flex items-center gap-3">
-              <div className="bg-[#0A6EBD]/30 p-2 rounded-xl border border-[#0A6EBD]/50">
-                <span className="text-2xl font-800 text-white tracking-tight">€140</span>
+            <div className="flex items-center gap-4">
+              <div className="bg-[#0A6EBD]/30 p-2.5 rounded-xl border border-[#0A6EBD]/50 w-16 flex justify-center">
+                <span className="text-xl font-800 text-white tracking-tight">€140</span>
               </div>
               <div className="flex flex-col text-left">
                 <span className="text-white font-600 leading-tight">{t.weekend}</span>
-                <span className="text-slate-300 text-xs font-500">{t.desc}</span>
+                <span className="text-slate-300 text-sm font-500">{t.desc}</span>
               </div>
             </div>
           </div>
