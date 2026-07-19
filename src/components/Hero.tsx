@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { PHONE_URL, WHATSAPP_NUMBER } from "@/data/content";
 
@@ -79,6 +80,17 @@ export default function Hero({
         />
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-black/50" />
+        
+        {/* Watermark */}
+        <div className="absolute bottom-20 right-8 z-10 w-16 sm:w-20 pointer-events-none opacity-80">
+          <Image
+            src="/logo_new_v2.png"
+            alt="Interdoc Watermark"
+            width={300}
+            height={100}
+            className="w-full h-auto object-contain drop-shadow-lg"
+          />
+        </div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 w-full">
