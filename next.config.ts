@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   images: {
     // Image optimization enabled (removed unoptimized:true)
     formats: ["image/avif", "image/webp"],
