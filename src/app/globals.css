@@ -1,0 +1,138 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-brand-blue: #0A6EBD;
+  --color-brand-blue-dark: #085a99;
+  --color-brand-blue-light: #e8f4fd;
+  --color-brand-green: #25D366;
+  --color-brand-green-dark: #1da851;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted: #94a3b8;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f8fafc;
+  --color-border: #e2e8f0;
+  --font-sans: "Outfit", sans-serif;
+  --radius-card: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #ffffff;
+  color: #0f172a;
+  font-family: "Outfit", sans-serif;
+}
+
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid #0A6EBD;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Smooth scrolling for anchor links */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Remove default list styles for nav lists */
+nav ul,
+nav ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ─── Hero Animations ──────────────────────────────────────── */
+
+/* Ken Burns: slow zoom + drift on video */
+@keyframes kenBurns {
+  0%   { transform: scale(1)    translate(0%, 0%); }
+  33%  { transform: scale(1.06) translate(-1%, -0.5%); }
+  66%  { transform: scale(1.1)  translate(1%, 0.5%); }
+  100% { transform: scale(1)    translate(0%, 0%); }
+}
+.video-kenburns {
+  animation: kenBurns 18s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+/* Rotating gradient border */
+@keyframes rotateBorder {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animated-border {
+  padding: 3px;
+  background: linear-gradient(270deg, #0A6EBD, #25D366, #0ea5e9, #0A6EBD);
+  background-size: 300% 300%;
+  animation: rotateBorder 5s ease infinite;
+  border-radius: 1.75rem;
+}
+
+/* Shimmer light sweep over video */
+@keyframes shimmerSweep {
+  0%   { transform: translateX(-100%) skewX(-15deg); opacity: 0; }
+  20%  { opacity: 1; }
+  100% { transform: translateX(250%) skewX(-15deg); opacity: 0; }
+}
+.shimmer-sweep {
+  position: relative;
+  overflow: hidden;
+}
+.shimmer-sweep::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 50%, transparent 100%);
+  animation: shimmerSweep 4s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Fade + slide-up entrance for hero text elements */
+@keyframes fadeSlideUp {
+  0%   { opacity: 0; transform: translateY(24px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.hero-fade-in {
+  animation: fadeSlideUp 0.7s ease forwards;
+  opacity: 0;
+}
+.hero-fade-in-delay-1 { animation-delay: 0.1s; }
+.hero-fade-in-delay-2 { animation-delay: 0.25s; }
+.hero-fade-in-delay-3 { animation-delay: 0.4s; }
+.hero-fade-in-delay-4 { animation-delay: 0.55s; }
+.hero-fade-in-delay-5 { animation-delay: 0.7s; }
+
+/* Floating bob animation for the video container */
+@keyframes floatBob {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+.float-bob {
+  animation: floatBob 6s ease-in-out infinite;
+}
+
+/* Pulse ring on active dot */
+@keyframes pulseRing {
+  0%   { box-shadow: 0 0 0 0 rgba(255,255,255,0.7); }
+  70%  { box-shadow: 0 0 0 7px rgba(255,255,255,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+}
+.dot-active {
+  animation: pulseRing 1.8s ease-out infinite;
+}
