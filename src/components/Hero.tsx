@@ -12,7 +12,20 @@ interface HeroProps {
   whatsappLabel: string;
   callLabel: string;
   trustItems: string[];
+  locale?: string;
 }
+
+const PRICING_TEXT: Record<string, { weekday: string; weekend: string; desc: string }> = {
+  en: { weekday: "Mon - Fri", weekend: "Weekends & Holidays", desc: "Medical Visit" },
+  es: { weekday: "Lunes - Viernes", weekend: "Fines de semana y Festivos", desc: "Visita Médica" },
+  de: { weekday: "Mo - Fr", weekend: "Wochenenden & Feiertage", desc: "Arztbesuch" },
+  fr: { weekday: "Lun - Ven", weekend: "Week-ends & Jours Fériés", desc: "Visite Médicale" },
+  fi: { weekday: "Ma - Pe", weekend: "Viikonloput & Pyhät", desc: "Lääkärikäynti" },
+  ar: { weekday: "الإثنين - الجمعة", weekend: "عطلات نهاية الأسبوع والأعياد", desc: "زيارة طبية" },
+  no: { weekday: "Man - Fre", weekend: "Helger & Helligdager", desc: "Legebesøk" },
+  da: { weekday: "Man - Fre", weekend: "Weekender & Helligdage", desc: "Lægebesøg" },
+  sv: { weekday: "Mån - Fre", weekend: "Helger & Helgdagar", desc: "Läkarbesök" },
+};
 
 export default function Hero({
   headline,
@@ -20,12 +33,15 @@ export default function Hero({
   whatsappLabel,
   callLabel,
   trustItems,
+  locale = "es",
 }: HeroProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [nextIndex, setNextIndex] = useState(1);
   const [fading, setFading] = useState(false);
   const currentRef = useRef<HTMLVideoElement>(null);
   const nextRef = useRef<HTMLVideoElement>(null);
+
+  const t = PRICING_TEXT[locale] || PRICING_TEXT["en"];
 
   const whatsappMsg = encodeURIComponent(
     "Hello, I need a doctor to visit my hotel/apartment. My name is: [NAME]. Hotel/Address: [HOTEL]. Symptoms: [SYMPTOMS]."
@@ -119,8 +135,31 @@ export default function Hero({
             {subheadline}
           </p>
 
+          {/* Pricing Info */}
+          <div className="hero-fade-in hero-fade-in-delay-4 mb-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-6 bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:px-6 border border-white/20 shadow-xl w-full sm:w-auto">
+            <div className="flex items-center gap-3">
+              <div className="bg-[#25D366]/20 p-2 rounded-xl border border-[#25D366]/30">
+                <span className="text-2xl font-800 text-white tracking-tight">€130</span>
+              </div>
+              <div className="flex flex-col text-left">
+                <span className="text-white font-600 leading-tight">{t.weekday}</span>
+                <span className="text-slate-300 text-xs font-500">{t.desc}</span>
+              </div>
+            </div>
+            <div className="hidden sm:block w-px h-10 bg-white/20" />
+            <div className="flex items-center gap-3">
+              <div className="bg-[#0A6EBD]/30 p-2 rounded-xl border border-[#0A6EBD]/50">
+                <span className="text-2xl font-800 text-white tracking-tight">€140</span>
+              </div>
+              <div className="flex flex-col text-left">
+                <span className="text-white font-600 leading-tight">{t.weekend}</span>
+                <span className="text-slate-300 text-xs font-500">{t.desc}</span>
+              </div>
+            </div>
+          </div>
+
           {/* CTA Buttons */}
-          <div className="hero-fade-in hero-fade-in-delay-4 flex flex-col sm:flex-row w-full sm:w-auto justify-center lg:justify-start gap-4 mb-10">
+          <div className="hero-fade-in hero-fade-in-delay-5 flex flex-col sm:flex-row w-full sm:w-auto justify-center lg:justify-start gap-4 mb-10">
             <a
               href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMsg}`}
               id="hero-whatsapp-btn"

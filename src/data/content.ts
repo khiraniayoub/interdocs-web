@@ -38,7 +38,7 @@ export const translations = {
       subheadline:
         "Private doctors available 24/7 for tourists across the Costa del Sol. Fast, professional and English-speaking.",
       whatsapp: "WhatsApp Now",
-      call: "Call us",
+      call: "Call Now",
       trusts: [
         "English Speaking Doctors",
         "Hotel & Home Visits",
@@ -132,7 +132,7 @@ export const translations = {
         },
         {
           q: "How fast can a doctor arrive?",
-          a: "Response times vary by location, but we aim to have a doctor with you within 30–60 minutes of your initial contact.",
+          a: "Response times vary by location, but we aim to have a doctor with you within 45–60 minutes of your initial contact.",
         },
         {
           q: "Do you speak English?",
@@ -247,7 +247,7 @@ export const translations = {
       items: [
         { q: "¿Visitan hoteles?", a: "Sí. Nuestros médicos visitan todos los hoteles de la Costa del Sol." },
         { q: "¿Pueden visitar apartamentos?", a: "Por supuesto. Visitamos apartamentos de alquiler y cualquier alojamiento." },
-        { q: "¿Cuánto tarda en llegar el médico?", a: "Nuestro objetivo es que el médico llegue en 30–60 minutos." },
+        { q: "¿Cuánto tarda en llegar el médico?", a: "Nuestro objetivo es que el médico llegue en 45–60 minutos." },
         { q: "¿Hablan inglés?", a: "Sí. Todos nuestros médicos colaboradores hablan inglés con fluidez." },
         { q: "¿Puedo usar mi seguro de viaje?", a: "Sí. Proporcionamos recibos médicos oficiales para todos los seguros." },
         { q: "¿Se puede atender a niños?", a: "Sí. Ofrecemos atención pediátrica para niños de todas las edades." },
@@ -327,7 +327,7 @@ export const translations = {
       items: [
         { q: "Besuchen Sie Hotels?", a: "Ja. Unsere Ärzte besuchen alle Hotels an der Costa del Sol." },
         { q: "Können Sie Apartments besuchen?", a: "Ja. Wir besuchen Ferienwohnungen und jede Unterkunft." },
-        { q: "Wie schnell kann ein Arzt kommen?", a: "Wir streben an, dass ein Arzt innerhalb von 30–60 Minuten bei Ihnen ist." },
+        { q: "Wie schnell kann ein Arzt kommen?", a: "Wir streben an, dass ein Arzt innerhalb von 45–60 Minuten bei Ihnen ist." },
         { q: "Sprechen Sie Deutsch?", a: "Ja. Wir haben deutschsprachige Ärzte verfügbar." },
         { q: "Kann ich meine Reiseversicherung nutzen?", a: "Ja. Wir stellen offizielle Arztbescheinigungen für alle Versicherungen aus." },
         { q: "Können Kinder behandelt werden?", a: "Ja. Wir bieten pädiatrische Versorgung für Kinder jeden Alters." },
@@ -407,7 +407,7 @@ export const translations = {
       items: [
         { q: "Visitez-vous les hôtels ?", a: "Oui. Nos médecins visitent tous les hôtels de la Costa del Sol." },
         { q: "Pouvez-vous visiter des appartements ?", a: "Absolument. Nous visitons les appartements de location et tout logement." },
-        { q: "Combien de temps pour qu'un médecin arrive ?", a: "Nous visons à avoir un médecin chez vous dans les 30 à 60 minutes." },
+        { q: "Combien de temps pour qu'un médecin arrive ?", a: "Nous visons à avoir un médecin chez vous dans les 45 à 60 minutes." },
         { q: "Parlez-vous français ?", a: "Oui. Nous avons des médecins francophones disponibles." },
         { q: "Puis-je utiliser mon assurance voyage ?", a: "Oui. Nous fournissons des reçus médicaux officiels pour toutes les assurances." },
         { q: "Les enfants peuvent-ils être traités ?", a: "Oui. Nous offrons des soins pédiatriques pour les enfants de tous âges." },
@@ -541,7 +541,7 @@ export const translations = {
         },
         {
           q: "Kuinka nopeasti lääkäri saapuu?",
-          a: "Saapumisajat vaihtelevat sijainnin mukaan, mutta tavoitteenamme on saapua 30–60 minuutin kuluessa yhteydenotosta.",
+          a: "Saapumisajat vaihtelevat sijainnin mukaan, mutta tavoitteenamme on saapua 45–60 minuutin kuluessa yhteydenotosta.",
         },
         {
           q: "Puhutteko englantia?",
@@ -692,7 +692,7 @@ export const translations = {
         },
         {
           q: "ما مدى سرعة وصول الطبيب؟",
-          a: "تختلف أوقات الاستجابة حسب الموقع، ولكننا نهدف إلى وصول الطبيب إليك في غضون 30 إلى 60 دقيقة من الاتصال الأول.",
+          a: "تختلف أوقات الاستجابة حسب الموقع، ولكننا نهدف إلى وصول الطبيب إليك في غضون 45 إلى 60 دقيقة من الاتصال الأول.",
         },
         {
           q: "هل تتحدثون الإنجليزية؟",
@@ -843,7 +843,7 @@ export const translations = {
         },
         {
           q: "Hvor raskt kan legen komme?",
-          a: "Responstiden varierer etter sted, men vi har som mål å ha en lege hos deg innen 30–60 minutter fra første kontakt.",
+          a: "Responstiden varierer etter sted, men vi har som mål å ha en lege hos deg innen 45–60 minutter fra første kontakt.",
         },
         {
           q: "Snakker dere engelsk?",
@@ -994,7 +994,7 @@ export const translations = {
         },
         {
           q: "Hvor hurtigt kan en læge komme?",
-          a: "Svartiden varierer efter placering, men vi tilstræber at have en læge hos dig inden for 30-60 minutter efter din første kontakt.",
+          a: "Svartiden varierer efter placering, men vi tilstræber at have en læge hos dig inden for 45-60 minutter efter din første kontakt.",
         },
         {
           q: "Taler I engelsk?",
@@ -1145,7 +1145,7 @@ export const translations = {
         },
         {
           q: "Hur snabbt kan en läkare komma?",
-          a: "Svarstiden varierar beroende på plats, men vi strävar efter att ha en läkare hos dig inom 30-60 minuter efter din första kontakt.",
+          a: "Svarstiden varierar beroende på plats, men vi strävar efter att ha en läkare hos dig inom 45-60 minuter efter din första kontakt.",
         },
         {
           q: "Talar ni engelska?",
@@ -2411,7 +2411,7 @@ export const BLOG_POSTS: BlogPost[] = [
 <p>If you are experiencing a life-threatening emergency such as a heart attack, stroke, severe trauma or loss of consciousness, call 112 immediately. This is Spain's emergency number and operators speak English. Emergency services are free for everyone.</p>
 <h2>For Non-Life-Threatening Medical Issues</h2>
 <p>For urgent but non-life-threatening conditions — such as high fever, vomiting, chest pain, severe headache, severe allergic reaction, or a child who is very unwell — a private doctor home visit is often the fastest way to receive professional medical attention.</p>
-<p>Our doctors can be with you within 30–60 minutes and can assess whether you need hospital care or can be treated at your location.</p>
+<p>Our doctors can be with you within 45–60 minutes and can assess whether you need hospital care or can be treated at your location.</p>
 <h2>Useful Emergency Numbers in Spain</h2>
 <ul>
 <li><strong>112</strong> — General emergency (police, fire, ambulance)</li>

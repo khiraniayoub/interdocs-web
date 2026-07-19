@@ -473,6 +473,7 @@ export default async function Page({
             whatsappLabel={t.hero.whatsapp}
             callLabel={t.hero.call}
             trustItems={[...t.hero.trusts]}
+            locale={locale}
           />
           <HowItWorks
             title={t.howItWorks.title}
