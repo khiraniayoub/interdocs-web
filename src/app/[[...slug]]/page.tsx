@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import {
@@ -536,9 +537,9 @@ export default async function Page({
               <nav aria-label="Breadcrumb" className="mb-8">
                 <ol className="flex items-center justify-center gap-2 text-sm text-slate-400">
                   <li>
-                    <a href="/" className="hover:text-[#0A6EBD] transition-colors">
+                    <Link href="/" className="hover:text-[#0A6EBD] transition-colors">
                       Home
-                    </a>
+                    </Link>
                   </li>
                   <li aria-hidden="true">›</li>
                   <li className="text-slate-600 font-500">{city.name}</li>
