@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface FAQItem {
   q: string;
@@ -15,6 +15,25 @@ interface FAQSectionProps {
 
 export default function FAQSection({ title, subtitle, items }: FAQSectionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+    return () => observer.disconnect();
+  }, []);
 
   const toggle = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -37,6 +56,7 @@ export default function FAQSection({ title, subtitle, items }: FAQSectionProps) 
   return (
     <section
       id="faq"
+      ref={sectionRef}
       className="py-20 lg:py-28 bg-white"
       aria-labelledby="faq-heading"
     >
@@ -70,7 +90,8 @@ export default function FAQSection({ title, subtitle, items }: FAQSectionProps) 
                   isOpen
                     ? "border-[#0A6EBD]/30 shadow-lg shadow-blue-50"
                     : "border-slate-100 hover:border-slate-200"
-                }`}
+                } ${isVisible ? 'hero-fade-in opacity-0' : 'opacity-0'}`}
+                style={isVisible ? { animationDelay: `${index * 0.15 + 0.1}s`, animationFillMode: 'forwards' } : {}}
               >
                 <dt>
                   <button

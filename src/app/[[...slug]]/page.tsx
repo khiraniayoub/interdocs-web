@@ -201,7 +201,7 @@ export async function generateMetadata({
       openingHoursSpecification: {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: [
-          "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday",
+          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday",
         ],
         opens: "00:00",
         closes: "23:59",
@@ -421,7 +421,7 @@ export default async function Page({
       ],
       openingHoursSpecification: {
         "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
         opens: "00:00",
         closes: "23:59",
       },

@@ -133,11 +133,19 @@ export default function ServiceAreas({ title, subtitle, locale }: ServiceAreasPr
                     </p>
 
                     {/* Prices */}
-                    <div className="mt-auto mb-4 flex flex-col xl:flex-row gap-2 w-full">
-                      <span className="text-xs font-600 text-[#1da851] bg-[#1da851]/10 px-2 py-1.5 rounded-md border border-[#1da851]/20 flex-1 text-center truncate">
+                    <div 
+                      className="mt-auto mb-4 flex flex-col xl:flex-row gap-2 w-full"
+                      style={{
+                        opacity: visibleCards[index] ? 1 : 0,
+                        transform: visibleCards[index] ? "scale(1)" : "scale(0.5)",
+                        transition: "opacity 0.6s ease, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)",
+                        transitionDelay: "0.25s"
+                      }}
+                    >
+                      <span className="text-xs font-700 text-white bg-[#1da851] px-2 py-1.5 rounded-md shadow-sm flex-1 text-center truncate">
                         {tBadge.weekday}
                       </span>
-                      <span className="text-xs font-600 text-[#0A6EBD] bg-[#0A6EBD]/10 px-2 py-1.5 rounded-md border border-[#0A6EBD]/20 flex-1 text-center truncate">
+                      <span className="text-xs font-700 text-white bg-[#0A6EBD] px-2 py-1.5 rounded-md shadow-sm flex-1 text-center truncate">
                         {tBadge.weekend}
                       </span>
                     </div>

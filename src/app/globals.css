@@ -112,6 +112,17 @@ nav ol {
   animation: fadeSlideUp 0.7s ease forwards;
   opacity: 0;
 }
+
+/* Pop-in entrance (scale up from nothing with a slight bounce) */
+@keyframes popIn {
+  0%   { opacity: 0; transform: scale(0.5); }
+  70%  { opacity: 1; transform: scale(1.05); }
+  100% { opacity: 1; transform: scale(1); }
+}
+.hero-pop-in {
+  animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  opacity: 0;
+}
 .hero-fade-in-delay-1 { animation-delay: 0.1s; }
 .hero-fade-in-delay-2 { animation-delay: 0.25s; }
 .hero-fade-in-delay-3 { animation-delay: 0.4s; }

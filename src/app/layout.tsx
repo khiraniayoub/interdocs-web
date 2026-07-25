@@ -138,7 +138,7 @@ export default async function RootLayout({
       </head>
       <body className="font-sans antialiased bg-white text-slate-900">
         {children}
-        <FloatingCTA />
+        <FloatingCTA locale={lang} />
       </body>
     </html>
   );
