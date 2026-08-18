@@ -118,6 +118,54 @@ function resolvePage(segments: string[]): PageType {
   return { type: "not-found" };
 }
 
+const HOME_META: Record<Locale, { title: string; description: string }> = {
+  en: {
+    title: "Doctor at Your Hotel | Private Doctor Costa del Sol",
+    description:
+      "Private English-speaking doctors available 24/7 for tourists across the Costa del Sol. Fast doctor home visits to your hotel or apartment in Málaga, Marbella and beyond.",
+  },
+  es: {
+    title: "Médico a Domicilio y en Hoteles | Costa del Sol",
+    description:
+      "Médicos privados disponibles 24/7 para turistas y residentes en la Costa del Sol. Visitas médicas urgentes a hoteles y apartamentos en Málaga, Marbella y alrededores.",
+  },
+  de: {
+    title: "Arzt im Hotel & Hausbesuch | Costa del Sol",
+    description:
+      "Privatarzt rund um die Uhr für Touristen an der Costa del Sol. Schnelle Hotel- und Hausbesuche in Málaga, Marbella und Umgebung mit Versicherungsnachweis.",
+  },
+  fr: {
+    title: "Médecin à l'Hôtel et à Domicile | Costa del Sol",
+    description:
+      "Médecins privés disponibles 24h/24 pour touristes sur la Costa del Sol. Visites médicales rapides à votre hôtel ou appartement à Málaga et Marbella.",
+  },
+  fi: {
+    title: "Lääkäri Hotelliin ja Kotikäynnit | Costa del Sol",
+    description:
+      "Yksityislääkäripalvelut 24/7 turisteille Costa del Solilla. Nopeat lääkärikäynnit hotellille tai asunnolle Málagassa ja Marbellassa. Kuitit vakuutukseen.",
+  },
+  ar: {
+    title: "طبيب في الفندق وزيارات منزلية | كوستا ديل سول",
+    description:
+      "أطباء خصوصيون متاحون 24/7 للسياح في كوستا ديل سول. زيارات طبية سريعة لفندقك أو شقتك في مالقة وماربيلا مع تقارير للتأمين.",
+  },
+  no: {
+    title: "Lege på Hotell og Hjemmebesøk | Costa del Sol",
+    description:
+      "Privatlege 24/7 for turister på Costa del Sol. Raske legebesøk til ditt hotell eller leilighet i Málaga og Marbella med refusjonsrapport.",
+  },
+  da: {
+    title: "Læge på Hotel og Hjemmebesøg | Costa del Sol",
+    description:
+      "Privat læge 24/7 for turister på Costa del Sol. Hurtigt lægebesøg på dit hotel eller din lejlighed i Málaga og Marbella med kvittering til forsikring.",
+  },
+  sv: {
+    title: "Läkare på Hotell och Hembesök | Costa del Sol",
+    description:
+      "Privatläkare dygnet runt för turister på Costa del Sol. Snabba läkarbesök till ditt hotell eller lägenhet i Málaga och Marbella med läkarintyg.",
+  },
+};
+
 // ────────────────────────────────────────────────────────────
 // Metadata generation
 // ────────────────────────────────────────────────────────────
@@ -133,12 +181,12 @@ export async function generateMetadata({
 
   if (page.type === "home") {
     const t = translations[page.locale];
+    const meta = HOME_META[page.locale] ?? HOME_META.en;
     const canonical =
       page.locale === "en" ? `${siteUrl}/` : `${siteUrl}/${page.locale}/`;
     return {
-      title: "Doctor at Your Hotel | Private Doctor Costa del Sol | Interdocs",
-      description:
-        "Private English-speaking doctors available 24/7 for tourists across the Costa del Sol. Doctor home visits to your hotel or apartment in Málaga, Marbella and beyond.",
+      title: meta.title,
+      description: meta.description,
       alternates: {
         canonical,
         languages: {
@@ -155,8 +203,8 @@ export async function generateMetadata({
         },
       },
       openGraph: {
-        title: t.hero.headline,
-        description: t.hero.subheadline,
+        title: meta.title,
+        description: meta.description,
         url: canonical,
         images: [{ url: "/hero.png", width: 1200, height: 630 }],
       },
@@ -265,7 +313,7 @@ export async function generateMetadata({
         ? `${siteUrl}/blog/`
         : `${siteUrl}/${locale}/blog/`;
     return {
-      title: `${t.blog.title} | Interdocs`,
+      title: t.blog.title,
       description: t.blog.subtitle,
       alternates: {
         canonical,

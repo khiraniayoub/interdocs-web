@@ -181,14 +181,12 @@ export default function Hero({
           <h1
             id="hero-heading"
             className="text-4xl sm:text-5xl lg:text-6xl font-800 text-white leading-[1.1] tracking-tight mb-6 drop-shadow-lg"
-            aria-label={headline}
           >
             {headline.split(" ").map((word, index) => (
               <span
                 key={index}
                 className="inline-block hero-fade-in"
                 style={{ animationDelay: `${index * 0.12 + 0.2}s` }}
-                aria-hidden="true"
               >
                 {word}&nbsp;
               </span>

@@ -121,7 +121,7 @@ export default async function RootLayout({
   const lang = getLangFromPath(pathname);
 
   return (
-    <html lang={lang} className={outfit.variable}>
+    <html lang={lang} className={outfit.variable} data-scroll-behavior="smooth">
       <head>
         <meta name="theme-color" content="#0A6EBD" />
         {/* ── Geo / Local SEO meta tags ─────────────────── */}
@@ -129,9 +129,6 @@ export default async function RootLayout({
         <meta name="geo.placename" content="Málaga, Costa del Sol, Spain" />
         <meta name="geo.position" content="36.7213;-4.4214" />
         <meta name="ICBM" content="36.7213, -4.4214" />
-        {/* ── Verification — replace YOUR_CODE with the code from Google Search Console ── */}
-        <meta name="google-site-verification" content="YOUR_GOOGLE_SEARCH_CONSOLE_CODE" />
-        {/* <meta name="msvalidate.01" content="YOUR_CODE" /> */}
         {/* ── Performance hints ─────────────────────────── */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
