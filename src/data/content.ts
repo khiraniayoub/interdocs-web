@@ -14,6 +14,12 @@ export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 export const PHONE_URL = `tel:+34600000000`;
 
 // ────────────────────────────────────────────────────────────
+// DOMAIN / SITE URL CONFIG
+// ────────────────────────────────────────────────────────────
+export const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://visita-domicilio.vercel.app";
+
+// ────────────────────────────────────────────────────────────
 // LOCALES
 // ────────────────────────────────────────────────────────────
 export const LOCALES: Locale[] = ["en", "es", "de", "fr", "fi", "ar", "no", "da", "sv"];

@@ -3,6 +3,7 @@ import { Outfit } from "next/font/google";
 import "./globals.css";
 import FloatingCTA from "@/components/FloatingCTA";
 import CookieBanner from "@/components/CookieBanner";
+import { SITE_URL } from "@/data/content";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -11,15 +12,13 @@ const outfit = Outfit({
   variable: "--font-outfit",
 });
 
-const SITE_URL = "https://interdocs.es";
-
 export const metadata: Metadata = {
   title: {
     default: "Doctor at Your Hotel | Private Doctor Costa del Sol | Interdocs",
     template: "%s | Interdocs",
   },
   description:
-    "Private English-speaking doctors available 24/7 for tourists across the Costa del Sol. Doctor home visits to your hotel or apartment in Málaga, Marbella and beyond.",
+    "Private English-speaking doctors available 24/7 for tourists across Costa del Sol. Fast hotel & home visits in Málaga and Marbella. Call or WhatsApp now.",
   metadataBase: new URL(SITE_URL),
   // ── Canonical & alternates ──────────────────────────
   alternates: {

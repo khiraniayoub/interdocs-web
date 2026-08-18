@@ -6,6 +6,7 @@ import {
   CITIES,
   BLOG_POSTS,
   translations,
+  SITE_URL,
   type Locale,
   getLocaleFromPath,
   getSlugFromPath,
@@ -122,37 +123,37 @@ const HOME_META: Record<Locale, { title: string; description: string }> = {
   en: {
     title: "Doctor at Your Hotel | Private Doctor Costa del Sol",
     description:
-      "Private English-speaking doctors available 24/7 for tourists across the Costa del Sol. Fast doctor home visits to your hotel or apartment in Málaga, Marbella and beyond.",
+      "Private English-speaking doctors available 24/7 for tourists across Costa del Sol. Fast hotel & home visits in Málaga and Marbella. Call or WhatsApp now.",
   },
   es: {
     title: "Médico a Domicilio y en Hoteles | Costa del Sol",
     description:
-      "Médicos privados disponibles 24/7 para turistas y residentes en la Costa del Sol. Visitas médicas urgentes a hoteles y apartamentos en Málaga, Marbella y alrededores.",
+      "Médicos privados 24/7 para turistas en la Costa del Sol. Visitas urgentes a hoteles y apartamentos en Málaga y Marbella con informe para seguro. Llama ya.",
   },
   de: {
     title: "Arzt im Hotel & Hausbesuch | Costa del Sol",
     description:
-      "Privatarzt rund um die Uhr für Touristen an der Costa del Sol. Schnelle Hotel- und Hausbesuche in Málaga, Marbella und Umgebung mit Versicherungsnachweis.",
+      "Privatarzt 24/7 für Touristen an der Costa del Sol. Schnelle Hotel- und Hausbesuche in Málaga und Marbella mit Versicherungsnachweis. Jetzt kontaktieren.",
   },
   fr: {
     title: "Médecin à l'Hôtel et à Domicile | Costa del Sol",
     description:
-      "Médecins privés disponibles 24h/24 pour touristes sur la Costa del Sol. Visites médicales rapides à votre hôtel ou appartement à Málaga et Marbella.",
+      "Médecins privés 24h/24 pour touristes sur la Costa del Sol. Visite rapide à l'hôtel ou appartement à Málaga et Marbella con facture assurance. Contact.",
   },
   fi: {
     title: "Lääkäri Hotelliin ja Kotikäynnit | Costa del Sol",
     description:
-      "Yksityislääkäripalvelut 24/7 turisteille Costa del Solilla. Nopeat lääkärikäynnit hotellille tai asunnolle Málagassa ja Marbellassa. Kuitit vakuutukseen.",
+      "Yksityislääkäripalvelut 24/7 turisteille Costa del Solilla. Nopeat kotikäynnit hotellille tai asunnolle Málagassa ja Marbellassa. Kuitit vakuutukseen.",
   },
   ar: {
     title: "طبيب في الفندق وزيارات منزلية | كوستا ديل سول",
     description:
-      "أطباء خصوصيون متاحون 24/7 للسياح في كوستا ديل سول. زيارات طبية سريعة لفندقك أو شقتك في مالقة وماربيلا مع تقارير للتأمين.",
+      "أطباء خصوصيون متاحون 24/7 للسياح في كوستا ديل سول. زيارات طبية سريعة للفنادق والشقق في مالقة وماربيلا مع تقارير للتأمين. اتصل بنا الآن.",
   },
   no: {
     title: "Lege på Hotell og Hjemmebesøk | Costa del Sol",
     description:
-      "Privatlege 24/7 for turister på Costa del Sol. Raske legebesøk til ditt hotell eller leilighet i Málaga og Marbella med refusjonsrapport.",
+      "Privatlege 24/7 for turister på Costa del Sol. Raske legebesøk til ditt hotell eller leilighet i Málaga og Marbella med rapport til reiseforsikring.",
   },
   da: {
     title: "Læge på Hotel og Hjemmebesøg | Costa del Sol",
@@ -177,7 +178,7 @@ export async function generateMetadata({
   const { slug = [] } = await params;
   const page = resolvePage(slug);
 
-  const siteUrl = "https://interdocs.es";
+  const siteUrl = SITE_URL;
 
   if (page.type === "home") {
     const t = translations[page.locale];
@@ -423,7 +424,7 @@ export default async function Page({
 
   // ── Home Page ──────────────────────────────────────────
   if (page.type === "home") {
-    const siteUrl = "https://interdocs.es";
+    const siteUrl = SITE_URL;
     const orgSchema = {
       "@context": "https://schema.org",
       "@type": "MedicalBusiness",

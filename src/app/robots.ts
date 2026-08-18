@@ -1,10 +1,6 @@
 import type { MetadataRoute } from "next";
+import { SITE_URL } from "@/data/content";
 
-/**
- * Generates robots.txt dynamically via Next.js App Router.
- * This replaces the static public/robots.txt file.
- * Delete public/robots.txt after verifying this works.
- */
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
@@ -14,6 +10,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/_next/", "/api/"],
       },
     ],
-    sitemap: "https://interdocs.es/sitemap.xml",
+    sitemap: `${SITE_URL}/sitemap.xml`,
   };
 }
