@@ -112,6 +112,12 @@ export const translations = {
           title: "General Practitioner",
           desc: "Full GP consultation including diagnosis and treatment plan.",
         },
+        {
+          icon: "ambulance",
+          title: "Ambulance Transfer",
+          desc: "Safe and fast medical transport to the nearest hospital.",
+        },
+
       ],
     },
     areas: {
@@ -172,7 +178,7 @@ export const translations = {
     },
     footer: {
       disclaimer:
-        "Interdoc coordinates requests with independent licensed medical professionals. We do not ourselves provide medical treatment. In a life-threatening emergency, please call 112.",
+        "Interdocs coordinates requests with independent licensed medical professionals. We do not ourselves provide medical treatment. In a life-threatening emergency, please call 112.",
       rights: "All rights reserved.",
     },
   },
@@ -238,6 +244,12 @@ export const translations = {
         { icon: "certificate", title: "Certificados Médicos", desc: "Documentación oficial para tu seguro de viaje." },
         { icon: "tourist", title: "Atención al Turista", desc: "Cuidado especializado para visitantes internacionales." },
         { icon: "gp", title: "Médico General", desc: "Consulta completa con diagnóstico y plan de tratamiento." },
+        {
+          icon: "ambulance",
+          title: "Traslado en Ambulancia",
+          desc: "Transporte médico seguro y rápido al hospital más cercano.",
+        },
+
       ],
     },
     areas: { title: "Zonas que Cubrimos", subtitle: "Cubrimos toda la Costa del Sol." },
@@ -268,7 +280,7 @@ export const translations = {
       disclaimer: "Al enviar este formulario, tus datos se enviarán por WhatsApp.",
     },
     footer: {
-      disclaimer: "Interdoc coordina solicitudes con profesionales médicos independientes con licencia. No prestamos tratamiento médico directamente. En una emergencia, llame al 112.",
+      disclaimer: "Interdocs coordina solicitudes con profesionales médicos independientes con licencia. No prestamos tratamiento médico directamente. En una emergencia, llame al 112.",
       rights: "Todos los derechos reservados.",
     },
   },
@@ -318,6 +330,12 @@ export const translations = {
         { icon: "certificate", title: "Ärztliche Bescheinigungen", desc: "Offizielle Dokumentation für Ihre Reiseversicherung." },
         { icon: "tourist", title: "Touristenmedizin", desc: "Spezialisierte Versorgung für internationale Besucher." },
         { icon: "gp", title: "Allgemeinarzt", desc: "Vollständige Konsultation mit Diagnose und Behandlungsplan." },
+        {
+          icon: "ambulance",
+          title: "Krankentransport",
+          desc: "Sicherer und schneller medizinischer Transport zum nächsten Krankenhaus.",
+        },
+
       ],
     },
     areas: { title: "Unser Einzugsgebiet", subtitle: "Wir betreuen die gesamte Costa del Sol." },
@@ -348,7 +366,7 @@ export const translations = {
       disclaimer: "Durch das Absenden dieses Formulars werden Ihre Daten per WhatsApp übermittelt.",
     },
     footer: {
-      disclaimer: "Interdoc koordiniert Anfragen mit unabhängigen zugelassenen Medizinern. Wir selbst erbringen keine medizinische Behandlung. Im lebensbedrohlichen Notfall rufen Sie bitte 112 an.",
+      disclaimer: "Interdocs koordiniert Anfragen mit unabhängigen zugelassenen Medizinern. Wir selbst erbringen keine medizinische Behandlung. Im lebensbedrohlichen Notfall rufen Sie bitte 112 an.",
       rights: "Alle Rechte vorbehalten.",
     },
   },
@@ -398,6 +416,12 @@ export const translations = {
         { icon: "certificate", title: "Certificats Médicaux", desc: "Documentation officielle pour votre assurance voyage." },
         { icon: "tourist", title: "Soins pour Touristes", desc: "Soins spécialisés pour les visiteurs internationaux." },
         { icon: "gp", title: "Médecin Généraliste", desc: "Consultation complète incluant diagnostic et plan de traitement." },
+        {
+          icon: "ambulance",
+          title: "Transfert en Ambulance",
+          desc: "Transport médical sûr et rapide vers l'hôpital le plus proche.",
+        },
+
       ],
     },
     areas: { title: "Zones Couvertes", subtitle: "Nous couvrons toute la Costa del Sol." },
@@ -428,7 +452,7 @@ export const translations = {
       disclaimer: "En soumettant ce formulaire, vos données seront envoyées par WhatsApp.",
     },
     footer: {
-      disclaimer: "Interdoc coordonne les demandes avec des professionnels médicaux indépendants agréés. Nous ne fournissons pas nous-mêmes de traitement médical. En cas d'urgence vitale, appelez le 112.",
+      disclaimer: "Interdocs coordonne les demandes avec des professionnels médicaux indépendants agréés. Nous ne fournissons pas nous-mêmes de traitement médical. En cas d'urgence vitale, appelez le 112.",
       rights: "Tous droits réservés.",
     },
   },
@@ -521,6 +545,12 @@ export const translations = {
           title: "Yleislääkäri",
           desc: "Täydellinen yleislääkärin konsultaatio sisältäen diagnoosin ja hoitosuunnitelman.",
         },
+        {
+          icon: "ambulance",
+          title: "Ambulanssikuljetus",
+          desc: "Turvallinen ja nopea lääketieteellinen kuljetus lähimpään sairaalaan.",
+        },
+
       ],
     },
     areas: {
@@ -579,7 +609,7 @@ export const translations = {
       disclaimer: "Lähettämällä tämän lomakkeen tietosi lähetetään WhatsAppilla käsiteltäväksi.",
     },
     footer: {
-      disclaimer: "Interdoc koordinoi pyyntöjä itsenäisten lisensoitujen lääkäreiden kanssa. Emme itse tarjoa lääketieteellistä hoitoa. Hengenvaarallisessa hätätilanteessa soita numeroon 112.",
+      disclaimer: "Interdocs koordinoi pyyntöjä itsenäisten lisensoitujen lääkäreiden kanssa. Emme itse tarjoa lääketieteellistä hoitoa. Hengenvaarallisessa hätätilanteessa soita numeroon 112.",
       rights: "Kaikki oikeudet pidätetään.",
     },
   },
@@ -672,6 +702,12 @@ export const translations = {
           title: "طبيب عام",
           desc: "استشارة طبية عامة كاملة تشمل التشخيص وخطة العلاج.",
         },
+        {
+          icon: "ambulance",
+          title: "نقل بسيارة الإسعاف",
+          desc: "نقل طبي آمن وسريع إلى أقرب مستشفى.",
+        },
+
       ],
     },
     areas: {
@@ -730,7 +766,7 @@ export const translations = {
       disclaimer: "بإرسال هذا النموذج، سيتم إرسال بياناتك عبر واتساب للمعالجة.",
     },
     footer: {
-      disclaimer: "تقوم Interdoc بتنسيق الطلبات مع أطباء مرخصين مستقلين. نحن لا نقدم علاجاً طبياً بأنفسنا. في حالات الطوارئ التي تهدد الحياة، يرجى الاتصال بالرقم 112.",
+      disclaimer: "تقوم Interdocs بتنسيق الطلبات مع أطباء مرخصين مستقلين. نحن لا نقدم علاجاً طبياً بأنفسنا. في حالات الطوارئ التي تهدد الحياة، يرجى الاتصال بالرقم 112.",
       rights: "جميع الحقوق محفوظة.",
     },
   },
@@ -823,6 +859,12 @@ export const translations = {
           title: "Allmennlege",
           desc: "Full allmennlegekonsultasjon inkludert diagnose og behandlingsplan.",
         },
+        {
+          icon: "ambulance",
+          title: "Ambulansetransport",
+          desc: "Sikker og rask medisinsk transport til nærmeste sykehus.",
+        },
+
       ],
     },
     areas: {
@@ -881,7 +923,7 @@ export const translations = {
       disclaimer: "Ved å sende inn dette skjemaet, vil opplysningene dine bli sendt via WhatsApp for behandling.",
     },
     footer: {
-      disclaimer: "Interdoc koordinerer forespørsler med uavhengige lisensierte leger. Vi tilbyr ikke medisinsk behandling selv. Ved livstruende nødsituasjoner, ring 112.",
+      disclaimer: "Interdocs koordinerer forespørsler med uavhengige lisensierte leger. Vi tilbyr ikke medisinsk behandling selv. Ved livstruende nødsituasjoner, ring 112.",
       rights: "Alle rettigheter forbeholdt.",
     },
   },
@@ -974,6 +1016,12 @@ export const translations = {
           title: "Praktiserende Læge",
           desc: "Komplet konsultation hos praktiserende læge inklusive diagnose og behandlingsplan.",
         },
+        {
+          icon: "ambulance",
+          title: "Ambulancetransport",
+          desc: "Sikker og hurtig medicinsk transport til det nærmeste hospital.",
+        },
+
       ],
     },
     areas: {
@@ -1032,7 +1080,7 @@ export const translations = {
       disclaimer: "Ved at indsende denne formular vil dine oplysninger blive sendt via WhatsApp til behandling.",
     },
     footer: {
-      disclaimer: "Interdoc koordinerer anmodninger med uafhængige autoriserede læger. Vi yder ikke selv lægebehandling. Ring 112 i tilfælde af livsfare.",
+      disclaimer: "Interdocs koordinerer anmodninger med uafhængige autoriserede læger. Vi yder ikke selv lægebehandling. Ring 112 i tilfælde af livsfare.",
       rights: "Alle rettigheder forbeholdes.",
     },
   },
@@ -1125,6 +1173,12 @@ export const translations = {
           title: "Allmänläkare",
           desc: "Komplett konsultation hos allmänläkare inklusive diagnos och behandlingsplan.",
         },
+        {
+          icon: "ambulance",
+          title: "Ambulanstransport",
+          desc: "Säker och snabb medicinsk transport till närmaste sjukhus.",
+        },
+
       ],
     },
     areas: {
@@ -1183,7 +1237,7 @@ export const translations = {
       disclaimer: "Genom att skicka in detta formulär kommer dina uppgifter att skickas via WhatsApp för behandling.",
     },
     footer: {
-      disclaimer: "Interdoc samordnar förfrågningar med oberoende legitimerade läkare. Vi tillhandahåller inte medicinsk behandling själva. Vid livshotande nödsituationer, ring 112.",
+      disclaimer: "Interdocs samordnar förfrågningar med oberoende legitimerade läkare. Vi tillhandahåller inte medicinsk behandling själva. Vid livshotande nödsituationer, ring 112.",
       rights: "Alla rättigheter förbehållna.",
     },
   },

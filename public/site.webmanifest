@@ -1,6 +1,6 @@
 {
-  "name": "Interdoc",
-  "short_name": "Visita Domicilio",
+  "name": "Interdocs",
+  "short_name": "Interdocs",
   "description": "Private doctors available 24/7 for tourists across the Costa del Sol",
   "start_url": "/",
   "display": "standalone",

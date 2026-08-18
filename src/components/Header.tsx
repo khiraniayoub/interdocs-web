@@ -145,21 +145,21 @@ export default function Header({ locale = "en" }: HeaderProps) {
           <Link
             href={localePaths[locale] || "/"}
             className="flex items-center gap-2 group"
-            aria-label="Interdoc - Home"
+            aria-label="Interdocs - Home"
           >
             <Image
-              src="/logo_new_v2.png"
-              alt="Interdoc logo"
-              width={60}
-              height={60}
+              src="/mi_logo.webp"
+              alt="Interdocs logo"
+              width={200}
+              height={80}
               priority
-              className="h-16 lg:h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              className="h-14 lg:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
-            <div className="hidden sm:block">
-              <p className="text-lg lg:text-xl font-800 text-slate-900 leading-tight tracking-tight uppercase transition-colors duration-200 group-hover:text-[#0A6EBD]">
-                Interdoc
+            <div>
+              <p className="text-base lg:text-xl font-800 text-slate-900 leading-tight tracking-tight uppercase transition-colors duration-200 group-hover:text-[#0A6EBD]">
+                Interdocs
               </p>
-              <p className="text-sm text-[#0A6EBD] font-600 uppercase tracking-widest transition-opacity duration-200 group-hover:opacity-80">
+              <p className="text-xs lg:text-sm text-[#0A6EBD] font-600 uppercase tracking-widest transition-opacity duration-200 group-hover:opacity-80">
                 Home Doctor Service
               </p>
             </div>

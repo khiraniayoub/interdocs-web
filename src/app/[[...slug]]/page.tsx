@@ -23,6 +23,9 @@ import ServiceAreas from "@/components/ServiceAreas";
 import FAQSection from "@/components/FAQSection";
 import ContactForm from "@/components/ContactForm";
 import BlogSection from "@/components/BlogSection";
+import ReviewsCarousel from "@/components/ReviewsCarousel";
+import InsuranceLogos from "@/components/InsuranceLogos";
+import WhatWeTreat from "@/components/WhatWeTreat";
 import Footer from "@/components/Footer";
 
 // ────────────────────────────────────────────────────────────
@@ -126,14 +129,14 @@ export async function generateMetadata({
   const { slug = [] } = await params;
   const page = resolvePage(slug);
 
-  const siteUrl = "https://visitadomicilio.es";
+  const siteUrl = "https://interdocs.es";
 
   if (page.type === "home") {
     const t = translations[page.locale];
     const canonical =
       page.locale === "en" ? `${siteUrl}/` : `${siteUrl}/${page.locale}/`;
     return {
-      title: "Doctor at Your Hotel | Private Doctor Costa del Sol | Visita a Domicilio",
+      title: "Doctor at Your Hotel | Private Doctor Costa del Sol | Interdocs",
       description:
         "Private English-speaking doctors available 24/7 for tourists across the Costa del Sol. Doctor home visits to your hotel or apartment in Málaga, Marbella and beyond.",
       alternates: {
@@ -178,7 +181,7 @@ export async function generateMetadata({
       "@context": "https://schema.org",
       "@type": "MedicalBusiness",
       "@id": `${siteUrl}/${locale === "en" ? city.localeSlugs["en"] : `${locale}/${city.localeSlugs[locale]}`}/#localbusiness`,
-      name: "Visita a Domicilio",
+      name: "Interdocs",
       description: city.description[locale],
       url: canonical,
       telephone: "+34600000000",
@@ -262,7 +265,7 @@ export async function generateMetadata({
         ? `${siteUrl}/blog/`
         : `${siteUrl}/${locale}/blog/`;
     return {
-      title: `${t.blog.title} | Visita a Domicilio`,
+      title: `${t.blog.title} | Interdocs`,
       description: t.blog.subtitle,
       alternates: {
         canonical,
@@ -299,11 +302,11 @@ export async function generateMetadata({
       dateModified: post.dateModified,
       author: {
         "@type": "Organization",
-        name: "Visita a Domicilio",
+        name: "Interdocs",
       },
       publisher: {
         "@type": "Organization",
-        name: "Visita a Domicilio",
+        name: "Interdocs",
         url: siteUrl,
       },
     };
@@ -372,12 +375,12 @@ export default async function Page({
 
   // ── Home Page ──────────────────────────────────────────
   if (page.type === "home") {
-    const siteUrl = "https://visitadomicilio.es";
+    const siteUrl = "https://interdocs.es";
     const orgSchema = {
       "@context": "https://schema.org",
       "@type": "MedicalBusiness",
       "@id": `${siteUrl}/#organization`,
-      name: "Visita a Domicilio",
+      name: "Interdocs",
       description: t.hero.subheadline,
       url: siteUrl,
       logo: `${siteUrl}/logo_new_v2.png`,
@@ -445,7 +448,7 @@ export default async function Page({
       "@type": "WebSite",
       "@id": `${siteUrl}/#website`,
       url: siteUrl,
-      name: "Visita a Domicilio",
+      name: "Interdocs",
       description: "Private doctors available 24/7 for tourists across the Costa del Sol",
       publisher: { "@id": `${siteUrl}/#organization` },
       potentialAction: {
@@ -475,11 +478,13 @@ export default async function Page({
             trustItems={[...t.hero.trusts]}
             locale={locale}
           />
+          <InsuranceLogos />
           <HowItWorks
             title={t.howItWorks.title}
             subtitle={t.howItWorks.subtitle}
             steps={[...t.howItWorks.steps]}
           />
+          <WhatWeTreat locale={locale} />
           <ServicesList
             title={t.services.title}
             subtitle={t.services.subtitle}
@@ -513,6 +518,7 @@ export default async function Page({
             languages={[...t.contact.languages]}
             disclaimer={t.contact.disclaimer}
           />
+          <ReviewsCarousel />
         </main>
         <Footer
           disclaimer={t.footer.disclaimer}
@@ -609,12 +615,13 @@ export default async function Page({
               </ul>
             </div>
           </section>
-
+          <InsuranceLogos />
           <HowItWorks
             title={t.howItWorks.title}
             subtitle={t.howItWorks.subtitle}
             steps={[...t.howItWorks.steps]}
           />
+          <WhatWeTreat locale={locale} />
           <ServicesList
             title={t.services.title}
             subtitle={t.services.subtitle}
@@ -637,6 +644,7 @@ export default async function Page({
             languages={[...t.contact.languages]}
             disclaimer={t.contact.disclaimer}
           />
+          <ReviewsCarousel />
         </main>
         <Footer
           disclaimer={t.footer.disclaimer}
@@ -669,6 +677,7 @@ export default async function Page({
             readMoreLabel={t.blog.readMore}
             locale={locale}
           />
+          <ReviewsCarousel />
         </main>
         <Footer
           disclaimer={t.footer.disclaimer}
@@ -693,6 +702,7 @@ export default async function Page({
             locale={locale}
             singlePost={post}
           />
+          <ReviewsCarousel />
         </main>
         <Footer
           disclaimer={t.footer.disclaimer}

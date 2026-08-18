@@ -31,19 +31,19 @@ export default function Footer({ disclaimer, rights, locale }: FooterProps) {
             <Link
               href={homeHref}
               className="inline-flex flex-col lg:flex-row items-center gap-3 mb-5"
-              aria-label="Málaga Care Doctors - Home"
+              aria-label="Interdocs - Home"
             >
               <div className="bg-white rounded-xl px-2 py-2 flex items-center justify-center">
                 <Image
-                  src="/logo_new_v2.png"
-                  alt="Málaga Care Doctors logo"
-                  width={100}
-                  height={100}
-                  className="h-24 w-auto object-contain"
+                  src="/mi_logo.webp"
+                  alt="Interdocs logo"
+                  width={200}
+                  height={80}
+                  className="h-14 w-auto object-contain"
                 />
               </div>
               <div>
-                <p className="font-700 text-white uppercase text-sm tracking-wide">Málaga Care Doctors</p>
+                <p className="font-700 text-white uppercase text-sm tracking-wide">Interdocs</p>
                 <p className="text-[10px] text-slate-400 uppercase tracking-widest mt-0.5">Home Doctor Service</p>
               </div>
             </Link>
@@ -53,7 +53,7 @@ export default function Footer({ disclaimer, rights, locale }: FooterProps) {
             </p>
 
             {/* Emergency notice */}
-            <div className="inline-flex items-center gap-2 px-4 py-2.5 bg-red-900/40 border border-red-700/40 rounded-xl">
+            <div className="inline-flex items-center gap-2 px-4 py-2.5 bg-red-900/40 border border-red-700/40 rounded-xl mb-6">
               <svg
                 className="w-4 h-4 text-red-400 flex-shrink-0"
                 fill="none"
@@ -74,6 +74,20 @@ export default function Footer({ disclaimer, rights, locale }: FooterProps) {
                   112
                 </a>
               </span>
+            </div>
+
+            {/* Trust Badges */}
+            <div className="bg-white rounded-lg p-3 inline-flex items-center gap-3 w-48 shadow-lg">
+              <svg className="w-8 h-8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#4285F4" d="M23.745 12.27c0-.825-.075-1.62-.21-2.385H12.24v4.515h6.45c-.285 1.455-1.095 2.685-2.31 3.51v2.925h3.735c2.19-2.01 3.63-4.995 3.63-8.565z"/>
+                <path fill="#34A853" d="M12.24 24c3.24 0 5.955-1.08 7.935-2.91l-3.735-2.925c-1.08.72-2.46 1.155-4.2 1.155-3.225 0-5.955-2.175-6.93-5.1h-3.87v3.015A11.95 11.95 0 0012.24 24z"/>
+                <path fill="#FBBC05" d="M5.31 15.225c-.255-.735-.405-1.53-.405-2.355 0-.825.15-1.62.405-2.355V7.5H1.44A11.972 11.972 0 000 12.87c0 1.935.465 3.78 1.44 5.37l3.87-3.015z"/>
+                <path fill="#EA4335" d="M12.24 4.725c1.77 0 3.36.6 4.605 1.8l3.42-3.42C18.195 1.185 15.48 0 12.24 0 7.395 0 3.21 2.805 1.44 7.5l3.87 3.015c.975-2.925 3.705-5.1 6.93-5.1z"/>
+              </svg>
+              <div className="flex flex-col text-slate-900">
+                <span className="font-800 text-sm leading-none">Google</span>
+                <span className="text-xs text-slate-500 font-500">Verified Service</span>
+              </div>
             </div>
           </div>
 
@@ -145,13 +159,28 @@ export default function Footer({ disclaimer, rights, locale }: FooterProps) {
             </ul>
           </div>
 
-
+          {/* Service Areas (SEO Hub) */}
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left mt-6 lg:mt-0">
+            <h3 className="font-700 text-white mb-5 text-sm tracking-wide uppercase">
+              Service Areas
+            </h3>
+            <div className="grid grid-cols-2 gap-x-8 gap-y-3 text-sm text-slate-400">
+              <Link href={homeHref} className="hover:text-white transition-colors">Málaga</Link>
+              <Link href={homeHref} className="hover:text-white transition-colors">Marbella</Link>
+              <Link href={homeHref} className="hover:text-white transition-colors">Fuengirola</Link>
+              <Link href={homeHref} className="hover:text-white transition-colors">Torremolinos</Link>
+              <Link href={homeHref} className="hover:text-white transition-colors">Benalmádena</Link>
+              <Link href={homeHref} className="hover:text-white transition-colors">Estepona</Link>
+              <Link href={homeHref} className="hover:text-white transition-colors">Mijas</Link>
+              <Link href={homeHref} className="hover:text-white transition-colors">Nerja</Link>
+            </div>
+          </div>
         </div>
 
         {/* Bottom bar */}
         <div className="border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-          <p className="text-slate-500 text-sm">
-            © {year} Interdoc. {rights}
+          <p className="text-slate-400 text-sm">
+            © {year} Interdocs. {rights}
           </p>
           <p className="text-slate-600 text-xs">Costa del Sol · Málaga · Spain</p>
         </div>

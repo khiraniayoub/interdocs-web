@@ -14,6 +14,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/_next/", "/api/"],
       },
     ],
-    sitemap: "https://interdoc.es/sitemap.xml",
+    sitemap: "https://interdocs.es/sitemap.xml",
   };
 }

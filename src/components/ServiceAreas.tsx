@@ -10,16 +10,28 @@ interface ServiceAreasProps {
   locale: Locale;
 }
 
-const PRICING_BADGES: Record<string, { weekday: string; weekend: string }> = {
-  en: { weekday: "€130 (Mon-Fri)", weekend: "€140 (Weekends)" },
-  es: { weekday: "€130 (Lun-Vie)", weekend: "€140 (Fines de semana)" },
-  de: { weekday: "€130 (Mo-Fr)", weekend: "€140 (Wochenenden)" },
-  fr: { weekday: "130 € (Lun-Ven)", weekend: "140 € (Week-ends)" },
-  fi: { weekday: "130 € (Ma-Pe)", weekend: "140 € (Viikonloput)" },
-  ar: { weekday: "€130 (الاثنين-الجمعة)", weekend: "€140 (عطلات نهاية الأسبوع)" },
-  no: { weekday: "€130 (Man-Fre)", weekend: "€140 (Helger)" },
-  da: { weekday: "€130 (Man-Fre)", weekend: "€140 (Weekender)" },
-  sv: { weekday: "€130 (Mån-Fre)", weekend: "€140 (Helger)" },
+const COMING_SOON_LABEL: Record<string, string> = {
+  en: "Coming Soon",
+  es: "Próximamente",
+  de: "Demnächst",
+  fr: "Bientôt disponible",
+  fi: "Tulossa pian",
+  ar: "قريباً",
+  no: "Kommer snart",
+  da: "Kommer snart",
+  sv: "Kommer snart",
+};
+
+const PRICE_LABEL: Record<string, { weekday: string; weekend: string; from: string }> = {
+  en: { weekday: "Mon–Fri", weekend: "Sun, Nights & Holidays", from: "from" },
+  es: { weekday: "Lun–Vie", weekend: "Dom, Noches y Festivos", from: "desde" },
+  de: { weekday: "Mo–Fr",   weekend: "So, Nächte & Feiertage", from: "ab"    },
+  fr: { weekday: "Lun–Ven", weekend: "Dim, Nuits & Jours Fériés", from: "dès" },
+  fi: { weekday: "Ma–Pe",   weekend: "Su, Illat & Pyhäpäivät",  from: "alkaen" },
+  ar: { weekday: "الاثنين–الجمعة", weekend: "الأحد والليالي والعطل", from: "من" },
+  no: { weekday: "Man–Fre", weekend: "Søn, Netter & Helligdager", from: "fra" },
+  da: { weekday: "Man–Fre", weekend: "Søn, Aftener & Helligdage", from: "fra" },
+  sv: { weekday: "Mån–Fre", weekend: "Sön, Nätter & Helgdagar",  from: "från" },
 };
 
 export default function ServiceAreas({ title, subtitle, locale }: ServiceAreasProps) {
@@ -32,7 +44,6 @@ export default function ServiceAreas({ title, subtitle, locale }: ServiceAreasPr
   useEffect(() => {
     const section = sectionRef.current;
     if (!section) return;
-
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting && !hasAnimated.current) {
@@ -44,128 +55,146 @@ export default function ServiceAreas({ title, subtitle, locale }: ServiceAreasPr
                 next[i] = true;
                 return next;
               });
-            }, i * 120);
+            }, i * 100);
           });
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.1 }
     );
-
     observer.observe(section);
     return () => observer.disconnect();
   }, []);
+
+  const t = PRICE_LABEL[locale] || PRICE_LABEL["en"];
 
   return (
     <section
       id="areas"
       ref={sectionRef}
-      className="py-20 lg:py-28 bg-slate-50"
+      className="bg-white"
       aria-labelledby="areas-heading"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2
-            id="areas-heading"
-            className="text-3xl sm:text-4xl font-800 text-slate-900 mb-4"
-          >
-            {title}
-          </h2>
-          <p className="text-lg text-slate-500 max-w-xl mx-auto">{subtitle}</p>
-        </div>
-
-        <ul
-          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6"
-          role="list"
-          aria-label="Service areas"
+      {/* Header — contained */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12 text-center">
+        <h2
+          id="areas-heading"
+          className="text-3xl sm:text-4xl font-800 text-slate-900 mb-4"
         >
-          {CITIES.map((city, index) => {
-            const localeSlug = city.localeSlugs[locale];
-            const href =
-              locale === "en"
-                ? `/${localeSlug}/`
-                : `/${locale}/${localeSlug}/`;
+          {title}
+        </h2>
+        <p className="text-lg text-[#0A6EBD] max-w-xl mx-auto font-500">{subtitle}</p>
+      </div>
 
-            const tBadge = PRICING_BADGES[locale] || PRICING_BADGES["en"];
+      {/* Full-width grid — no side padding */}
+      <ul
+        className="grid grid-cols-2 lg:grid-cols-4 w-full"
+        role="list"
+        aria-label="Service areas"
+      >
+        {CITIES.map((city, index) => {
+          const localeSlug = city.localeSlugs[locale];
+          const href =
+            locale === "en"
+              ? `/${localeSlug}/`
+              : `/${locale}/${localeSlug}/`;
+          const isActive = city.slug === "malaga";
+          const label = COMING_SOON_LABEL[locale] ?? COMING_SOON_LABEL["en"];
 
-            return (
-              <li
-                key={city.slug}
-                style={{
-                  opacity: visibleCards[index] ? 1 : 0,
-                  transform: visibleCards[index]
-                    ? "translateY(0) scale(1)"
-                    : "translateY(30px) scale(0.92)",
-                  transition:
-                    "opacity 0.5s ease, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)",
-                }}
-              >
+          return (
+            <li
+              key={city.slug}
+              className="relative overflow-hidden"
+              style={{
+                opacity: visibleCards[index] ? 1 : 0,
+                transform: visibleCards[index] ? "scale(1)" : "scale(0.96)",
+                transition: "opacity 0.5s ease, transform 0.5s ease",
+                transitionDelay: `${index * 80}ms`,
+              }}
+            >
+              {isActive ? (
                 <Link
                   href={href}
-                  className="group flex flex-col items-start p-0 rounded-2xl bg-white border border-slate-100 hover:border-[#0A6EBD]/50 hover:shadow-2xl hover:shadow-blue-100 text-left transition-all duration-300 hover:-translate-y-2 h-full overflow-hidden"
+                  className="group block relative w-full h-72 lg:h-96 overflow-hidden"
                   aria-label={`Doctor in ${city.name}`}
                 >
-                  {/* City image */}
-                  <div
-                    className="w-full h-40 overflow-hidden relative"
-                    aria-hidden="true"
-                  >
-                    <img
-                      src={`/areas/${city.slug}.webp`}
-                      alt={`${city.name} — private doctor service`}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A6EBD]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  {/* Image */}
+                  <img
+                    src={`/areas/${city.slug}.webp`}
+                    alt={`${city.name} — private doctor service`}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  {/* Dark gradient overlay — always visible at bottom */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A2C6E]/90 via-[#0A2C6E]/30 to-transparent" />
+
+                  {/* Content overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                    <h3 className="font-800 text-2xl leading-tight mb-3 drop-shadow">
+                      {city.name}
+                    </h3>
+                    {/* Weekday price */}
+                    <div className="mb-2">
+                      <span className="text-3xl font-800">€130</span>
+                      <span className="text-white/70 text-sm font-500 ml-2">*</span>
+                      <p className="text-white/70 text-sm mt-0.5">{t.weekday}</p>
+                    </div>
+                    {/* Weekend price pill */}
+                    <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-xs font-600 text-white mt-1">
+                      €140* · {t.weekend}
+                    </div>
                   </div>
 
-                  {/* Text content */}
-                  <div className="p-5 flex flex-col flex-1 w-full">
-
-                    {/* City name — bigger */}
-                    <span className="font-800 text-xl text-slate-900 group-hover:text-[#0A6EBD] transition-colors duration-300 mb-2 leading-tight">
-                      {city.name}
-                    </span>
-
-                    {/* Description — bigger */}
-                    <p className="text-sm text-slate-500 leading-relaxed mb-4">
-                      {city.description[locale].split(".")[0]}
-                    </p>
-
-                    {/* Prices */}
-                    <div 
-                      className="mt-auto mb-4 flex flex-col xl:flex-row gap-2 w-full"
-                      style={{
-                        opacity: visibleCards[index] ? 1 : 0,
-                        transform: visibleCards[index] ? "scale(1)" : "scale(0.5)",
-                        transition: "opacity 0.6s ease, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)",
-                        transitionDelay: "0.25s"
-                      }}
-                    >
-                      <span className="text-xs font-700 text-white bg-[#1da851] px-2 py-1.5 rounded-md shadow-sm flex-1 text-center truncate">
-                        {tBadge.weekday}
-                      </span>
-                      <span className="text-xs font-700 text-white bg-[#0A6EBD] px-2 py-1.5 rounded-md shadow-sm flex-1 text-center truncate">
-                        {tBadge.weekend}
-                      </span>
-                    </div>
-
-                    {/* Arrow indicator on hover */}
-                    <span
-                      className="text-[#0A6EBD] text-sm font-600 opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-y-1 group-hover:translate-y-0 flex items-center gap-1"
-                    >
-                      Ver más
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                      </svg>
-                    </span>
+                  {/* Hover arrow */}
+                  <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0">
+                    <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg>
                   </div>
                 </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+              ) : (
+                /* ── Coming Soon card ── */
+                <div
+                  className="relative w-full h-72 lg:h-96 overflow-hidden cursor-default"
+                  aria-label={`${city.name} — ${label}`}
+                >
+                  <img
+                    src={`/areas/${city.slug}.webp`}
+                    alt={city.name}
+                    className="absolute inset-0 w-full h-full object-cover grayscale opacity-60"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/85 via-slate-900/30 to-transparent" />
+
+                  {/* Coming soon badge */}
+                  <div className="absolute top-4 left-4">
+                    <span className="inline-flex items-center gap-1.5 bg-white/90 backdrop-blur-sm text-slate-700 text-xs font-700 px-3 py-1.5 rounded-full shadow">
+                      <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+                      {label}
+                    </span>
+                  </div>
+
+                  {/* City name */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 className="font-800 text-2xl text-white/70 leading-tight">
+                      {city.name}
+                    </h3>
+                    <p className="text-white/50 text-sm mt-1 line-clamp-2">
+                      {city.description[locale].split(".")[0]}
+                    </p>
+                  </div>
+                </div>
+              )}
+            </li>
+          );
+        })}
+      </ul>
+
+      {/* Bottom note */}
+      <p className="text-center text-xs text-slate-400 py-4 px-4">
+        * Prices may vary. Contact us for exact quote.
+      </p>
     </section>
   );
 }

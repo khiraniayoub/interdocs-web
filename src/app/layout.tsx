@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
 import FloatingCTA from "@/components/FloatingCTA";
+import CookieBanner from "@/components/CookieBanner";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -10,12 +11,12 @@ const outfit = Outfit({
   variable: "--font-outfit",
 });
 
-const SITE_URL = "https://interdoc.es";
+const SITE_URL = "https://interdocs.es";
 
 export const metadata: Metadata = {
   title: {
-    default: "Doctor at Your Hotel | Private Doctor Costa del Sol | Interdoc",
-    template: "%s | Interdoc",
+    default: "Doctor at Your Hotel | Private Doctor Costa del Sol | Interdocs",
+    template: "%s | Interdocs",
   },
   description:
     "Private English-speaking doctors available 24/7 for tourists across the Costa del Sol. Doctor home visits to your hotel or apartment in Málaga, Marbella and beyond.",
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_GB",
-    siteName: "Interdoc",
+    siteName: "Interdocs",
     images: [
       {
         url: "/hero.png",
@@ -53,7 +54,7 @@ export const metadata: Metadata = {
   // ── Twitter ─────────────────────────────────────────
   twitter: {
     card: "summary_large_image",
-    site: "@interdoc_es",
+    site: "@interdocs_es",
   },
   // ── Robots ──────────────────────────────────────────
   robots: {
@@ -70,7 +71,7 @@ export const metadata: Metadata = {
   // ── Icons ───────────────────────────────────────────
   icons: {
     icon: "/favicon.ico",
-    apple: "/logo_new_v2.png",
+    apple: "/mi_logo.webp",
     shortcut: "/favicon.ico",
   },
   // ── Manifest ────────────────────────────────────────
@@ -86,9 +87,9 @@ export const metadata: Metadata = {
     "doctor fuengirola",
     "medico turistico costa del sol",
   ],
-  authors: [{ name: "Interdoc", url: SITE_URL }],
-  creator: "Interdoc",
-  publisher: "Interdoc",
+  authors: [{ name: "Interdocs", url: SITE_URL }],
+  creator: "Interdocs",
+  publisher: "Interdocs",
   category: "health",
 };
 
@@ -129,7 +130,7 @@ export default async function RootLayout({
         <meta name="geo.position" content="36.7213;-4.4214" />
         <meta name="ICBM" content="36.7213, -4.4214" />
         {/* ── Verification — replace YOUR_CODE with the code from Google Search Console ── */}
-        {/* <meta name="google-site-verification" content="YOUR_CODE" /> */}
+        <meta name="google-site-verification" content="YOUR_GOOGLE_SEARCH_CONSOLE_CODE" />
         {/* <meta name="msvalidate.01" content="YOUR_CODE" /> */}
         {/* ── Performance hints ─────────────────────────── */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -139,6 +140,7 @@ export default async function RootLayout({
       <body className="font-sans antialiased bg-white text-slate-900">
         {children}
         <FloatingCTA locale={lang} />
+        <CookieBanner locale={lang} />
       </body>
     </html>
   );

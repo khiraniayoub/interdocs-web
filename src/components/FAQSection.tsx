@@ -86,11 +86,10 @@ export default function FAQSection({ title, subtitle, items }: FAQSectionProps) 
             return (
               <div
                 key={index}
-                className={`rounded-2xl border transition-all duration-200 ${
-                  isOpen
+                className={`rounded-2xl border transition-all duration-200 ${isOpen
                     ? "border-[#0A6EBD]/30 shadow-lg shadow-blue-50"
                     : "border-slate-100 hover:border-slate-200"
-                } ${isVisible ? 'hero-fade-in opacity-0' : 'opacity-0'}`}
+                  } ${isVisible ? 'hero-fade-in opacity-0' : 'opacity-0'}`}
                 style={isVisible ? { animationDelay: `${index * 0.15 + 0.1}s`, animationFillMode: 'forwards' } : {}}
               >
                 <dt>
@@ -105,11 +104,10 @@ export default function FAQSection({ title, subtitle, items }: FAQSectionProps) 
                       {item.q}
                     </span>
                     <span
-                      className={`flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-200 ${
-                        isOpen
+                      className={`flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-200 ${isOpen
                           ? "bg-[#0A6EBD] text-white"
                           : "bg-slate-100 text-slate-500"
-                      }`}
+                        }`}
                       aria-hidden="true"
                     >
                       <svg
@@ -133,9 +131,8 @@ export default function FAQSection({ title, subtitle, items }: FAQSectionProps) 
                   id={answerId}
                   role="region"
                   aria-labelledby={itemId}
-                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                    isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-                  }`}
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                    }`}
                 >
                   <div className="px-6 pb-5">
                     <p className="text-slate-600 leading-relaxed text-sm">

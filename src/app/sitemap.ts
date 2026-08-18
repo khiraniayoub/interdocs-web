@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { CITIES, BLOG_POSTS, LOCALES } from "@/data/content";
 
-const BASE_URL = "https://interdoc.es";
+const BASE_URL = "https://interdocs.es";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
