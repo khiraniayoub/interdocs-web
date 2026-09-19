@@ -15,8 +15,8 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: {
-    default: "Doctor at Your Hotel | Private Doctor Costa del Sol | Interdocs",
-    template: "%s | Interdocs",
+    default: "Doctor at Your Hotel | Private Doctor Costa del Sol | Interdocs Medical",
+    template: "%s | Interdocs Medical",
   },
   description:
     "Private English-speaking doctors available 24/7 for tourists across Costa del Sol. Fast hotel & home visits in Málaga and Marbella. Call or WhatsApp now.",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_GB",
-    siteName: "Interdocs",
+    siteName: "Interdocs Medical",
     images: [
       {
         url: "/hero.png",
@@ -91,9 +91,9 @@ export const metadata: Metadata = {
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
   },
-  authors: [{ name: "Interdocs", url: SITE_URL }],
-  creator: "Interdocs",
-  publisher: "Interdocs",
+  authors: [{ name: "Interdocs Medical", url: SITE_URL }],
+  creator: "Interdocs Medical",
+  publisher: "Interdocs Medical",
   category: "health",
 };
 

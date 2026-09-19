@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { PHONE_NUMBER, PHONE_URL, WHATSAPP_NUMBER } from "@/data/content";
+import { PHONE_NUMBER, PHONE_URL, WHATSAPP_NUMBER, EMAIL_ADDRESS, EMAIL_URL } from "@/data/content";
 
 interface FooterProps {
   disclaimer: string;
@@ -31,19 +31,19 @@ export default function Footer({ disclaimer, rights, locale }: FooterProps) {
             <Link
               href={homeHref}
               className="inline-flex flex-col lg:flex-row items-center gap-3 mb-5"
-              aria-label="Interdocs - Home"
+              aria-label="Interdocs Medical - Home"
             >
               <div className="bg-white rounded-xl px-2 py-2 flex items-center justify-center">
                 <Image
                   src="/mi_logo.webp"
-                  alt="Interdocs logo"
+                  alt="Interdocs Medical logo"
                   width={200}
                   height={80}
                   className="h-14 w-auto object-contain"
                 />
               </div>
               <div>
-                <p className="font-700 text-white uppercase text-sm tracking-wide">Interdocs</p>
+                <p className="font-700 text-white uppercase text-sm tracking-wide">Interdocs Medical</p>
                 <p className="text-[10px] text-slate-400 uppercase tracking-widest mt-0.5">Home Doctor Service</p>
               </div>
             </Link>
@@ -139,6 +139,29 @@ export default function Footer({ disclaimer, rights, locale }: FooterProps) {
                   WhatsApp
                 </a>
               </li>
+              <li>
+                <a
+                  href={EMAIL_URL}
+                  className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors text-sm"
+                  aria-label={`Email us at ${EMAIL_ADDRESS}`}
+                >
+                  <svg
+                    className="w-4 h-4 text-[#0A6EBD]"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                  {EMAIL_ADDRESS}
+                </a>
+              </li>
               <li className="flex items-center gap-3 text-slate-400 text-sm">
                 <svg
                   className="w-4 h-4 text-[#0A6EBD]"
@@ -180,7 +203,7 @@ export default function Footer({ disclaimer, rights, locale }: FooterProps) {
         {/* Bottom bar */}
         <div className="border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <p className="text-slate-400 text-sm">
-            © {year} Interdocs. {rights}
+            © {year} Interdocs Medical. {rights}
           </p>
           <p className="text-slate-600 text-xs">Costa del Sol · Málaga · Spain</p>
         </div>

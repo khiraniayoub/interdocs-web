@@ -230,7 +230,7 @@ export async function generateMetadata({
       "@context": "https://schema.org",
       "@type": "MedicalBusiness",
       "@id": `${siteUrl}/${locale === "en" ? city.localeSlugs["en"] : `${locale}/${city.localeSlugs[locale]}`}/#localbusiness`,
-      name: "Interdocs",
+      name: "Interdocs Medical",
       description: city.description[locale],
       url: canonical,
       telephone: "+34600000000",
@@ -351,11 +351,11 @@ export async function generateMetadata({
       dateModified: post.dateModified,
       author: {
         "@type": "Organization",
-        name: "Interdocs",
+        name: "Interdocs Medical",
       },
       publisher: {
         "@type": "Organization",
-        name: "Interdocs",
+        name: "Interdocs Medical",
         url: siteUrl,
       },
     };
@@ -429,7 +429,7 @@ export default async function Page({
       "@context": "https://schema.org",
       "@type": "MedicalBusiness",
       "@id": `${siteUrl}/#organization`,
-      name: "Interdocs",
+      name: "Interdocs Medical",
       description: t.hero.subheadline,
       url: siteUrl,
       logo: `${siteUrl}/logo_new_v2.png`,
@@ -497,7 +497,7 @@ export default async function Page({
       "@type": "WebSite",
       "@id": `${siteUrl}/#website`,
       url: siteUrl,
-      name: "Interdocs",
+      name: "Interdocs Medical",
       description: "Private doctors available 24/7 for tourists across the Costa del Sol",
       publisher: { "@id": `${siteUrl}/#organization` },
       potentialAction: {

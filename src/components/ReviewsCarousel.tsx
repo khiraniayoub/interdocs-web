@@ -122,7 +122,7 @@ export default function ReviewsCarousel() {
         {/* Title */}
         <div className="text-center sm:text-left">
           <h2 className="text-2xl sm:text-3xl font-800 text-slate-900 leading-tight">
-            Why Patients Trust Interdocs
+            Why Patients Trust Interdocs Medical
           </h2>
           <p className="text-slate-500 text-sm mt-1">Real reviews from our patients across Costa del Sol</p>
         </div>
