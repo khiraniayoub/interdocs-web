@@ -17,7 +17,7 @@ export const PHONE_URL = `tel:+34600000000`;
 // DOMAIN / SITE URL CONFIG
 // ────────────────────────────────────────────────────────────
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://visita-domicilio.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://www.interdocsmedical.com";
 
 // ────────────────────────────────────────────────────────────
 // LOCALES

@@ -3,6 +3,7 @@ import { Outfit } from "next/font/google";
 import "./globals.css";
 import FloatingCTA from "@/components/FloatingCTA";
 import CookieBanner from "@/components/CookieBanner";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { SITE_URL } from "@/data/content";
 
 const outfit = Outfit({
@@ -86,6 +87,10 @@ export const metadata: Metadata = {
     "doctor fuengirola",
     "medico turistico costa del sol",
   ],
+  // ── Google Search Console Verification ──────────────
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
+  },
   authors: [{ name: "Interdocs", url: SITE_URL }],
   creator: "Interdocs",
   publisher: "Interdocs",
@@ -132,11 +137,13 @@ export default async function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://flagcdn.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
       </head>
       <body className="font-sans antialiased bg-white text-slate-900">
         {children}
         <FloatingCTA locale={lang} />
         <CookieBanner locale={lang} />
+        <GoogleAnalytics />
       </body>
     </html>
   );
