@@ -77,16 +77,15 @@ export default function Footer({ disclaimer, rights, locale }: FooterProps) {
             </div>
 
             {/* Trust Badges */}
-            <div className="bg-white rounded-lg p-3 inline-flex items-center gap-3 w-48 shadow-lg">
-              <svg className="w-8 h-8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path fill="#4285F4" d="M23.745 12.27c0-.825-.075-1.62-.21-2.385H12.24v4.515h6.45c-.285 1.455-1.095 2.685-2.31 3.51v2.925h3.735c2.19-2.01 3.63-4.995 3.63-8.565z"/>
-                <path fill="#34A853" d="M12.24 24c3.24 0 5.955-1.08 7.935-2.91l-3.735-2.925c-1.08.72-2.46 1.155-4.2 1.155-3.225 0-5.955-2.175-6.93-5.1h-3.87v3.015A11.95 11.95 0 0012.24 24z"/>
-                <path fill="#FBBC05" d="M5.31 15.225c-.255-.735-.405-1.53-.405-2.355 0-.825.15-1.62.405-2.355V7.5H1.44A11.972 11.972 0 000 12.87c0 1.935.465 3.78 1.44 5.37l3.87-3.015z"/>
-                <path fill="#EA4335" d="M12.24 4.725c1.77 0 3.36.6 4.605 1.8l3.42-3.42C18.195 1.185 15.48 0 12.24 0 7.395 0 3.21 2.805 1.44 7.5l3.87 3.015c.975-2.925 3.705-5.1 6.93-5.1z"/>
-              </svg>
-              <div className="flex flex-col text-slate-900">
-                <span className="font-800 text-sm leading-none">Google</span>
-                <span className="text-xs text-slate-500 font-500">Verified Service</span>
+            <div className="bg-slate-800/90 border border-slate-700/80 rounded-xl p-3 inline-flex items-center gap-3 w-56 shadow-lg">
+              <div className="w-9 h-9 rounded-lg bg-[#0A6EBD]/20 border border-[#0A6EBD]/40 flex items-center justify-center flex-shrink-0 text-[#38bdf8]">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <div className="flex flex-col text-left">
+                <span className="font-700 text-xs text-white leading-tight">Licensed Medical Care</span>
+                <span className="text-[11px] text-slate-400 mt-0.5">24/7 Costa del Sol</span>
               </div>
             </div>
           </div>

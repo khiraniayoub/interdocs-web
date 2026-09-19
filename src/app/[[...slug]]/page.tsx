@@ -567,7 +567,7 @@ export default async function Page({
             languages={[...t.contact.languages]}
             disclaimer={t.contact.disclaimer}
           />
-          <ReviewsCarousel />
+          <ReviewsCarousel locale={locale} />
         </main>
         <Footer
           disclaimer={t.footer.disclaimer}
@@ -693,7 +693,7 @@ export default async function Page({
             languages={[...t.contact.languages]}
             disclaimer={t.contact.disclaimer}
           />
-          <ReviewsCarousel />
+          <ReviewsCarousel locale={locale} />
         </main>
         <Footer
           disclaimer={t.footer.disclaimer}
