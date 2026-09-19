@@ -62,9 +62,9 @@ export default function ServicesList({ title, subtitle, items }: ServicesListPro
 
             {/* Text below image */}
             <div className="p-5 flex flex-col items-center text-center border-b border-slate-100 bg-white group-hover:bg-[#f0f7ff] transition-colors duration-300 h-full">
-              <h3 className="font-700 text-slate-900 mb-2 text-base group-hover:text-[#0A6EBD] transition-colors duration-200">
+              <p className="font-700 text-slate-900 mb-2 text-base group-hover:text-[#0A6EBD] transition-colors duration-200">
                 {item.title}
-              </h3>
+              </p>
               <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
             </div>
           </li>

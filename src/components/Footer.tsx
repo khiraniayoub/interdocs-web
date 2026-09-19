@@ -92,9 +92,9 @@ export default function Footer({ disclaimer, rights, locale }: FooterProps) {
 
           {/* Contact */}
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left mt-6 lg:mt-0">
-            <h3 className="font-700 text-white mb-5 text-sm tracking-wide uppercase">
+            <p className="font-700 text-white mb-5 text-sm tracking-wide uppercase">
               Contact
-            </h3>
+            </p>
             <ul className="space-y-3">
               <li>
                 <a
@@ -178,14 +178,23 @@ export default function Footer({ disclaimer, rights, locale }: FooterProps) {
                 </svg>
                 Available 24 hours · 7 days
               </li>
+              <li className="pt-2">
+                <Link
+                  href="/colaboradores"
+                  className="inline-flex items-center gap-2 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors bg-sky-950/60 px-3 py-1.5 rounded-lg border border-sky-800/60"
+                >
+                  <span>🤝</span>
+                  <span>Convenios & Colaboradores</span>
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Service Areas (SEO Hub) */}
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left mt-6 lg:mt-0">
-            <h3 className="font-700 text-white mb-5 text-sm tracking-wide uppercase">
+            <p className="font-700 text-white mb-5 text-sm tracking-wide uppercase">
               Service Areas
-            </h3>
+            </p>
             <div className="grid grid-cols-2 gap-x-8 gap-y-3 text-sm text-slate-400">
               <Link href={homeHref} className="hover:text-white transition-colors">Málaga</Link>
               <Link href={homeHref} className="hover:text-white transition-colors">Marbella</Link>

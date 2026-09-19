@@ -121,7 +121,7 @@ function resolvePage(segments: string[]): PageType {
 
 const HOME_META: Record<Locale, { title: string; description: string }> = {
   en: {
-    title: "Doctor at Your Hotel | Private Doctor Costa del Sol",
+    title: "Private Doctor Málaga & Costa del Sol",
     description:
       "Private English-speaking doctors available 24/7 for tourists across Costa del Sol. Fast hotel & home visits in Málaga and Marbella. Call or WhatsApp now.",
   },
@@ -233,7 +233,7 @@ export async function generateMetadata({
       name: "Interdocs Medical",
       description: city.description[locale],
       url: canonical,
-      telephone: "+34600000000",
+      telephone: "+34637255224",
       priceRange: "€€",
       paymentAccepted: "Cash, Credit Card, Travel Insurance",
       address: {
@@ -260,7 +260,7 @@ export async function generateMetadata({
       },
       contactPoint: {
         "@type": "ContactPoint",
-        telephone: "+34600000000",
+        telephone: "+34637255224",
         contactType: "customer service",
         availableLanguage: ["English", "Spanish"],
         areaServed: "ES",
@@ -434,7 +434,7 @@ export default async function Page({
       url: siteUrl,
       logo: `${siteUrl}/logo_new_v2.png`,
       image: `${siteUrl}/hero.png`,
-      telephone: "+34600000000",
+      telephone: "+34637255224",
       priceRange: "€€",
       paymentAccepted: "Cash, Credit Card, Travel Insurance",
       currenciesAccepted: "EUR",
@@ -479,7 +479,7 @@ export default async function Page({
       },
       contactPoint: {
         "@type": "ContactPoint",
-        telephone: "+34600000000",
+        telephone: "+34637255224",
         contactType: "customer service",
         availableLanguage: ["English", "Spanish", "German", "French"],
         contactOption: "TollFree",
@@ -621,7 +621,7 @@ export default async function Page({
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href={`https://wa.me/34600000000?text=${encodeURIComponent(`Hello, I need a doctor in ${city.name}.`)}`}
+                  href={`https://wa.me/34637255224?text=${encodeURIComponent(`Hello, I need a doctor in ${city.name}.`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#25D366] text-white rounded-2xl font-700 text-lg hover:bg-[#1da851] transition-colors shadow-lg shadow-green-100"
@@ -632,7 +632,7 @@ export default async function Page({
                   {t.hero.whatsapp}
                 </a>
                 <a
-                  href="tel:+34600000000"
+                  href="tel:+34637255224"
                   className="inline-flex items-center justify-center gap-3 px-8 py-4 border-2 border-slate-200 text-slate-900 rounded-2xl font-700 text-lg hover:border-[#0A6EBD] hover:text-[#0A6EBD] transition-colors"
                 >
                   <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">

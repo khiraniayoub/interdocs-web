@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { PHONE_URL, WHATSAPP_NUMBER } from "@/data/content";
+import { PHONE_URL, PHONE_NUMBER, WHATSAPP_NUMBER } from "@/data/content";
 
 const VIDEOS = ["/video1.mp4", "/video4.mp4", "/video2.mp4", "/video3.mp4"];
 
@@ -245,11 +245,11 @@ export default function Hero({
                 <a
                   href={PHONE_URL}
                   id="hero-call-btn"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-md border-2 border-white/50 text-white rounded-2xl font-700 text-lg hover:bg-white hover:text-slate-900 transition-all duration-300 shadow-lg shadow-black/20"
-                  aria-label="Call us now"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-3.5 bg-white/10 backdrop-blur-md border-2 border-white/50 text-white rounded-2xl font-700 hover:bg-white hover:text-slate-900 transition-all duration-300 shadow-lg shadow-black/20 group"
+                  aria-label={`Call us now ${PHONE_NUMBER}`}
                 >
                   <svg
-                    className="w-6 h-6"
+                    className="w-6 h-6 flex-shrink-0 text-white group-hover:text-slate-900 transition-colors"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -262,7 +262,10 @@ export default function Hero({
                       d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                     />
                   </svg>
-                  {callLabel}
+                  <div className="flex flex-col text-left">
+                    <span className="text-[11px] uppercase tracking-wider font-bold opacity-80 leading-none">{callLabel}</span>
+                    <span className="text-base sm:text-lg font-800 tracking-wide leading-tight mt-0.5">{PHONE_NUMBER}</span>
+                  </div>
                 </a>
               </div>
             </div>

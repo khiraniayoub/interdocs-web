@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { PHONE_URL, WHATSAPP_URL } from "@/data/content";
+import { PHONE_URL, PHONE_NUMBER, WHATSAPP_URL } from "@/data/content";
 
 const languages = [
   { code: "en", label: "English", flagCode: "gb" },
@@ -33,54 +33,63 @@ export default function Header({ locale = "en" }: HeaderProps) {
       { href: "/#services", label: "Services" },
       { href: "/#areas", label: "Areas" },
       { href: "/blog", label: "Blog" },
+      { href: "/colaboradores", label: "Partners" },
       { href: "/#contact", label: "Contact" },
     ],
     es: [
       { href: "/es/#services", label: "Servicios" },
       { href: "/es/#areas", label: "Zonas" },
       { href: "/es/blog", label: "Blog" },
+      { href: "/colaboradores", label: "Colaboradores" },
       { href: "/es/#contact", label: "Contacto" },
     ],
     de: [
       { href: "/de/#services", label: "Leistungen" },
       { href: "/de/#areas", label: "Gebiete" },
       { href: "/de/blog", label: "Blog" },
+      { href: "/colaboradores", label: "Partner" },
       { href: "/de/#contact", label: "Kontakt" },
     ],
     fr: [
       { href: "/fr/#services", label: "Services" },
       { href: "/fr/#areas", label: "Zones" },
       { href: "/fr/blog", label: "Blog" },
+      { href: "/colaboradores", label: "Partenaires" },
       { href: "/fr/#contact", label: "Contact" },
     ],
     fi: [
       { href: "/fi/#services", label: "Palvelut" },
       { href: "/fi/#areas", label: "Alueet" },
       { href: "/fi/blog", label: "Blogi" },
+      { href: "/colaboradores", label: "Yhteistyö" },
       { href: "/fi/#contact", label: "Yhteystiedot" },
     ],
     ar: [
       { href: "/ar/#services", label: "الخدمات" },
       { href: "/ar/#areas", label: "المناطق" },
       { href: "/ar/blog", label: "المدونة" },
+      { href: "/colaboradores", label: "الشركاء" },
       { href: "/ar/#contact", label: "اتصل بنا" },
     ],
     no: [
       { href: "/no/#services", label: "Tjenester" },
       { href: "/no/#areas", label: "Områder" },
       { href: "/no/blog", label: "Blogg" },
+      { href: "/colaboradores", label: "Partnere" },
       { href: "/no/#contact", label: "Kontakt" },
     ],
     da: [
       { href: "/da/#services", label: "Ydelser" },
       { href: "/da/#areas", label: "Områder" },
       { href: "/da/blog", label: "Blog" },
+      { href: "/colaboradores", label: "Partnere" },
       { href: "/da/#contact", label: "Kontakt" },
     ],
     sv: [
       { href: "/sv/#services", label: "Tjänster" },
       { href: "/sv/#areas", label: "Områden" },
       { href: "/sv/blog", label: "Blogg" },
+      { href: "/colaboradores", label: "Partners" },
       { href: "/sv/#contact", label: "Kontakt" },
     ],
   };
@@ -252,10 +261,11 @@ export default function Header({ locale = "en" }: HeaderProps) {
             <a
               href={PHONE_URL}
               id="header-call-btn"
-              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 text-white text-sm font-600 hover:bg-slate-700 transition-colors duration-200"
+              className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-slate-900 text-white text-sm font-700 hover:bg-slate-700 transition-colors duration-200"
+              aria-label={`${t.call} ${PHONE_NUMBER}`}
             >
               <svg
-                className="w-4 h-4"
+                className="w-4 h-4 text-sky-400"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -268,7 +278,7 @@ export default function Header({ locale = "en" }: HeaderProps) {
                   d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                 />
               </svg>
-              {t.call}
+              <span>{PHONE_NUMBER}</span>
             </a>
 
             <button
@@ -333,12 +343,12 @@ export default function Header({ locale = "en" }: HeaderProps) {
 
               <a
                 href={PHONE_URL}
-                className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-slate-900 text-white text-sm font-600"
+                className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-slate-900 text-white text-sm font-700"
               >
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <svg className="w-4 h-4 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                {t.call}
+                <span>{t.call}: {PHONE_NUMBER}</span>
               </a>
               <button
                 onClick={(e) => { e.preventDefault(); window.dispatchEvent(new Event('openTriage')); }}

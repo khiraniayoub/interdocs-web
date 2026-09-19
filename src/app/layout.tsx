@@ -15,7 +15,7 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: {
-    default: "Doctor at Your Hotel | Private Doctor Costa del Sol | Interdocs Medical",
+    default: "Private Doctor Málaga & Costa del Sol | Interdocs Medical",
     template: "%s | Interdocs Medical",
   },
   description:

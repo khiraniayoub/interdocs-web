@@ -218,9 +218,9 @@ export default function ReviewsCarousel({ locale = "en" }: WhyChooseProps) {
                 </div>
 
                 {/* Title */}
-                <h3 className="font-800 text-slate-900 text-lg sm:text-xl leading-snug mb-3">
+                <p className="font-800 text-slate-900 text-lg sm:text-xl leading-snug mb-3">
                   {isEs ? item.title.es : item.title.en}
-                </h3>
+                </p>
 
                 {/* Description */}
                 <p className="text-slate-600 text-sm leading-relaxed mb-6">

@@ -81,9 +81,9 @@ export default function WhatWeTreat({ locale }: { locale: Locale }) {
               >
                 {treatment.icon}
               </div>
-              <h3 className="font-800 text-xl text-slate-900 mb-3 group-hover:text-[#0A6EBD] transition-colors duration-300">
+              <p className="font-800 text-xl text-slate-900 mb-3 group-hover:text-[#0A6EBD] transition-colors duration-300">
                 {treatment.title}
-              </h3>
+              </p>
               <p className="text-slate-500 leading-relaxed text-sm">
                 {treatment.desc}
               </p>
