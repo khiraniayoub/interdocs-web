@@ -3,7 +3,16 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { PHONE_URL, PHONE_NUMBER, WHATSAPP_URL } from "@/data/content";
+import { usePathname } from "next/navigation";
+import {
+  PHONE_URL,
+  PHONE_NUMBER,
+  WHATSAPP_URL,
+  LOCALES,
+  type Locale,
+  getCityBySlug,
+  getBlogPostBySlug,
+} from "@/data/content";
 
 const languages = [
   { code: "en", label: "English", flagCode: "gb" },
@@ -22,11 +31,81 @@ const languages = [
 interface HeaderProps {
   locale?: string;
   currentPath?: string;
+  alternateUrls?: Record<string, string>;
 }
 
-export default function Header({ locale = "en" }: HeaderProps) {
+export default function Header({ locale = "en", alternateUrls }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
+  const pathname = usePathname();
+
+  const getAlternateUrl = (targetCode: string): string => {
+    // 1. If explicit alternateUrls was provided for this page
+    if (alternateUrls && alternateUrls[targetCode]) {
+      const targetBase = alternateUrls[targetCode];
+      if (typeof window !== "undefined" && window.location.hash) {
+        return `${targetBase.replace(/\/$/, "")}/${window.location.hash}`;
+      }
+      return targetBase;
+    }
+
+    // 2. Client-side fallback using pathname
+    if (!pathname) {
+      return targetCode === "en" ? "/" : `/${targetCode}/`;
+    }
+
+    if (pathname.includes("colaboradores")) {
+      return "/colaboradores";
+    }
+
+    const segments = pathname.split("/").filter(Boolean);
+    const hash = typeof window !== "undefined" ? window.location.hash : "";
+
+    // Home: "/"
+    if (segments.length === 0) {
+      const base = targetCode === "en" ? "/" : `/${targetCode}/`;
+      return hash ? `${base.replace(/\/$/, "")}/${hash}` : base;
+    }
+
+    const firstIsLocale = LOCALES.includes(segments[0] as Locale) && segments[0] !== "en";
+    const subSegments = firstIsLocale ? segments.slice(1) : segments;
+
+    // Locale home: "/es", "/ru", etc.
+    if (subSegments.length === 0) {
+      const base = targetCode === "en" ? "/" : `/${targetCode}/`;
+      return hash ? `${base.replace(/\/$/, "")}/${hash}` : base;
+    }
+
+    // Blog index: "/blog", "/es/blog", etc.
+    if (subSegments.length === 1 && subSegments[0] === "blog") {
+      return targetCode === "en" ? "/blog/" : `/${targetCode}/blog/`;
+    }
+
+    // Blog post: "/blog/:slug", "/es/blog/:slug", etc.
+    if (subSegments.length === 2 && subSegments[0] === "blog") {
+      const post = getBlogPostBySlug(subSegments[1]);
+      if (post) {
+        const targetSlug = post.localeSlugs[targetCode as Locale] || post.localeSlugs.en;
+        return targetCode === "en"
+          ? `/blog/${targetSlug}/`
+          : `/${targetCode}/blog/${targetSlug}/`;
+      }
+      return targetCode === "en" ? "/blog/" : `/${targetCode}/blog/`;
+    }
+
+    // City page: "/:slug", "/es/:slug", etc.
+    if (subSegments.length === 1) {
+      const city = getCityBySlug(subSegments[0]);
+      if (city) {
+        const targetSlug = city.localeSlugs[targetCode as Locale] || city.localeSlugs.en;
+        return targetCode === "en"
+          ? `/${targetSlug}/`
+          : `/${targetCode}/${targetSlug}/`;
+      }
+    }
+
+    return targetCode === "en" ? "/" : `/${targetCode}/`;
+  };
 
   const currentLang = languages.find((l) => l.code === locale) || languages[0];
 
@@ -149,7 +228,7 @@ export default function Header({ locale = "en" }: HeaderProps) {
           {languages.map((lang) => (
             <Link
               key={lang.code}
-              href={localePaths[lang.code] || "/"}
+              href={getAlternateUrl(lang.code)}
               className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-[13px] border transition-colors ${lang.code === locale
                 ? "bg-[#e8f4fd] border-[#0A6EBD] text-[#0A6EBD] font-600"
                 : "bg-white border-slate-200 text-slate-600 hover:bg-[#f0f7ff]"
@@ -255,7 +334,7 @@ export default function Header({ locale = "en" }: HeaderProps) {
                   {languages.map((lang) => (
                     <Link
                       key={lang.code}
-                      href={localePaths[lang.code] || "/"}
+                      href={getAlternateUrl(lang.code)}
                       role="option"
                       aria-selected={lang.code === locale}
                       onClick={() => setLangOpen(false)}

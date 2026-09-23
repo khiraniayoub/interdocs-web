@@ -524,6 +524,20 @@ export default async function Page({
       },
     };
 
+    const homeAlternates: Record<string, string> = {
+      en: "/",
+      es: "/es/",
+      de: "/de/",
+      fr: "/fr/",
+      fi: "/fi/",
+      ar: "/ar/",
+      no: "/no/",
+      da: "/da/",
+      sv: "/sv/",
+      ru: "/ru/",
+      nl: "/nl/",
+    };
+
     return (
       <>
         <script
@@ -534,7 +548,7 @@ export default async function Page({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
-        <Header locale={locale} />
+        <Header locale={locale} alternateUrls={homeAlternates} />
         <main id="main-content">
           <Hero
             headline={t.hero.headline}
@@ -598,10 +612,14 @@ export default async function Page({
   // ── City Page ──────────────────────────────────────────
   if (page.type === "city") {
     const { city } = page;
+    const cityAlternates: Record<string, string> = {};
+    for (const [loc, ls] of Object.entries(city.localeSlugs)) {
+      cityAlternates[loc] = loc === "en" ? `/${ls}/` : `/${loc}/${ls}/`;
+    }
 
     return (
       <>
-        <Header locale={locale} />
+        <Header locale={locale} alternateUrls={cityAlternates} />
         <main id="main-content">
           {/* City Hero */}
           <section className="bg-white py-16 lg:py-24" aria-labelledby="city-heading">
@@ -723,9 +741,23 @@ export default async function Page({
 
   // ── Blog Index ─────────────────────────────────────────
   if (page.type === "blog-index") {
+    const blogIndexAlternates: Record<string, string> = {
+      en: "/blog/",
+      es: "/es/blog/",
+      de: "/de/blog/",
+      fr: "/fr/blog/",
+      fi: "/fi/blog/",
+      ar: "/ar/blog/",
+      no: "/no/blog/",
+      da: "/da/blog/",
+      sv: "/sv/blog/",
+      ru: "/ru/blog/",
+      nl: "/nl/blog/",
+    };
+
     return (
       <>
-        <Header locale={locale} />
+        <Header locale={locale} alternateUrls={blogIndexAlternates} />
         <main id="main-content">
           <BlogSection
             title={t.blog.title}
@@ -748,9 +780,14 @@ export default async function Page({
   // ── Blog Post ──────────────────────────────────────────
   if (page.type === "blog-post") {
     const { post } = page;
+    const blogPostAlternates: Record<string, string> = {};
+    for (const [loc, ls] of Object.entries(post.localeSlugs)) {
+      blogPostAlternates[loc] = loc === "en" ? `/blog/${ls}/` : `/${loc}/blog/${ls}/`;
+    }
+
     return (
       <>
-        <Header locale={locale} />
+        <Header locale={locale} alternateUrls={blogPostAlternates} />
         <main id="main-content">
           <BlogSection
             title={t.blog.title}
