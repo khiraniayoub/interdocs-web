@@ -118,7 +118,7 @@ export default function Footer({ disclaimer, rights, locale }: FooterProps) {
                   </svg>
                 </a>
                 <a
-                  href="https://www.facebook.com/interdocsmedical"
+                  href="https://www.facebook.com/profile.php?id=61594814065218"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit Interdocs Medical on Facebook"

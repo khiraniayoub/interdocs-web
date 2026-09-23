@@ -524,7 +524,7 @@ export default async function Page({
       },
       sameAs: [
         "https://wa.me/34637255224",
-        "https://www.facebook.com/interdocsmedical",
+        "https://www.facebook.com/profile.php?id=61594814065218",
         "https://www.instagram.com/interdocsmedical",
         "https://www.linkedin.com/company/interdocsmedical",
       ],
