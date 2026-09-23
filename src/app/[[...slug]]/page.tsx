@@ -221,6 +221,12 @@ export async function generateMetadata({
         url: canonical,
         images: [{ url: "/hero.png", width: 1200, height: 630 }],
       },
+      twitter: {
+        card: "summary_large_image",
+        title: meta.title,
+        description: meta.description,
+        images: ["/hero.png"],
+      },
     };
   }
 
@@ -310,6 +316,12 @@ export async function generateMetadata({
         description: city.metaDesc[locale],
         url: canonical,
         images: [{ url: `${siteUrl}/hero.png`, width: 1200, height: 630, alt: `Private Doctor in ${city.name}` }],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: city.h1[locale],
+        description: city.metaDesc[locale],
+        images: [`${siteUrl}/hero.png`],
       },
       other: {
         "script:ld+json:localbusiness": JSON.stringify(localBusinessSchema),
@@ -408,6 +420,12 @@ export async function generateMetadata({
         url: canonical,
         images: [{ url: `${siteUrl}/hero.png`, width: 1200, height: 630 }],
       },
+      twitter: {
+        card: "summary_large_image",
+        title: post.title[locale],
+        description: post.excerpt[locale],
+        images: [`${siteUrl}/hero.png`],
+      },
       other: {
         "script:ld+json:article": JSON.stringify(articleSchema),
         "script:ld+json:breadcrumb": JSON.stringify(breadcrumbBlogSchema),
@@ -502,11 +520,12 @@ export default async function Page({
         contactOption: "TollFree",
         areaServed: "ES",
       },
-      // Add real social/directory URLs here once available, e.g.:
-      // sameAs: [
-      //   "https://g.co/kgs/YOUR_GOOGLE_BUSINESS_ID",
-      //   "https://www.facebook.com/YOUR_PAGE",
-      // ],
+      sameAs: [
+        "https://wa.me/34637255224",
+        "https://www.facebook.com/interdocsmedical",
+        "https://www.instagram.com/interdocsmedical",
+        "https://www.linkedin.com/company/interdocsmedical",
+      ],
     };
 
     const websiteSchema = {

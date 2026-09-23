@@ -140,9 +140,9 @@ export default function HowItWorks({ title, subtitle, steps }: HowItWorksProps) 
                     : {}
                 }
               >
-                <h3 className="text-lg font-700 text-slate-900 mb-2">
+                <p className="text-lg font-700 text-slate-900 mb-2">
                   {step.title}
-                </h3>
+                </p>
                 <p className="text-sm text-slate-500 leading-relaxed">
                   {step.desc}
                 </p>

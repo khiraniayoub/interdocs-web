@@ -85,6 +85,20 @@ export default function ServiceAreas({ title, subtitle, locale }: ServiceAreasPr
 
   const t = PRICE_LABEL[locale] || PRICE_LABEL["en"];
 
+  const cityPrefix: Record<Locale, string> = {
+    en: "Doctor in ",
+    es: "Médico en ",
+    de: "Arzt in ",
+    fr: "Médecin à ",
+    fi: "Lääkäri ",
+    ar: "طبيب في ",
+    no: "Lege i ",
+    da: "Læge i ",
+    sv: "Läkare i ",
+    ru: "Врач в ",
+    nl: "Arts in ",
+  };
+
   return (
     <section
       id="areas"
@@ -129,11 +143,7 @@ export default function ServiceAreas({ title, subtitle, locale }: ServiceAreasPr
                 transitionDelay: `${index * 80}ms`,
               }}
             >
-              <Link
-                href={href}
-                className="group block relative w-full h-72 lg:h-96 overflow-hidden"
-                aria-label={ariaLabel}
-              >
+              <div className="group block relative w-full h-72 lg:h-96 overflow-hidden">
                 {/* Image */}
                 <img
                   src={`/areas/${city.slug}.webp`}
@@ -143,13 +153,22 @@ export default function ServiceAreas({ title, subtitle, locale }: ServiceAreasPr
                   decoding="async"
                 />
                 {/* Dark gradient overlay — always visible at bottom */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A2C6E]/90 via-[#0A2C6E]/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A2C6E]/90 via-[#0A2C6E]/30 to-transparent pointer-events-none" />
 
                 {/* Content overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <h3 className="font-800 text-2xl leading-tight mb-3 drop-shadow">
-                    {city.name}
-                  </h3>
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white pointer-events-none">
+                  <p className="font-800 text-2xl leading-tight mb-3 drop-shadow pointer-events-auto">
+                    <Link
+                      href={href}
+                      className="focus:outline-none after:absolute after:inset-0 hover:underline"
+                      aria-label={ariaLabel}
+                    >
+                      <span className="sr-only">
+                        {cityPrefix[locale] || cityPrefix.en}
+                      </span>
+                      {city.name}
+                    </Link>
+                  </p>
                   {/* Weekday price */}
                   <div className="mb-2">
                     <span className="text-3xl font-800">€130</span>
@@ -163,12 +182,12 @@ export default function ServiceAreas({ title, subtitle, locale }: ServiceAreasPr
                 </div>
 
                 {/* Hover arrow */}
-                <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0">
+                <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0 pointer-events-none">
                   <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                   </svg>
                 </div>
-              </Link>
+              </div>
             </li>
           );
         })}
