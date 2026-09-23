@@ -15,6 +15,8 @@ const languages = [
   { code: "no", label: "Norsk", flagCode: "no" },
   { code: "da", label: "Dansk", flagCode: "dk" },
   { code: "sv", label: "Svenska", flagCode: "se" },
+  { code: "ru", label: "Русский", flagCode: "ru" },
+  { code: "nl", label: "Nederlands", flagCode: "nl" },
 ];
 
 interface HeaderProps {
@@ -92,6 +94,20 @@ export default function Header({ locale = "en" }: HeaderProps) {
       { href: "/colaboradores", label: "Partners" },
       { href: "/sv/#contact", label: "Kontakt" },
     ],
+    ru: [
+      { href: "/ru/#services", label: "Услуги" },
+      { href: "/ru/#areas", label: "Зоны" },
+      { href: "/ru/blog", label: "Блог" },
+      { href: "/colaboradores", label: "Партнерам" },
+      { href: "/ru/#contact", label: "Контакты" },
+    ],
+    nl: [
+      { href: "/nl/#services", label: "Diensten" },
+      { href: "/nl/#areas", label: "Gebieden" },
+      { href: "/nl/blog", label: "Blog" },
+      { href: "/colaboradores", label: "Partners" },
+      { href: "/nl/#contact", label: "Contact" },
+    ],
   };
 
   const localePaths: Record<string, string> = {
@@ -104,6 +120,8 @@ export default function Header({ locale = "en" }: HeaderProps) {
     no: "/no/",
     da: "/da/",
     sv: "/sv/",
+    ru: "/ru/",
+    nl: "/nl/",
   };
 
   const btnTranslations: Record<string, { call: string; whatsapp: string }> = {
@@ -116,6 +134,8 @@ export default function Header({ locale = "en" }: HeaderProps) {
     no: { call: "Ring nå", whatsapp: "WhatsApp" },
     da: { call: "Ring nu", whatsapp: "WhatsApp" },
     sv: { call: "Ring nu", whatsapp: "WhatsApp" },
+    ru: { call: "Позвонить", whatsapp: "WhatsApp" },
+    nl: { call: "Bel Nu", whatsapp: "WhatsApp" },
   };
 
   const links = navLinks[locale as keyof typeof navLinks] || navLinks.en;

@@ -19,6 +19,9 @@ export default function Footer({ disclaimer, rights, locale }: FooterProps) {
     ar: "/ar/",
     no: "/no/",
     da: "/da/",
+    sv: "/sv/",
+    ru: "/ru/",
+    nl: "/nl/",
   };
   const homeHref = localePaths[locale] || "/";
 

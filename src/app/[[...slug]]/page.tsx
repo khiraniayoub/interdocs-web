@@ -165,6 +165,16 @@ const HOME_META: Record<Locale, { title: string; description: string }> = {
     description:
       "Privatläkare dygnet runt för turister på Costa del Sol. Snabba läkarbesök till ditt hotell eller lägenhet i Málaga och Marbella med läkarintyg.",
   },
+  ru: {
+    title: "Частный врач в Малаге и на Коста-дель-Соль | Вызов в отель 24/7",
+    description:
+      "Частные врачи 24/7 для туристов на Коста-дель-Соль. Быстрый выезд в отель или апартаменты в Малаге и Марбелье. Отчеты для страховки.",
+  },
+  nl: {
+    title: "Privéarts Málaga & Costa del Sol | Hotel- en huisbezoek 24/7",
+    description:
+      "Particuliere artsen 24/7 beschikbaar voor toeristen aan de Costa del Sol. Snelle hotel- en huisbezoeken in Málaga en Marbella. Factuur voor reisverzekering.",
+  },
 };
 
 // ────────────────────────────────────────────────────────────
@@ -200,6 +210,8 @@ export async function generateMetadata({
           no: `${siteUrl}/no/`,
           da: `${siteUrl}/da/`,
           sv: `${siteUrl}/sv/`,
+          ru: `${siteUrl}/ru/`,
+          nl: `${siteUrl}/nl/`,
           "x-default": `${siteUrl}/`,
         },
       },
@@ -249,7 +261,7 @@ export async function generateMetadata({
       },
       hasMap: `https://maps.google.com/?q=doctor+${encodeURIComponent(city.name)}+Spain`,
       areaServed: { "@type": "City", name: city.name },
-      availableLanguage: ["English", "Spanish", "German", "French", "Finnish", "Arabic", "Norwegian", "Danish"],
+      availableLanguage: ["English", "Spanish", "German", "French", "Finnish", "Arabic", "Norwegian", "Danish", "Swedish", "Russian", "Dutch"],
       openingHoursSpecification: {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: [
@@ -328,6 +340,8 @@ export async function generateMetadata({
           no: `${siteUrl}/no/blog/`,
           da: `${siteUrl}/da/blog/`,
           sv: `${siteUrl}/sv/blog/`,
+          ru: `${siteUrl}/ru/blog/`,
+          nl: `${siteUrl}/nl/blog/`,
         },
       },
     };
@@ -470,6 +484,9 @@ export default async function Page({
         { "@type": "Language", name: "Arabic" },
         { "@type": "Language", name: "Norwegian" },
         { "@type": "Language", name: "Danish" },
+        { "@type": "Language", name: "Swedish" },
+        { "@type": "Language", name: "Russian" },
+        { "@type": "Language", name: "Dutch" },
       ],
       openingHoursSpecification: {
         "@type": "OpeningHoursSpecification",
@@ -710,23 +727,14 @@ export default async function Page({
       <>
         <Header locale={locale} />
         <main id="main-content">
-          <div className="bg-white py-16 lg:py-20">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-              <h1 className="text-4xl sm:text-5xl font-800 text-slate-900 mb-4">
-                {t.blog.title}
-              </h1>
-              <p className="text-lg text-slate-500 max-w-xl mx-auto">
-                {t.blog.subtitle}
-              </p>
-            </div>
-          </div>
           <BlogSection
             title={t.blog.title}
             subtitle={t.blog.subtitle}
             readMoreLabel={t.blog.readMore}
             locale={locale}
+            isIndexPage={true}
           />
-          <ReviewsCarousel />
+          <ReviewsCarousel locale={locale} />
         </main>
         <Footer
           disclaimer={t.footer.disclaimer}
@@ -751,7 +759,7 @@ export default async function Page({
             locale={locale}
             singlePost={post}
           />
-          <ReviewsCarousel />
+          <ReviewsCarousel locale={locale} />
         </main>
         <Footer
           disclaimer={t.footer.disclaimer}

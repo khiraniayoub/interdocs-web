@@ -106,5 +106,29 @@ export const treatmentsData: Record<string, { title: string, subtitle: string, i
       { id: "injury", title: "Mindre skador & Skärsår", desc: "Stukningar, små sår, manetstick och sjöborreskador.", icon: "🩹", color: "bg-purple-100 text-purple-700" },
       { id: "prescriptions", title: "Förlorade recept", desc: "Ersättning av förlorad eller glömd medicin under din semester.", icon: "💊", color: "bg-cyan-100 text-cyan-700" },
     ]
+  },
+  ru: {
+    title: "Распространенные заболевания, которые мы лечим",
+    subtitle: "Неотложная медицинская помощь при наиболее частых заболеваниях и травмах во время отдыха в Испании.",
+    items: [
+      { id: "stomach", title: "Пищевые отравления и проблемы с ЖКТ", desc: "Гастроэнтерит, тошнота, рвота и обезвоживание от непривычной пищи или воды.", icon: "🤢", color: "bg-emerald-100 text-emerald-700" },
+      { id: "sun", title: "Солнечные ожоги и тепловой удар", desc: "Сильные солнечные ожоги, тепловой удар и обезвоживание после пребывания на солнце.", icon: "☀️", color: "bg-amber-100 text-amber-700" },
+      { id: "ear", title: "Ушные инфекции (отит купальщика)", desc: "Острый наружный отит после купания в море или бассейне.", icon: "👂", color: "bg-blue-100 text-blue-700" },
+      { id: "throat", title: "Боль в горле и простуда", desc: "Тонзиллит, симптомы гриппа, кашель и респираторные инфекции.", icon: "🤧", color: "bg-rose-100 text-rose-700" },
+      { id: "injury", title: "Легкие травмы и порезы", desc: "Растяжения, небольшие порезы, ожоги медуз и уколы морских ежей.", icon: "🩹", color: "bg-purple-100 text-purple-700" },
+      { id: "prescriptions", title: "Утерянные рецепты и лекарства", desc: "Выписка официальных рецептов взамен забытых или утерянных лекарств.", icon: "💊", color: "bg-cyan-100 text-cyan-700" },
+    ]
+  },
+  nl: {
+    title: "Veelvoorkomende gezondheidsproblemen die wij behandelen",
+    subtitle: "Directe medische hulp bij de meest voorkomende aandoeningen en blessures tijdens uw vakantie in Spanje.",
+    items: [
+      { id: "stomach", title: "Voedselvergiftiging & Maag-darmklachten", desc: "Gastro-enteritis, misselijkheid, overgeven en uitdroging.", icon: "🤢", color: "bg-emerald-100 text-emerald-700" },
+      { id: "sun", title: "Zonnebrand & Zonnesteek", desc: "Ernstige verbranding door de zon, hitte-uitputting en dehydratatie.", icon: "☀️", color: "bg-amber-100 text-amber-700" },
+      { id: "ear", title: "Oorontstekingen (Zwemmersoor)", desc: "Pijnlijke oorontsteking veroorzaakt door zwemmen in het zwembad of de zee.", icon: "👂", color: "bg-blue-100 text-blue-700" },
+      { id: "throat", title: "Keelpijn & Verkoudheid", desc: "Keelontsteking, griepverschijnselen en luchtweginfecties.", icon: "🤧", color: "bg-rose-100 text-rose-700" },
+      { id: "injury", title: "Kleine verwondingen & Snijwonden", desc: "Verstuikingen, schaafwonden, kwallenbeten en wonden door zee-egels.", icon: "🩹", color: "bg-purple-100 text-purple-700" },
+      { id: "prescriptions", title: "Verloren recepten", desc: "Vervanging van vergeten of verloren medicatie tijdens uw vakantie.", icon: "💊", color: "bg-cyan-100 text-cyan-700" },
+    ]
   }
 };

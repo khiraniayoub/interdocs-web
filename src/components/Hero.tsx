@@ -25,6 +25,8 @@ const PRICING_TEXT: Record<string, { price1: string; price2: string; title1: str
   no: { price1: "€130", price2: "€140", title1: "Man-Fre", title2: "Helger og Helligdager", desc: "Legebesøk" },
   da: { price1: "€130", price2: "€140", title1: "Man-Fre", title2: "Weekender & Helligdage", desc: "Lægebesøg" },
   sv: { price1: "€130", price2: "€140", title1: "Mån-Fre", title2: "Helger & Helgdagar", desc: "Läkarbesök" },
+  ru: { price1: "130€", price2: "140€", title1: "Пн-Пт", title2: "Выходные и праздники", desc: "Визит врача" },
+  nl: { price1: "€130", price2: "€140", title1: "Ma-Vr", title2: "Weekenden & Feestdagen", desc: "Doktersbezoek" },
 };
 
 const BADGE_TEXT: Record<string, string> = {
@@ -37,6 +39,8 @@ const BADGE_TEXT: Record<string, string> = {
   no: "Tilgjengelig 24/7 · Costa del Sol",
   da: "Tilgængelig 24/7 · Costa del Sol",
   sv: "Tillgänglig 24/7 · Costa del Sol",
+  ru: "Доступно 24/7 · Коста-дель-Соль",
+  nl: "Beschikbaar 24/7 · Costa del Sol",
 };
 
 export default function Hero({
@@ -180,17 +184,9 @@ export default function Hero({
           {/* Headline */}
           <h1
             id="hero-heading"
-            className="text-4xl sm:text-5xl lg:text-6xl font-800 text-white leading-[1.1] tracking-tight mb-6 drop-shadow-lg"
+            className="hero-fade-in text-4xl sm:text-5xl lg:text-6xl font-800 text-white leading-[1.1] tracking-tight mb-6 drop-shadow-lg"
           >
-            {headline.split(" ").map((word, index) => (
-              <span
-                key={index}
-                className="inline-block hero-fade-in"
-                style={{ animationDelay: `${index * 0.12 + 0.2}s` }}
-              >
-                {word}&nbsp;
-              </span>
-            ))}
+            {headline}
           </h1>
 
           {/* Subheadline */}

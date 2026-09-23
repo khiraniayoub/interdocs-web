@@ -34,6 +34,8 @@ export const metadata: Metadata = {
       "no": `${SITE_URL}/no/`,
       "da": `${SITE_URL}/da/`,
       "sv": `${SITE_URL}/sv/`,
+      "ru": `${SITE_URL}/ru/`,
+      "nl": `${SITE_URL}/nl/`,
       "x-default": `${SITE_URL}/`,
     },
   },
@@ -108,6 +110,8 @@ const LOCALE_MAP: Record<string, string> = {
   no: "no",
   da: "da",
   sv: "sv",
+  ru: "ru",
+  nl: "nl",
 };
 
 function getLangFromPath(pathname: string): string {
@@ -125,8 +129,9 @@ export default async function RootLayout({
   const lang = getLangFromPath(pathname);
 
   return (
-    <html lang={lang} className={outfit.variable} data-scroll-behavior="smooth">
+    <html lang={lang} className={outfit.variable} data-scroll-behavior="smooth" translate="no">
       <head>
+        <meta name="google" content="notranslate" />
         <meta name="theme-color" content="#0A6EBD" />
         {/* ── Geo / Local SEO meta tags ─────────────────── */}
         <meta name="geo.region" content="ES-MA" />

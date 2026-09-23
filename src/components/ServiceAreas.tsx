@@ -20,6 +20,8 @@ const PRICE_LABEL: Record<string, { weekday: string; weekend: string; from: stri
   no: { weekday: "Man–Fre", weekend: "Søn, Netter & Helligdager", from: "fra" },
   da: { weekday: "Man–Fre", weekend: "Søn, Aftener & Helligdage", from: "fra" },
   sv: { weekday: "Mån–Fre", weekend: "Sön, Nätter & Helgdagar",  from: "från" },
+  ru: { weekday: "Пн–Пт", weekend: "Вс, Ночи и Праздники", from: "от" },
+  nl: { weekday: "Ma–Vr", weekend: "Zon, Nachten & Feestdagen", from: "vanaf" },
 };
 
 const ARIA_LABELS: Record<Locale, (name: string) => string> = {
@@ -32,6 +34,8 @@ const ARIA_LABELS: Record<Locale, (name: string) => string> = {
   no: (name) => `Lege i ${name} — Hjemme- og hotellbesøk 24/7`,
   da: (name) => `Læge i ${name} — Hjemme- og hotelbesøg 24/7`,
   sv: (name) => `Läkare i ${name} — Hembesök och hotellbesök 24/7`,
+  ru: (name) => `Врач в ${name} — Вызовы на дом и в отель 24/7`,
+  nl: (name) => `Arts in ${name} — 24/7 Huis- en hotelbezoeken`,
 };
 
 const ALT_LABELS: Record<Locale, (name: string) => string> = {
@@ -44,6 +48,8 @@ const ALT_LABELS: Record<Locale, (name: string) => string> = {
   no: (name) => `${name} — privat legetjeneste og hjemmebesøk`,
   da: (name) => `${name} — privat lægetjeneste og hjemmebesøg`,
   sv: (name) => `${name} — privat läkartjänst och hembesök`,
+  ru: (name) => `${name} — частная медицинская помощь и вызовы на дом`,
+  nl: (name) => `${name} — particuliere artsendienst en huisbezoeken`,
 };
 
 export default function ServiceAreas({ title, subtitle, locale }: ServiceAreasProps) {

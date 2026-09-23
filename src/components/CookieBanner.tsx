@@ -203,9 +203,51 @@ const t: Record<string, Record<string, string>> = {
     badge: "Cookie-inställningar",
     alwaysOn: "Alltid aktiv",
   },
+  ru: {
+    title: "Мы заботимся о вашей конфиденциальности",
+    description:
+      "Мы используем файлы cookie для улучшения работы сайта, анализа трафика и персонализации контента.",
+    acceptAll: "Принять все",
+    rejectAll: "Отклонить все",
+    savePrefs: "Сохранить настройки",
+    customise: "Настроить",
+    necessary: "Необходимые",
+    necessaryDesc:
+      "Необходимы для правильной работы сайта. Их нельзя отключить.",
+    analytics: "Аналитика",
+    analyticsDesc:
+      "Помогают нам понять, как посетители взаимодействуют с нашим сайтом.",
+    marketing: "Маркетинг",
+    marketingDesc:
+      "Используются для показа релевантной рекламы и оценки эффективности кампаний.",
+    learnMore: "Политика конфиденциальности",
+    badge: "Настройки cookie",
+    alwaysOn: "Всегда активно",
+  },
+  nl: {
+    title: "Wij waarderen uw privacy",
+    description:
+      "Wij gebruiken cookies om uw surfervaring te verbeteren, websiteverkeer te analyseren en inhoud te personaliseren.",
+    acceptAll: "Alles accepteren",
+    rejectAll: "Alles weigeren",
+    savePrefs: "Voorkeuren opslaan",
+    customise: "Aanpassen",
+    necessary: "Noodzakelijk",
+    necessaryDesc:
+      "Essentieel voor het goed functioneren van de website. Kan niet worden uitgeschakeld.",
+    analytics: "Analytisch",
+    analyticsDesc:
+      "Helpt ons te begrijpen hoe bezoekers onze website gebruiken.",
+    marketing: "Marketing",
+    marketingDesc:
+      "Wordt gebruikt om relevante advertenties te tonen en de effectiviteit van campagnes te meten.",
+    learnMore: "Privacybeleid",
+    badge: "Cookie-instellingen",
+    alwaysOn: "Altijd actief",
+  },
 };
 
-const KNOWN_LOCALES = ["es", "de", "fr", "fi", "ar", "no", "da", "sv"];
+const KNOWN_LOCALES = ["es", "de", "fr", "fi", "ar", "no", "da", "sv", "ru", "nl"];
 
 const STORAGE_KEY = "interdocs_cookie_consent";
 const EXPIRY_DAYS = 180;
