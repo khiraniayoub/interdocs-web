@@ -29,6 +29,8 @@ import InsuranceLogos from "@/components/InsuranceLogos";
 import WhatWeTreat from "@/components/WhatWeTreat";
 import Footer from "@/components/Footer";
 
+export const revalidate = 86400;
+
 // ────────────────────────────────────────────────────────────
 // Static params generation
 // ────────────────────────────────────────────────────────────
