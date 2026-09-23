@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { PHONE_NUMBER, PHONE_URL, WHATSAPP_NUMBER, EMAIL_ADDRESS, EMAIL_URL } from "@/data/content";
+import { PHONE_NUMBER, PHONE_URL, WHATSAPP_NUMBER, EMAIL_ADDRESS, EMAIL_URL, CITIES, type Locale } from "@/data/content";
 
 interface FooterProps {
   disclaimer: string;
@@ -196,14 +196,23 @@ export default function Footer({ disclaimer, rights, locale }: FooterProps) {
               Service Areas
             </p>
             <div className="grid grid-cols-2 gap-x-8 gap-y-3 text-sm text-slate-400">
-              <Link href={homeHref} className="hover:text-white transition-colors">Málaga</Link>
-              <Link href={homeHref} className="hover:text-white transition-colors">Marbella</Link>
-              <Link href={homeHref} className="hover:text-white transition-colors">Fuengirola</Link>
-              <Link href={homeHref} className="hover:text-white transition-colors">Torremolinos</Link>
-              <Link href={homeHref} className="hover:text-white transition-colors">Benalmádena</Link>
-              <Link href={homeHref} className="hover:text-white transition-colors">Estepona</Link>
-              <Link href={homeHref} className="hover:text-white transition-colors">Mijas</Link>
-              <Link href={homeHref} className="hover:text-white transition-colors">Nerja</Link>
+              {CITIES.map((city) => {
+                const currentLocale = (locale as Locale) || "en";
+                const localeSlug = city.localeSlugs[currentLocale] || city.localeSlugs["en"];
+                const href =
+                  currentLocale === "en"
+                    ? `/${localeSlug}/`
+                    : `/${currentLocale}/${localeSlug}/`;
+                return (
+                  <Link
+                    key={city.slug}
+                    href={href}
+                    className="hover:text-white transition-colors"
+                  >
+                    {city.name}
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </div>
