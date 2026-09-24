@@ -1,9 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { PHONE_NUMBER, PHONE_URL, WHATSAPP_NUMBER } from "@/data/content";
+import { PHONE_NUMBER, PHONE_URL, EMAIL_ADDRESS, EMAIL_URL } from "@/data/content";
+
+const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_boz3dxg";
+const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_6tcinqb";
+const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "cYyKyrvoTjm42b1yM";
 
 export default function ColaboradoresPage() {
   const [formData, setFormData] = useState({
@@ -16,28 +21,46 @@ export default function ColaboradoresPage() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
+    setError(null);
+
     const typeLabelMap: Record<string, string> = {
-      hotel: "Hotel / Alojamiento",
-      clinica: "Clínica Privada",
-      medico: "Médico Colaborador",
-      otro: "Otro colaborador",
+      hotel: "Hotel o Alojamiento Turístico",
+      clinica: "Clínica o Centro Médico Privado",
+      medico: "Médico Colegiado Interesado en Colaborar",
+      otro: "Agencia / Empresa / Otro",
     };
 
-    const text = encodeURIComponent(
-      `🤝 *NUEVA SOLICITUD DE CONVENIO / COLABORACIÓN*\n\n` +
-      `🏢 *Empresa:* ${formData.company}\n` +
-      `👤 *Contacto:* ${formData.contactPerson} (${formData.role || "Responsable"})\n` +
-      `📱 *Teléfono:* ${formData.phone}\n` +
-      `✉️ *Email:* ${formData.email}\n` +
-      `📌 *Tipo:* ${typeLabelMap[formData.type] || formData.type}\n` +
-      `💬 *Mensaje:* ${formData.message || "Interesados en establecer convenio de colaboración médica."}`
-    );
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          company: formData.company,
+          contact_person: formData.contactPerson,
+          role: formData.role || "Responsable",
+          phone: formData.phone,
+          email: formData.email,
+          type: typeLabelMap[formData.type] || formData.type,
+          message: formData.message || "Sin mensaje adicional",
+        },
+        EMAILJS_PUBLIC_KEY
+      );
 
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, "_blank");
-    setSubmitted(true);
+      setSubmitted(true);
+    } catch (err: unknown) {
+      console.error("Error al enviar con EmailJS:", err);
+      setError(
+        "Hubo un problema al enviar la solicitud. Por favor, inténtalo de nuevo o escríbenos directamente a contacto@interdocsmedical.com"
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -75,15 +98,11 @@ export default function ColaboradoresPage() {
                 Solicitar Convenio de Colaboración
               </a>
               <a
-                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hola, me gustaría información sobre convenios de colaboración médica para empresas y hoteles.")}`}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={EMAIL_URL}
                 className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-bold text-sm sm:text-base shadow-sm transition-all flex items-center justify-center gap-2 text-center"
               >
-                <svg className="w-5 h-5 text-[#25D366]" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-                </svg>
-                <span>Línea Directa WhatsApp</span>
+                <span>✉️</span>
+                <span>{EMAIL_ADDRESS}</span>
               </a>
             </div>
           </div>
@@ -346,7 +365,7 @@ export default function ColaboradoresPage() {
                   <div className="text-4xl">✅</div>
                   <h3 className="text-lg font-bold text-emerald-900">¡Solicitud Enviada con Éxito!</h3>
                   <p className="text-xs sm:text-sm text-emerald-700">
-                    Se ha abierto una conversación prioritaria con nuestro responsable. En breve nos pondremos en contacto contigo.
+                    Hemos recibido los datos de tu solicitud. Nuestro responsable de convenios y colaboraciones se pondrá en contacto contigo a través de <strong>contacto@interdocsmedical.com</strong> hoy mismo.
                   </p>
                   <div className="pt-2">
                     <button
@@ -392,7 +411,7 @@ export default function ColaboradoresPage() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1.5">
                       <label className="text-xs font-semibold text-slate-700">
-                        Teléfono / WhatsApp *
+                        Teléfono de Contacto *
                       </label>
                       <input
                         required
@@ -448,12 +467,25 @@ export default function ColaboradoresPage() {
                     />
                   </div>
 
+                  {error && (
+                    <div className="p-3.5 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs text-center font-medium">
+                      ⚠️ {error}
+                    </div>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full py-4 rounded-xl bg-[#0A6EBD] hover:bg-[#085a9c] text-white font-bold text-sm sm:text-base shadow-lg shadow-sky-700/20 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2"
+                    disabled={loading}
+                    className="w-full py-4 rounded-xl bg-[#0A6EBD] hover:bg-[#085a9c] disabled:bg-slate-400 text-white font-bold text-sm sm:text-base shadow-lg shadow-sky-700/20 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2 cursor-pointer disabled:cursor-not-allowed"
                   >
-                    <span>Enviar Solicitud de Convenio</span>
-                    <span>➔</span>
+                    {loading ? (
+                      <span>Enviando solicitud...</span>
+                    ) : (
+                      <>
+                        <span>Enviar Solicitud de Convenio</span>
+                        <span>➔</span>
+                      </>
+                    )}
                   </button>
 
                   <p className="text-[11px] text-center text-slate-500">
