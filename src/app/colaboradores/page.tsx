@@ -41,6 +41,7 @@ export default function ColaboradoresPage() {
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         {
+          subject: formData.company,
           company: formData.company,
           contact_person: formData.contactPerson,
           role: formData.role || "Responsable",
