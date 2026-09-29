@@ -69,13 +69,116 @@ export default function BlogSection({
           dangerouslySetInnerHTML={{ __html: singlePost.content[locale] }}
         />
 
+        {/* Social Share Bar */}
+        <div className="mt-10 pt-6 border-t border-slate-200">
+          <p className="text-sm font-700 text-slate-700 mb-3">
+            {locale === "es"
+              ? "Compartir este artículo:"
+              : locale === "de"
+              ? "Diesen Artikel teilen:"
+              : locale === "fr"
+              ? "Partager cet article :"
+              : locale === "fi"
+              ? "Jaa tämä artikkeli:"
+              : locale === "ar"
+              ? "شارك هذا المقال:"
+              : locale === "no"
+              ? "Del denne artikkelen:"
+              : locale === "da"
+              ? "Del denne artikel:"
+              : locale === "sv"
+              ? "Dela denna artikel:"
+              : locale === "ru"
+              ? "Поделиться статьей:"
+              : locale === "nl"
+              ? "Deel dit artikel:"
+              : "Share this article:"}
+          </p>
+          <div className="flex flex-wrap items-center gap-2.5">
+            <a
+              href={`https://api.whatsapp.com/send?text=${encodeURIComponent(
+                `${singlePost.title[locale]} https://www.interdocsmedical.com${
+                  locale === "en"
+                    ? `/blog/${singlePost.localeSlugs[locale]}/`
+                    : `/${locale}/blog/${singlePost.localeSlugs[locale]}/`
+                }`
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Share on WhatsApp"
+              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#25D366]/10 text-[#1da851] hover:bg-[#25D366] hover:text-white font-600 text-xs transition-colors"
+            >
+              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+              </svg>
+              WhatsApp
+            </a>
+            <a
+              href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+                `https://www.interdocsmedical.com${
+                  locale === "en"
+                    ? `/blog/${singlePost.localeSlugs[locale]}/`
+                    : `/${locale}/blog/${singlePost.localeSlugs[locale]}/`
+                }`
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Share on Facebook"
+              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-blue-50 text-[#1877F2] hover:bg-[#1877F2] hover:text-white font-600 text-xs transition-colors"
+            >
+              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+              Facebook
+            </a>
+            <a
+              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
+                singlePost.title[locale]
+              )}&url=${encodeURIComponent(
+                `https://www.interdocsmedical.com${
+                  locale === "en"
+                    ? `/blog/${singlePost.localeSlugs[locale]}/`
+                    : `/${locale}/blog/${singlePost.localeSlugs[locale]}/`
+                }`
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Share on X"
+              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-100 text-slate-800 hover:bg-slate-900 hover:text-white font-600 text-xs transition-colors"
+            >
+              <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+              X
+            </a>
+            <a
+              href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+                `https://www.interdocsmedical.com${
+                  locale === "en"
+                    ? `/blog/${singlePost.localeSlugs[locale]}/`
+                    : `/${locale}/blog/${singlePost.localeSlugs[locale]}/`
+                }`
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Share on LinkedIn"
+              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-sky-50 text-[#0077B5] hover:bg-[#0077B5] hover:text-white font-600 text-xs transition-colors"
+            >
+              <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+              </svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+
         {/* In-article conversion CTA */}
-        <div className="mt-14 p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-[#0A6EBD]/10 via-[#e8f4fd]/60 to-white border border-[#0A6EBD]/20 shadow-sm">
+        <div className="mt-12 p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-[#0A6EBD]/10 via-[#e8f4fd]/60 to-white border border-[#0A6EBD]/20 shadow-sm">
           <div className="max-w-2xl">
             <span className="inline-block px-3.5 py-1 bg-[#0A6EBD] text-white text-xs font-700 rounded-full uppercase tracking-wider mb-3">
               24/7 Medical Care · Costa del Sol
             </span>
-            <h3 className="text-2xl sm:text-3xl font-800 text-slate-900 mb-3 tracking-tight">
+            <p className="text-2xl sm:text-3xl font-800 text-slate-900 mb-3 tracking-tight">
               {locale === "es"
                 ? "¿Necesitas un médico en tu hotel o apartamento ahora?"
                 : locale === "de"
@@ -97,7 +200,7 @@ export default function BlogSection({
                 : locale === "nl"
                 ? "Heeft u nu een dokter nodig in uw hotel of appartement?"
                 : "Need a doctor at your hotel or apartment right now?"}
-            </h3>
+            </p>
             <p className="text-slate-600 text-base sm:text-lg mb-6 leading-relaxed">
               {locale === "es"
                 ? "Médicos colegiados privados acuden a tu alojamiento en Málaga, Marbella y Costa del Sol en 30-45 minutos. Con receta médica oficial e informe para tu seguro de viaje."
@@ -177,12 +280,8 @@ export default function BlogSection({
               locale === "en" ? `/blog/${slug}/` : `/${locale}/blog/${slug}/`;
 
             return (
-              <li key={post.slug}>
-                <Link
-                  href={href}
-                  className="group flex flex-col h-full p-7 rounded-2xl border border-slate-100 hover:border-[#0A6EBD]/30 hover:shadow-xl hover:shadow-blue-50 transition-all duration-300"
-                  aria-label={post.title[locale]}
-                >
+              <li key={post.slug} className="h-full">
+                <article className="group relative flex flex-col h-full p-7 rounded-2xl border border-slate-100 hover:border-[#0A6EBD]/30 hover:shadow-xl hover:shadow-blue-50 transition-all duration-300 bg-white">
                   <div className="flex items-center gap-3 mb-5">
                     <span className="text-sm font-600 text-[#0A6EBD] bg-[#e8f4fd] px-3 py-1 rounded-full">
                       Health Guide
@@ -192,16 +291,21 @@ export default function BlogSection({
                     </span>
                   </div>
 
-                  <h3 className="font-700 text-slate-900 text-xl leading-snug mb-3 group-hover:text-[#0A6EBD] transition-colors duration-200 flex-1">
-                    {post.title[locale]}
-                  </h3>
+                  <p className="font-700 text-slate-900 text-xl leading-snug mb-3 group-hover:text-[#0A6EBD] transition-colors duration-200 flex-1">
+                    <Link
+                      href={href}
+                      className="focus:outline-none after:absolute after:inset-0"
+                    >
+                      {post.title[locale]}
+                    </Link>
+                  </p>
 
                   <p className="text-base text-slate-500 leading-relaxed mb-6 line-clamp-3">
                     {post.excerpt[locale]}
                   </p>
 
                   <div className="flex items-center gap-1 text-base font-600 text-[#0A6EBD] mt-auto">
-                    {readMoreLabel}
+                    <span>{readMoreLabel}</span>
                     <svg
                       className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200"
                       fill="none"
@@ -217,7 +321,7 @@ export default function BlogSection({
                       />
                     </svg>
                   </div>
-                </Link>
+                </article>
               </li>
             );
           })}

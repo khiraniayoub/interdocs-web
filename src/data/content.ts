@@ -10,7 +10,7 @@ export type Locale = "en" | "es" | "de" | "fr" | "fi" | "ar" | "no" | "da" | "sv
 // ────────────────────────────────────────────────────────────
 export const WHATSAPP_NUMBER = "34637255224"; // no + or spaces
 export const PHONE_NUMBER = "+34 637 255 224";
-export const EMAIL_ADDRESS = "interdocsmedical@gmail.com";
+export const EMAIL_ADDRESS = "contacto@interdocsmedical.com";
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 export const PHONE_URL = `tel:+34637255224`;
 export const EMAIL_URL = `mailto:${EMAIL_ADDRESS}`;
