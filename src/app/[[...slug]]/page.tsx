@@ -27,6 +27,7 @@ import BlogSection from "@/components/BlogSection";
 import ReviewsCarousel from "@/components/ReviewsCarousel";
 import InsuranceLogos from "@/components/InsuranceLogos";
 import WhatWeTreat from "@/components/WhatWeTreat";
+import LiveDispatchRadar from "@/components/LiveDispatchRadar";
 import Footer from "@/components/Footer";
 
 export const revalidate = 86400;
@@ -255,7 +256,7 @@ export async function generateMetadata({
       url: canonical,
       telephone: "+34637255224",
       priceRange: "€€",
-      paymentAccepted: "Cash, Credit Card, Travel Insurance",
+      paymentAccepted: "Direct payment, Travel Insurance",
       address: {
         "@type": "PostalAddress",
         addressLocality: city.name,
@@ -470,7 +471,7 @@ export default async function Page({
       image: `${siteUrl}/hero.png`,
       telephone: "+34637255224",
       priceRange: "€€",
-      paymentAccepted: "Cash, Credit Card, Travel Insurance",
+      paymentAccepted: "Direct payment, Travel Insurance",
       currenciesAccepted: "EUR",
       address: {
         "@type": "PostalAddress",
@@ -579,6 +580,7 @@ export default async function Page({
             trustItems={[...t.hero.trusts]}
             locale={locale}
           />
+          <LiveDispatchRadar locale={locale} />
           <InsuranceLogos />
           <HowItWorks
             title={t.howItWorks.title}

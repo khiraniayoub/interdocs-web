@@ -8,7 +8,7 @@ const INSURANCES = [
   "Bupa Global",
   "Cigna",
   "ERGO Reiseversicherung",
-  "Mapfre Asistencia",
+  "ADAC Auslandskrankenschutz",
   "Gouda Travel Insurance",
   "Europ Assistance",
   "IF Skadeförsäkring",
