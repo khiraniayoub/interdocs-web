@@ -249,7 +249,7 @@ const t: Record<string, Record<string, string>> = {
 
 const KNOWN_LOCALES = ["es", "de", "fr", "fi", "ar", "no", "da", "sv", "ru", "nl"];
 
-const STORAGE_KEY = "interdocs_cookie_consent";
+const STORAGE_KEY = "urgentcare_cookie_consent";
 const EXPIRY_DAYS = 180;
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────

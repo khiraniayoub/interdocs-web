@@ -15,8 +15,8 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: {
-    default: "Private Doctor Málaga & Costa del Sol | Interdocs Medical",
-    template: "%s | Interdocs Medical",
+    default: "Private Doctor Málaga & Costa del Sol | Urgent Care 24H",
+    template: "%s | Urgent Care 24H",
   },
   description:
     "Private English-speaking doctors available 24/7 for tourists across Costa del Sol. Fast hotel & home visits in Málaga and Marbella. Call or WhatsApp now.",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_GB",
-    siteName: "Interdocs Medical",
+    siteName: "Urgent Care 24H",
     images: [
       {
         url: "/hero.png",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   // ── Twitter ─────────────────────────────────────────
   twitter: {
     card: "summary_large_image",
-    site: "@interdocs_es",
+    site: "@urgentcare24h",
   },
   // ── Robots ──────────────────────────────────────────
   robots: {
@@ -80,6 +80,9 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
   // ── Extra SEO ───────────────────────────────────────
   keywords: [
+    "urgent care costa del sol",
+    "urgent care malaga",
+    "urgent care marbella",
     "private doctor costa del sol",
     "doctor hotel malaga",
     "home visit doctor marbella",
@@ -93,9 +96,9 @@ export const metadata: Metadata = {
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
   },
-  authors: [{ name: "Interdocs Medical", url: SITE_URL }],
-  creator: "Interdocs Medical",
-  publisher: "Interdocs Medical",
+  authors: [{ name: "Urgent Care 24H", url: SITE_URL }],
+  creator: "Urgent Care 24H",
+  publisher: "Urgent Care 24H",
   category: "health",
 };
 

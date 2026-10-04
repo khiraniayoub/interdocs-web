@@ -250,7 +250,7 @@ export async function generateMetadata({
       "@context": "https://schema.org",
       "@type": "MedicalBusiness",
       "@id": `${siteUrl}/${locale === "en" ? city.localeSlugs["en"] : `${locale}/${city.localeSlugs[locale]}`}/#localbusiness`,
-      name: "Interdocs Medical",
+      name: "Urgent Care 24H",
       description: city.description[locale],
       url: canonical,
       telephone: "+34637255224",
@@ -379,11 +379,11 @@ export async function generateMetadata({
       dateModified: post.dateModified,
       author: {
         "@type": "Organization",
-        name: "Interdocs Medical",
+        name: "Urgent Care 24H",
       },
       publisher: {
         "@type": "Organization",
-        name: "Interdocs Medical",
+        name: "Urgent Care 24H",
         url: siteUrl,
       },
     };
@@ -463,7 +463,7 @@ export default async function Page({
       "@context": "https://schema.org",
       "@type": "MedicalBusiness",
       "@id": `${siteUrl}/#organization`,
-      name: "Interdocs Medical",
+      name: "Urgent Care 24H",
       description: t.hero.subheadline,
       url: siteUrl,
       logo: `${siteUrl}/logo_new_v2.png`,
@@ -525,8 +525,8 @@ export default async function Page({
       sameAs: [
         "https://wa.me/34637255224",
         "https://www.facebook.com/profile.php?id=61594814065218",
-        "https://www.instagram.com/interdocsmedical",
-        "https://www.linkedin.com/company/interdocsmedical",
+        "https://www.instagram.com/urgentcare24h",
+        "https://www.linkedin.com/company/urgentcare24h",
       ],
     };
 
@@ -535,7 +535,7 @@ export default async function Page({
       "@type": "WebSite",
       "@id": `${siteUrl}/#website`,
       url: siteUrl,
-      name: "Interdocs Medical",
+      name: "Urgent Care 24H",
       description: "Private doctors available 24/7 for tourists across the Costa del Sol",
       publisher: { "@id": `${siteUrl}/#organization` },
       potentialAction: {

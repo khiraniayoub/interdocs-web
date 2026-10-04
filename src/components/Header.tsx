@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import {
   PHONE_URL,
@@ -37,14 +37,22 @@ interface HeaderProps {
 export default function Header({ locale = "en", alternateUrls }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
+  const [hash, setHash] = useState("");
   const pathname = usePathname();
+
+  useEffect(() => {
+    setHash(window.location.hash || "");
+    const handleHash = () => setHash(window.location.hash || "");
+    window.addEventListener("hashchange", handleHash);
+    return () => window.removeEventListener("hashchange", handleHash);
+  }, []);
 
   const getAlternateUrl = (targetCode: string): string => {
     // 1. If explicit alternateUrls was provided for this page
     if (alternateUrls && alternateUrls[targetCode]) {
       const targetBase = alternateUrls[targetCode];
-      if (typeof window !== "undefined" && window.location.hash) {
-        return `${targetBase.replace(/\/$/, "")}/${window.location.hash}`;
+      if (hash) {
+        return `${targetBase.replace(/\/$/, "")}/${hash}`;
       }
       return targetBase;
     }
@@ -59,7 +67,6 @@ export default function Header({ locale = "en", alternateUrls }: HeaderProps) {
     }
 
     const segments = pathname.split("/").filter(Boolean);
-    const hash = typeof window !== "undefined" ? window.location.hash : "";
 
     // Home: "/"
     if (segments.length === 0) {
@@ -252,22 +259,27 @@ export default function Header({ locale = "en", alternateUrls }: HeaderProps) {
           {/* Logo */}
           <Link
             href={localePaths[locale] || "/"}
-            className="flex items-center gap-2 group"
-            aria-label="Interdocs Medical - Home"
+            className="flex items-center gap-2.5 sm:gap-3 group"
+            aria-label="Urgent Care 24H - Home"
           >
             <Image
               src="/mi_logo.webp"
-              alt="Interdocs Medical logo"
+              alt="Urgent Care 24H logo"
               width={200}
               height={80}
               priority
-              className="h-14 lg:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              className="h-14 sm:h-16 lg:h-18 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
             <div>
-              <p className="text-base lg:text-xl font-800 text-slate-900 leading-tight tracking-tight uppercase transition-colors duration-200 group-hover:text-[#0A6EBD]">
-                Interdocs Medical
-              </p>
-              <p className="text-xs lg:text-sm text-[#0A6EBD] font-600 uppercase tracking-widest transition-opacity duration-200 group-hover:opacity-80">
+              <div className="flex items-center gap-2 leading-none">
+                <span className="text-xl sm:text-2xl lg:text-[26px] font-800 text-slate-900 tracking-tight uppercase">
+                  Urgent Care
+                </span>
+                <span className="bg-[#0A6EBD] text-white text-xs sm:text-sm lg:text-base font-800 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md sm:rounded-lg tracking-normal inline-flex items-center justify-center shadow-sm">
+                  24H
+                </span>
+              </div>
+              <p className="text-[11px] sm:text-xs lg:text-[13px] text-[#0A6EBD] font-600 uppercase tracking-[0.2em] mt-1 transition-opacity duration-200 group-hover:opacity-80">
                 Home Doctor Service
               </p>
             </div>

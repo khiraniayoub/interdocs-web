@@ -38,17 +38,17 @@ const SECTION_STRINGS: {
     nl: "Onze garanties",
   },
   title: {
-    en: "Why Choose Interdocs Medical?",
-    es: "¿Por Qué Elegir Interdocs Medical?",
-    de: "Warum Interdocs Medical wählen?",
-    fr: "Pourquoi Choisir Interdocs Medical ?",
-    fi: "Miksi valita Interdocs Medical?",
-    ar: "لماذا تختار Interdocs Medical؟",
-    no: "Hvorfor velge Interdocs Medical?",
-    da: "Hvorfor vælge Interdocs Medical?",
-    sv: "Varför välja Interdocs Medical?",
-    ru: "Почему выбирают Interdocs Medical?",
-    nl: "Waarom kiezen voor Interdocs Medical?",
+    en: "Why Choose Urgent Care 24H?",
+    es: "¿Por Qué Elegir Urgent Care 24H?",
+    de: "Warum Urgent Care 24H wählen?",
+    fr: "Pourquoi Choisir Urgent Care 24H ?",
+    fi: "Miksi valita Urgent Care 24H?",
+    ar: "لماذا تختار Urgent Care 24H؟",
+    no: "Hvorfor velge Urgent Care 24H?",
+    da: "Hvorfor vælge Urgent Care 24H?",
+    sv: "Varför välja Urgent Care 24H?",
+    ru: "Почему выбирают Urgent Care 24H?",
+    nl: "Waarom kiezen voor Urgent Care 24H?",
   },
   subtitle: {
     en: "High-standard private medical care delivered directly to your accommodation with zero hospital delays.",
@@ -478,7 +478,22 @@ export default function ReviewsCarousel({ locale = "en" }: WhyChooseProps) {
               id="why-choose-heading"
               className="text-3xl sm:text-4xl font-800 text-slate-900 leading-tight"
             >
-              {SECTION_STRINGS.title[currentLocale] || SECTION_STRINGS.title.en}
+              {(() => {
+                const titleText = SECTION_STRINGS.title[currentLocale] || SECTION_STRINGS.title.en;
+                if (titleText.includes("24H")) {
+                  const parts = titleText.split("24H");
+                  return (
+                    <>
+                      <span>{parts[0]}</span>
+                      <span className="bg-[#0A6EBD] text-white text-xl sm:text-2xl font-800 px-2.5 py-0.5 rounded-lg tracking-normal inline-flex items-center justify-center align-middle mx-1">
+                        24H
+                      </span>
+                      <span>{parts[1]}</span>
+                    </>
+                  );
+                }
+                return titleText;
+              })()}
             </h2>
             <p className="text-slate-500 text-base sm:text-lg mt-2">
               {SECTION_STRINGS.subtitle[currentLocale] || SECTION_STRINGS.subtitle.en}

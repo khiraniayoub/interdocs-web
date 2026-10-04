@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 // ─── Configuration ────────────────────────────────────────────────────────────
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "";
-const STORAGE_KEY = "interdocs_cookie_consent";
+const STORAGE_KEY = "urgentcare_cookie_consent";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 

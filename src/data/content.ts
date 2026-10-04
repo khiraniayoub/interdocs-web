@@ -10,7 +10,7 @@ export type Locale = "en" | "es" | "de" | "fr" | "fi" | "ar" | "no" | "da" | "sv
 // ────────────────────────────────────────────────────────────
 export const WHATSAPP_NUMBER = "34637255224"; // no + or spaces
 export const PHONE_NUMBER = "+34 637 255 224";
-export const EMAIL_ADDRESS = "contacto@interdocsmedical.com";
+export const EMAIL_ADDRESS = "contact@urgentcare24h.com";
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 export const PHONE_URL = `tel:+34637255224`;
 export const EMAIL_URL = `mailto:${EMAIL_ADDRESS}`;
@@ -19,7 +19,7 @@ export const EMAIL_URL = `mailto:${EMAIL_ADDRESS}`;
 // DOMAIN / SITE URL CONFIG
 // ────────────────────────────────────────────────────────────
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://www.interdocsmedical.com";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://www.urgentcare24h.com";
 
 // ────────────────────────────────────────────────────────────
 // LOCALES
@@ -186,7 +186,7 @@ export const translations = {
     },
     footer: {
       disclaimer:
-        "Interdocs Medical coordinates requests with independent licensed medical professionals. We do not ourselves provide medical treatment. In a life-threatening emergency, please call 112.",
+        "Urgent Care 24H coordinates requests with independent licensed medical professionals. We do not ourselves provide medical treatment. In a life-threatening emergency, please call 112.",
       rights: "All rights reserved.",
     },
   },
@@ -288,7 +288,7 @@ export const translations = {
       disclaimer: "Al enviar este formulario, tus datos se enviarán por WhatsApp.",
     },
     footer: {
-      disclaimer: "Interdocs Medical coordina solicitudes con profesionales médicos independientes con licencia. No prestamos tratamiento médico directamente. En una emergencia, llame al 112.",
+      disclaimer: "Urgent Care 24H coordina solicitudes con profesionales médicos independientes con licencia. No prestamos tratamiento médico directamente. En una emergencia, llame al 112.",
       rights: "Todos los derechos reservados.",
     },
   },
@@ -374,7 +374,7 @@ export const translations = {
       disclaimer: "Durch das Absenden dieses Formulars werden Ihre Daten per WhatsApp übermittelt.",
     },
     footer: {
-      disclaimer: "Interdocs Medical koordiniert Anfragen mit unabhängigen zugelassenen Medizinern. Wir selbst erbringen keine medizinische Behandlung. Im lebensbedrohlichen Notfall rufen Sie bitte 112 an.",
+      disclaimer: "Urgent Care 24H koordiniert Anfragen mit unabhängigen zugelassenen Medizinern. Wir selbst erbringen keine medizinische Behandlung. Im lebensbedrohlichen Notfall rufen Sie bitte 112 an.",
       rights: "Alle Rechte vorbehalten.",
     },
   },
@@ -460,7 +460,7 @@ export const translations = {
       disclaimer: "En soumettant ce formulaire, vos données seront envoyées par WhatsApp.",
     },
     footer: {
-      disclaimer: "Interdocs Medical coordonne les demandes avec des professionnels médicaux indépendants agréés. Nous ne fournissons pas nous-mêmes de traitement médical. En cas d'urgence vitale, appelez le 112.",
+      disclaimer: "Urgent Care 24H coordonne les demandes avec des professionnels médicaux indépendants agréés. Nous ne fournissons pas nous-mêmes de traitement médical. En cas d'urgence vitale, appelez le 112.",
       rights: "Tous droits réservés.",
     },
   },
@@ -617,7 +617,7 @@ export const translations = {
       disclaimer: "Lähettämällä tämän lomakkeen tietosi lähetetään WhatsAppilla käsiteltäväksi.",
     },
     footer: {
-      disclaimer: "Interdocs Medical koordinoi pyyntöjä itsenäisten lisensoitujen lääkäreiden kanssa. Emme itse tarjoa lääketieteellistä hoitoa. Hengenvaarallisessa hätätilanteessa soita numeroon 112.",
+      disclaimer: "Urgent Care 24H koordinoi pyyntöjä itsenäisten lisensoitujen lääkäreiden kanssa. Emme itse tarjoa lääketieteellistä hoitoa. Hengenvaarallisessa hätätilanteessa soita numeroon 112.",
       rights: "Kaikki oikeudet pidätetään.",
     },
   },
@@ -774,7 +774,7 @@ export const translations = {
       disclaimer: "بإرسال هذا النموذج، سيتم إرسال بياناتك عبر واتساب للمعالجة.",
     },
     footer: {
-      disclaimer: "تقوم Interdocs Medical بتنسيق الطلبات مع أطباء مرخصين مستقلين. نحن لا نقدم علاجاً طبياً بأنفسنا. في حالات الطوارئ التي تهدد الحياة، يرجى الاتصال بالرقم 112.",
+      disclaimer: "تقوم Urgent Care 24H بتنسيق الطلبات مع أطباء مرخصين مستقلين. نحن لا نقدم علاجاً طبياً بأنفسنا. في حالات الطوارئ التي تهدد الحياة، يرجى الاتصال بالرقم 112.",
       rights: "جميع الحقوق محفوظة.",
     },
   },
@@ -931,7 +931,7 @@ export const translations = {
       disclaimer: "Ved å sende inn dette skjemaet, vil opplysningene dine bli sendt via WhatsApp for behandling.",
     },
     footer: {
-      disclaimer: "Interdocs Medical koordinerer forespørsler med uavhengige lisensierte leger. Vi tilbyr ikke medisinsk behandling selv. Ved livstruende nødsituasjoner, ring 112.",
+      disclaimer: "Urgent Care 24H koordinerer forespørsler med uavhengige lisensierte leger. Vi tilbyr ikke medisinsk behandling selv. Ved livstruende nødsituasjoner, ring 112.",
       rights: "Alle rettigheter forbeholdt.",
     },
   },
@@ -1088,7 +1088,7 @@ export const translations = {
       disclaimer: "Ved at indsende denne formular vil dine oplysninger blive sendt via WhatsApp til behandling.",
     },
     footer: {
-      disclaimer: "Interdocs Medical koordinerer anmodninger med uafhængige autoriserede læger. Vi yder ikke selv lægebehandling. Ring 112 i tilfælde af livsfare.",
+      disclaimer: "Urgent Care 24H koordinerer anmodninger med uafhængige autoriserede læger. Vi yder ikke selv lægebehandling. Ring 112 i tilfælde af livsfare.",
       rights: "Alle rettigheder forbeholdes.",
     },
   },
@@ -1245,7 +1245,7 @@ export const translations = {
       disclaimer: "Genom att skicka in detta formulär kommer dina uppgifter att skickas via WhatsApp för behandling.",
     },
     footer: {
-      disclaimer: "Interdocs Medical samordnar förfrågningar med oberoende legitimerade läkare. Vi tillhandahåller inte medicinsk behandling själva. Vid livshotande nödsituationer, ring 112.",
+      disclaimer: "Urgent Care 24H samordnar förfrågningar med oberoende legitimerade läkare. Vi tillhandahåller inte medicinsk behandling själva. Vid livshotande nödsituationer, ring 112.",
       rights: "Alla rättigheter förbehållna.",
     },
   },

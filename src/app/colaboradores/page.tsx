@@ -57,7 +57,7 @@ export default function ColaboradoresPage() {
     } catch (err: unknown) {
       console.error("Error al enviar con EmailJS:", err);
       setError(
-        "Hubo un problema al enviar la solicitud. Por favor, inténtalo de nuevo o escríbenos directamente a contacto@interdocsmedical.com"
+        "Hubo un problema al enviar la solicitud. Por favor, inténtalo de nuevo o escríbenos directamente a contact@urgentcare24h.com"
       );
     } finally {
       setLoading(false);
@@ -255,8 +255,12 @@ export default function ColaboradoresPage() {
         <section className="py-20 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
             <div className="text-center space-y-3">
-              <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
-                ¿Por qué confiar en Interdocs Medical?
+              <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight inline-flex items-center justify-center gap-2 flex-wrap">
+                <span>¿Por qué confiar en Urgent Care</span>
+                <span className="bg-[#0A6EBD] text-white text-base sm:text-lg font-800 px-2.5 py-0.5 rounded-lg tracking-normal inline-flex items-center justify-center">
+                  24H
+                </span>
+                <span>?</span>
               </h2>
               <p className="text-slate-600 text-sm sm:text-base max-w-xl mx-auto">
                 Diseñado para ofrecer tranquilidad inmediata tanto al establecimiento como al paciente.
@@ -366,7 +370,7 @@ export default function ColaboradoresPage() {
                   <div className="text-4xl">✅</div>
                   <h3 className="text-lg font-bold text-emerald-900">¡Solicitud Enviada con Éxito!</h3>
                   <p className="text-xs sm:text-sm text-emerald-700">
-                    Hemos recibido los datos de tu solicitud. Nuestro responsable de convenios y colaboraciones se pondrá en contacto contigo a través de <strong>contacto@interdocsmedical.com</strong> hoy mismo.
+                    Hemos recibido los datos de tu solicitud. Nuestro responsable de convenios y colaboraciones se pondrá en contacto contigo a través de <strong>contact@urgentcare24h.com</strong> hoy mismo.
                   </p>
                   <div className="pt-2">
                     <button

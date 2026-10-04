@@ -34,20 +34,27 @@ export default function Footer({ disclaimer, rights, locale }: FooterProps) {
             <Link
               href={homeHref}
               className="inline-flex flex-col lg:flex-row items-center gap-3 mb-5"
-              aria-label="Interdocs Medical — 24/7 Private Doctor Costa del Sol"
+              aria-label="Urgent Care 24H — 24/7 Private Doctor Costa del Sol"
             >
               <div className="bg-white rounded-xl px-2 py-2 flex items-center justify-center">
                 <Image
                   src="/mi_logo.webp"
-                  alt="Interdocs Medical logo"
+                  alt="Urgent Care 24H logo"
                   width={200}
                   height={80}
                   className="h-14 w-auto object-contain"
                 />
               </div>
               <div>
-                <p className="font-700 text-white uppercase text-sm tracking-wide">Interdocs Medical</p>
-                <p className="text-[10px] text-slate-400 uppercase tracking-widest mt-0.5">Costa del Sol Medical Care</p>
+                <p className="font-800 text-white uppercase text-base sm:text-lg tracking-tight flex items-center gap-1.5">
+                  <span>Urgent Care</span>
+                  <span className="bg-[#0A6EBD] text-white text-xs font-800 px-2 py-0.5 rounded-md tracking-normal inline-flex items-center justify-center shadow-sm">
+                    24H
+                  </span>
+                </p>
+                <p className="text-[11px] sm:text-xs text-sky-400 font-600 uppercase tracking-[0.2em] mt-1">
+                  Home Doctor Service
+                </p>
               </div>
             </Link>
 
@@ -99,7 +106,7 @@ export default function Footer({ disclaimer, rights, locale }: FooterProps) {
                   href={`https://wa.me/${WHATSAPP_NUMBER}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Chat with Interdocs Medical on WhatsApp"
+                  aria-label="Chat with Urgent Care 24H on WhatsApp"
                   className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-[#25D366] hover:bg-[#25D366] hover:text-white hover:border-[#25D366] hover:shadow-[0_0_16px_rgba(37,211,102,0.45)] hover:-translate-y-0.5 transition-all duration-300"
                 >
                   <svg className="w-4.5 h-4.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
@@ -107,10 +114,10 @@ export default function Footer({ disclaimer, rights, locale }: FooterProps) {
                   </svg>
                 </a>
                 <a
-                  href="https://www.instagram.com/interdocsmedical"
+                  href="https://www.instagram.com/urgentcare24h"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Follow Interdocs Medical on Instagram"
+                  aria-label="Follow Urgent Care 24H on Instagram"
                   className="w-10 h-10 rounded-xl bg-pink-500/10 border border-pink-500/30 flex items-center justify-center text-[#E4405F] hover:bg-gradient-to-tr hover:from-[#f09433] hover:via-[#dc2743] hover:to-[#bc1888] hover:text-white hover:border-transparent hover:shadow-[0_0_16px_rgba(228,64,95,0.45)] hover:-translate-y-0.5 transition-all duration-300"
                 >
                   <svg className="w-4.5 h-4.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
@@ -121,7 +128,7 @@ export default function Footer({ disclaimer, rights, locale }: FooterProps) {
                   href="https://www.facebook.com/profile.php?id=61594814065218"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Visit Interdocs Medical on Facebook"
+                  aria-label="Visit Urgent Care 24H on Facebook"
                   className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-[#1877F2] hover:bg-[#1877F2] hover:text-white hover:border-[#1877F2] hover:shadow-[0_0_16px_rgba(24,119,242,0.45)] hover:-translate-y-0.5 transition-all duration-300"
                 >
                   <svg className="w-4.5 h-4.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
@@ -129,10 +136,10 @@ export default function Footer({ disclaimer, rights, locale }: FooterProps) {
                   </svg>
                 </a>
                 <a
-                  href="https://www.linkedin.com/company/interdocsmedical"
+                  href="https://www.linkedin.com/company/urgentcare24h"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Connect with Interdocs Medical on LinkedIn"
+                  aria-label="Connect with Urgent Care 24H on LinkedIn"
                   className="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-[#0A66C2] hover:bg-[#0A66C2] hover:text-white hover:border-[#0A66C2] hover:shadow-[0_0_16px_rgba(10,102,194,0.45)] hover:-translate-y-0.5 transition-all duration-300"
                 >
                   <svg className="w-4.5 h-4.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
@@ -148,29 +155,29 @@ export default function Footer({ disclaimer, rights, locale }: FooterProps) {
                 {locale === "es"
                   ? "Compartir este servicio:"
                   : locale === "de"
-                  ? "Diesen Service teilen:"
-                  : locale === "fr"
-                  ? "Partager ce service :"
-                  : locale === "fi"
-                  ? "Jaa tämä palvelu:"
-                  : locale === "ar"
-                  ? "مشاركة هذه الخدمة:"
-                  : locale === "no"
-                  ? "Del denne tjenesten:"
-                  : locale === "da"
-                  ? "Del denne tjeneste:"
-                  : locale === "sv"
-                  ? "Dela denna tjänst:"
-                  : locale === "ru"
-                  ? "Поделиться сервисом:"
-                  : locale === "nl"
-                  ? "Deel deze dienst:"
-                  : "Share this service:"}
+                    ? "Diesen Service teilen:"
+                    : locale === "fr"
+                      ? "Partager ce service :"
+                      : locale === "fi"
+                        ? "Jaa tämä palvelu:"
+                        : locale === "ar"
+                          ? "مشاركة هذه الخدمة:"
+                          : locale === "no"
+                            ? "Del denne tjenesten:"
+                            : locale === "da"
+                              ? "Del denne tjeneste:"
+                              : locale === "sv"
+                                ? "Dela denna tjänst:"
+                                : locale === "ru"
+                                  ? "Поделиться сервисом:"
+                                  : locale === "nl"
+                                    ? "Deel deze dienst:"
+                                    : "Share this service:"}
               </p>
               <div className="flex flex-wrap items-center gap-2">
                 <a
                   href={`https://api.whatsapp.com/send?text=${encodeURIComponent(
-                    `Interdocs Medical - Private Doctor 24/7 in Costa del Sol: https://www.interdocsmedical.com${homeHref}`
+                    `Urgent Care 24H - Private Doctor 24/7 in Costa del Sol: https://www.urgentcare24h.com${homeHref}`
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -184,7 +191,7 @@ export default function Footer({ disclaimer, rights, locale }: FooterProps) {
                 </a>
                 <a
                   href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-                    `https://www.interdocsmedical.com${homeHref}`
+                    `https://www.urgentcare24h.com${homeHref}`
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -199,7 +206,7 @@ export default function Footer({ disclaimer, rights, locale }: FooterProps) {
                 <a
                   href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
                     "Private Doctor 24/7 in Costa del Sol - Home & Hotel visits"
-                  )}&url=${encodeURIComponent(`https://www.interdocsmedical.com${homeHref}`)}`}
+                  )}&url=${encodeURIComponent(`https://www.urgentcare24h.com${homeHref}`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Share on X"
@@ -212,7 +219,7 @@ export default function Footer({ disclaimer, rights, locale }: FooterProps) {
                 </a>
                 <a
                   href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-                    `https://www.interdocsmedical.com${homeHref}`
+                    `https://www.urgentcare24h.com${homeHref}`
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -357,8 +364,12 @@ export default function Footer({ disclaimer, rights, locale }: FooterProps) {
 
         {/* Bottom bar */}
         <div className="border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-          <p className="text-slate-400 text-sm">
-            © {year} Interdocs Medical. {rights}
+          <p className="text-slate-400 text-sm flex items-center justify-center sm:justify-start gap-1.5">
+            <span>© {year} Urgent Care</span>
+            <span className="bg-[#0A6EBD] text-white text-[10px] font-800 px-1.5 py-0.5 rounded tracking-normal inline-flex items-center justify-center">
+              24H
+            </span>
+            <span>. {rights}</span>
           </p>
           <p className="text-slate-600 text-xs">Costa del Sol · Málaga · Spain</p>
         </div>

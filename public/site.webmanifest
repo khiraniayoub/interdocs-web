@@ -1,6 +1,6 @@
 {
-  "name": "Interdocs",
-  "short_name": "Interdocs",
+  "name": "Urgent Care 24H",
+  "short_name": "UrgentCare24H",
   "description": "Private doctors available 24/7 for tourists across the Costa del Sol",
   "start_url": "/",
   "display": "standalone",

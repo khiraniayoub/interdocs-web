@@ -59,7 +59,7 @@ export default function Hero({
   const currentRef = useRef<HTMLVideoElement>(null);
   const nextRef = useRef<HTMLVideoElement>(null);
 
-  const rotatingTexts = ["Interdocs Medical", "Home Doctor Service"];
+  const rotatingTexts = ["Urgent Care 24H", "Home Doctor Service"];
 
   const t = PRICING_TEXT[locale] || PRICING_TEXT["en"];
 
@@ -320,7 +320,7 @@ export default function Hero({
       <div className="hidden sm:flex absolute bottom-8 right-8 z-20 bg-white/95 backdrop-blur-md px-6 py-4 rounded-2xl shadow-2xl items-center justify-center border border-white/20">
         <Image
           src="/mi_logo.webp"
-          alt="Interdocs Medical logo"
+          alt="Urgent Care 24H logo"
           width={360}
           height={130}
           className="h-20 sm:h-24 w-auto object-contain"

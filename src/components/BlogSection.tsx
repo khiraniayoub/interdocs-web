@@ -97,7 +97,7 @@ export default function BlogSection({
           <div className="flex flex-wrap items-center gap-2.5">
             <a
               href={`https://api.whatsapp.com/send?text=${encodeURIComponent(
-                `${singlePost.title[locale]} https://www.interdocsmedical.com${
+                `${singlePost.title[locale]} https://www.urgentcare24h.com${
                   locale === "en"
                     ? `/blog/${singlePost.localeSlugs[locale]}/`
                     : `/${locale}/blog/${singlePost.localeSlugs[locale]}/`
@@ -115,7 +115,7 @@ export default function BlogSection({
             </a>
             <a
               href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-                `https://www.interdocsmedical.com${
+                `https://www.urgentcare24h.com${
                   locale === "en"
                     ? `/blog/${singlePost.localeSlugs[locale]}/`
                     : `/${locale}/blog/${singlePost.localeSlugs[locale]}/`
@@ -135,7 +135,7 @@ export default function BlogSection({
               href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
                 singlePost.title[locale]
               )}&url=${encodeURIComponent(
-                `https://www.interdocsmedical.com${
+                `https://www.urgentcare24h.com${
                   locale === "en"
                     ? `/blog/${singlePost.localeSlugs[locale]}/`
                     : `/${locale}/blog/${singlePost.localeSlugs[locale]}/`
@@ -153,7 +153,7 @@ export default function BlogSection({
             </a>
             <a
               href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-                `https://www.interdocsmedical.com${
+                `https://www.urgentcare24h.com${
                   locale === "en"
                     ? `/blog/${singlePost.localeSlugs[locale]}/`
                     : `/${locale}/blog/${singlePost.localeSlugs[locale]}/`
