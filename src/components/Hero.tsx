@@ -317,14 +317,27 @@ export default function Hero({
       </div>
 
       {/* Floating Logo Bottom Right */}
-      <div className="hidden sm:flex absolute bottom-8 right-8 z-20 bg-white/95 backdrop-blur-md px-6 py-4 rounded-2xl shadow-2xl items-center justify-center border border-white/20">
+      <div className="hidden sm:flex absolute bottom-2 right-2 sm:bottom-3 sm:right-3 z-20 bg-white/95 backdrop-blur-md px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl sm:rounded-2xl shadow-xl items-center gap-3 border border-white/30">
         <Image
           src="/mi_logo.webp"
           alt="Urgent Care 24H logo"
-          width={360}
-          height={130}
-          className="h-20 sm:h-24 w-auto object-contain"
+          width={160}
+          height={65}
+          className="h-12 sm:h-14 w-auto object-contain"
         />
+        <div className="flex flex-col justify-center text-left">
+          <div className="flex items-center gap-2 leading-none">
+            <span className="text-base sm:text-lg lg:text-xl font-800 text-slate-900 tracking-tight uppercase">
+              Urgent Care
+            </span>
+            <span className="bg-[#0A6EBD] text-white text-[11px] sm:text-xs font-800 px-2 py-0.5 rounded-md tracking-normal inline-flex items-center justify-center shadow-sm">
+              24H
+            </span>
+          </div>
+          <p className="text-[9px] sm:text-[10px] text-[#0A6EBD] font-700 uppercase tracking-[0.2em] mt-1">
+            Home Doctor Service
+          </p>
+        </div>
       </div>
     </section>
   );
