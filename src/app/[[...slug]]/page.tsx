@@ -254,6 +254,7 @@ export async function generateMetadata({
       description: city.description[locale],
       url: canonical,
       telephone: "+34637255224",
+      email: "contact@urgentcare24h.com",
       priceRange: "€€",
       paymentAccepted: "Cash, Credit Card, Travel Insurance",
       address: {
@@ -281,6 +282,7 @@ export async function generateMetadata({
       contactPoint: {
         "@type": "ContactPoint",
         telephone: "+34637255224",
+        email: "contact@urgentcare24h.com",
         contactType: "customer service",
         availableLanguage: ["English", "Spanish"],
         areaServed: "ES",
@@ -469,6 +471,7 @@ export default async function Page({
       logo: `${siteUrl}/logo_new_v2.png`,
       image: `${siteUrl}/hero.png`,
       telephone: "+34637255224",
+      email: "contact@urgentcare24h.com",
       priceRange: "€€",
       paymentAccepted: "Cash, Credit Card, Travel Insurance",
       currenciesAccepted: "EUR",
@@ -517,6 +520,7 @@ export default async function Page({
       contactPoint: {
         "@type": "ContactPoint",
         telephone: "+34637255224",
+        email: "contact@urgentcare24h.com",
         contactType: "customer service",
         availableLanguage: ["English", "Spanish", "German", "French"],
         contactOption: "TollFree",
@@ -611,6 +615,7 @@ export default async function Page({
             title={t.contact.title}
             subtitle={t.contact.subtitle}
             namePlaceholder={t.contact.name}
+            emailPlaceholder={t.contact.email}
             phonePlaceholder={t.contact.phone}
             hotelPlaceholder={t.contact.hotel}
             symptomsPlaceholder={t.contact.symptoms}
@@ -741,6 +746,7 @@ export default async function Page({
             title={t.contact.title}
             subtitle={t.contact.subtitle}
             namePlaceholder={t.contact.name}
+            emailPlaceholder={t.contact.email}
             phonePlaceholder={t.contact.phone}
             hotelPlaceholder={t.contact.hotel}
             symptomsPlaceholder={t.contact.symptoms}
