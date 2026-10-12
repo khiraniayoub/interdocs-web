@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s | Urgent Care 24H",
   },
   description:
-    "24/7 English-speaking doctor to your hotel room or villa in Marbella & Costa del Sol in 30-45 min. Fit to Fly & insurance reports. Call or WhatsApp now.",
+    "24/7 English-speaking doctor to your hotel room or villa in Marbella & Costa del Sol in 30-60 min. Fit to Fly & insurance reports. Call or WhatsApp now.",
   metadataBase: new URL(SITE_URL),
   // ── Canonical & alternates ──────────────────────────
   alternates: {

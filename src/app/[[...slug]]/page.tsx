@@ -125,12 +125,12 @@ const HOME_META: Record<Locale, { title: string; description: string }> = {
   en: {
     title: "Hotel Doctor in Marbella & Costa del Sol",
     description:
-      "24/7 English-speaking doctor to your hotel room or villa in Marbella & Costa del Sol in 30-45 min. Fit to Fly & insurance reports. Call or WhatsApp now.",
+      "24/7 English-speaking doctor to your hotel room or villa in Marbella & Costa del Sol in 30-60 min. Fit to Fly & insurance reports. Call or WhatsApp now.",
   },
   es: {
     title: "Médico a Domicilio y en Hoteles Marbella",
     description:
-      "Médico privado 24/7 en tu hotel o domicilio en Marbella y Costa del Sol en 30-45 min. Certificados Fit to Fly e informes para seguro. Llama o escribe ahora.",
+      "Médico privado 24/7 en tu hotel o domicilio en Marbella y Costa del Sol en 30-60 min. Certificados Fit to Fly e informes para seguro. Llama o escribe ahora.",
   },
   de: {
     title: "Arzt im Hotel & Hausbesuch Costa del Sol",
@@ -140,7 +140,7 @@ const HOME_META: Record<Locale, { title: string; description: string }> = {
   fr: {
     title: "Médecin à l'Hôtel & à Domicile",
     description:
-      "Médecin privé 24h/24 à votre hôtel ou domicile sur la Costa del Sol en 30-45 min. Certificat Fit to Fly et facture pour assurance voyage. Contactez-nous.",
+      "Médecin privé 24h/24 à votre hôtel ou domicile sur la Costa del Sol en 30-60 min. Certificat Fit to Fly et facture pour assurance voyage. Contactez-nous.",
   },
   fi: {
     title: "Lääkäri Hotelliin ja Kotiin Costa del Sol",
@@ -170,7 +170,7 @@ const HOME_META: Record<Locale, { title: string; description: string }> = {
   ru: {
     title: "Врач в отель и на дом в Марбелье и Малаге",
     description:
-      "Частный врач 24/7 для туристов на Коста-дель-Соль. Выезд в отель или апартаменты в Марбелье и Малаге за 30-45 мин. Справки для страховки. Звоните.",
+      "Частный врач 24/7 для туристов на Коста-дель-Соль. Выезд в отель или апартаменты в Марбелье и Малаге за 30-60 мин. Справки для страховки. Звоните.",
   },
   nl: {
     title: "Arts in Hotel & Huisbezoek Costa del Sol",

@@ -44,12 +44,12 @@ export const translations = {
     hero: {
       headline: "24/7 Hotel Doctor & Urgent Private GP Visits in Marbella & Costa del Sol",
       subheadline:
-        "English-speaking emergency doctor directly to your hotel room, villa or holiday apartment in 30–45 minutes. Complete medical examination, prescriptions, Fit to Fly certificates and official travel insurance reports.",
+        "English-speaking emergency doctor directly to your hotel room, villa or holiday apartment in 30–60 minutes. Complete medical examination, prescriptions, Fit to Fly certificates and official travel insurance reports.",
       whatsapp: "WhatsApp Now",
       call: "Call Now",
       trusts: [
         "English-Speaking Doctor 24/7",
-        "Hotel Room & Villa Visits in 30–45 Min",
+        "Hotel Room & Villa Visits in 30–60 Min",
         "Fit to Fly & Medical Certificates",
         "Official Receipts for Travel Insurance (Bupa, Allianz)",
         "Adults, Children & Urgent Care",
@@ -129,7 +129,7 @@ export const translations = {
     },
     areas: {
       title: "Areas We Cover",
-      subtitle: "Rapid 30-45 minute emergency doctor dispatch across the entire Costa del Sol region.",
+      subtitle: "Rapid 30-60 minute emergency doctor dispatch across the entire Costa del Sol region.",
     },
     faq: {
       title: "Frequently Asked Questions",
@@ -145,7 +145,7 @@ export const translations = {
         },
         {
           q: "How fast will the doctor arrive at my room?",
-          a: "Our average response time is between 30 and 45 minutes from your initial phone or WhatsApp call.",
+          a: "Our average response time is between 30 and 60 minutes from your initial phone or WhatsApp call.",
         },
         {
           q: "Do your doctors speak English?",
@@ -208,12 +208,12 @@ export const translations = {
     hero: {
       headline: "Médico en Tu Hotel o Domicilio 24h en Marbella y Costa del Sol",
       subheadline:
-        "Atención médica privada inmediata directamente en tu habitación de hotel, villa o apartamento en 30–45 minutos. Médicos colegiados bilingües, recetas, certificados Fit to Fly e informes para seguro de viaje.",
+        "Atención médica privada inmediata directamente en tu habitación de hotel, villa o apartamento en 30–60 minutos. Médicos colegiados bilingües, recetas, certificados Fit to Fly e informes para seguro de viaje.",
       whatsapp: "WhatsApp Ahora",
       call: "Llámanos 24/7",
       trusts: [
         "Médicos Colegiados en Inglés y Español",
-        "Visitas a Hoteles y Villas en 30–45 Min",
+        "Visitas a Hoteles y Villas en 30–60 Min",
         "Certificados Fit to Fly y Bajas Oficiales",
         "Facturas e Informes para Seguros Médicos",
         "Atención 24/7 Adultos y Pediatría",
@@ -263,14 +263,14 @@ export const translations = {
         },
       ],
     },
-    areas: { title: "Zonas que Cubrimos", subtitle: "Respuesta rápida de 30 a 45 minutos en toda la Costa del Sol." },
+    areas: { title: "Zonas que Cubrimos", subtitle: "Respuesta rápida de 30 a 60 minutos en toda la Costa del Sol." },
     faq: {
       title: "Preguntas Frecuentes",
       subtitle: "Todo lo que necesitas saber sobre nuestro servicio médico urgente en hoteles y domicilios.",
       items: [
         { q: "¿Visitan hoteles y complejos turísticos?", a: "Sí. Nuestros médicos acuden a todos los hoteles, resorts y apartamentos turísticos de Marbella, Puerto Banús, Málaga, Fuengirola, Benalmádena, Torremolinos, Mijas y Estepona." },
         { q: "¿Pueden acudir a una villa privada o apartamento de alquiler?", a: "Por supuesto. Realizamos visitas a domicilio en villas de lujo, pisos turísticos de Airbnb y residencias privadas en cualquier punto de la Costa del Sol." },
-        { q: "¿Cuánto tarda en llegar el médico?", a: "El tiempo medio habitual de llegada a tu hotel o domicilio es de 30 a 45 minutos tras confirmar el aviso." },
+        { q: "¿Cuánto tarda en llegar el médico?", a: "El tiempo medio habitual de llegada a tu hotel o domicilio es de 30 a 60 minutos tras confirmar el aviso." },
         { q: "¿Hablan los médicos en inglés?", a: "Sí. Todos nuestros facultativos hablan inglés fluido, además de español, y contamos con médicos con dominio de alemán y francés." },
         { q: "¿Puedo obtener un certificado médico 'Fit to Fly'?", a: "Sí. Si una enfermedad o lesión te impide volar o necesitas autorización médica para tu aerolínea, el médico te examina y emite el certificado oficial Fit to Fly en el acto." },
         { q: "¿Puedo usar mi seguro de viaje internacional?", a: "Sí. Entregamos un informe médico completo con diagnóstico codificado (CIE-10 / ICD-10) y factura desglosada válida para reembolso directo con Bupa, Allianz, AXA, Sanitas, seguros nórdicos y británicos." },
@@ -1280,7 +1280,7 @@ export const translations = {
       trusts: [
         "Англоязычные врачи",
         "Визиты в отель и на дом",
-        "Приезд за 30-45 минут",
+        "Приезд за 30-60 минут",
         "Чеки для страховой",
         "Взрослые и дети",
       ],
