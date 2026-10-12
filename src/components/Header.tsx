@@ -229,31 +229,6 @@ export default function Header({ locale = "en", alternateUrls }: HeaderProps) {
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm flex flex-col">
-      {/* Mobile Top Bar for Languages */}
-      <div className="lg:hidden w-full bg-slate-50 border-b border-slate-100 py-2.5 px-4 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-        <div className="flex items-center gap-2 w-max">
-          {languages.map((lang) => (
-            <Link
-              key={lang.code}
-              href={getAlternateUrl(lang.code)}
-              className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-[13px] border transition-colors ${lang.code === locale
-                ? "bg-[#e8f4fd] border-[#0A6EBD] text-[#0A6EBD] font-600"
-                : "bg-white border-slate-200 text-slate-600 hover:bg-[#f0f7ff]"
-                }`}
-            >
-              <span aria-hidden="true" className="w-3.5 h-3.5 rounded-full overflow-hidden border border-slate-200 flex-shrink-0 flex items-center justify-center">
-                <img
-                  src={`https://flagcdn.com/${lang.flagCode}.svg`}
-                  alt={lang.label}
-                  className="w-full h-full object-cover scale-110"
-                />
-              </span>
-              <span>{lang.label}</span>
-            </Link>
-          ))}
-        </div>
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full border-b border-slate-100 lg:border-none">
         <div className="flex items-center justify-between h-20 lg:h-28">
           {/* Logo */}
@@ -338,34 +313,43 @@ export default function Header({ locale = "en", alternateUrls }: HeaderProps) {
               </button>
 
               {langOpen && (
-                <div
-                  role="listbox"
-                  aria-label="Languages"
-                  className="absolute right-0 mt-2 w-44 bg-white border border-slate-100 rounded-xl shadow-lg overflow-hidden z-50"
-                >
-                  {languages.map((lang) => (
-                    <Link
-                      key={lang.code}
-                      href={getAlternateUrl(lang.code)}
-                      role="option"
-                      aria-selected={lang.code === locale}
-                      onClick={() => setLangOpen(false)}
-                      className={`flex items-center gap-3 px-4 py-3 text-sm transition-colors duration-200 ${lang.code === locale
-                        ? "bg-[#e8f4fd] hover:bg-[#d6ebfa] text-[#0A6EBD] font-600"
-                        : "text-slate-700 hover:bg-[#f0f7ff] hover:text-[#0A6EBD] font-500"
-                        }`}
-                    >
-                      <span aria-hidden="true" className="w-5 h-5 rounded-full overflow-hidden border border-slate-200 flex-shrink-0 flex items-center justify-center">
-                        <img
-                          src={`https://flagcdn.com/${lang.flagCode}.svg`}
-                          alt={lang.label}
-                          className="w-full h-full object-cover scale-110"
-                        />
-                      </span>
-                      <span>{lang.label}</span>
-                    </Link>
-                  ))}
-                </div>
+                <>
+                  <div
+                    className="fixed inset-0 z-40 bg-black/10 backdrop-blur-[1px]"
+                    onClick={() => setLangOpen(false)}
+                  />
+                  <div
+                    role="listbox"
+                    aria-label="Languages"
+                    className="absolute right-0 mt-2 w-44 bg-white border border-slate-100 rounded-xl shadow-lg overflow-hidden z-50 py-1"
+                  >
+                    {languages.map((lang) => (
+                      <Link
+                        key={lang.code}
+                        href={getAlternateUrl(lang.code)}
+                        role="option"
+                        aria-selected={lang.code === locale}
+                        onClick={() => setLangOpen(false)}
+                        className={`flex items-center gap-3 px-4 py-2.5 text-sm transition-colors duration-200 ${lang.code === locale
+                          ? "bg-[#e8f4fd] hover:bg-[#d6ebfa] text-[#0A6EBD] font-600"
+                          : "text-slate-700 hover:bg-[#f0f7ff] hover:text-[#0A6EBD] font-500"
+                          }`}
+                      >
+                        <span aria-hidden="true" className="w-5 h-5 rounded-full overflow-hidden border border-slate-200 flex-shrink-0 flex items-center justify-center">
+                          <img
+                            src={`https://flagcdn.com/${lang.flagCode}.svg`}
+                            alt={lang.label}
+                            className="w-full h-full object-cover scale-110"
+                          />
+                        </span>
+                        <span>{lang.label}</span>
+                        {lang.code === locale && (
+                          <span className="ml-auto text-[#0A6EBD] text-xs font-bold">✓</span>
+                        )}
+                      </Link>
+                    ))}
+                  </div>
+                </>
               )}
             </div>
 
@@ -409,24 +393,98 @@ export default function Header({ locale = "en", alternateUrls }: HeaderProps) {
             </button>
           </div>
 
-          {/* Mobile Menu Toggle */}
-          <button
-            id="mobile-menu-toggle"
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="lg:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-50 transition-colors"
-            aria-expanded={menuOpen}
-            aria-label="Toggle navigation menu"
-          >
-            {menuOpen ? (
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
-          </button>
+          {/* Mobile Right Controls: Language Dropdown + Menu Toggle */}
+          <div className="flex items-center gap-2 lg:hidden">
+            {/* Mobile Language Dropdown */}
+            <div className="relative">
+              <button
+                id="mobile-lang-switcher-btn"
+                onClick={() => { setLangOpen(!langOpen); setMenuOpen(false); }}
+                className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl border border-slate-200 bg-slate-50 active:bg-slate-100 text-xs font-600 text-slate-700 transition-colors shadow-sm"
+                aria-expanded={langOpen}
+                aria-haspopup="listbox"
+                aria-label="Change language"
+              >
+                <span aria-hidden="true" className="w-4 h-4 rounded-full overflow-hidden border border-slate-200 flex-shrink-0 flex items-center justify-center">
+                  <img
+                    src={`https://flagcdn.com/${currentLang.flagCode}.svg`}
+                    alt={currentLang.label}
+                    className="w-full h-full object-cover scale-110"
+                  />
+                </span>
+                <span className="uppercase text-[11px] font-800 text-slate-800">{currentLang.code}</span>
+                <svg
+                  className={`w-3.5 h-3.5 text-slate-400 transition-transform duration-200 ${langOpen ? "rotate-180" : ""}`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              {langOpen && (
+                <>
+                  <div
+                    className="fixed inset-0 z-40 bg-black/15 backdrop-blur-[1px]"
+                    onClick={() => setLangOpen(false)}
+                  />
+                  <div
+                    role="listbox"
+                    aria-label="Languages"
+                    className="absolute right-0 mt-2 w-48 max-h-[70vh] overflow-y-auto bg-white border border-slate-100 rounded-2xl shadow-2xl z-50 py-1 divide-y divide-slate-50 animate-in fade-in slide-in-from-top-2 duration-150"
+                  >
+                    {languages.map((lang) => (
+                      <Link
+                        key={lang.code}
+                        href={getAlternateUrl(lang.code)}
+                        role="option"
+                        aria-selected={lang.code === locale}
+                        onClick={() => setLangOpen(false)}
+                        className={`flex items-center gap-2.5 px-3.5 py-2.5 text-xs transition-colors ${
+                          lang.code === locale
+                            ? "bg-[#e8f4fd] text-[#0A6EBD] font-700"
+                            : "text-slate-700 hover:bg-[#f0f7ff] hover:text-[#0A6EBD] font-500"
+                        }`}
+                      >
+                        <span aria-hidden="true" className="w-4 h-4 rounded-full overflow-hidden border border-slate-200 flex-shrink-0 flex items-center justify-center">
+                          <img
+                            src={`https://flagcdn.com/${lang.flagCode}.svg`}
+                            alt={lang.label}
+                            className="w-full h-full object-cover scale-110"
+                          />
+                        </span>
+                        <span>{lang.label}</span>
+                        {lang.code === locale && (
+                          <span className="ml-auto text-[#0A6EBD] text-xs font-bold">✓</span>
+                        )}
+                      </Link>
+                    ))}
+                  </div>
+                </>
+              )}
+            </div>
+
+            {/* Mobile Menu Toggle */}
+            <button
+              id="mobile-menu-toggle"
+              onClick={() => { setMenuOpen(!menuOpen); setLangOpen(false); }}
+              className="p-2 rounded-xl text-slate-600 hover:bg-slate-50 border border-slate-200 transition-colors shadow-sm"
+              aria-expanded={menuOpen}
+              aria-label="Toggle navigation menu"
+            >
+              {menuOpen ? (
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
