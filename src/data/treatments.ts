@@ -9,6 +9,7 @@ export const treatmentsData: Record<string, { title: string, subtitle: string, i
       { id: "throat", title: "Sore Throat & Colds", desc: "Tonsillitis, flu symptoms, and respiratory infections.", icon: "🤧", color: "bg-rose-100 text-rose-700" },
       { id: "injury", title: "Minor Injuries & Cuts", desc: "Sprains, minor cuts, jellyfish stings, and sea urchin wounds.", icon: "🩹", color: "bg-purple-100 text-purple-700" },
       { id: "prescriptions", title: "Lost Prescriptions", desc: "Replacement of lost or forgotten medication during your holidays.", icon: "💊", color: "bg-cyan-100 text-cyan-700" },
+      { id: "fit2fly", title: "Fit to Fly & Travel Certificates", desc: "Official airline medical clearance, cancellation certificates, and travel insurance reports.", icon: "✈️", color: "bg-indigo-100 text-indigo-700" },
     ]
   },
   es: {
@@ -21,6 +22,7 @@ export const treatmentsData: Record<string, { title: string, subtitle: string, i
       { id: "throat", title: "Dolor de Garganta y Resfriados", desc: "Amigdalitis, síntomas de gripe e infecciones respiratorias.", icon: "🤧", color: "bg-rose-100 text-rose-700" },
       { id: "injury", title: "Lesiones Leves y Cortes", desc: "Esguinces, pequeños cortes, picaduras de medusa y heridas por erizos de mar.", icon: "🩹", color: "bg-purple-100 text-purple-700" },
       { id: "prescriptions", title: "Recetas Perdidas", desc: "Reemplazo de medicación perdida u olvidada durante tus vacaciones.", icon: "💊", color: "bg-cyan-100 text-cyan-700" },
+      { id: "fit2fly", title: "Certificados Médicos Fit to Fly", desc: "Autorización médica oficial para volar, cancelación de vuelos e informes para el seguro de viaje.", icon: "✈️", color: "bg-indigo-100 text-indigo-700" },
     ]
   },
   de: {

@@ -123,14 +123,14 @@ function resolvePage(segments: string[]): PageType {
 
 const HOME_META: Record<Locale, { title: string; description: string }> = {
   en: {
-    title: "Private Doctor Málaga & Costa del Sol",
+    title: "24/7 Hotel Doctor & Urgent GP Visits in Marbella & Costa del Sol",
     description:
-      "Private English-speaking doctors available 24/7 for tourists across Costa del Sol. Fast hotel & home visits in Málaga and Marbella. Call or WhatsApp now.",
+      "English-speaking private doctor visits your hotel room, villa or holiday apartment in Marbella, Fuengirola, Benalmádena & Costa del Sol in 30–45 min. Fit to fly & travel insurance reports. Call or WhatsApp 24/7.",
   },
   es: {
-    title: "Médico a Domicilio y en Hoteles | Costa del Sol",
+    title: "Médico a Domicilio y en Hoteles 24h | Marbella y Costa del Sol",
     description:
-      "Médicos privados 24/7 para turistas en la Costa del Sol. Visitas urgentes a hoteles y apartamentos en Málaga y Marbella con informe para seguro. Llama ya.",
+      "Médico privado de urgencias 24/7 en tu hotel o domicilio en Marbella, Benalmádena, Fuengirola y Málaga en 30-45 min. Informes oficiales para seguros internacionales y certificados Fit to Fly. Llama ya.",
   },
   de: {
     title: "Arzt im Hotel & Hausbesuch | Costa del Sol",
@@ -251,6 +251,9 @@ export async function generateMetadata({
       "@type": "MedicalBusiness",
       "@id": `${siteUrl}/${locale === "en" ? city.localeSlugs["en"] : `${locale}/${city.localeSlugs[locale]}`}/#localbusiness`,
       name: "Urgent Care 24H",
+      alternateName: ["Interdocs Medical", "Interdocs Medical - Doctor Home & Hotel Visits"],
+      legalName: "Interdocs Medical",
+      medicalSpecialty: ["Emergency", "GeneralPractice"],
       description: city.description[locale],
       url: canonical,
       telephone: "+34637255224",
@@ -466,6 +469,18 @@ export default async function Page({
       "@type": "MedicalBusiness",
       "@id": `${siteUrl}/#organization`,
       name: "Urgent Care 24H",
+      alternateName: [
+        "Interdocs Medical",
+        "Interdocs Medical - Doctor Home & Hotel Visits",
+        "UrgentCare24H",
+      ],
+      legalName: "Interdocs Medical",
+      slogan: "24/7 Rapid-Response Private Doctor Visits to Hotels and Homes in Costa del Sol",
+      medicalSpecialty: [
+        "Emergency",
+        "GeneralPractice",
+        "PrimaryCare",
+      ],
       description: t.hero.subheadline,
       url: siteUrl,
       logo: `${siteUrl}/logo_new_v2.png`,
@@ -530,6 +545,7 @@ export default async function Page({
         "https://wa.me/34637255224",
         "https://www.facebook.com/profile.php?id=61594814065218",
         "https://www.instagram.com/urgentcare24h",
+        "https://www.instagram.com/interdocsmedical",
         "https://www.linkedin.com/company/urgentcare24h",
       ],
     };
