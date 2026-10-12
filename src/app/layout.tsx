@@ -15,11 +15,11 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: {
-    default: "Private Doctor Málaga & Costa del Sol | Urgent Care 24H",
+    default: "24/7 Hotel Doctor & Urgent Home Visits in Marbella & Costa del Sol | Urgent Care 24H",
     template: "%s | Urgent Care 24H",
   },
   description:
-    "Private English-speaking doctors available 24/7 for tourists across Costa del Sol. Fast hotel & home visits in Málaga and Marbella. Call or WhatsApp now.",
+    "English-speaking private doctor visits your hotel room, villa or holiday apartment in Marbella, Fuengirola, Benalmádena & Costa del Sol in 30–45 min. Fit to fly & travel insurance reports. Call or WhatsApp 24/7.",
   metadataBase: new URL(SITE_URL),
   // ── Canonical & alternates ──────────────────────────
   alternates: {
