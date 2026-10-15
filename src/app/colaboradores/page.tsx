@@ -270,7 +270,7 @@ export default function ColaboradoresPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="bg-slate-50 border border-slate-200/80 p-6 rounded-2xl space-y-3 hover:bg-sky-50/50 transition-colors">
                 <span className="text-3xl">⏱️</span>
-                <h4 className="font-bold text-slate-900 text-base">Llegada en 30-45 min</h4>
+                <h4 className="font-bold text-slate-900 text-base">Llegada en 30–60 min</h4>
                 <p className="text-xs text-slate-600 leading-relaxed">
                   Desplazamiento urgente directo al hotel o domicilio para no demorar la atención del paciente.
                 </p>
@@ -332,7 +332,7 @@ export default function ColaboradoresPage() {
                 </div>
                 <h4 className="font-bold text-slate-900 text-base">Desplazamiento Inmediato</h4>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  El médico de guardia se desplaza a la habitación o domicilio en un tiempo estimado de 30 a 45 minutos.
+                  El médico de guardia se desplaza a la habitación o domicilio en un tiempo estimado de 30 a 60 minutos.
                 </p>
               </div>
 
