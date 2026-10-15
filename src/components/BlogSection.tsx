@@ -203,15 +203,15 @@ export default function BlogSection({
             </p>
             <p className="text-slate-600 text-base sm:text-lg mb-6 leading-relaxed">
               {locale === "es"
-                ? "Médicos colegiados privados acuden a tu alojamiento en Málaga, Marbella y Costa del Sol en 30-60 minutos. Con receta médica oficial e informe para tu seguro de viaje."
+                ? "Médicos colegiados privados acuden a tu alojamiento en Málaga, Marbella y Costa del Sol en 30–60 minutos. Con receta médica oficial e informe para tu seguro de viaje."
                 : locale === "de"
                 ? "Privatarztbesuche in Málaga, Marbella und der Costa del Sol in 30–60 Minuten. Mit offiziellen Rezepten und Belegen für Ihre Reiseversicherung."
                 : locale === "fr"
-                ? "Nos médecins se déplacent dans votre chambre d'hôtel en 30 à 45 minutes avec ordonnance et rapport pour votre assurance."
+                ? "Nos médecins se déplacent dans votre chambre d'hôtel en 30 à 60 minutes avec ordonnance et rapport pour votre assurance."
                 : locale === "ru"
-                ? "Лицензированные частные врачи приедут к вам в течение 30-60 минут в Малаге, Марбелье и по всему побережью. Официальные рецепты и медицинские заключения для 100% компенсации по страховке."
+                ? "Лицензированные частные врачи приедут к вам в течение 30–60 минут в Малаге, Марбелье и по всему побережью. Официальные рецепты и медицинские заключения для 100% компенсации по страховке."
                 : locale === "nl"
-                ? "Gediplomeerde privéartsen arriveren binnen 30-60 minuten in uw accommodatie aan de Costa del Sol. Officiële medische rapporten en recepten voor 100% dekking door uw reisverzekering."
+                ? "Gediplomeerde privéartsen arriveren binnen 30–60 minuten in uw accommodatie aan de Costa del Sol. Officiële medische rapporten en recepten voor 100% dekking door uw reisverzekering."
                 : "Licensed private doctors arrive at your Costa del Sol accommodation in 30–60 minutes. Official medical receipts and prescriptions provided for 100% insurance claims."}
             </p>
             <div className="flex flex-wrap gap-4 items-center">

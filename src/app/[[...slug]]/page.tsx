@@ -123,59 +123,59 @@ function resolvePage(segments: string[]): PageType {
 
 const HOME_META: Record<Locale, { title: string; description: string }> = {
   en: {
-    title: "Hotel Doctor in Marbella & Costa del Sol",
+    title: "24/7 Doctor & Urgent Care Near You in Marbella & Costa del Sol",
     description:
-      "24/7 English-speaking doctor to your hotel room or villa in Marbella & Costa del Sol in 30-60 min. Fit to Fly & insurance reports. Call or WhatsApp now.",
+      "Need urgent care near you? English-speaking private doctor visits your hotel room, villa or apartment in Marbella & Costa del Sol in 30–60 min. Call or WhatsApp 24/7.",
   },
   es: {
-    title: "Médico a Domicilio y en Hoteles Marbella",
+    title: "Médico a Domicilio y en Hoteles 24h | Marbella y Costa del Sol",
     description:
-      "Médico privado 24/7 en tu hotel o domicilio en Marbella y Costa del Sol en 30-60 min. Certificados Fit to Fly e informes para seguro. Llama o escribe ahora.",
+      "Médico privado de urgencias 24/7 en tu hotel o domicilio en Marbella, Benalmádena, Fuengirola y Málaga en 30-60 min. Informes oficiales para seguros internacionales y certificados Fit to Fly. Llama ya.",
   },
   de: {
-    title: "Arzt im Hotel & Hausbesuch Costa del Sol",
+    title: "24/7 Arzt & Notfalldienst in Ihrer Nähe | Marbella & Costa del Sol",
     description:
-      "Privatarzt 24/7 für Touristen an der Costa del Sol. Schnelle Hotel- und Hausbesuche in Málaga und Marbella mit Versicherungsnachweis. Jetzt kontaktieren.",
+      "Arzt in Ihrer Nähe gesucht? Deutsch- und englischsprachiger Privatarzt besucht Ihr Hotelzimmer oder Apartment an der Costa del Sol in 30–60 Min. 24/7 erreichbar.",
   },
   fr: {
-    title: "Médecin à l'Hôtel & à Domicile",
+    title: "Médecin & Soins d'Urgence Près de Chez Vous | Marbella & Costa del Sol",
     description:
-      "Médecin privé 24h/24 à votre hôtel ou domicile sur la Costa del Sol en 30-60 min. Certificat Fit to Fly et facture pour assurance voyage. Contactez-nous.",
+      "Besoin d'un médecin près de chez vous ? Médecin privé se déplaçant à votre hôtel ou appartement à Marbella et Costa del Sol en 30–60 min. Facture d'assurance.",
   },
   fi: {
-    title: "Lääkäri Hotelliin ja Kotiin Costa del Sol",
+    title: "24/7 Lääkäri & Päivystys Lähelläsi | Marbella & Costa del Sol",
     description:
-      "Yksityislääkäri 24/7 Costa del Solilla. Nopeat lääkärikäynnit hotellille tai asunnolle Marbellassa ja Málagassa. Kuitit vakuutukseen. Ota yhteyttä heti.",
+      "Tarvitsetko lääkäriä lähelläsi? Yksityislääkäri vierailee hotellihuoneessasi tai asunnossasi Costa del Solilla 30–60 minuutissa. Kuitit vakuutukseen.",
   },
   ar: {
-    title: "طبيب في الفندق والمنزل كوستا ديل سول",
+    title: "طبيب ورعاية عاجلة بالقرب منك 24/7 | ماربيلا وكوستا ديل سول",
     description:
-      "طبيب خاص 24/7 للسياح في كوستا ديل سول. زيارات سريعة للفنادق والشقق في ماربيلا ومالقة مع تقارير لشركات التأمين وشهادات السفر. اتصل بنا الآن.",
+      "هل تبحث عن طبيب بالقرب منك؟ أطباء خصوصيون يزورون غرفتك في الفندق أو شقتك في كوستا ديل سول خلال 30-60 دقيقة. تقارير طبية رسمية لشركات التأمين.",
   },
   no: {
-    title: "Lege på Hotell og Hjemmebesøk Costa del Sol",
+    title: "24/7 Lege & Akutthjelp i Nærheten | Marbella & Costa del Sol",
     description:
-      "Privatlege 24/7 for turister på Costa del Sol. Raske legebesøk til hotell eller leilighet i Marbella og Málaga med rapport til reiseforsikring. Ring nå.",
+      "Trenger du lege i nærheten? Engelsktalende privatlege besøker ditt hotellrom eller leilighet på Costa del Sol innen 30–60 min. Rapporter for reiseforsikring.",
   },
   da: {
-    title: "Læge på Hotel og Hjemmebesøg Costa del Sol",
+    title: "24/7 Læge & Akuthjælp Nær Dig | Marbella & Costa del Sol",
     description:
-      "Privat læge 24/7 for turister på Costa del Sol. Hurtigt lægebesøg på dit hotel i Marbella og Málaga med kvittering til rejseforsikring. Kontakt os nu.",
+      "Har du brug for en læge nær dig? Engelsktalende privatlæge besøger dit hotelværelse eller feriebolig på Costa del Sol inden for 30–60 min. Forsikringsrapporter.",
   },
   sv: {
-    title: "Läkare på Hotell och Hembesök Costa del Sol",
+    title: "24/7 Läkare & Akutvård Nära Dig | Marbella & Costa del Sol",
     description:
-      "Privatläkare 24/7 för turister på Costa del Sol. Snabba läkarbesök till hotell eller lägenhet i Marbella och Málaga med läkarintyg för försäkring. Ring.",
+      "Behöver du läkare nära dig? Engelsktalande privatläkare besöker ditt hotellrum eller lägenhet på Costa del Sol inom 30–60 min. Läkarintyg för försäkring.",
   },
   ru: {
-    title: "Врач в отель и на дом в Марбелье и Малаге",
+    title: "24/7 Частный врач рядом с вами | Марбелья и Коста-дель-Соль",
     description:
-      "Частный врач 24/7 для туристов на Коста-дель-Соль. Выезд в отель или апартаменты в Марбелье и Малаге за 30-60 мин. Справки для страховки. Звоните.",
+      "Нужен врач рядом с вами? Англо- и русскоязычный частный доктор приедет в ваш отель или апартаменты на Коста-дель-Соль за 30–60 минут. Документы для страховки.",
   },
   nl: {
-    title: "Arts in Hotel & Huisbezoek Costa del Sol",
+    title: "24/7 Arts & Spoedzorg in de Buurt | Marbella & Costa del Sol",
     description:
-      "Particuliere arts 24/7 aan de Costa del Sol. Snelle hotel- en huisbezoeken in Marbella en Málaga met factuur voor reisverzekering. Bel direct.",
+      "Arts in de buurt nodig? Meertalige privéarts bezoekt uw hotelkamer of appartement aan de Costa del Sol binnen 30–60 min. Officiële declaratie voor reisverzekering.",
   },
 };
 
@@ -251,7 +251,12 @@ export async function generateMetadata({
       "@type": "MedicalBusiness",
       "@id": `${siteUrl}/${locale === "en" ? city.localeSlugs["en"] : `${locale}/${city.localeSlugs[locale]}`}/#localbusiness`,
       name: "Urgent Care 24H",
-      alternateName: ["Interdocs Medical", "Interdocs Medical - Doctor Home & Hotel Visits"],
+      alternateName: [
+        "Interdocs Medical",
+        "Interdocs Medical - Doctor Home & Hotel Visits",
+        `Doctor & Urgent Care in ${city.name}`,
+        `Urgent Care Near You - ${city.name}`,
+      ],
       legalName: "Interdocs Medical",
       medicalSpecialty: ["Emergency", "GeneralPractice"],
       description: city.description[locale],
