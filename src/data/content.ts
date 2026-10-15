@@ -222,7 +222,7 @@ export const translations = {
       trusts: [
         "Médicos Colegiados en Inglés y Español",
         "Visitas a Hoteles y Villas en 30–60 Min",
-        "Certificados Médicos y Fit to Fly",
+        "Certificados Fit to Fly y Bajas Oficiales",
         "Facturas e Informes para Seguros Médicos",
         "Atención 24/7 Adultos y Pediatría",
       ],
@@ -261,7 +261,7 @@ export const translations = {
         { icon: "home", title: "Médico en Apartamento y Villa", desc: "Atención médica rápida en apartamentos vacacionales, residencias y villas privadas en toda la Costa del Sol." },
         { icon: "emergency", title: "Urgencias Médicas Domiciliarias", desc: "Asistencia médica urgente ante gastroenteritis, fiebre aguda, infecciones, cólicos y patologías repentinas." },
         { icon: "prescription", title: "Recetas Médicas Oficiales", desc: "Prescripción de antibióticos, analgésicos y tratamientos de urgencia válidos en farmacias de guardia 24 horas." },
-        { icon: "certificate", title: "Certificados Médicos y Fit to Fly", desc: "Emisión de certificados de aptitud para volar (Fit to Fly), justificantes médicos para cancelación de viaje e informes para aseguradoras." },
+        { icon: "certificate", title: "Certificados Fit to Fly y Bajas", desc: "Emisión de certificados de aptitud para volar (Fit to Fly), partes de cancelación de viaje e informes para aseguradoras." },
         { icon: "tourist", title: "Atención Médica al Turista", desc: "Asistencia médica internacional especializada para turistas extranjeros y residentes con cobertura en múltiples idiomas." },
         { icon: "gp", title: "Medicina General (GP)", desc: "Consulta clínica completa con toma de constantes, exploración física, medicación in situ y pauta de tratamiento." },
         {
