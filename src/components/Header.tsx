@@ -257,10 +257,11 @@ export default function Header({ locale = "en", alternateUrls }: HeaderProps) {
                 </div>
                 <p className="text-[11px] sm:text-xs lg:text-[12px] text-[#0A6EBD] font-600 uppercase tracking-[0.2em] mt-1 transition-opacity duration-200 group-hover:opacity-80 whitespace-nowrap">
                   Home Doctor Service
+                  <span className="sm:hidden font-bold text-slate-400 lowercase tracking-normal"> · by <span className="text-slate-600 capitalize">Interdocs</span></span>
                 </p>
               </div>
 
-              {/* Interdocs Medical en el hueco blanco a la derecha (+25% tamaño) */}
+              {/* Interdocs Medical en el hueco blanco a la derecha */}
               <div className="hidden sm:flex flex-col justify-center pl-3.5 sm:pl-4 border-l-2 border-slate-200/90 leading-tight">
                 <span className="text-[11px] sm:text-[12px] uppercase font-700 tracking-widest text-slate-400 mb-0.5">
                   by
@@ -272,16 +273,16 @@ export default function Header({ locale = "en", alternateUrls }: HeaderProps) {
             </div>
           </Link>
 
-          {/* Desktop Nav */}
+          {/* Desktop Nav with guaranteed left margin to prevent any collision */}
           <nav
-            className="hidden lg:flex items-center gap-4 xl:gap-7 2xl:gap-8"
+            className="hidden lg:flex items-center gap-3.5 xl:gap-6 2xl:gap-8 ml-6 xl:ml-8"
             aria-label="Main navigation"
           >
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="relative text-sm xl:text-base font-600 text-slate-600 hover:text-[#0A6EBD] transition-colors duration-200 after:absolute after:bottom-[-3px] after:left-0 after:h-[2px] after:w-0 after:bg-[#0A6EBD] after:rounded-full after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
+                className="relative text-[13px] xl:text-[15px] font-600 text-slate-600 hover:text-[#0A6EBD] transition-colors duration-200 after:absolute after:bottom-[-3px] after:left-0 after:h-[2px] after:w-0 after:bg-[#0A6EBD] after:rounded-full after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
               >
                 {link.label}
               </Link>
@@ -368,11 +369,11 @@ export default function Header({ locale = "en", alternateUrls }: HeaderProps) {
             <a
               href={PHONE_URL}
               id="header-call-btn"
-              className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-slate-900 text-white text-sm font-700 hover:bg-slate-700 transition-colors duration-200"
+              className="flex items-center gap-2 px-3 xl:px-4 py-2.5 rounded-xl bg-slate-900 text-white text-xs xl:text-sm font-700 hover:bg-slate-700 transition-colors duration-200"
               aria-label={`${t.call} ${PHONE_NUMBER}`}
             >
               <svg
-                className="w-4 h-4 text-sky-400"
+                className="w-4 h-4 text-sky-400 flex-shrink-0"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -385,7 +386,8 @@ export default function Header({ locale = "en", alternateUrls }: HeaderProps) {
                   d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                 />
               </svg>
-              <span>{PHONE_NUMBER}</span>
+              <span className="hidden xl:inline">{PHONE_NUMBER}</span>
+              <span className="xl:hidden">{t.call}</span>
             </a>
 
             <button
@@ -504,6 +506,17 @@ export default function Header({ locale = "en", alternateUrls }: HeaderProps) {
             className="lg:hidden border-t border-slate-100 py-4"
             aria-label="Mobile navigation"
           >
+            {/* Endorsed brand banner in mobile drawer */}
+            <div className="px-3.5 py-2.5 mb-3 mx-1 flex items-center justify-between bg-slate-50 border border-slate-200/80 rounded-xl">
+              <div className="flex items-center gap-1.5">
+                <span className="text-[11px] uppercase font-700 tracking-wider text-slate-400">by</span>
+                <span className="text-xs font-700 text-slate-800">Interdocs<span className="text-[#0A6EBD]"> Medical</span></span>
+              </div>
+              <span className="text-[10px] font-700 text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                24/7 Home & Hotel
+              </span>
+            </div>
+
             <ul className="space-y-1">
               {links.map((link) => (
                 <li key={link.href}>
