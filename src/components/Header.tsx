@@ -234,7 +234,7 @@ export default function Header({ locale = "en", alternateUrls }: HeaderProps) {
           {/* Logo */}
           <Link
             href={localePaths[locale] || "/"}
-            className="flex items-center gap-2.5 sm:gap-3 group flex-shrink-0"
+            className="flex items-center gap-2 sm:gap-3 group min-w-0 flex-shrink"
             aria-label="Urgent Care 24H - Home"
           >
             <Image
@@ -243,26 +243,25 @@ export default function Header({ locale = "en", alternateUrls }: HeaderProps) {
               width={200}
               height={80}
               priority
-              className="h-14 sm:h-16 lg:h-18 w-auto object-contain transition-transform duration-300 group-hover:scale-105 flex-shrink-0"
+              className="h-10 sm:h-16 lg:h-18 w-auto object-contain transition-transform duration-300 group-hover:scale-105 flex-shrink-0"
             />
-            <div className="flex items-center gap-3 sm:gap-3.5 whitespace-nowrap">
-              <div className="flex flex-col justify-center">
-                <div className="flex items-center gap-2 leading-none whitespace-nowrap">
-                  <span className="text-xl sm:text-2xl lg:text-[25px] font-800 text-slate-900 tracking-tight uppercase whitespace-nowrap">
+            <div className="flex items-center gap-2 sm:gap-3.5 min-w-0">
+              <div className="flex flex-col justify-center min-w-0">
+                <div className="flex items-center gap-1.5 sm:gap-2 leading-none">
+                  <span className="text-base sm:text-2xl lg:text-[25px] font-800 text-slate-900 tracking-tight uppercase whitespace-nowrap">
                     Urgent Care
                   </span>
-                  <span className="bg-[#0A6EBD] text-white text-xs sm:text-sm font-800 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md sm:rounded-lg tracking-normal inline-flex items-center justify-center shadow-xs whitespace-nowrap">
+                  <span className="bg-[#0A6EBD] text-white text-[10px] sm:text-sm font-800 px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-md sm:rounded-lg tracking-normal inline-flex items-center justify-center shadow-xs whitespace-nowrap">
                     24H
                   </span>
                 </div>
-                <p className="text-[11px] sm:text-xs lg:text-[12px] text-[#0A6EBD] font-600 uppercase tracking-[0.2em] mt-1 transition-opacity duration-200 group-hover:opacity-80 whitespace-nowrap">
+                <p className="text-[10px] sm:text-xs lg:text-[12px] text-[#0A6EBD] font-700 uppercase tracking-wider sm:tracking-[0.2em] mt-0.5 sm:mt-1 truncate">
                   Home Doctor Service
-                  <span className="sm:hidden font-bold text-slate-400 lowercase tracking-normal"> · by <span className="text-slate-600 capitalize">Interdocs</span></span>
                 </p>
               </div>
 
-              {/* Interdocs Medical en el hueco blanco a la derecha */}
-              <div className="hidden sm:flex flex-col justify-center pl-3.5 sm:pl-4 border-l-2 border-slate-200/90 leading-tight">
+              {/* Interdocs Medical en el hueco blanco a la derecha (tablet/desktop) */}
+              <div className="hidden sm:flex flex-col justify-center pl-3.5 sm:pl-4 border-l-2 border-slate-200/90 leading-tight flex-shrink-0">
                 <span className="text-[11px] sm:text-[12px] uppercase font-700 tracking-widest text-slate-400 mb-0.5">
                   by
                 </span>
