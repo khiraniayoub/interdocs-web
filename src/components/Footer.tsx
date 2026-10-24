@@ -58,8 +58,13 @@ export default function Footer({ disclaimer, rights, locale }: FooterProps) {
               </div>
             </Link>
 
-            <p className="text-slate-400 text-sm leading-relaxed max-w-md mb-6">
+            <p className="text-slate-400 text-sm leading-relaxed max-w-md mb-3">
               {disclaimer}
+            </p>
+            <p className="text-slate-400 text-xs leading-relaxed max-w-md mb-6">
+              {locale === "es"
+                ? "Servicio médico urgente a domicilio y hotel operado por Interdocs Medical en Málaga y la Costa del Sol."
+                : "Urgent home & hotel medical service operated by Interdocs Medical across Málaga and Costa del Sol."}
             </p>
 
             {/* Emergency notice */}
@@ -99,6 +104,25 @@ export default function Footer({ disclaimer, rights, locale }: FooterProps) {
                   <span className="text-[11px] text-slate-400 mt-0.5">24/7 Costa del Sol</span>
                 </div>
               </div>
+
+              <a
+                href="https://www.google.com/maps/place/Interdocs+Medical+-+Doctor+Home+%26+Hotel+Visits/@36.5852582,-4.7515889,10z/data=!3m1!4b1!4m6!3m5!1s0xa523e2833cf68091:0x24b8d10697f305a!8m2!3d36.5852582!4d-4.7515889!16s%2Fg%2F11nw7l0nyg?entry=ttu"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-slate-800/90 border border-slate-700/80 hover:border-[#4285F4]/70 rounded-xl p-3 inline-flex items-center gap-3 w-64 shadow-lg transition-all group"
+                aria-label="Ver ficha verificada de Interdocs Medical en Google Maps"
+              >
+                <div className="w-9 h-9 rounded-lg bg-[#4285F4]/15 border border-[#4285F4]/30 flex items-center justify-center flex-shrink-0 text-[#4285F4] font-extrabold text-base group-hover:scale-105 transition-transform">
+                  G
+                </div>
+                <div className="flex flex-col text-left">
+                  <span className="font-700 text-xs text-white leading-tight flex items-center gap-1.5">
+                    <span>Google Maps Verified</span>
+                    <span className="text-amber-400 text-[10px]">★★★★★</span>
+                  </span>
+                  <span className="text-[11px] text-slate-400 mt-0.5">Interdocs Medical · 24/7</span>
+                </div>
+              </a>
 
               {/* Social Media Links */}
               <div className="flex items-center gap-2.5">
@@ -369,7 +393,7 @@ export default function Footer({ disclaimer, rights, locale }: FooterProps) {
             <span className="bg-[#0A6EBD] text-white text-[10px] font-800 px-1.5 py-0.5 rounded tracking-normal inline-flex items-center justify-center">
               24H
             </span>
-            <span>. {rights}</span>
+            <span>· Interdocs Medical. {rights}</span>
           </p>
           <p className="text-slate-600 text-xs">Costa del Sol · Málaga · Spain</p>
         </div>

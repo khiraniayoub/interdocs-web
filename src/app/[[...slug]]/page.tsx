@@ -180,6 +180,165 @@ const HOME_META: Record<Locale, { title: string; description: string }> = {
 };
 
 // ────────────────────────────────────────────────────────────
+// Google Maps Entity & Schema Helpers
+// ────────────────────────────────────────────────────────────
+const GOOGLE_MAPS_URL =
+  "https://www.google.com/maps/place/Interdocs+Medical+-+Doctor+Home+%26+Hotel+Visits/@36.5852582,-4.7515889,10z/data=!3m1!4b1!4m6!3m5!1s0xa523e2833cf68091:0x24b8d10697f305a!8m2!3d36.5852582!4d-4.7515889!16s%2Fg%2F11nw7l0nyg?entry=ttu";
+
+export function buildCitySchema(
+  city: (typeof CITIES)[0],
+  locale: Locale,
+  canonical: string
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "@id": `${canonical}#medicalbusiness`,
+    name: `Urgent Care 24H · Doctor in ${city.name}`,
+    alternateName: [
+      "Interdocs Medical",
+      "Interdocs Medical - Doctor Home & Hotel Visits",
+      `Doctor & Urgent Care in ${city.name}`,
+      `Urgent Care Near You - ${city.name}`,
+      `Private Doctor ${city.name}`,
+    ],
+    legalName: "Interdocs Medical",
+    medicalSpecialty: ["Emergency", "GeneralPractice", "PrimaryCare"],
+    description: city.description[locale],
+    url: canonical,
+    telephone: "+34637255224",
+    email: "contact@urgentcare24h.com",
+    priceRange: "€€",
+    paymentAccepted: "Cash, Credit Card, Travel Insurance",
+    currenciesAccepted: "EUR",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: city.name,
+      addressRegion: "Andalucía",
+      addressCountry: "ES",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: city.geo.lat,
+      longitude: city.geo.lng,
+    },
+    hasMap: GOOGLE_MAPS_URL,
+    sameAs: [
+      GOOGLE_MAPS_URL,
+      "https://wa.me/34637255224",
+      "https://www.instagram.com/urgentcare24h",
+      "https://www.instagram.com/interdocsmedical",
+    ],
+    areaServed: { "@type": "City", name: city.name },
+    availableLanguage: [
+      "English",
+      "Spanish",
+      "German",
+      "French",
+      "Finnish",
+      "Arabic",
+      "Norwegian",
+      "Danish",
+      "Swedish",
+      "Russian",
+      "Dutch",
+    ],
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ],
+      opens: "00:00",
+      closes: "23:59",
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+34637255224",
+      email: "contact@urgentcare24h.com",
+      contactType: "customer service",
+      availableLanguage: ["English", "Spanish"],
+      areaServed: "ES",
+    },
+  };
+}
+
+export function buildCityBreadcrumbs(
+  city: (typeof CITIES)[0],
+  siteUrl: string,
+  canonical: string
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: `${siteUrl}/`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: city.name,
+        item: canonical,
+      },
+    ],
+  };
+}
+
+export function buildBlogPostSchema(
+  post: (typeof BLOG_POSTS)[0],
+  locale: Locale,
+  siteUrl: string,
+  canonical: string
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title[locale],
+    description: post.excerpt[locale],
+    url: canonical,
+    datePublished: post.date,
+    dateModified: post.dateModified,
+    author: {
+      "@type": "MedicalBusiness",
+      name: "Interdocs Medical · Urgent Care 24H",
+      url: siteUrl,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Interdocs Medical",
+      url: siteUrl,
+      logo: `${siteUrl}/mi_logo.webp`,
+    },
+  };
+}
+
+export function buildBlogBreadcrumbs(
+  post: (typeof BLOG_POSTS)[0],
+  locale: Locale,
+  siteUrl: string,
+  canonical: string
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/` },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${siteUrl}/blog/` },
+      { "@type": "ListItem", position: 3, name: post.title[locale], item: canonical },
+    ],
+  };
+}
+
+// ────────────────────────────────────────────────────────────
 // Metadata generation
 // ────────────────────────────────────────────────────────────
 export async function generateMetadata({
@@ -245,71 +404,7 @@ export async function generateMetadata({
       altLangs[loc] =
         loc === "en" ? `${siteUrl}/${ls}/` : `${siteUrl}/${loc}/${ls}/`;
     }
-
-    const localBusinessSchema = {
-      "@context": "https://schema.org",
-      "@type": "MedicalBusiness",
-      "@id": `${siteUrl}/${locale === "en" ? city.localeSlugs["en"] : `${locale}/${city.localeSlugs[locale]}`}/#localbusiness`,
-      name: "Urgent Care 24H",
-      alternateName: ["Interdocs Medical", "Interdocs Medical - Doctor Home & Hotel Visits"],
-      legalName: "Interdocs Medical",
-      medicalSpecialty: ["Emergency", "GeneralPractice"],
-      description: city.description[locale],
-      url: canonical,
-      telephone: "+34637255224",
-      email: "contact@urgentcare24h.com",
-      priceRange: "€€",
-      paymentAccepted: "Cash, Credit Card, Travel Insurance",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: city.name,
-        addressRegion: "Andalucía",
-        addressCountry: "ES",
-      },
-      geo: {
-        "@type": "GeoCoordinates",
-        latitude: city.geo.lat,
-        longitude: city.geo.lng,
-      },
-      hasMap: `https://maps.google.com/?q=doctor+${encodeURIComponent(city.name)}+Spain`,
-      areaServed: { "@type": "City", name: city.name },
-      availableLanguage: ["English", "Spanish", "German", "French", "Finnish", "Arabic", "Norwegian", "Danish", "Swedish", "Russian", "Dutch"],
-      openingHoursSpecification: {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: [
-          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday",
-        ],
-        opens: "00:00",
-        closes: "23:59",
-      },
-      contactPoint: {
-        "@type": "ContactPoint",
-        telephone: "+34637255224",
-        email: "contact@urgentcare24h.com",
-        contactType: "customer service",
-        availableLanguage: ["English", "Spanish"],
-        areaServed: "ES",
-      },
-    };
-
-    const breadcrumbSchema = {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: "Home",
-          item: `${siteUrl}/`,
-        },
-        {
-          "@type": "ListItem",
-          position: 2,
-          name: city.name,
-          item: canonical,
-        },
-      ],
-    };
+    altLangs["x-default"] = `${siteUrl}/${city.localeSlugs.en}/`;
 
     return {
       title: city.metaTitle[locale],
@@ -329,10 +424,6 @@ export async function generateMetadata({
         title: city.h1[locale],
         description: city.metaDesc[locale],
         images: [`${siteUrl}/hero.png`],
-      },
-      other: {
-        "script:ld+json:localbusiness": JSON.stringify(localBusinessSchema),
-        "script:ld+json:breadcrumb": JSON.stringify(breadcrumbSchema),
       },
     };
   }
@@ -361,6 +452,7 @@ export async function generateMetadata({
           sv: `${siteUrl}/sv/blog/`,
           ru: `${siteUrl}/ru/blog/`,
           nl: `${siteUrl}/nl/blog/`,
+          "x-default": `${siteUrl}/blog/`,
         },
       },
     };
@@ -374,35 +466,6 @@ export async function generateMetadata({
         ? `${siteUrl}/blog/${localeSlug}/`
         : `${siteUrl}/${locale}/blog/${localeSlug}/`;
 
-    const articleSchema = {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      headline: post.title[locale],
-      description: post.excerpt[locale],
-      url: canonical,
-      datePublished: post.date,
-      dateModified: post.dateModified,
-      author: {
-        "@type": "Organization",
-        name: "Urgent Care 24H",
-      },
-      publisher: {
-        "@type": "Organization",
-        name: "Urgent Care 24H",
-        url: siteUrl,
-      },
-    };
-
-    const breadcrumbBlogSchema = {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/` },
-        { "@type": "ListItem", position: 2, name: "Blog", item: `${siteUrl}/blog/` },
-        { "@type": "ListItem", position: 3, name: post.title[locale], item: canonical },
-      ],
-    };
-
     const altLangs: Record<string, string> = {};
     for (const [loc, ls] of Object.entries(post.localeSlugs)) {
       altLangs[loc] =
@@ -410,6 +473,7 @@ export async function generateMetadata({
           ? `${siteUrl}/blog/${ls}/`
           : `${siteUrl}/${loc}/blog/${ls}/`;
     }
+    altLangs["x-default"] = `${siteUrl}/blog/${post.localeSlugs.en}/`;
 
     return {
       title: post.metaTitle[locale],
@@ -432,10 +496,6 @@ export async function generateMetadata({
         title: post.title[locale],
         description: post.excerpt[locale],
         images: [`${siteUrl}/hero.png`],
-      },
-      other: {
-        "script:ld+json:article": JSON.stringify(articleSchema),
-        "script:ld+json:breadcrumb": JSON.stringify(breadcrumbBlogSchema),
       },
     };
   }
@@ -472,7 +532,7 @@ export default async function Page({
       alternateName: [
         "Interdocs Medical",
         "Interdocs Medical - Doctor Home & Hotel Visits",
-        "UrgentCare24H",
+        "Urgent Care 24H Costa del Sol",
       ],
       legalName: "Interdocs Medical",
       slogan: "24/7 Rapid-Response Private Doctor Visits to Hotels and Homes in Costa del Sol",
@@ -483,7 +543,7 @@ export default async function Page({
       ],
       description: t.hero.subheadline,
       url: siteUrl,
-      logo: `${siteUrl}/logo_new_v2.png`,
+      logo: `${siteUrl}/mi_logo.webp`,
       image: `${siteUrl}/hero.png`,
       telephone: "+34637255224",
       email: "contact@urgentcare24h.com",
@@ -495,14 +555,13 @@ export default async function Page({
         addressLocality: "Málaga",
         addressRegion: "Andalucía",
         addressCountry: "ES",
-        postalCode: "29001",
       },
       geo: {
         "@type": "GeoCoordinates",
         latitude: 36.7213,
         longitude: -4.4214,
       },
-      hasMap: "https://maps.google.com/?q=Malaga,Spain",
+      hasMap: GOOGLE_MAPS_URL,
       areaServed: [
         { "@type": "City", name: "Málaga" },
         { "@type": "City", name: "Marbella" },
@@ -538,10 +597,10 @@ export default async function Page({
         email: "contact@urgentcare24h.com",
         contactType: "customer service",
         availableLanguage: ["English", "Spanish", "German", "French"],
-        contactOption: "TollFree",
         areaServed: "ES",
       },
       sameAs: [
+        GOOGLE_MAPS_URL,
         "https://wa.me/34637255224",
         "https://www.facebook.com/profile.php?id=61594814065218",
         "https://www.instagram.com/urgentcare24h",
@@ -555,14 +614,9 @@ export default async function Page({
       "@type": "WebSite",
       "@id": `${siteUrl}/#website`,
       url: siteUrl,
-      name: "Urgent Care 24H",
+      name: "Urgent Care 24H · Interdocs Medical",
       description: "Private doctors available 24/7 for tourists across the Costa del Sol",
       publisher: { "@id": `${siteUrl}/#organization` },
-      potentialAction: {
-        "@type": "SearchAction",
-        target: { "@type": "EntryPoint", urlTemplate: `${siteUrl}/?s={search_term_string}` },
-        "query-input": "required name=search_term_string",
-      },
     };
 
     const homeAlternates: Record<string, string> = {
@@ -654,6 +708,16 @@ export default async function Page({
   // ── City Page ──────────────────────────────────────────
   if (page.type === "city") {
     const { city } = page;
+    const siteUrl = SITE_URL;
+    const localeSlug = city.localeSlugs[locale];
+    const canonical =
+      locale === "en"
+        ? `${siteUrl}/${localeSlug}/`
+        : `${siteUrl}/${locale}/${localeSlug}/`;
+
+    const localBusinessSchema = buildCitySchema(city, locale, canonical);
+    const breadcrumbSchema = buildCityBreadcrumbs(city, siteUrl, canonical);
+
     const cityAlternates: Record<string, string> = {};
     for (const [loc, ls] of Object.entries(city.localeSlugs)) {
       cityAlternates[loc] = loc === "en" ? `/${ls}/` : `/${loc}/${ls}/`;
@@ -661,6 +725,14 @@ export default async function Page({
 
     return (
       <>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
         <Header locale={locale} alternateUrls={cityAlternates} />
         <main id="main-content">
           {/* City Hero */}
@@ -823,6 +895,16 @@ export default async function Page({
   // ── Blog Post ──────────────────────────────────────────
   if (page.type === "blog-post") {
     const { post } = page;
+    const siteUrl = SITE_URL;
+    const localeSlug = post.localeSlugs[locale];
+    const canonical =
+      locale === "en"
+        ? `${siteUrl}/blog/${localeSlug}/`
+        : `${siteUrl}/${locale}/blog/${localeSlug}/`;
+
+    const articleSchema = buildBlogPostSchema(post, locale, siteUrl, canonical);
+    const breadcrumbBlogSchema = buildBlogBreadcrumbs(post, locale, siteUrl, canonical);
+
     const blogPostAlternates: Record<string, string> = {};
     for (const [loc, ls] of Object.entries(post.localeSlugs)) {
       blogPostAlternates[loc] = loc === "en" ? `/blog/${ls}/` : `/${loc}/blog/${ls}/`;
@@ -830,6 +912,14 @@ export default async function Page({
 
     return (
       <>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbBlogSchema) }}
+        />
         <Header locale={locale} alternateUrls={blogPostAlternates} />
         <main id="main-content">
           <BlogSection

@@ -209,10 +209,10 @@ export default function BlogSection({
                 : locale === "fr"
                 ? "Nos médecins se déplacent dans votre chambre d'hôtel en 30 à 60 minutes avec ordonnance et rapport pour votre assurance."
                 : locale === "ru"
-                ? "Лицензированные частные врачи приедут к вам в течение 30–60 минут в Малаге, Марбелье и по всему побережью. Официальные рецепты и медицинские заключения для 100% компенсации по страховке."
+                ? "Лицензированные частные врачи приедут к вам в течение 30–60 минут в Малаге, Марбелье и по всему побережью. Официальные рецепты и медицинские заключения для вашей страховки."
                 : locale === "nl"
-                ? "Gediplomeerde privéartsen arriveren binnen 30–60 minuten in uw accommodatie aan de Costa del Sol. Officiële medische rapporten en recepten voor 100% dekking door uw reisverzekering."
-                : "Licensed private doctors arrive at your Costa del Sol accommodation in 30–60 minutes. Official medical receipts and prescriptions provided for 100% insurance claims."}
+                ? "Gediplomeerde privéartsen arriveren binnen 30–60 minuten in uw accommodatie aan de Costa del Sol. Officiële medische rapporten en recepten voor uw reisverzekering."
+                : "Licensed private doctors arrive at your Costa del Sol accommodation in 30–60 minutes. Official medical receipts and prescriptions provided for your travel insurance claim."}
             </p>
             <div className="flex flex-wrap gap-4 items-center">
               <a

@@ -77,7 +77,7 @@ export const translations = {
         {
           step: "4",
           title: "Receive Medical Care & Reports",
-          desc: "The doctor treats you, issues prescriptions and delivers an official clinical report with invoice for your travel insurance reimbursement.",
+          desc: "The doctor treats you, issues prescriptions and delivers an official clinical report with invoice for your travel insurance claim.",
         },
       ],
     },
@@ -222,7 +222,7 @@ export const translations = {
       trusts: [
         "Médicos Colegiados en Inglés y Español",
         "Visitas a Hoteles y Villas en 30–60 Min",
-        "Certificados Fit to Fly y Bajas Oficiales",
+        "Certificados Fit to Fly e Informes Médicos",
         "Facturas e Informes para Seguros Médicos",
         "Atención 24/7 Adultos y Pediatría",
       ],
@@ -261,7 +261,7 @@ export const translations = {
         { icon: "home", title: "Médico en Apartamento y Villa", desc: "Atención médica rápida en apartamentos vacacionales, residencias y villas privadas en toda la Costa del Sol." },
         { icon: "emergency", title: "Urgencias Médicas Domiciliarias", desc: "Asistencia médica urgente ante gastroenteritis, fiebre aguda, infecciones, cólicos y patologías repentinas." },
         { icon: "prescription", title: "Recetas Médicas Oficiales", desc: "Prescripción de antibióticos, analgésicos y tratamientos de urgencia válidos en farmacias de guardia 24 horas." },
-        { icon: "certificate", title: "Certificados Fit to Fly y Bajas", desc: "Emisión de certificados de aptitud para volar (Fit to Fly), partes de cancelación de viaje e informes para aseguradoras." },
+        { icon: "certificate", title: "Certificados Médicos y Fit to Fly", desc: "Emisión de certificados de aptitud para volar (Fit to Fly), partes de cancelación de viaje e informes para aseguradoras." },
         { icon: "tourist", title: "Atención Médica al Turista", desc: "Asistencia médica internacional especializada para turistas extranjeros y residentes con cobertura en múltiples idiomas." },
         { icon: "gp", title: "Medicina General (GP)", desc: "Consulta clínica completa con toma de constantes, exploración física, medicación in situ y pauta de tratamiento." },
         {
@@ -283,7 +283,7 @@ export const translations = {
         { q: "¿Cuánto tarda en llegar el médico?", a: "El tiempo medio habitual de llegada a tu hotel o domicilio es de 30 a 60 minutos tras confirmar el aviso." },
         { q: "¿Hablan los médicos en inglés?", a: "Sí. Todos nuestros facultativos hablan inglés fluido, además de español, y contamos con médicos con dominio de alemán y francés." },
         { q: "¿Puedo obtener un certificado médico 'Fit to Fly'?", a: "Sí. Si una enfermedad o lesión te impide volar o necesitas autorización médica para tu aerolínea, el médico te examina y emite el certificado oficial Fit to Fly en el acto." },
-        { q: "¿Puedo usar mi seguro de viaje internacional?", a: "Sí. Entregamos un informe médico completo con diagnóstico codificado (CIE-10 / ICD-10) y factura desglosada válida para reembolso directo con Bupa, Allianz, AXA, Sanitas, seguros nórdicos y británicos." },
+        { q: "¿Puedo usar mi seguro de viaje internacional?", a: "Sí. Entregamos un informe médico completo con diagnóstico codificado (CIE-10 / ICD-10) y factura desglosada oficial para que puedas presentar la reclamación a tu seguro de viaje o privado (Bupa, Allianz, AXA, Sanitas, aseguradoras nórdicas, británicas o internacionales)." },
         { q: "¿Atienden a bebés y niños?", a: "Sí. Disponemos de facultativos con amplia experiencia en atención pediátrica urgente para tratar fiebres, otitis de piscina, heridas y vómitos en niños." },
         { q: "¿El médico puede recetar medicamentos?", a: "Sí. Los médicos llevan talonario oficial de recetas para prescribir antibióticos, calmantes o el tratamiento que requieras en cualquier farmacia 24 horas." },
       ],
@@ -376,7 +376,7 @@ export const translations = {
         },
         { q: "Besuchen Sie Hotels?", a: "Ja. Unsere Ärzte besuchen alle Hotels an der Costa del Sol." },
         { q: "Können Sie Apartments besuchen?", a: "Ja. Wir besuchen Ferienwohnungen und jede Unterkunft." },
-        { q: "Wie schnell kann ein Arzt kommen?", a: "Wir streben an, dass ein Arzt innerhalb von 45–60 Minuten bei Ihnen ist." },
+        { q: "Wie schnell kann ein Arzt kommen?", a: "Wir streben an, dass ein Arzt innerhalb von 30–60 Minuten bei Ihnen ist." },
         { q: "Sprechen Sie Deutsch?", a: "Ja. Wir haben deutschsprachige Ärzte verfügbar." },
         { q: "Kann ich meine Reiseversicherung nutzen?", a: "Ja. Wir stellen offizielle Arztbescheinigungen für alle Versicherungen aus." },
         { q: "Können Kinder behandelt werden?", a: "Ja. Wir bieten pädiatrische Versorgung für Kinder jeden Alters." },
@@ -471,7 +471,7 @@ export const translations = {
         },
         { q: "Visitez-vous les hôtels ?", a: "Oui. Nos médecins visitent tous les hôtels de la Costa del Sol." },
         { q: "Pouvez-vous visiter des appartements ?", a: "Absolument. Nous visitons les appartements de location et tout logement." },
-        { q: "Combien de temps pour qu'un médecin arrive ?", a: "Nous visons à avoir un médecin chez vous dans les 45 à 60 minutes." },
+        { q: "Combien de temps pour qu'un médecin arrive ?", a: "Nous visons à avoir un médecin chez vous dans les 30 à 60 minutes." },
         { q: "Parlez-vous français ?", a: "Oui. Nous avons des médecins francophones disponibles." },
         { q: "Puis-je utiliser mon assurance voyage ?", a: "Oui. Nous fournissons des reçus médicaux officiels pour toutes les assurances." },
         { q: "Les enfants peuvent-ils être traités ?", a: "Oui. Nous offrons des soins pédiatriques pour les enfants de tous âges." },
@@ -620,7 +620,7 @@ export const translations = {
         },
         {
           q: "Kuinka nopeasti lääkäri saapuu?",
-          a: "Saapumisajat vaihtelevat sijainnin mukaan, mutta tavoitteenamme on saapua 45–60 minuutin kuluessa yhteydenotosta.",
+          a: "Saapumisajat vaihtelevat sijainnin mukaan, mutta tavoitteenamme on saapua 30–60 minuutin kuluessa yhteydenotosta.",
         },
         {
           q: "Puhutteko englantia?",
@@ -786,7 +786,7 @@ export const translations = {
         },
         {
           q: "ما مدى سرعة وصول الطبيب؟",
-          a: "تختلف أوقات الاستجابة حسب الموقع، ولكننا نهدف إلى وصول الطبيب إليك في غضون 45 إلى 60 دقيقة من الاتصال الأول.",
+          a: "تختلف أوقات الاستجابة حسب الموقع، ولكننا نهدف إلى وصول الطبيب إليك في غضون 30 إلى 60 دقيقة من الاتصال الأول.",
         },
         {
           q: "هل تتحدثون الإنجليزية؟",
@@ -952,7 +952,7 @@ export const translations = {
         },
         {
           q: "Hvor raskt kan legen komme?",
-          a: "Responstiden varierer etter sted, men vi har som mål å ha en lege hos deg innen 45–60 minutter fra første kontakt.",
+          a: "Responstiden varierer etter sted, men vi har som mål å ha en lege hos deg innen 30–60 minutter fra første kontakt.",
         },
         {
           q: "Snakker dere engelsk?",
@@ -1118,7 +1118,7 @@ export const translations = {
         },
         {
           q: "Hvor hurtigt kan en læge komme?",
-          a: "Svartiden varierer efter placering, men vi tilstræber at have en læge hos dig inden for 45-60 minutter efter din første kontakt.",
+          a: "Svartiden varierer efter placering, men vi tilstræber at have en læge hos dig inden for 30-60 minutter efter din første kontakt.",
         },
         {
           q: "Taler I engelsk?",
@@ -1284,7 +1284,7 @@ export const translations = {
         },
         {
           q: "Hur snabbt kan en läkare komma?",
-          a: "Svarstiden varierar beroende på plats, men vi strävar efter att ha en läkare hos dig inom 45-60 minuter efter din första kontakt.",
+          a: "Svarstiden varierar beroende på plats, men vi strävar efter att ha en läkare hos dig inom 30-60 minuter efter din första kontakt.",
         },
         {
           q: "Talar ni engelska?",
@@ -1404,7 +1404,7 @@ export const translations = {
         {
           icon: "certificate",
           title: "Медицинские справки",
-          desc: "Официальные отчеты и счета для возмещения расходов по страховке.",
+          desc: "Официальные отчеты и счета для вашей страховой компании.",
         },
         {
           icon: "tourist",
@@ -1449,7 +1449,7 @@ export const translations = {
         },
         {
           q: "Как быстро приедет доктор?",
-          a: "Обычно врач прибывает в течение 45–60 минут с момента первого обращения.",
+          a: "Обычно врач прибывает в течение 30–60 минут с момента первого обращения.",
         },
         {
           q: "На каких языках говорят врачи?",
@@ -1614,7 +1614,7 @@ export const translations = {
         },
         {
           q: "Hoe snel kan de dokter er zijn?",
-          a: "De responstijd hangt af van uw locatie, maar gemiddeld is de arts binnen 45–60 minuten ter plaatse.",
+          a: "De responstijd hangt af van uw locatie, maar gemiddeld is de arts binnen 30–60 minuten ter plaatse.",
         },
         {
           q: "Spreekt de arts Engels?",

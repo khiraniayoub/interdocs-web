@@ -15,8 +15,8 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: {
-    default: "Doctor Near You in Marbella & Costa del Sol | Urgent Care 24H",
-    template: "%s | Urgent Care 24H",
+    default: "24/7 Doctor & Urgent Care Near You | Marbella & Costa del Sol — Interdocs Medical",
+    template: "%s | Urgent Care 24H · Interdocs Medical",
   },
   description:
     "Urgent care near you: English-speaking private doctor visits your hotel room, villa or apartment in Marbella & Costa del Sol in 30–60 min. Call 24/7.",
@@ -43,13 +43,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_GB",
-    siteName: "Urgent Care 24H",
+    siteName: "Urgent Care 24H — Interdocs Medical",
     images: [
       {
         url: "/hero.png",
         width: 1200,
         height: 630,
-        alt: "Private Doctor Home Visit Costa del Sol",
+        alt: "Private Doctor Home Visit Costa del Sol — Interdocs Medical",
       },
     ],
   },
@@ -96,14 +96,15 @@ export const metadata: Metadata = {
     "visita medica hotel marbella",
     "medico domicilio costa del sol",
     "interdocs medical",
+    "interdocs medical costa del sol",
   ],
   // ── Google Search Console Verification ──────────────
   verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "9c413d8a69c4d485",
   },
-  authors: [{ name: "Urgent Care 24H", url: SITE_URL }],
-  creator: "Urgent Care 24H",
-  publisher: "Urgent Care 24H",
+  authors: [{ name: "Interdocs Medical · Urgent Care 24H", url: SITE_URL }],
+  creator: "Interdocs Medical",
+  publisher: "Interdocs Medical",
   category: "health",
 };
 
