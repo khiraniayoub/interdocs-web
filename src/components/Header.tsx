@@ -234,7 +234,7 @@ export default function Header({ locale = "en", alternateUrls }: HeaderProps) {
           {/* Logo */}
           <Link
             href={localePaths[locale] || "/"}
-            className="flex items-center gap-2 sm:gap-3 group min-w-0 flex-shrink"
+            className="flex items-center gap-2.5 sm:gap-3 group flex-shrink-0"
             aria-label="Urgent Care 24H - Home"
           >
             <Image
@@ -245,17 +245,17 @@ export default function Header({ locale = "en", alternateUrls }: HeaderProps) {
               priority
               className="h-10 sm:h-16 lg:h-18 w-auto object-contain transition-transform duration-300 group-hover:scale-105 flex-shrink-0"
             />
-            <div className="flex items-center gap-2 sm:gap-3.5 min-w-0">
-              <div className="flex flex-col justify-center min-w-0">
-                <div className="flex items-center gap-1.5 sm:gap-2 leading-none">
+            <div className="flex items-center gap-3 sm:gap-4 flex-shrink-0">
+              <div className="flex flex-col justify-center flex-shrink-0">
+                <div className="flex items-center gap-1.5 sm:gap-2 leading-none whitespace-nowrap">
                   <span className="text-base sm:text-2xl lg:text-[25px] font-800 text-slate-900 tracking-tight uppercase whitespace-nowrap">
                     Urgent Care
                   </span>
-                  <span className="bg-[#0A6EBD] text-white text-[10px] sm:text-sm font-800 px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-md sm:rounded-lg tracking-normal inline-flex items-center justify-center shadow-xs whitespace-nowrap">
+                  <span className="bg-[#0A6EBD] text-white text-xs sm:text-sm font-800 px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-md sm:rounded-lg tracking-normal inline-flex items-center justify-center shadow-xs whitespace-nowrap">
                     24H
                   </span>
                 </div>
-                <p className="text-[10px] sm:text-xs lg:text-[12px] text-[#0A6EBD] font-700 uppercase tracking-wider sm:tracking-[0.2em] mt-0.5 sm:mt-1 truncate">
+                <p className="text-[10px] sm:text-xs lg:text-[12px] text-[#0A6EBD] font-600 uppercase tracking-wider sm:tracking-[0.2em] mt-0.5 sm:mt-1 whitespace-nowrap">
                   Home Doctor Service
                 </p>
               </div>
@@ -272,16 +272,16 @@ export default function Header({ locale = "en", alternateUrls }: HeaderProps) {
             </div>
           </Link>
 
-          {/* Desktop Nav with guaranteed left margin to prevent any collision */}
+          {/* Desktop Nav */}
           <nav
-            className="hidden lg:flex items-center gap-3.5 xl:gap-6 2xl:gap-8 ml-6 xl:ml-8"
+            className="hidden lg:flex items-center gap-3 xl:gap-5 2xl:gap-7 ml-auto mr-3 xl:mr-6 flex-shrink-0"
             aria-label="Main navigation"
           >
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="relative text-[13px] xl:text-[15px] font-600 text-slate-600 hover:text-[#0A6EBD] transition-colors duration-200 after:absolute after:bottom-[-3px] after:left-0 after:h-[2px] after:w-0 after:bg-[#0A6EBD] after:rounded-full after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
+                className="relative text-xs xl:text-sm 2xl:text-base font-600 text-slate-600 hover:text-[#0A6EBD] transition-colors duration-200 after:absolute after:bottom-[-3px] after:left-0 after:h-[2px] after:w-0 after:bg-[#0A6EBD] after:rounded-full after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
               >
                 {link.label}
               </Link>
