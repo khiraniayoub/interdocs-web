@@ -243,38 +243,38 @@ export default function Header({ locale = "en", alternateUrls }: HeaderProps) {
               width={200}
               height={80}
               priority
-              className="h-10 sm:h-16 lg:h-18 w-auto object-contain transition-transform duration-300 group-hover:scale-105 flex-shrink-0"
+              className="h-10 sm:h-12 lg:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105 flex-shrink-0"
             />
-            <div className="flex items-center gap-3 sm:gap-4 flex-shrink-0">
+            <div className="flex items-center gap-2.5 sm:gap-3.5 flex-shrink-0">
               <div className="flex flex-col justify-center flex-shrink-0">
                 <div className="flex items-center gap-1.5 sm:gap-2 leading-none whitespace-nowrap">
-                  <span className="text-base sm:text-2xl lg:text-[25px] font-800 text-slate-900 tracking-tight uppercase whitespace-nowrap">
+                  <span className="text-base sm:text-xl lg:text-2xl font-800 text-slate-900 tracking-tight uppercase whitespace-nowrap">
                     Urgent Care
                   </span>
-                  <span className="bg-[#0A6EBD] text-white text-xs sm:text-sm font-800 px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-md sm:rounded-lg tracking-normal inline-flex items-center justify-center shadow-xs whitespace-nowrap">
+                  <span className="bg-[#0A6EBD] text-white text-xs sm:text-sm font-800 px-1.5 sm:px-2 py-0.5 rounded-md tracking-normal inline-flex items-center justify-center shadow-xs whitespace-nowrap">
                     24H
                   </span>
                 </div>
-                <p className="text-[10px] sm:text-xs lg:text-[12px] text-[#0A6EBD] font-600 uppercase tracking-wider sm:tracking-[0.2em] mt-0.5 sm:mt-1 whitespace-nowrap">
+                <p className="text-[10px] sm:text-[11px] lg:text-xs text-[#0A6EBD] font-600 uppercase tracking-wider sm:tracking-[0.18em] mt-0.5 sm:mt-1 whitespace-nowrap">
                   Home Doctor Service
                 </p>
               </div>
 
               {/* Interdocs Medical en el hueco blanco a la derecha (tablet/desktop) */}
-              <div className="hidden sm:flex flex-col justify-center pl-3.5 sm:pl-4 border-l-2 border-slate-200/90 leading-tight flex-shrink-0">
-                <span className="text-[11px] sm:text-[12px] uppercase font-700 tracking-widest text-slate-400 mb-0.5">
+              <div className="hidden sm:flex flex-col justify-center pl-3 sm:pl-3.5 border-l-2 border-slate-200/90 leading-tight flex-shrink-0">
+                <span className="text-[10px] sm:text-[11px] uppercase font-700 tracking-widest text-slate-400 mb-0.5">
                   by
                 </span>
-                <span className="text-[15px] sm:text-base lg:text-[17px] font-700 text-slate-700 tracking-tight whitespace-nowrap">
+                <span className="text-sm sm:text-[15px] lg:text-base font-700 text-slate-700 tracking-tight whitespace-nowrap">
                   Interdocs<span className="text-[#0A6EBD]"> Medical</span>
                 </span>
               </div>
             </div>
           </Link>
 
-          {/* Desktop Nav */}
+          {/* Desktop Nav with guaranteed minimum gap */}
           <nav
-            className="hidden lg:flex items-center gap-3 xl:gap-5 2xl:gap-7 ml-auto mr-3 xl:mr-6 flex-shrink-0"
+            className="hidden lg:flex items-center gap-3 xl:gap-5 2xl:gap-7 ml-6 xl:ml-10 mr-auto flex-shrink-0"
             aria-label="Main navigation"
           >
             {links.map((link) => (
@@ -368,7 +368,7 @@ export default function Header({ locale = "en", alternateUrls }: HeaderProps) {
             <a
               href={PHONE_URL}
               id="header-call-btn"
-              className="flex items-center gap-2 px-3 xl:px-4 py-2.5 rounded-xl bg-slate-900 text-white text-xs xl:text-sm font-700 hover:bg-slate-700 transition-colors duration-200"
+              className="flex items-center gap-2 px-3 xl:px-4 py-2.5 rounded-xl bg-slate-900 text-white text-xs xl:text-sm font-700 hover:bg-slate-700 transition-colors duration-200 flex-shrink-0"
               aria-label={`${t.call} ${PHONE_NUMBER}`}
             >
               <svg
@@ -385,8 +385,8 @@ export default function Header({ locale = "en", alternateUrls }: HeaderProps) {
                   d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                 />
               </svg>
-              <span className="hidden xl:inline">{PHONE_NUMBER}</span>
-              <span className="xl:hidden">{t.call}</span>
+              <span className="hidden 2xl:inline">{PHONE_NUMBER}</span>
+              <span className="2xl:hidden">{t.call}</span>
             </a>
 
             <button
