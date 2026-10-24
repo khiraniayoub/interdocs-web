@@ -458,7 +458,7 @@ export default function CookieBanner({ locale = "en" }: { locale?: string }) {
           role="dialog"
           aria-modal="false"
           className={`
-            fixed bottom-0 left-0 right-0 z-[9999]
+            fixed bottom-[60px] lg:bottom-0 left-0 right-0 z-[9999]
             transition-all duration-500 ease-out
             ${animating ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"}
           `}

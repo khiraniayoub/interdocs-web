@@ -27,7 +27,7 @@ export default function Footer({ disclaimer, rights, locale }: FooterProps) {
 
   return (
     <footer className="bg-slate-900 text-white" role="contentinfo">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24 lg:py-20">
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-12">
           {/* Brand */}
           <div className="lg:col-span-2 flex flex-col items-center text-center lg:items-start lg:text-left">

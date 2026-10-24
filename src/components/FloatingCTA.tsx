@@ -5,22 +5,22 @@ import { usePathname } from "next/navigation";
 import { PHONE_URL, PHONE_NUMBER, WHATSAPP_NUMBER } from "@/data/content";
 
 const TRANSLATIONS: Record<string, any> = {
-  en: { call: "Call Now", whatsapp: "WhatsApp Now", whatsappMobile: "WhatsApp", title: "Quick Medical Request", q1: "1. Where are you staying?", p1: "Hotel name or address...", q2: "2. What are your symptoms?", p2: "Briefly describe what happens...", btn: "Continue to WhatsApp", msg: "Hello, I need a doctor.\n\n📍 Location: {location}\n🤒 Symptoms: {symptoms}" },
-  es: { call: "Llamar Ahora", whatsapp: "WhatsApp Ahora", whatsappMobile: "WhatsApp", title: "Petición Médica", q1: "1. ¿Dónde estás alojado?", p1: "Nombre del hotel o dirección...", q2: "2. ¿Cuáles son tus síntomas?", p2: "Describe brevemente qué ocurre...", btn: "Continuar a WhatsApp", msg: "Hola, necesito un médico.\n\n📍 Ubicación: {location}\n🤒 Síntomas: {symptoms}" },
-  de: { call: "Jetzt anrufen", whatsapp: "WhatsApp jetzt", whatsappMobile: "WhatsApp", title: "Schnelle ärztliche Anfrage", q1: "1. Wo übernachten Sie?", p1: "Hotelname oder Adresse...", q2: "2. Was sind Ihre Symptome?", p2: "Beschreiben Sie kurz...", btn: "Weiter zu WhatsApp", msg: "Hallo, ich brauche einen Arzt.\n\n📍 Ort: {location}\n🤒 Symptome: {symptoms}" },
-  fr: { call: "Appeler", whatsapp: "WhatsApp", whatsappMobile: "WhatsApp", title: "Demande Médicale Rapide", q1: "1. Où séjournez-vous ?", p1: "Nom de l'hôtel ou adresse...", q2: "2. Quels sont vos symptômes ?", p2: "Décrivez brièvement...", btn: "Aller sur WhatsApp", msg: "Bonjour, j'ai besoin d'un médecin.\n\n📍 Lieu : {location}\n🤒 Symptômes : {symptoms}" },
-  fi: { call: "Soita Nyt", whatsapp: "WhatsApp", whatsappMobile: "WhatsApp", title: "Nopea pyyntö", q1: "1. Missä majoitut?", p1: "Hotellin nimi tai osoite...", q2: "2. Mitkä ovat oireesi?", p2: "Kuvaile lyhyesti...", btn: "Jatka WhatsAppiin", msg: "Hei, tarvitsen lääkäriä.\n\n📍 Sijainti: {location}\n🤒 Oireet: {symptoms}" },
-  ar: { call: "اتصل الان", whatsapp: "واتساب", whatsappMobile: "واتساب", title: "طلب طبي سريع", q1: "1. أين تقيم؟", p1: "اسم الفندق أو العنوان...", q2: "2. ما هي الأعراض؟", p2: "صف باختصار...", btn: "متابعة إلى الواتساب", msg: "مرحباً، أحتاج إلى طبيب.\n\n📍 الموقع: {location}\n🤒 الأعراض: {symptoms}" },
-  no: { call: "Ring nå", whatsapp: "WhatsApp", whatsappMobile: "WhatsApp", title: "Rask forespørsel", q1: "1. Hvor bor du?", p1: "Hotellnavn eller adresse...", q2: "2. Hva er symptomene dine?", p2: "Beskriv kort...", btn: "Gå til WhatsApp", msg: "Hei, jeg trenger en lege.\n\n📍 Sted: {location}\n🤒 Symptomer: {symptoms}" },
-  da: { call: "Ring nu", whatsapp: "WhatsApp", whatsappMobile: "WhatsApp", title: "Hurtig anmodning", q1: "1. Hvor bor du?", p1: "Hotelnavn eller adresse...", q2: "2. Hvad er dine symptomer?", p2: "Beskriv kort...", btn: "Gå til WhatsApp", msg: "Hej, jeg har brug for en læge.\n\n📍 Sted: {location}\n🤒 Symptomer: {symptoms}" },
-  sv: { call: "Ring nu", whatsapp: "WhatsApp", whatsappMobile: "WhatsApp", title: "Snabb begäran", q1: "1. Var bor du?", p1: "Hotellnamn eller adress...", q2: "2. Vad har du för symptom?", p2: "Beskriv kort...", btn: "Gå till WhatsApp", msg: "Hej, jag behöver en läkare.\n\n📍 Plats: {location}\n🤒 Symptom: {symptoms}" },
-  ru: { call: "Позвонить", whatsapp: "WhatsApp", whatsappMobile: "WhatsApp", title: "Быстрый вызов врача", q1: "1. Где вы находитесь?", p1: "Название отеля или адрес...", q2: "2. Какие у вас симптомы?", p2: "Кратко опишите проблему...", btn: "Перейти в WhatsApp", msg: "Здравствуйте, мне нужен врач.\n\n📍 Местоположение: {location}\n🤒 Симптомы: {symptoms}" },
-  nl: { call: "Bel nu", whatsapp: "WhatsApp nu", whatsappMobile: "WhatsApp", title: "Snelle doktersaanvraag", q1: "1. Waar verblijft u?", p1: "Hotelnaam of adres...", q2: "2. Wat zijn uw symptomen?", p2: "Beschrijf kort uw klachten...", btn: "Verder naar WhatsApp", msg: "Hallo, ik heb een dokter nodig.\n\n📍 Locatie: {location}\n🤒 Symptomen: {symptoms}" }
+  en: { call: "Call Now", callMobile: "Call 24/7", whatsapp: "WhatsApp Now", whatsappMobile: "WhatsApp 24/7", title: "Quick Medical Request", q1: "1. Where are you staying?", p1: "Hotel name or address...", q2: "2. What are your symptoms?", p2: "Briefly describe what happens...", btn: "Continue to WhatsApp", msg: "Hello, I need a doctor.\n\n📍 Location: {location}\n🤒 Symptoms: {symptoms}" },
+  es: { call: "Llamar Ahora", callMobile: "Llamar 24/7", whatsapp: "WhatsApp Ahora", whatsappMobile: "WhatsApp 24/7", title: "Petición Médica Inmediata", q1: "1. ¿Dónde estás alojado?", p1: "Nombre del hotel o dirección...", q2: "2. ¿Cuáles son tus síntomas?", p2: "Describe brevemente qué ocurre...", btn: "Continuar a WhatsApp", msg: "Hola, necesito un médico.\n\n📍 Ubicación: {location}\n🤒 Síntomas: {symptoms}" },
+  de: { call: "Jetzt anrufen", callMobile: "Anrufen 24/7", whatsapp: "WhatsApp jetzt", whatsappMobile: "WhatsApp 24/7", title: "Schnelle ärztliche Anfrage", q1: "1. Wo übernachten Sie?", p1: "Hotelname oder Adresse...", q2: "2. Was sind Ihre Symptome?", p2: "Beschreiben Sie kurz...", btn: "Weiter zu WhatsApp", msg: "Hallo, ich brauche einen Arzt.\n\n📍 Ort: {location}\n🤒 Symptome: {symptoms}" },
+  fr: { call: "Appeler", callMobile: "Appeler 24/7", whatsapp: "WhatsApp", whatsappMobile: "WhatsApp 24/7", title: "Demande Médicale Rapide", q1: "1. Où séjournez-vous ?", p1: "Nom de l'hôtel ou adresse...", q2: "2. Quels sont vos symptômes ?", p2: "Décrivez brièvement...", btn: "Aller sur WhatsApp", msg: "Bonjour, j'ai besoin d'un médecin.\n\n📍 Lieu : {location}\n🤒 Symptômes : {symptoms}" },
+  fi: { call: "Soita Nyt", callMobile: "Soita 24/7", whatsapp: "WhatsApp", whatsappMobile: "WhatsApp 24/7", title: "Nopea pyyntö", q1: "1. Missä majoitut?", p1: "Hotellin nimi tai osoite...", q2: "2. Mitkä ovat oireesi?", p2: "Kuvaile lyhyesti...", btn: "Jatka WhatsAppiin", msg: "Hei, tarvitsen lääkäriä.\n\n📍 Sijainti: {location}\n🤒 Oireet: {symptoms}" },
+  ar: { call: "اتصل الان", callMobile: "اتصال 24/7", whatsapp: "واتساب", whatsappMobile: "واتساب 24/7", title: "طلب طبي سريع", q1: "1. أين تقيم؟", p1: "اسم الفندق أو العنوان...", q2: "2. ما هي الأعراض؟", p2: "صف باختصار...", btn: "متابعة إلى الواتساب", msg: "مرحباً، أحتاج إلى طبيب.\n\n📍 الموقع: {location}\n🤒 الأعراض: {symptoms}" },
+  no: { call: "Ring nå", callMobile: "Ring 24/7", whatsapp: "WhatsApp", whatsappMobile: "WhatsApp 24/7", title: "Rask forespørsel", q1: "1. Hvor bor du?", p1: "Hotellnavn eller adresse...", q2: "2. Hva er symptomene dine?", p2: "Beskriv kort...", btn: "Gå til WhatsApp", msg: "Hei, jeg trenger en lege.\n\n📍 Sted: {location}\n🤒 Symptomer: {symptoms}" },
+  da: { call: "Ring nu", callMobile: "Ring 24/7", whatsapp: "WhatsApp", whatsappMobile: "WhatsApp 24/7", title: "Hurtig anmodning", q1: "1. Hvor bor du?", p1: "Hotelnavn eller adresse...", q2: "2. Hvad er dine symptomer?", p2: "Beskriv kort...", btn: "Gå til WhatsApp", msg: "Hej, jeg har brug for en læge.\n\n📍 Sted: {location}\n🤒 Symptomer: {symptoms}" },
+  sv: { call: "Ring nu", callMobile: "Ring 24/7", whatsapp: "WhatsApp", whatsappMobile: "WhatsApp 24/7", title: "Snabb begäran", q1: "1. Var bor du?", p1: "Hotellnamn eller adress...", q2: "2. Vad har du för symptom?", p2: "Beskriv kort...", btn: "Gå till WhatsApp", msg: "Hej, jag behöver en läkare.\n\n📍 Plats: {location}\n🤒 Symptom: {symptoms}" },
+  ru: { call: "Позвонить", callMobile: "Звонок 24/7", whatsapp: "WhatsApp", whatsappMobile: "WhatsApp 24/7", title: "Быстрый вызов врача", q1: "1. Где вы находитесь?", p1: "Название отеля или адрес...", q2: "2. Какие у вас симптомы?", p2: "Кратко опишите проблему...", btn: "Перейти в WhatsApp", msg: "Здравствуйте, мне нужен врач.\n\n📍 Местоположение: {location}\n🤒 Симптомы: {symptoms}" },
+  nl: { call: "Bel nu", callMobile: "Bellen 24/7", whatsapp: "WhatsApp nu", whatsappMobile: "WhatsApp 24/7", title: "Snelle doktersaanvraag", q1: "1. Waar verblijft u?", p1: "Hotelnaam of adres...", q2: "2. Wat zijn uw symptomen?", p2: "Beschrijf kort uw klachten...", btn: "Verder naar WhatsApp", msg: "Hallo, ik heb een dokter nodig.\n\n📍 Locatie: {location}\n🤒 Symptomen: {symptoms}" }
 };
 
 export default function FloatingCTA({ locale: propLocale = "en" }: { locale?: string }) {
   const pathname = usePathname();
-  const pathLocale = pathname ? pathname.split('/')[1] : null;
+  const pathLocale = pathname ? pathname.split("/")[1] : null;
   const activeLocale = (pathLocale && TRANSLATIONS[pathLocale]) ? pathLocale : propLocale;
   
   const [isOpen, setIsOpen] = useState(false);
@@ -31,8 +31,8 @@ export default function FloatingCTA({ locale: propLocale = "en" }: { locale?: st
 
   useEffect(() => {
     const handleOpen = () => setIsOpen(true);
-    window.addEventListener('openTriage', handleOpen);
-    return () => window.removeEventListener('openTriage', handleOpen);
+    window.addEventListener("openTriage", handleOpen);
+    return () => window.removeEventListener("openTriage", handleOpen);
   }, []);
 
   const handleWhatsAppClick = (e: React.MouseEvent) => {
@@ -55,111 +55,122 @@ export default function FloatingCTA({ locale: propLocale = "en" }: { locale?: st
   );
 
   return (
-    <div
-      className="fixed bottom-5 right-4 z-50 flex flex-col items-end gap-3 pointer-events-auto lg:bottom-6 lg:right-6 lg:left-auto"
-      role="region"
-      aria-label="Quick contact"
-    >
-      {/* Triage Modal */}
+    <>
+      {/* ── Mobile & Tablet Sticky Emergency Bar (< lg) ── */}
+      <aside
+        className="fixed bottom-0 left-0 right-0 z-[10000] lg:hidden bg-white/95 backdrop-blur-xl border-t border-slate-200/90 shadow-[0_-4px_25px_rgba(0,0,0,0.12)] px-3 py-2.5 pb-[max(0.625rem,env(safe-area-inset-bottom))]"
+        aria-label="Emergency Contact Bar"
+      >
+        <div className="max-w-lg mx-auto flex items-center gap-2.5">
+          {/* Call 24/7 Button */}
+          <a
+            href={PHONE_URL}
+            id="mobile-sticky-call-btn"
+            className="flex-1 flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-slate-900 active:bg-slate-800 text-white font-bold text-sm shadow-md transition-all active:scale-[0.98]"
+            aria-label={`${t.callMobile} ${PHONE_NUMBER}`}
+          >
+            <span className="relative flex h-2 w-2 flex-shrink-0">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span>
+            </span>
+            <svg
+              className="w-4 h-4 text-sky-400 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+              />
+            </svg>
+            <span className="truncate">{t.callMobile}</span>
+          </a>
+
+          {/* WhatsApp 24/7 Button */}
+          <button
+            onClick={handleWhatsAppClick}
+            id="mobile-sticky-whatsapp-btn"
+            className="flex-1 flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-[#25D366] active:bg-[#1da851] text-white font-bold text-sm shadow-md shadow-green-500/25 transition-all active:scale-[0.98]"
+            aria-label={t.whatsappMobile}
+          >
+            <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+            </svg>
+            <span className="truncate">{t.whatsappMobile}</span>
+          </button>
+        </div>
+      </aside>
+
+      {/* ── Triage Modal (Mobile & Desktop) ── */}
       {isOpen && (
-        <div className="mb-2 w-[calc(100vw-2rem)] max-w-[340px] bg-white rounded-2xl shadow-2xl border border-slate-100 p-5 transform origin-bottom-right transition-all animate-in fade-in slide-in-from-bottom-4 duration-300">
-          <div className="flex justify-between items-center mb-4">
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-              <p className="font-700 text-slate-800">{t.title}</p>
+        <div className="fixed inset-0 z-[10002] flex items-end sm:items-center justify-center p-3 sm:p-4 bg-black/40 backdrop-blur-xs">
+          <div
+            className="w-full max-w-md bg-white rounded-2xl shadow-2xl border border-slate-100 p-5 mb-16 sm:mb-0 transform transition-all animate-in fade-in slide-in-from-bottom-6 duration-200"
+            role="dialog"
+            aria-modal="true"
+          >
+            <div className="flex justify-between items-center mb-4">
+              <div className="flex items-center gap-2">
+                <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></div>
+                <p className="font-800 text-slate-900 text-base">{t.title}</p>
+              </div>
+              <button
+                onClick={() => setIsOpen(false)}
+                className="text-slate-400 hover:text-slate-600 p-1.5 rounded-lg hover:bg-slate-100 transition-colors"
+                aria-label="Close"
+              >
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
             </div>
-            <button 
-              onClick={() => setIsOpen(false)} 
-              className="text-slate-400 hover:text-slate-600 transition-colors p-1"
-              aria-label="Close"
-            >
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-          
-          <div className="space-y-4">
-            <div>
-              <label className="block text-xs font-600 text-slate-500 mb-1.5 uppercase tracking-wider">
-                {t.q1}
-              </label>
-              <input 
-                value={location} 
-                onChange={(e) => setLocation(e.target.value)} 
-                placeholder={t.p1} 
-                className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#0A6EBD] focus:ring-1 focus:ring-[#0A6EBD] transition-all bg-slate-50 focus:bg-white" 
-              />
+
+            <div className="space-y-4">
+              <div>
+                <label className="block text-xs font-700 text-slate-600 mb-1.5 uppercase tracking-wider">
+                  {t.q1}
+                </label>
+                <input
+                  value={location}
+                  onChange={(e) => setLocation(e.target.value)}
+                  placeholder={t.p1}
+                  className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#0A6EBD] focus:ring-1 focus:ring-[#0A6EBD] transition-all bg-slate-50 focus:bg-white"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-700 text-slate-600 mb-1.5 uppercase tracking-wider">
+                  {t.q2}
+                </label>
+                <textarea
+                  value={symptoms}
+                  onChange={(e) => setSymptoms(e.target.value)}
+                  placeholder={t.p2}
+                  rows={2}
+                  className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#0A6EBD] focus:ring-1 focus:ring-[#0A6EBD] transition-all bg-slate-50 focus:bg-white resize-none"
+                />
+              </div>
+              <button
+                onClick={handleSend}
+                disabled={!location || !symptoms}
+                className="w-full py-3.5 bg-[#25D366] text-white rounded-xl font-800 text-sm hover:bg-[#1da851] transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-lg shadow-green-500/25 active:scale-[0.98]"
+              >
+                {whatsappIcon}
+                {t.btn}
+              </button>
             </div>
-            <div>
-              <label className="block text-xs font-600 text-slate-500 mb-1.5 uppercase tracking-wider">
-                {t.q2}
-              </label>
-              <textarea 
-                value={symptoms} 
-                onChange={(e) => setSymptoms(e.target.value)} 
-                placeholder={t.p2} 
-                rows={2} 
-                className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#0A6EBD] focus:ring-1 focus:ring-[#0A6EBD] transition-all bg-slate-50 focus:bg-white resize-none" 
-              />
-            </div>
-            <button 
-              onClick={handleSend} 
-              disabled={!location || !symptoms} 
-              className="w-full py-3 bg-[#25D366] text-white rounded-xl font-700 text-sm hover:bg-[#1da851] transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-lg shadow-green-500/20"
-            >
-              {whatsappIcon}
-              {t.btn}
-            </button>
           </div>
         </div>
       )}
 
-      {/* Mobile: Floating Round Buttons */}
-      <div className="flex lg:hidden flex-col items-center gap-3">
-        {/* Round Call Button */}
-        <a
-          href={PHONE_URL}
-          id="floating-call-btn"
-          className="w-14 h-14 rounded-full bg-slate-900 hover:bg-slate-800 text-white flex items-center justify-center shadow-xl shadow-slate-900/40 active:scale-95 transition-all duration-200 border-2 border-white/20 relative group"
-          aria-label={`${t.call} ${PHONE_NUMBER}`}
-        >
-          <svg
-            className="w-6 h-6 text-sky-400 group-hover:scale-110 transition-transform"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-            />
-          </svg>
-          <span className="absolute -top-1 -right-1 bg-[#0A6EBD] text-white text-[9px] font-800 px-1.5 py-0.5 rounded-full border border-white shadow-sm leading-none">
-            24h
-          </span>
-        </a>
-
-        {/* Round WhatsApp Button */}
-        <button
-          onClick={handleWhatsAppClick}
-          id="floating-whatsapp-btn"
-          className="w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#1da851] text-white flex items-center justify-center shadow-2xl shadow-green-500/40 active:scale-95 transition-all duration-200 relative group"
-          aria-label={t.whatsappMobile}
-        >
-          {/* Pulsing radar wave */}
-          <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-25 pointer-events-none"></span>
-          <svg className="w-7 h-7 relative z-10 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-          </svg>
-        </button>
-      </div>
-
-      {/* Desktop: Floating buttons with full phone visible */}
-      <div className="hidden lg:flex flex-col gap-3 relative z-10">
+      {/* ── Desktop Floating Action Cards (lg:flex) ── */}
+      <aside
+        className="hidden lg:flex fixed bottom-6 right-6 z-50 flex-col gap-3 pointer-events-auto"
+        aria-label="Quick contact"
+      >
         <button
           onClick={handleWhatsAppClick}
           id="floating-whatsapp-desktop"
@@ -186,7 +197,7 @@ export default function FloatingCTA({ locale: propLocale = "en" }: { locale?: st
             <span className="text-sm font-extrabold tracking-wide leading-tight">{PHONE_NUMBER}</span>
           </div>
         </a>
-      </div>
-    </div>
+      </aside>
+    </>
   );
 }
