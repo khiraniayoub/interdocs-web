@@ -11,17 +11,17 @@ interface ServiceAreasProps {
 }
 
 const PRICE_LABEL: Record<string, { weekday: string; weekend: string; from: string }> = {
-  en: { weekday: "Mon–Fri", weekend: "Sun, Nights & Holidays", from: "from" },
-  es: { weekday: "Lun–Vie", weekend: "Dom, Noches y Festivos", from: "desde" },
-  de: { weekday: "Mo–Fr",   weekend: "So, Nächte & Feiertage", from: "ab"    },
-  fr: { weekday: "Lun–Ven", weekend: "Dim, Nuits & Jours Fériés", from: "dès" },
-  fi: { weekday: "Ma–Pe",   weekend: "Su, Illat & Pyhäpäivät",  from: "alkaen" },
-  ar: { weekday: "الاثنين–الجمعة", weekend: "الأحد والليالي والعطل", from: "من" },
-  no: { weekday: "Man–Fre", weekend: "Søn, Netter & Helligdager", from: "fra" },
-  da: { weekday: "Man–Fre", weekend: "Søn, Aftener & Helligdage", from: "fra" },
-  sv: { weekday: "Mån–Fre", weekend: "Sön, Nätter & Helgdagar",  from: "från" },
-  ru: { weekday: "Пн–Пт", weekend: "Вс, Ночи и Праздники", from: "от" },
-  nl: { weekday: "Ma–Vr", weekend: "Zon, Nachten & Feestdagen", from: "vanaf" },
+  en: { weekday: "Mon–Fri", weekend: "Nights, Weekends & Holidays", from: "from" },
+  es: { weekday: "Lun–Vie", weekend: "Noches, Fin de semana y Festivos", from: "desde" },
+  de: { weekday: "Mo–Fr",   weekend: "Nächte, Wochenenden & Feiertage", from: "ab"    },
+  fr: { weekday: "Lun–Ven", weekend: "Nuits, Week-ends & Jours Fériés", from: "dès" },
+  fi: { weekday: "Ma–Pe",   weekend: "Yöt, Viikonloput & Pyhäpäivät",  from: "alkaen" },
+  ar: { weekday: "الاثنين–الجمعة", weekend: "الليالي وعطلات نهاية الأسبوع والأعياد", from: "من" },
+  no: { weekday: "Man–Fre", weekend: "Netter, Helger & Helligdager", from: "fra" },
+  da: { weekday: "Man–Fre", weekend: "Nætter, Weekender & Helligdage", from: "fra" },
+  sv: { weekday: "Mån–Fre", weekend: "Nätter, Helger & Helgdagar",  from: "från" },
+  ru: { weekday: "Пн–Пт", weekend: "Ночи, Выходные и Праздники", from: "от" },
+  nl: { weekday: "Ma–Vr", weekend: "Nachten, Weekenden & Feestdagen", from: "vanaf" },
 };
 
 const ARIA_LABELS: Record<Locale, (name: string) => string> = {

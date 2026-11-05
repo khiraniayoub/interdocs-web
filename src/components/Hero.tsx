@@ -16,17 +16,17 @@ interface HeroProps {
 }
 
 const PRICING_TEXT: Record<string, { price1: string; price2: string; title1: string; title2: string; desc: string }> = {
-  en: { price1: "€130", price2: "€140", title1: "Mon-Fri", title2: "Weekends & Holidays", desc: "Medical Visit" },
-  es: { price1: "130€", price2: "140€", title1: "Lun-Vie", title2: "Fines de semana y Festivos", desc: "Visita Médica" },
-  de: { price1: "130€", price2: "140€", title1: "Mo-Fr", title2: "Wochenenden & Feiertage", desc: "Hausbesuch" },
-  fr: { price1: "130€", price2: "140€", title1: "Lun-Ven", title2: "Week-ends et Jours fériés", desc: "Visite Médicale" },
-  fi: { price1: "130€", price2: "140€", title1: "Ma-Pe", title2: "Viikonloput & Pyhäpäivät", desc: "Lääkärin kotikäynti" },
-  ar: { price1: "€130", price2: "€140", title1: "الإثنين - الجمعة", title2: "عطلات نهاية الأسبوع والأعياد", desc: "زيارة طبية" },
-  no: { price1: "€130", price2: "€140", title1: "Man-Fre", title2: "Helger og Helligdager", desc: "Legebesøk" },
-  da: { price1: "€130", price2: "€140", title1: "Man-Fre", title2: "Weekender & Helligdage", desc: "Lægebesøg" },
-  sv: { price1: "€130", price2: "€140", title1: "Mån-Fre", title2: "Helger & Helgdagar", desc: "Läkarbesök" },
-  ru: { price1: "130€", price2: "140€", title1: "Пн-Пт", title2: "Выходные и праздники", desc: "Визит врача" },
-  nl: { price1: "€130", price2: "€140", title1: "Ma-Vr", title2: "Weekenden & Feestdagen", desc: "Doktersbezoek" },
+  en: { price1: "€130", price2: "€140", title1: "Mon-Fri", title2: "Nights, Weekends & Holidays", desc: "Medical Visit" },
+  es: { price1: "130€", price2: "140€", title1: "Lun-Vie", title2: "Noches, Fines de semana y Festivos", desc: "Visita Médica" },
+  de: { price1: "130€", price2: "140€", title1: "Mo-Fr", title2: "Nächte, Wochenenden & Feiertage", desc: "Hausbesuch" },
+  fr: { price1: "130€", price2: "140€", title1: "Lun-Ven", title2: "Nuits, Week-ends et Jours fériés", desc: "Visite Médicale" },
+  fi: { price1: "130€", price2: "140€", title1: "Ma-Pe", title2: "Yöt, Viikonloput & Pyhäpäivät", desc: "Lääkärin kotikäynti" },
+  ar: { price1: "€130", price2: "€140", title1: "الإثنين - الجمعة", title2: "الليالي وعطلات نهاية الأسبوع والأعياد", desc: "زيارة طبية" },
+  no: { price1: "€130", price2: "€140", title1: "Man-Fre", title2: "Netter, Helger og Helligdager", desc: "Legebesøk" },
+  da: { price1: "€130", price2: "€140", title1: "Man-Fre", title2: "Nætter, Weekender & Helligdage", desc: "Lægebesøg" },
+  sv: { price1: "€130", price2: "€140", title1: "Mån-Fre", title2: "Nätter, Helger & Helgdagar", desc: "Läkarbesök" },
+  ru: { price1: "130€", price2: "140€", title1: "Пн-Пт", title2: "Ночи, Выходные и праздники", desc: "Визит врача" },
+  nl: { price1: "€130", price2: "€140", title1: "Ma-Vr", title2: "Nachten, Weekenden & Feestdagen", desc: "Doktersbezoek" },
 };
 
 const BADGE_TEXT: Record<string, string> = {
