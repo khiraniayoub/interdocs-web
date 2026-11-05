@@ -41,8 +41,23 @@ export default function FloatingCTA({ locale: propLocale = "en" }: { locale?: st
   };
 
   const handleSend = () => {
-    const text = t.msg.replace("{location}", location).replace("{symptoms}", symptoms);
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank");
+    let text = "";
+    const loc = location.trim();
+    const sym = symptoms.trim();
+    const baseGreeting = t.msg.split("\n\n")[0] || "Hello, I need a doctor.";
+
+    if (loc && sym) {
+      text = t.msg.replace("{location}", loc).replace("{symptoms}", sym);
+    } else if (loc) {
+      text = `${baseGreeting}\n\n📍 ${loc}`;
+    } else if (sym) {
+      text = `${baseGreeting}\n\n🤒 ${sym}`;
+    } else {
+      text = baseGreeting;
+    }
+
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+    window.location.href = url;
     setIsOpen(false);
     setLocation("");
     setSymptoms("");
@@ -155,8 +170,7 @@ export default function FloatingCTA({ locale: propLocale = "en" }: { locale?: st
               </div>
               <button
                 onClick={handleSend}
-                disabled={!location || !symptoms}
-                className="w-full py-3.5 bg-[#25D366] text-white rounded-xl font-800 text-sm hover:bg-[#1da851] transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-lg shadow-green-500/25 active:scale-[0.98]"
+                className="w-full py-3.5 bg-[#25D366] text-white rounded-xl font-800 text-sm hover:bg-[#1da851] transition-all flex items-center justify-center gap-2 shadow-lg shadow-green-500/25 active:scale-[0.98]"
               >
                 {whatsappIcon}
                 {t.btn}
