@@ -127,8 +127,8 @@ export default function ServiceAreas({ title, subtitle, locale }: ServiceAreasPr
           const localeSlug = city.localeSlugs[locale];
           const href =
             locale === "en"
-              ? `/${localeSlug}/`
-              : `/${locale}/${localeSlug}/`;
+              ? `/${localeSlug}`
+              : `/${locale}/${localeSlug}`;
           const ariaLabel = (ARIA_LABELS[locale] || ARIA_LABELS.en)(city.name);
           const altText = (ALT_LABELS[locale] || ALT_LABELS.en)(city.name);
 

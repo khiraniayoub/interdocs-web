@@ -12,16 +12,16 @@ export default function Footer({ disclaimer, rights, locale }: FooterProps) {
   const year = new Date().getFullYear();
   const localePaths: Record<string, string> = {
     en: "/",
-    es: "/es/",
-    de: "/de/",
-    fr: "/fr/",
-    fi: "/fi/",
-    ar: "/ar/",
-    no: "/no/",
-    da: "/da/",
-    sv: "/sv/",
-    ru: "/ru/",
-    nl: "/nl/",
+    es: "/es",
+    de: "/de",
+    fr: "/fr",
+    fi: "/fi",
+    ar: "/ar",
+    no: "/no",
+    da: "/da",
+    sv: "/sv",
+    ru: "/ru",
+    nl: "/nl",
   };
   const homeHref = localePaths[locale] || "/";
 
@@ -370,8 +370,8 @@ export default function Footer({ disclaimer, rights, locale }: FooterProps) {
                 const localeSlug = city.localeSlugs[currentLocale] || city.localeSlugs["en"];
                 const href =
                   currentLocale === "en"
-                    ? `/${localeSlug}/`
-                    : `/${currentLocale}/${localeSlug}/`;
+                    ? `/${localeSlug}`
+                    : `/${currentLocale}/${localeSlug}`;
                 return (
                   <Link
                     key={city.slug}

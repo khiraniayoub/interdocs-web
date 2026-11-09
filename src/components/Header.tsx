@@ -52,14 +52,14 @@ export default function Header({ locale = "en", alternateUrls }: HeaderProps) {
     if (alternateUrls && alternateUrls[targetCode]) {
       const targetBase = alternateUrls[targetCode];
       if (hash) {
-        return `${targetBase.replace(/\/$/, "")}/${hash}`;
+        return targetBase === "/" ? `/${hash}` : `${targetBase.replace(/\/$/, "")}${hash}`;
       }
       return targetBase;
     }
 
     // 2. Client-side fallback using pathname
     if (!pathname) {
-      return targetCode === "en" ? "/" : `/${targetCode}/`;
+      return targetCode === "en" ? "/" : `/${targetCode}`;
     }
 
     if (pathname.includes("colaboradores")) {
@@ -70,8 +70,8 @@ export default function Header({ locale = "en", alternateUrls }: HeaderProps) {
 
     // Home: "/"
     if (segments.length === 0) {
-      const base = targetCode === "en" ? "/" : `/${targetCode}/`;
-      return hash ? `${base.replace(/\/$/, "")}/${hash}` : base;
+      const base = targetCode === "en" ? "/" : `/${targetCode}`;
+      return hash ? (base === "/" ? `/${hash}` : `${base}${hash}`) : base;
     }
 
     const firstIsLocale = LOCALES.includes(segments[0] as Locale) && segments[0] !== "en";
@@ -79,13 +79,13 @@ export default function Header({ locale = "en", alternateUrls }: HeaderProps) {
 
     // Locale home: "/es", "/ru", etc.
     if (subSegments.length === 0) {
-      const base = targetCode === "en" ? "/" : `/${targetCode}/`;
-      return hash ? `${base.replace(/\/$/, "")}/${hash}` : base;
+      const base = targetCode === "en" ? "/" : `/${targetCode}`;
+      return hash ? (base === "/" ? `/${hash}` : `${base}${hash}`) : base;
     }
 
     // Blog index: "/blog", "/es/blog", etc.
     if (subSegments.length === 1 && subSegments[0] === "blog") {
-      return targetCode === "en" ? "/blog/" : `/${targetCode}/blog/`;
+      return targetCode === "en" ? "/blog" : `/${targetCode}/blog`;
     }
 
     // Blog post: "/blog/:slug", "/es/blog/:slug", etc.
@@ -94,10 +94,10 @@ export default function Header({ locale = "en", alternateUrls }: HeaderProps) {
       if (post) {
         const targetSlug = post.localeSlugs[targetCode as Locale] || post.localeSlugs.en;
         return targetCode === "en"
-          ? `/blog/${targetSlug}/`
-          : `/${targetCode}/blog/${targetSlug}/`;
+          ? `/blog/${targetSlug}`
+          : `/${targetCode}/blog/${targetSlug}`;
       }
-      return targetCode === "en" ? "/blog/" : `/${targetCode}/blog/`;
+      return targetCode === "en" ? "/blog" : `/${targetCode}/blog`;
     }
 
     // City page: "/:slug", "/es/:slug", etc.
@@ -106,12 +106,12 @@ export default function Header({ locale = "en", alternateUrls }: HeaderProps) {
       if (city) {
         const targetSlug = city.localeSlugs[targetCode as Locale] || city.localeSlugs.en;
         return targetCode === "en"
-          ? `/${targetSlug}/`
-          : `/${targetCode}/${targetSlug}/`;
+          ? `/${targetSlug}`
+          : `/${targetCode}/${targetSlug}`;
       }
     }
 
-    return targetCode === "en" ? "/" : `/${targetCode}/`;
+    return targetCode === "en" ? "/" : `/${targetCode}`;
   };
 
   const currentLang = languages.find((l) => l.code === locale) || languages[0];
@@ -125,89 +125,89 @@ export default function Header({ locale = "en", alternateUrls }: HeaderProps) {
       { href: "/#contact", label: "Contact" },
     ],
     es: [
-      { href: "/es/#services", label: "Servicios" },
-      { href: "/es/#areas", label: "Zonas" },
+      { href: "/es#services", label: "Servicios" },
+      { href: "/es#areas", label: "Zonas" },
       { href: "/es/blog", label: "Blog" },
       { href: "/colaboradores", label: "Colaboradores" },
-      { href: "/es/#contact", label: "Contacto" },
+      { href: "/es#contact", label: "Contacto" },
     ],
     de: [
-      { href: "/de/#services", label: "Leistungen" },
-      { href: "/de/#areas", label: "Gebiete" },
+      { href: "/de#services", label: "Leistungen" },
+      { href: "/de#areas", label: "Gebiete" },
       { href: "/de/blog", label: "Blog" },
       { href: "/colaboradores", label: "Partner" },
-      { href: "/de/#contact", label: "Kontakt" },
+      { href: "/de#contact", label: "Kontakt" },
     ],
     fr: [
-      { href: "/fr/#services", label: "Services" },
-      { href: "/fr/#areas", label: "Zones" },
+      { href: "/fr#services", label: "Services" },
+      { href: "/fr#areas", label: "Zones" },
       { href: "/fr/blog", label: "Blog" },
       { href: "/colaboradores", label: "Partenaires" },
-      { href: "/fr/#contact", label: "Contact" },
+      { href: "/fr#contact", label: "Contact" },
     ],
     fi: [
-      { href: "/fi/#services", label: "Palvelut" },
-      { href: "/fi/#areas", label: "Alueet" },
+      { href: "/fi#services", label: "Palvelut" },
+      { href: "/fi#areas", label: "Alueet" },
       { href: "/fi/blog", label: "Blogi" },
       { href: "/colaboradores", label: "Yhteistyö" },
-      { href: "/fi/#contact", label: "Yhteystiedot" },
+      { href: "/fi#contact", label: "Yhteystiedot" },
     ],
     ar: [
-      { href: "/ar/#services", label: "الخدمات" },
-      { href: "/ar/#areas", label: "المناطق" },
+      { href: "/ar#services", label: "الخدمات" },
+      { href: "/ar#areas", label: "المناطق" },
       { href: "/ar/blog", label: "المدونة" },
       { href: "/colaboradores", label: "الشركاء" },
-      { href: "/ar/#contact", label: "اتصل بنا" },
+      { href: "/ar#contact", label: "اتصل بنا" },
     ],
     no: [
-      { href: "/no/#services", label: "Tjenester" },
-      { href: "/no/#areas", label: "Områder" },
+      { href: "/no#services", label: "Tjenester" },
+      { href: "/no#areas", label: "Områder" },
       { href: "/no/blog", label: "Blogg" },
       { href: "/colaboradores", label: "Partnere" },
-      { href: "/no/#contact", label: "Kontakt" },
+      { href: "/no#contact", label: "Kontakt" },
     ],
     da: [
-      { href: "/da/#services", label: "Ydelser" },
-      { href: "/da/#areas", label: "Områder" },
+      { href: "/da#services", label: "Ydelser" },
+      { href: "/da#areas", label: "Områder" },
       { href: "/da/blog", label: "Blog" },
       { href: "/colaboradores", label: "Partnere" },
-      { href: "/da/#contact", label: "Kontakt" },
+      { href: "/da#contact", label: "Kontakt" },
     ],
     sv: [
-      { href: "/sv/#services", label: "Tjänster" },
-      { href: "/sv/#areas", label: "Områden" },
+      { href: "/sv#services", label: "Tjänster" },
+      { href: "/sv#areas", label: "Områden" },
       { href: "/sv/blog", label: "Blogg" },
       { href: "/colaboradores", label: "Partners" },
-      { href: "/sv/#contact", label: "Kontakt" },
+      { href: "/sv#contact", label: "Kontakt" },
     ],
     ru: [
-      { href: "/ru/#services", label: "Услуги" },
-      { href: "/ru/#areas", label: "Зоны" },
+      { href: "/ru#services", label: "Услуги" },
+      { href: "/ru#areas", label: "Зоны" },
       { href: "/ru/blog", label: "Блог" },
       { href: "/colaboradores", label: "Партнерам" },
-      { href: "/ru/#contact", label: "Контакты" },
+      { href: "/ru#contact", label: "Контакты" },
     ],
     nl: [
-      { href: "/nl/#services", label: "Diensten" },
-      { href: "/nl/#areas", label: "Gebieden" },
+      { href: "/nl#services", label: "Diensten" },
+      { href: "/nl#areas", label: "Gebieden" },
       { href: "/nl/blog", label: "Blog" },
       { href: "/colaboradores", label: "Partners" },
-      { href: "/nl/#contact", label: "Contact" },
+      { href: "/nl#contact", label: "Contact" },
     ],
   };
 
   const localePaths: Record<string, string> = {
     en: "/",
-    es: "/es/",
-    de: "/de/",
-    fr: "/fr/",
-    fi: "/fi/",
-    ar: "/ar/",
-    no: "/no/",
-    da: "/da/",
-    sv: "/sv/",
-    ru: "/ru/",
-    nl: "/nl/",
+    es: "/es",
+    de: "/de",
+    fr: "/fr",
+    fi: "/fi",
+    ar: "/ar",
+    no: "/no",
+    da: "/da",
+    sv: "/sv",
+    ru: "/ru",
+    nl: "/nl",
   };
 
   const btnTranslations: Record<string, { call: string; whatsapp: string }> = {

@@ -99,8 +99,8 @@ export default function BlogSection({
               href={`https://api.whatsapp.com/send?text=${encodeURIComponent(
                 `${singlePost.title[locale]} https://www.urgentcare24h.com${
                   locale === "en"
-                    ? `/blog/${singlePost.localeSlugs[locale]}/`
-                    : `/${locale}/blog/${singlePost.localeSlugs[locale]}/`
+                    ? `/blog/${singlePost.localeSlugs[locale]}`
+                    : `/${locale}/blog/${singlePost.localeSlugs[locale]}`
                 }`
               )}`}
               target="_blank"
@@ -117,8 +117,8 @@ export default function BlogSection({
               href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
                 `https://www.urgentcare24h.com${
                   locale === "en"
-                    ? `/blog/${singlePost.localeSlugs[locale]}/`
-                    : `/${locale}/blog/${singlePost.localeSlugs[locale]}/`
+                    ? `/blog/${singlePost.localeSlugs[locale]}`
+                    : `/${locale}/blog/${singlePost.localeSlugs[locale]}`
                 }`
               )}`}
               target="_blank"
@@ -137,8 +137,8 @@ export default function BlogSection({
               )}&url=${encodeURIComponent(
                 `https://www.urgentcare24h.com${
                   locale === "en"
-                    ? `/blog/${singlePost.localeSlugs[locale]}/`
-                    : `/${locale}/blog/${singlePost.localeSlugs[locale]}/`
+                    ? `/blog/${singlePost.localeSlugs[locale]}`
+                    : `/${locale}/blog/${singlePost.localeSlugs[locale]}`
                 }`
               )}`}
               target="_blank"
@@ -155,8 +155,8 @@ export default function BlogSection({
               href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
                 `https://www.urgentcare24h.com${
                   locale === "en"
-                    ? `/blog/${singlePost.localeSlugs[locale]}/`
-                    : `/${locale}/blog/${singlePost.localeSlugs[locale]}/`
+                    ? `/blog/${singlePost.localeSlugs[locale]}`
+                    : `/${locale}/blog/${singlePost.localeSlugs[locale]}`
                 }`
               )}`}
               target="_blank"
@@ -277,7 +277,7 @@ export default function BlogSection({
           {BLOG_POSTS.map((post) => {
             const slug = post.localeSlugs[locale];
             const href =
-              locale === "en" ? `/blog/${slug}/` : `/${locale}/blog/${slug}/`;
+              locale === "en" ? `/blog/${slug}` : `/${locale}/blog/${slug}`;
 
             return (
               <li key={post.slug} className="h-full">

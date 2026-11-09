@@ -8,7 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // ── Home pages ────────────────────────────────────────
   entries.push({
-    url: `${BASE_URL}/`,
+    url: `${BASE_URL}`,
     lastModified: new Date(),
     changeFrequency: "weekly",
     priority: 1.0,
@@ -17,7 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const locale of LOCALES) {
     if (locale !== "en") {
       entries.push({
-        url: `${BASE_URL}/${locale}/`,
+        url: `${BASE_URL}/${locale}`,
         lastModified: new Date(),
         changeFrequency: "weekly",
         priority: 0.9,
@@ -30,8 +30,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const [locale, localeSlug] of Object.entries(city.localeSlugs)) {
       const url =
         locale === "en"
-          ? `${BASE_URL}/${localeSlug}/`
-          : `${BASE_URL}/${locale}/${localeSlug}/`;
+          ? `${BASE_URL}/${localeSlug}`
+          : `${BASE_URL}/${locale}/${localeSlug}`;
       entries.push({
         url,
         lastModified: new Date(),
@@ -43,7 +43,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // ── Blog index ────────────────────────────────────────
   entries.push({
-    url: `${BASE_URL}/blog/`,
+    url: `${BASE_URL}/blog`,
     lastModified: new Date(),
     changeFrequency: "weekly",
     priority: 0.8,
@@ -52,7 +52,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const locale of LOCALES) {
     if (locale !== "en") {
       entries.push({
-        url: `${BASE_URL}/${locale}/blog/`,
+        url: `${BASE_URL}/${locale}/blog`,
         lastModified: new Date(),
         changeFrequency: "weekly",
         priority: 0.7,
@@ -65,8 +65,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const [locale, localeSlug] of Object.entries(post.localeSlugs)) {
       const url =
         locale === "en"
-          ? `${BASE_URL}/blog/${localeSlug}/`
-          : `${BASE_URL}/${locale}/blog/${localeSlug}/`;
+          ? `${BASE_URL}/blog/${localeSlug}`
+          : `${BASE_URL}/${locale}/blog/${localeSlug}`;
       entries.push({
         url,
         lastModified: post.date ? new Date(post.date) : new Date(),

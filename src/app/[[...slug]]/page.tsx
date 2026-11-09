@@ -281,7 +281,7 @@ export function buildCityBreadcrumbs(
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: `${siteUrl}/`,
+        item: siteUrl,
       },
       {
         "@type": "ListItem",
@@ -331,8 +331,8 @@ export function buildBlogBreadcrumbs(
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/` },
-      { "@type": "ListItem", position: 2, name: "Blog", item: `${siteUrl}/blog/` },
+      { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${siteUrl}/blog` },
       { "@type": "ListItem", position: 3, name: post.title[locale], item: canonical },
     ],
   };
@@ -355,25 +355,25 @@ export async function generateMetadata({
     const t = translations[page.locale];
     const meta = HOME_META[page.locale] ?? HOME_META.en;
     const canonical =
-      page.locale === "en" ? `${siteUrl}/` : `${siteUrl}/${page.locale}/`;
+      page.locale === "en" ? siteUrl : `${siteUrl}/${page.locale}`;
     return {
       title: meta.title,
       description: meta.description,
       alternates: {
         canonical,
         languages: {
-          en: `${siteUrl}/`,
-          es: `${siteUrl}/es/`,
-          de: `${siteUrl}/de/`,
-          fr: `${siteUrl}/fr/`,
-          fi: `${siteUrl}/fi/`,
-          ar: `${siteUrl}/ar/`,
-          no: `${siteUrl}/no/`,
-          da: `${siteUrl}/da/`,
-          sv: `${siteUrl}/sv/`,
-          ru: `${siteUrl}/ru/`,
-          nl: `${siteUrl}/nl/`,
-          "x-default": `${siteUrl}/`,
+          en: siteUrl,
+          es: `${siteUrl}/es`,
+          de: `${siteUrl}/de`,
+          fr: `${siteUrl}/fr`,
+          fi: `${siteUrl}/fi`,
+          ar: `${siteUrl}/ar`,
+          no: `${siteUrl}/no`,
+          da: `${siteUrl}/da`,
+          sv: `${siteUrl}/sv`,
+          ru: `${siteUrl}/ru`,
+          nl: `${siteUrl}/nl`,
+          "x-default": siteUrl,
         },
       },
       openGraph: {
@@ -396,15 +396,15 @@ export async function generateMetadata({
     const localeSlug = city.localeSlugs[locale];
     const canonical =
       locale === "en"
-        ? `${siteUrl}/${localeSlug}/`
-        : `${siteUrl}/${locale}/${localeSlug}/`;
+        ? `${siteUrl}/${localeSlug}`
+        : `${siteUrl}/${locale}/${localeSlug}`;
 
     const altLangs: Record<string, string> = {};
     for (const [loc, ls] of Object.entries(city.localeSlugs)) {
       altLangs[loc] =
-        loc === "en" ? `${siteUrl}/${ls}/` : `${siteUrl}/${loc}/${ls}/`;
+        loc === "en" ? `${siteUrl}/${ls}` : `${siteUrl}/${loc}/${ls}`;
     }
-    altLangs["x-default"] = `${siteUrl}/${city.localeSlugs.en}/`;
+    altLangs["x-default"] = `${siteUrl}/${city.localeSlugs.en}`;
 
     return {
       title: city.metaTitle[locale],
@@ -433,26 +433,26 @@ export async function generateMetadata({
     const t = translations[locale];
     const canonical =
       locale === "en"
-        ? `${siteUrl}/blog/`
-        : `${siteUrl}/${locale}/blog/`;
+        ? `${siteUrl}/blog`
+        : `${siteUrl}/${locale}/blog`;
     return {
       title: t.blog.title,
       description: t.blog.subtitle,
       alternates: {
         canonical,
         languages: {
-          en: `${siteUrl}/blog/`,
-          es: `${siteUrl}/es/blog/`,
-          de: `${siteUrl}/de/blog/`,
-          fr: `${siteUrl}/fr/blog/`,
-          fi: `${siteUrl}/fi/blog/`,
-          ar: `${siteUrl}/ar/blog/`,
-          no: `${siteUrl}/no/blog/`,
-          da: `${siteUrl}/da/blog/`,
-          sv: `${siteUrl}/sv/blog/`,
-          ru: `${siteUrl}/ru/blog/`,
-          nl: `${siteUrl}/nl/blog/`,
-          "x-default": `${siteUrl}/blog/`,
+          en: `${siteUrl}/blog`,
+          es: `${siteUrl}/es/blog`,
+          de: `${siteUrl}/de/blog`,
+          fr: `${siteUrl}/fr/blog`,
+          fi: `${siteUrl}/fi/blog`,
+          ar: `${siteUrl}/ar/blog`,
+          no: `${siteUrl}/no/blog`,
+          da: `${siteUrl}/da/blog`,
+          sv: `${siteUrl}/sv/blog`,
+          ru: `${siteUrl}/ru/blog`,
+          nl: `${siteUrl}/nl/blog`,
+          "x-default": `${siteUrl}/blog`,
         },
       },
     };
@@ -463,17 +463,17 @@ export async function generateMetadata({
     const localeSlug = post.localeSlugs[locale];
     const canonical =
       locale === "en"
-        ? `${siteUrl}/blog/${localeSlug}/`
-        : `${siteUrl}/${locale}/blog/${localeSlug}/`;
+        ? `${siteUrl}/blog/${localeSlug}`
+        : `${siteUrl}/${locale}/blog/${localeSlug}`;
 
     const altLangs: Record<string, string> = {};
     for (const [loc, ls] of Object.entries(post.localeSlugs)) {
       altLangs[loc] =
         loc === "en"
-          ? `${siteUrl}/blog/${ls}/`
-          : `${siteUrl}/${loc}/blog/${ls}/`;
+          ? `${siteUrl}/blog/${ls}`
+          : `${siteUrl}/${loc}/blog/${ls}`;
     }
-    altLangs["x-default"] = `${siteUrl}/blog/${post.localeSlugs.en}/`;
+    altLangs["x-default"] = `${siteUrl}/blog/${post.localeSlugs.en}`;
 
     return {
       title: post.metaTitle[locale],
@@ -621,16 +621,16 @@ export default async function Page({
 
     const homeAlternates: Record<string, string> = {
       en: "/",
-      es: "/es/",
-      de: "/de/",
-      fr: "/fr/",
-      fi: "/fi/",
-      ar: "/ar/",
-      no: "/no/",
-      da: "/da/",
-      sv: "/sv/",
-      ru: "/ru/",
-      nl: "/nl/",
+      es: "/es",
+      de: "/de",
+      fr: "/fr",
+      fi: "/fi",
+      ar: "/ar",
+      no: "/no",
+      da: "/da",
+      sv: "/sv",
+      ru: "/ru",
+      nl: "/nl",
     };
 
     return (
@@ -712,15 +712,15 @@ export default async function Page({
     const localeSlug = city.localeSlugs[locale];
     const canonical =
       locale === "en"
-        ? `${siteUrl}/${localeSlug}/`
-        : `${siteUrl}/${locale}/${localeSlug}/`;
+        ? `${siteUrl}/${localeSlug}`
+        : `${siteUrl}/${locale}/${localeSlug}`;
 
     const localBusinessSchema = buildCitySchema(city, locale, canonical);
     const breadcrumbSchema = buildCityBreadcrumbs(city, siteUrl, canonical);
 
     const cityAlternates: Record<string, string> = {};
     for (const [loc, ls] of Object.entries(city.localeSlugs)) {
-      cityAlternates[loc] = loc === "en" ? `/${ls}/` : `/${loc}/${ls}/`;
+      cityAlternates[loc] = loc === "en" ? `/${ls}` : `/${loc}/${ls}`;
     }
 
     return (
@@ -857,17 +857,17 @@ export default async function Page({
   // ── Blog Index ─────────────────────────────────────────
   if (page.type === "blog-index") {
     const blogIndexAlternates: Record<string, string> = {
-      en: "/blog/",
-      es: "/es/blog/",
-      de: "/de/blog/",
-      fr: "/fr/blog/",
-      fi: "/fi/blog/",
-      ar: "/ar/blog/",
-      no: "/no/blog/",
-      da: "/da/blog/",
-      sv: "/sv/blog/",
-      ru: "/ru/blog/",
-      nl: "/nl/blog/",
+      en: "/blog",
+      es: "/es/blog",
+      de: "/de/blog",
+      fr: "/fr/blog",
+      fi: "/fi/blog",
+      ar: "/ar/blog",
+      no: "/no/blog",
+      da: "/da/blog",
+      sv: "/sv/blog",
+      ru: "/ru/blog",
+      nl: "/nl/blog",
     };
 
     return (
@@ -899,15 +899,15 @@ export default async function Page({
     const localeSlug = post.localeSlugs[locale];
     const canonical =
       locale === "en"
-        ? `${siteUrl}/blog/${localeSlug}/`
-        : `${siteUrl}/${locale}/blog/${localeSlug}/`;
+        ? `${siteUrl}/blog/${localeSlug}`
+        : `${siteUrl}/${locale}/blog/${localeSlug}`;
 
     const articleSchema = buildBlogPostSchema(post, locale, siteUrl, canonical);
     const breadcrumbBlogSchema = buildBlogBreadcrumbs(post, locale, siteUrl, canonical);
 
     const blogPostAlternates: Record<string, string> = {};
     for (const [loc, ls] of Object.entries(post.localeSlugs)) {
-      blogPostAlternates[loc] = loc === "en" ? `/blog/${ls}/` : `/${loc}/blog/${ls}/`;
+      blogPostAlternates[loc] = loc === "en" ? `/blog/${ls}` : `/${loc}/blog/${ls}`;
     }
 
     return (
