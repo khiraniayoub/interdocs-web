@@ -102,8 +102,8 @@ export const translations = {
         },
         {
           icon: "prescription",
-          title: "Prescriptions & Medication",
-          desc: "Immediate medical prescription for antibiotics, pain relief, ear drops and urgent medication valid at all 24-hour pharmacies.",
+          title: "Express Prescription & Medical Report (€90)",
+          desc: "Online/Phone Doctor Consultation in 15 min: Official Spanish QR Prescription (valid at all pharmacies across Spain) + Signed Medical Report & Invoice for Travel Insurance.",
         },
         {
           icon: "certificate",
@@ -172,8 +172,8 @@ export const translations = {
           a: "Yes. Our doctors provide gentle, professional paediatric care for infants, children and adolescents suffering from fevers, earaches, rashes or stomach problems.",
         },
         {
-          q: "Can the doctor provide prescriptions on the spot?",
-          a: "Yes. Our doctors carry official medical prescription pads for antibiotics, pain relief, antiemetics and treatments that you can pick up at any local 24-hour pharmacy.",
+          q: "Can I get an urgent Spanish prescription & medical report online anywhere in Spain (€90)?",
+          a: "Yes. Through our €90 Express Online/Phone Consultation, our licensed doctors evaluate your case and send an Official Spanish Electronic Prescription (QR code) plus a Signed Medical Report and Invoice directly to your phone via WhatsApp or Email in 15 minutes. The QR prescription is accepted at all 22,000+ pharmacies across Mainland Spain, the Costa del Sol, Balearic Islands (Mallorca, Ibiza) and Canary Islands (Tenerife, Gran Canaria), and the medical report allows you to claim reimbursement from your travel insurance.",
         },
       ],
     },
@@ -260,7 +260,7 @@ export const translations = {
         { icon: "hotel", title: "Médico en Hotel 24/7", desc: "Visita médica urgente y privada directamente en tu habitación de hotel en Marbella, Puerto Banús, Fuengirola y Benalmádena." },
         { icon: "home", title: "Médico en Apartamento y Villa", desc: "Atención médica rápida en apartamentos vacacionales, residencias y villas privadas en toda la Costa del Sol." },
         { icon: "emergency", title: "Urgencias Médicas Domiciliarias", desc: "Asistencia médica urgente ante gastroenteritis, fiebre aguda, infecciones, cólicos y patologías repentinas." },
-        { icon: "prescription", title: "Recetas Médicas Oficiales", desc: "Prescripción de antibióticos, analgésicos y tratamientos de urgencia válidos en farmacias de guardia 24 horas." },
+        { icon: "prescription", title: "Receta Electrónica + Informe Médico (90€)", desc: "Teleconsulta médica en 15 min: Receta Oficial Española con código QR (válida en todas las farmacias de España) + Informe Médico y Factura para tu Seguro." },
         { icon: "certificate", title: "Certificados Médicos y Fit to Fly", desc: "Emisión de certificados de aptitud para volar (Fit to Fly), partes de cancelación de viaje e informes para aseguradoras." },
         { icon: "tourist", title: "Atención Médica al Turista", desc: "Asistencia médica internacional especializada para turistas extranjeros y residentes con cobertura en múltiples idiomas." },
         { icon: "gp", title: "Medicina General (GP)", desc: "Consulta clínica completa con toma de constantes, exploración física, medicación in situ y pauta de tratamiento." },
@@ -285,7 +285,7 @@ export const translations = {
         { q: "¿Puedo obtener un certificado médico 'Fit to Fly'?", a: "Sí. Si una enfermedad o lesión te impide volar o necesitas autorización médica para tu aerolínea, el médico te examina y emite el certificado oficial Fit to Fly en el acto." },
         { q: "¿Puedo usar mi seguro de viaje internacional?", a: "Sí. Entregamos un informe médico completo con diagnóstico codificado (CIE-10 / ICD-10) y factura desglosada oficial para que puedas presentar la reclamación a tu seguro de viaje o privado (Bupa, Allianz, AXA, Sanitas, aseguradoras nórdicas, británicas o internacionales)." },
         { q: "¿Atienden a bebés y niños?", a: "Sí. Disponemos de facultativos con amplia experiencia en atención pediátrica urgente para tratar fiebres, otitis de piscina, heridas y vómitos en niños." },
-        { q: "¿El médico puede recetar medicamentos?", a: "Sí. Los médicos llevan talonario oficial de recetas para prescribir antibióticos, calmantes o el tratamiento que requieras en cualquier farmacia 24 horas." },
+        { q: "¿Puedo obtener una receta médica oficial e informe médico online en cualquier parte de España (90€)?", a: "Sí. Mediante nuestra Teleconsulta Express de 90€, un médico colegiado valora tu caso y te envía a tu móvil por WhatsApp o Email en 15 minutos la Receta Electrónica Oficial con código QR (válida en todas las farmacias de España, Costa del Sol, Baleares y Canarias) junto con el Informe Médico Oficial firmado y la Factura para el reembolso de tu seguro de viaje." },
       ],
     },
     blog: { title: "Guías de Salud y Consejos Médicos", subtitle: "Información médica útil para turistas y viajeros en la Costa del Sol.", readMore: "Leer artículo" },
@@ -349,7 +349,7 @@ export const translations = {
         { icon: "hotel", title: "Arzt im Hotel", desc: "Vollständige ärztliche Beratung in Ihrem Hotelzimmer." },
         { icon: "home", title: "Arzt in der Ferienwohnung", desc: "Wir besuchen Sie in Ihrer Mietwohnung oder Unterkunft." },
         { icon: "emergency", title: "Notfall-Hausbesuch", desc: "Dringende ärztliche Versorgung, wenn Sie sie am meisten brauchen." },
-        { icon: "prescription", title: "Rezeptausstellung", desc: "Notwendige Medikamente, verschrieben von einem zugelassenen Arzt." },
+        { icon: "prescription", title: "Express-Rezept & Arztbericht (90€)", desc: "Online-/Telefon-Konsultation in 15 Min: Offizielles spanisches QR-Rezept (gültig in allen Apotheken Spaniens) + Arztbericht & Rechnung für Ihre Reiseversicherung." },
         { icon: "certificate", title: "Ärztliche Bescheinigungen", desc: "Offizielle Dokumentation für Ihre Reiseversicherung." },
         { icon: "tourist", title: "Touristenmedizin", desc: "Spezialisierte Versorgung für internationale Besucher." },
         { icon: "gp", title: "Allgemeinarzt", desc: "Vollständige Konsultation mit Diagnose und Behandlungsplan." },
@@ -444,7 +444,7 @@ export const translations = {
         { icon: "hotel", title: "Médecin à l'Hôtel", desc: "Consultation médicale complète dans le confort de votre chambre d'hôtel." },
         { icon: "home", title: "Médecin à l'Appartement", desc: "Nous visitons votre appartement de location ou résidence." },
         { icon: "emergency", title: "Visite d'Urgence à Domicile", desc: "Attention médicale urgente quand vous en avez le plus besoin." },
-        { icon: "prescription", title: "Assistance Prescription", desc: "Obtenez les médicaments nécessaires prescrits par un médecin agréé." },
+        { icon: "prescription", title: "Ordonnance Express & Rapport Médical (90€)", desc: "Téléconsultation en 15 min : Ordonnance officielle espagnole QR (valable dans toutes les pharmacies d'Espagne) + Rapport médical et facture pour votre assurance." },
         { icon: "certificate", title: "Certificats Médicaux", desc: "Documentation officielle pour votre assurance voyage." },
         { icon: "tourist", title: "Soins pour Touristes", desc: "Soins spécialisés pour les visiteurs internationaux." },
         { icon: "gp", title: "Médecin Généraliste", desc: "Consultation complète incluant diagnostic et plan de traitement." },
@@ -568,8 +568,8 @@ export const translations = {
         },
         {
           icon: "prescription",
-          title: "Reseptipalvelut",
-          desc: "Hanki tarvittavat lääkkeet laillistetun lääkärin määräämänä.",
+          title: "Pikaresepti & Lääkärinlausunto (90€)",
+          desc: "Etäkonsultaatio 15 minuutissa: Virallinen espanjalainen QR-resepti (voimassa kaikissa Espanjan apteekeissa) + lääkärinlausunto ja kuitti matkavakuutukseen.",
         },
         {
           icon: "certificate",
@@ -734,8 +734,8 @@ export const translations = {
         },
         {
           icon: "prescription",
-          title: "المساعدة في الوصفات الطبية",
-          desc: "احصل على الأدوية اللازمة الموصوفة من قبل طبيب مرخص.",
+          title: "وصفة طبية سريعة + تقرير طبي (€90)",
+          desc: "استشارة طبية أونلاين خلال 15 دقيقة: وصفة إلكترونية رسمية برمز QR صالحة في جميع صيدليات إسبانيا + تقرير طبي وفاتورة للتأمين.",
         },
         {
           icon: "certificate",
@@ -900,8 +900,8 @@ export const translations = {
         },
         {
           icon: "prescription",
-          title: "Resepthjelp",
-          desc: "Få nødvendige medisiner foreskrevet av en lisensiert lege.",
+          title: "Ekspress Resept & Legerapport (€90)",
+          desc: "Online konsultasjon på 15 min: Offisiell spansk QR-resept (gyldig på alle apotek i hele Spania) + signert legerapport og kvittering til reiseforsikring.",
         },
         {
           icon: "certificate",
@@ -1066,8 +1066,8 @@ export const translations = {
         },
         {
           icon: "prescription",
-          title: "Hjælp til Recepter",
-          desc: "Få den nødvendige medicin ordineret af en autoriseret læge.",
+          title: "Ekspres Recept & Lægerapport (€90)",
+          desc: "Online konsultation på 15 min: Officiel spansk QR-recept (gyldig på alle apoteker i hele Spanien) + underskrevet lægeerklæring og kvittering til rejseforsikring.",
         },
         {
           icon: "certificate",
@@ -1232,8 +1232,8 @@ export const translations = {
         },
         {
           icon: "prescription",
-          title: "Hjälp med Recept",
-          desc: "Få nödvändig medicin utskriven av en legitimerad läkare.",
+          title: "Expressrecept & Läkarintyg (€90)",
+          desc: "Onlinekonsultation på 15 min: Officiellt spanskt QR-recept (giltigt på alla apotek i hela Spanien) + signerat läkarintyg och kvitto för reseförsäkring.",
         },
         {
           icon: "certificate",
@@ -1398,8 +1398,8 @@ export const translations = {
         },
         {
           icon: "prescription",
-          title: "Выписка рецептов",
-          desc: "Получение официальных рецептов на необходимые медикаменты.",
+          title: "Экспресс-рецепт и Медотчет (90€)",
+          desc: "Онлайн-консультация за 15 мин: официальный испанский QR-рецепт (действует во всех аптеках Испании) + медицинский отчет и счет для страховки.",
         },
         {
           icon: "certificate",
@@ -1563,8 +1563,8 @@ export const translations = {
         },
         {
           icon: "prescription",
-          title: "Receptservice",
-          desc: "Verkrijg noodzakelijke medicatie voorgeschreven door een bevoegd arts.",
+          title: "Spoedrecept & Medisch Rapport (€90)",
+          desc: "Online consult in 15 min: Officieel Spaans QR-recept (geldig bij alle apotheken in heel Spanje) + ondertekend medisch rapport en factuur voor uw reisverzekering.",
         },
         {
           icon: "certificate",

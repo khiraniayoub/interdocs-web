@@ -5,17 +5,237 @@ import { usePathname } from "next/navigation";
 import { PHONE_URL, PHONE_NUMBER, WHATSAPP_NUMBER } from "@/data/content";
 
 const TRANSLATIONS: Record<string, any> = {
-  en: { call: "Call Now", callMobile: "Call 24/7", whatsapp: "WhatsApp Now", whatsappMobile: "WhatsApp 24/7", title: "Quick Medical Request", q1: "1. Where are you staying?", p1: "Hotel name or address...", q2: "2. What are your symptoms?", p2: "Briefly describe what happens...", btn: "Continue to WhatsApp", msg: "Hello, I need a doctor.\n\n📍 Location: {location}\n🤒 Symptoms: {symptoms}" },
-  es: { call: "Llamar Ahora", callMobile: "Llamar 24/7", whatsapp: "WhatsApp Ahora", whatsappMobile: "WhatsApp 24/7", title: "Petición Médica Inmediata", q1: "1. ¿Dónde estás alojado?", p1: "Nombre del hotel o dirección...", q2: "2. ¿Cuáles son tus síntomas?", p2: "Describe brevemente qué ocurre...", btn: "Continuar a WhatsApp", msg: "Hola, necesito un médico.\n\n📍 Ubicación: {location}\n🤒 Síntomas: {symptoms}" },
-  de: { call: "Jetzt anrufen", callMobile: "Anrufen 24/7", whatsapp: "WhatsApp jetzt", whatsappMobile: "WhatsApp 24/7", title: "Schnelle ärztliche Anfrage", q1: "1. Wo übernachten Sie?", p1: "Hotelname oder Adresse...", q2: "2. Was sind Ihre Symptome?", p2: "Beschreiben Sie kurz...", btn: "Weiter zu WhatsApp", msg: "Hallo, ich brauche einen Arzt.\n\n📍 Ort: {location}\n🤒 Symptome: {symptoms}" },
-  fr: { call: "Appeler", callMobile: "Appeler 24/7", whatsapp: "WhatsApp", whatsappMobile: "WhatsApp 24/7", title: "Demande Médicale Rapide", q1: "1. Où séjournez-vous ?", p1: "Nom de l'hôtel ou adresse...", q2: "2. Quels sont vos symptômes ?", p2: "Décrivez brièvement...", btn: "Aller sur WhatsApp", msg: "Bonjour, j'ai besoin d'un médecin.\n\n📍 Lieu : {location}\n🤒 Symptômes : {symptoms}" },
-  fi: { call: "Soita Nyt", callMobile: "Soita 24/7", whatsapp: "WhatsApp", whatsappMobile: "WhatsApp 24/7", title: "Nopea pyyntö", q1: "1. Missä majoitut?", p1: "Hotellin nimi tai osoite...", q2: "2. Mitkä ovat oireesi?", p2: "Kuvaile lyhyesti...", btn: "Jatka WhatsAppiin", msg: "Hei, tarvitsen lääkäriä.\n\n📍 Sijainti: {location}\n🤒 Oireet: {symptoms}" },
-  ar: { call: "اتصل الان", callMobile: "اتصال 24/7", whatsapp: "واتساب", whatsappMobile: "واتساب 24/7", title: "طلب طبي سريع", q1: "1. أين تقيم؟", p1: "اسم الفندق أو العنوان...", q2: "2. ما هي الأعراض؟", p2: "صف باختصار...", btn: "متابعة إلى الواتساب", msg: "مرحباً، أحتاج إلى طبيب.\n\n📍 الموقع: {location}\n🤒 الأعراض: {symptoms}" },
-  no: { call: "Ring nå", callMobile: "Ring 24/7", whatsapp: "WhatsApp", whatsappMobile: "WhatsApp 24/7", title: "Rask forespørsel", q1: "1. Hvor bor du?", p1: "Hotellnavn eller adresse...", q2: "2. Hva er symptomene dine?", p2: "Beskriv kort...", btn: "Gå til WhatsApp", msg: "Hei, jeg trenger en lege.\n\n📍 Sted: {location}\n🤒 Symptomer: {symptoms}" },
-  da: { call: "Ring nu", callMobile: "Ring 24/7", whatsapp: "WhatsApp", whatsappMobile: "WhatsApp 24/7", title: "Hurtig anmodning", q1: "1. Hvor bor du?", p1: "Hotelnavn eller adresse...", q2: "2. Hvad er dine symptomer?", p2: "Beskriv kort...", btn: "Gå til WhatsApp", msg: "Hej, jeg har brug for en læge.\n\n📍 Sted: {location}\n🤒 Symptomer: {symptoms}" },
-  sv: { call: "Ring nu", callMobile: "Ring 24/7", whatsapp: "WhatsApp", whatsappMobile: "WhatsApp 24/7", title: "Snabb begäran", q1: "1. Var bor du?", p1: "Hotellnamn eller adress...", q2: "2. Vad har du för symptom?", p2: "Beskriv kort...", btn: "Gå till WhatsApp", msg: "Hej, jag behöver en läkare.\n\n📍 Plats: {location}\n🤒 Symptom: {symptoms}" },
-  ru: { call: "Позвонить", callMobile: "Звонок 24/7", whatsapp: "WhatsApp", whatsappMobile: "WhatsApp 24/7", title: "Быстрый вызов врача", q1: "1. Где вы находитесь?", p1: "Название отеля или адрес...", q2: "2. Какие у вас симптомы?", p2: "Кратко опишите проблему...", btn: "Перейти в WhatsApp", msg: "Здравствуйте, мне нужен врач.\n\n📍 Местоположение: {location}\n🤒 Симптомы: {symptoms}" },
-  nl: { call: "Bel nu", callMobile: "Bellen 24/7", whatsapp: "WhatsApp nu", whatsappMobile: "WhatsApp 24/7", title: "Snelle doktersaanvraag", q1: "1. Waar verblijft u?", p1: "Hotelnaam of adres...", q2: "2. Wat zijn uw symptomen?", p2: "Beschrijf kort uw klachten...", btn: "Verder naar WhatsApp", msg: "Hallo, ik heb een dokter nodig.\n\n📍 Locatie: {location}\n🤒 Symptomen: {symptoms}" }
+  en: {
+    call: "Call Now",
+    callMobile: "Call 24/7",
+    whatsapp: "WhatsApp Now",
+    whatsappMobile: "WhatsApp 24/7",
+    title: "Quick Medical Request",
+    optVisit: "🏨 Doctor Visit (€130/€140)",
+    optRx: "💊 Prescription + Report (€90)",
+    q1: "1. Where are you staying?",
+    q1Rx: "1. Your City / Location in Spain",
+    p1: "Hotel name or address...",
+    p1Rx: "City or pharmacy area (e.g. Marbella, Mallorca, Tenerife)...",
+    q2: "2. What are your symptoms?",
+    q2Rx: "2. Medication needed & symptoms",
+    p2: "Briefly describe what happens...",
+    p2Rx: "Medication name / symptoms for your prescription & report...",
+    btn: "Continue to WhatsApp",
+    msg: "Hello, I need a doctor visit.\n\n📍 Location: {location}\n🤒 Symptoms: {symptoms}",
+    msgRx:
+      "Hello, I need an Express Online Prescription + Medical Report (€90).\n\n📍 Location/City: {location}\n💊 Medication / Symptoms: {symptoms}",
+  },
+  es: {
+    call: "Llamar Ahora",
+    callMobile: "Llamar 24/7",
+    whatsapp: "WhatsApp Ahora",
+    whatsappMobile: "WhatsApp 24/7",
+    title: "Petición Médica Inmediata",
+    optVisit: "🏨 Visita Médica (130€/140€)",
+    optRx: "💊 Receta QR + Informe (90€)",
+    q1: "1. ¿Dónde estás alojado?",
+    q1Rx: "1. ¿En qué ciudad de España estás?",
+    p1: "Nombre del hotel o dirección...",
+    p1Rx: "Ciudad o zona (ej. Marbella, Mallorca, Tenerife, Madrid)...",
+    q2: "2. ¿Cuáles son tus síntomas?",
+    q2Rx: "2. Medicación necesaria y síntomas",
+    p2: "Describe brevemente qué ocurre...",
+    p2Rx: "Nombre del medicamento o síntomas para tu receta e informe...",
+    btn: "Continuar a WhatsApp",
+    msg: "Hola, necesito un médico a domicilio/hotel.\n\n📍 Ubicación: {location}\n🤒 Síntomas: {symptoms}",
+    msgRx:
+      "Hola, necesito una Receta Electrónica Express + Informe Médico (90€).\n\n📍 Ciudad: {location}\n💊 Medicación / Síntomas: {symptoms}",
+  },
+  de: {
+    call: "Jetzt anrufen",
+    callMobile: "Anrufen 24/7",
+    whatsapp: "WhatsApp jetzt",
+    whatsappMobile: "WhatsApp 24/7",
+    title: "Schnelle ärztliche Anfrage",
+    optVisit: "🏨 Arztbesuch (130€/140€)",
+    optRx: "💊 Rezept + Bericht (90€)",
+    q1: "1. Wo übernachten Sie?",
+    q1Rx: "1. Stadt / Ort in Spanien",
+    p1: "Hotelname oder Adresse...",
+    p1Rx: "Stadt oder Ort in Spanien...",
+    q2: "2. Was sind Ihre Symptome?",
+    q2Rx: "2. Benötigtes Medikament & Symptome",
+    p2: "Beschreiben Sie kurz...",
+    p2Rx: "Medikament / Symptome...",
+    btn: "Weiter zu WhatsApp",
+    msg: "Hallo, ich brauche einen Arzt.\n\n📍 Ort: {location}\n🤒 Symptome: {symptoms}",
+    msgRx:
+      "Hallo, ich benötige ein Express-Online-Rezept + Arztbericht (90€).\n\n📍 Ort: {location}\n💊 Medikament / Symptome: {symptoms}",
+  },
+  fr: {
+    call: "Appeler",
+    callMobile: "Appeler 24/7",
+    whatsapp: "WhatsApp",
+    whatsappMobile: "WhatsApp 24/7",
+    title: "Demande Médicale Rapide",
+    optVisit: "🏨 Visite Médecin (130€/140€)",
+    optRx: "💊 Ordonnance + Rapport (90€)",
+    q1: "1. Où séjournez-vous ?",
+    q1Rx: "1. Ville en Espagne",
+    p1: "Nom de l'hôtel ou adresse...",
+    p1Rx: "Ville ou hôtel en Espagne...",
+    q2: "2. Quels sont vos symptômes ?",
+    q2Rx: "2. Médicament souhaité et symptômes",
+    p2: "Décrivez brièvement...",
+    p2Rx: "Médicament / symptômes...",
+    btn: "Aller sur WhatsApp",
+    msg: "Bonjour, j'ai besoin d'un médecin.\n\n📍 Lieu : {location}\n🤒 Symptômes : {symptoms}",
+    msgRx:
+      "Bonjour, j'ai besoin d'une Ordonnance Express + Rapport Médical (90€).\n\n📍 Ville : {location}\n💊 Médicament / Symptômes : {symptoms}",
+  },
+  fi: {
+    call: "Soita Nyt",
+    callMobile: "Soita 24/7",
+    whatsapp: "WhatsApp",
+    whatsappMobile: "WhatsApp 24/7",
+    title: "Nopea pyyntö",
+    optVisit: "🏨 Lääkärikäynti (130€/140€)",
+    optRx: "💊 Resepti + Lausunto (90€)",
+    q1: "1. Missä majoitut?",
+    q1Rx: "1. Kaupunki Espanjassa",
+    p1: "Hotellin nimi tai osoite...",
+    p1Rx: "Kaupunki tai sijainti...",
+    q2: "2. Mitkä ovat oireesi?",
+    q2Rx: "2. Tarvittava lääke ja oireet",
+    p2: "Kuvaile lyhyesti...",
+    p2Rx: "Lääkkeen nimi / oireet...",
+    btn: "Jatka WhatsAppiin",
+    msg: "Hei, tarvitsen lääkäriä.\n\n📍 Sijainti: {location}\n🤒 Oireet: {symptoms}",
+    msgRx:
+      "Hei, tarvitsen Pikareseptin + Lääkärinlausunnon (90€).\n\n📍 Sijainti: {location}\n💊 Lääke / Oireet: {symptoms}",
+  },
+  ar: {
+    call: "اتصل الان",
+    callMobile: "اتصال 24/7",
+    whatsapp: "واتساب",
+    whatsappMobile: "واتساب 24/7",
+    title: "طلب طبي سريع",
+    optVisit: "🏨 زيارة طبيب (€130/€140)",
+    optRx: "💊 وصفة + تقرير طبي (€90)",
+    q1: "1. أين تقيم؟",
+    q1Rx: "1. المدينة في إسبانيا",
+    p1: "اسم الفندق أو العنوان...",
+    p1Rx: "المدينة أو الموقع...",
+    q2: "2. ما هي الأعراض؟",
+    q2Rx: "2. الدواء المطلوب والأعراض",
+    p2: "صف باختصار...",
+    p2Rx: "اسم الدواء أو الأعراض...",
+    btn: "متابعة إلى الواتساب",
+    msg: "مرحباً، أحتاج إلى طبيب.\n\n📍 الموقع: {location}\n🤒 الأعراض: {symptoms}",
+    msgRx:
+      "مرحباً، أحتاج إلى وصفة طبية سريعة + تقرير طبي (€90).\n\n📍 الموقع: {location}\n💊 الدواء / الأعراض: {symptoms}",
+  },
+  no: {
+    call: "Ring nå",
+    callMobile: "Ring 24/7",
+    whatsapp: "WhatsApp",
+    whatsappMobile: "WhatsApp 24/7",
+    title: "Rask forespørsel",
+    optVisit: "🏨 Legebesøk (€130/€140)",
+    optRx: "💊 Resept + Rapport (€90)",
+    q1: "1. Hvor bor du?",
+    q1Rx: "1. By / Sted i Spania",
+    p1: "Hotellnavn eller adresse...",
+    p1Rx: "By eller sted i Spania...",
+    q2: "2. Hva er symptomene dine?",
+    q2Rx: "2. Medisin og symptomer",
+    p2: "Beskriv kort...",
+    p2Rx: "Medisin / symptomer...",
+    btn: "Gå til WhatsApp",
+    msg: "Hei, jeg trenger en lege.\n\n📍 Sted: {location}\n🤒 Symptomer: {symptoms}",
+    msgRx:
+      "Hei, jeg trenger Ekspress Resept + Medisinsk Rapport (€90).\n\n📍 Sted: {location}\n💊 Medisin / Symptomer: {symptoms}",
+  },
+  da: {
+    call: "Ring nu",
+    callMobile: "Ring 24/7",
+    whatsapp: "WhatsApp",
+    whatsappMobile: "WhatsApp 24/7",
+    title: "Hurtig anmodning",
+    optVisit: "🏨 Lægebesøg (€130/€140)",
+    optRx: "💊 Recept + Rapport (€90)",
+    q1: "1. Hvor bor du?",
+    q1Rx: "1. By i Spanien",
+    p1: "Hotelnavn eller adresse...",
+    p1Rx: "By eller sted i Spanien...",
+    q2: "2. Hvad er dine symptomer?",
+    q2Rx: "2. Medicin og symptomer",
+    p2: "Beskriv kort...",
+    p2Rx: "Medicin / symptomer...",
+    btn: "Gå til WhatsApp",
+    msg: "Hej, jeg har brug for en læge.\n\n📍 Sted: {location}\n🤒 Symptomer: {symptoms}",
+    msgRx:
+      "Hej, jeg har brug for Ekspres Recept + Lægerapport (€90).\n\n📍 Sted: {location}\n💊 Medicin / Symptomer: {symptoms}",
+  },
+  sv: {
+    call: "Ring nu",
+    callMobile: "Ring 24/7",
+    whatsapp: "WhatsApp",
+    whatsappMobile: "WhatsApp 24/7",
+    title: "Snabb begäran",
+    optVisit: "🏨 Läkarbesök (€130/€140)",
+    optRx: "💊 Recept + Läkarintyg (€90)",
+    q1: "1. Var bor du?",
+    q1Rx: "1. Stad i Spanien",
+    p1: "Hotellnamn eller adress...",
+    p1Rx: "Stad eller plats i Spanien...",
+    q2: "2. Vad har du för symptom?",
+    q2Rx: "2. Medicin och symptom",
+    p2: "Beskriv kort...",
+    p2Rx: "Medicin / symptom...",
+    btn: "Gå till WhatsApp",
+    msg: "Hej, jag behöver en läkare.\n\n📍 Plats: {location}\n🤒 Symptom: {symptoms}",
+    msgRx:
+      "Hej, jag behöver Expressrecept + Läkarintyg (€90).\n\n📍 Plats: {location}\n💊 Medicin / Symptom: {symptoms}",
+  },
+  ru: {
+    call: "Позвонить",
+    callMobile: "Звонок 24/7",
+    whatsapp: "WhatsApp",
+    whatsappMobile: "WhatsApp 24/7",
+    title: "Быстрый вызов врача",
+    optVisit: "🏨 Визит врача (130€/140€)",
+    optRx: "💊 Рецепт + Медотчет (90€)",
+    q1: "1. Где вы находитесь?",
+    q1Rx: "1. Город в Испании",
+    p1: "Название отеля или адрес...",
+    p1Rx: "Город в Испании...",
+    q2: "2. Какие у вас симптомы?",
+    q2Rx: "2. Лекарство и симптомы",
+    p2: "Кратко опишите проблему...",
+    p2Rx: "Название лекарства / симптомы...",
+    btn: "Перейти в WhatsApp",
+    msg: "Здравствуйте, мне нужен врач.\n\n📍 Местоположение: {location}\n🤒 Симптомы: {symptoms}",
+    msgRx:
+      "Здравствуйте, мне нужен Экспресс-рецепт + Медицинский отчет (90€).\n\n📍 Город: {location}\n💊 Лекарство / Симптомы: {symptoms}",
+  },
+  nl: {
+    call: "Bel nu",
+    callMobile: "Bellen 24/7",
+    whatsapp: "WhatsApp nu",
+    whatsappMobile: "WhatsApp 24/7",
+    title: "Snelle doktersaanvraag",
+    optVisit: "🏨 Doktersbezoek (€130/€140)",
+    optRx: "💊 Recept + Rapport (€90)",
+    q1: "1. Waar verblijft u?",
+    q1Rx: "1. Stad / Locatie in Spanje",
+    p1: "Hotelnaam of adres...",
+    p1Rx: "Stad of locatie in Spanje...",
+    q2: "2. Wat zijn uw symptomen?",
+    q2Rx: "2. Benodigde medicatie & symptomen",
+    p2: "Beschrijf kort uw klachten...",
+    p2Rx: "Medicatie / symptomen...",
+    btn: "Verder naar WhatsApp",
+    msg: "Hallo, ik heb een dokter nodig.\n\n📍 Locatie: {location}\n🤒 Symptomen: {symptoms}",
+    msgRx:
+      "Hallo, ik heb een Spoedrecept + Medisch Rapport (€90) nodig.\n\n📍 Locatie: {location}\n💊 Medicatie / Symptomen: {symptoms}",
+  },
 };
 
 export default function FloatingCTA({ locale: propLocale = "en" }: { locale?: string }) {
@@ -24,15 +244,27 @@ export default function FloatingCTA({ locale: propLocale = "en" }: { locale?: st
   const activeLocale = (pathLocale && TRANSLATIONS[pathLocale]) ? pathLocale : propLocale;
   
   const [isOpen, setIsOpen] = useState(false);
+  const [requestType, setRequestType] = useState<"visit" | "rx">("visit");
   const [location, setLocation] = useState("");
   const [symptoms, setSymptoms] = useState("");
   
   const t = TRANSLATIONS[activeLocale] || TRANSLATIONS["en"];
 
   useEffect(() => {
-    const handleOpen = () => setIsOpen(true);
+    const handleOpen = () => {
+      setRequestType("visit");
+      setIsOpen(true);
+    };
+    const handleOpenRx = () => {
+      setRequestType("rx");
+      setIsOpen(true);
+    };
     window.addEventListener("openTriage", handleOpen);
-    return () => window.removeEventListener("openTriage", handleOpen);
+    window.addEventListener("openTriagePrescription", handleOpenRx);
+    return () => {
+      window.removeEventListener("openTriage", handleOpen);
+      window.removeEventListener("openTriagePrescription", handleOpenRx);
+    };
   }, []);
 
   const handleWhatsAppClick = (e: React.MouseEvent) => {
@@ -44,14 +276,19 @@ export default function FloatingCTA({ locale: propLocale = "en" }: { locale?: st
     let text = "";
     const loc = location.trim();
     const sym = symptoms.trim();
-    const baseGreeting = t.msg.split("\n\n")[0] || "Hello, I need a doctor.";
+    const template = requestType === "rx" ? t.msgRx || t.msg : t.msg;
+    const baseGreeting =
+      template.split("\n\n")[0] ||
+      (requestType === "rx"
+        ? "Hello, I need an Express Online Prescription + Medical Report (€90)."
+        : "Hello, I need a doctor.");
 
     if (loc && sym) {
-      text = t.msg.replace("{location}", loc).replace("{symptoms}", sym);
+      text = template.replace("{location}", loc).replace("{symptoms}", sym);
     } else if (loc) {
       text = `${baseGreeting}\n\n📍 ${loc}`;
     } else if (sym) {
-      text = `${baseGreeting}\n\n🤒 ${sym}`;
+      text = `${baseGreeting}\n\n${requestType === "rx" ? "💊" : "🤒"} ${sym}`;
     } else {
       text = baseGreeting;
     }
@@ -145,25 +382,51 @@ export default function FloatingCTA({ locale: propLocale = "en" }: { locale?: st
             </div>
 
             <div className="space-y-4">
+              {/* 2-Option Selector: Doctor Visit vs Prescription + Report (€90) */}
+              <div className="grid grid-cols-2 gap-2 p-1 bg-slate-100 rounded-xl">
+                <button
+                  type="button"
+                  onClick={() => setRequestType("visit")}
+                  className={`py-2 px-2.5 rounded-lg text-xs font-700 transition-all text-center cursor-pointer ${
+                    requestType === "visit"
+                      ? "bg-white text-slate-900 shadow-xs border border-slate-200/80"
+                      : "text-slate-600 hover:text-slate-900"
+                  }`}
+                >
+                  {t.optVisit}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setRequestType("rx")}
+                  className={`py-2 px-2.5 rounded-lg text-xs font-700 transition-all text-center cursor-pointer ${
+                    requestType === "rx"
+                      ? "bg-amber-500 text-white shadow-xs"
+                      : "text-slate-600 hover:text-slate-900"
+                  }`}
+                >
+                  {t.optRx}
+                </button>
+              </div>
+
               <div>
                 <label className="block text-xs font-700 text-slate-600 mb-1.5 uppercase tracking-wider">
-                  {t.q1}
+                  {requestType === "rx" ? t.q1Rx : t.q1}
                 </label>
                 <input
                   value={location}
                   onChange={(e) => setLocation(e.target.value)}
-                  placeholder={t.p1}
+                  placeholder={requestType === "rx" ? t.p1Rx : t.p1}
                   className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#0A6EBD] focus:ring-1 focus:ring-[#0A6EBD] transition-all bg-slate-50 focus:bg-white"
                 />
               </div>
               <div>
                 <label className="block text-xs font-700 text-slate-600 mb-1.5 uppercase tracking-wider">
-                  {t.q2}
+                  {requestType === "rx" ? t.q2Rx : t.q2}
                 </label>
                 <textarea
                   value={symptoms}
                   onChange={(e) => setSymptoms(e.target.value)}
-                  placeholder={t.p2}
+                  placeholder={requestType === "rx" ? t.p2Rx : t.p2}
                   rows={2}
                   className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#0A6EBD] focus:ring-1 focus:ring-[#0A6EBD] transition-all bg-slate-50 focus:bg-white resize-none"
                 />

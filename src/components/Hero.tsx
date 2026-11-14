@@ -15,18 +15,129 @@ interface HeroProps {
   locale?: string;
 }
 
-const PRICING_TEXT: Record<string, { price1: string; price2: string; title1: string; title2: string; desc: string }> = {
-  en: { price1: "€130", price2: "€140", title1: "Mon-Fri", title2: "Nights, Weekends & Holidays", desc: "Medical Visit" },
-  es: { price1: "130€", price2: "140€", title1: "Lun-Vie", title2: "Noches, Fines de semana y Festivos", desc: "Visita Médica" },
-  de: { price1: "130€", price2: "140€", title1: "Mo-Fr", title2: "Nächte, Wochenenden & Feiertage", desc: "Hausbesuch" },
-  fr: { price1: "130€", price2: "140€", title1: "Lun-Ven", title2: "Nuits, Week-ends et Jours fériés", desc: "Visite Médicale" },
-  fi: { price1: "130€", price2: "140€", title1: "Ma-Pe", title2: "Yöt, Viikonloput & Pyhäpäivät", desc: "Lääkärin kotikäynti" },
-  ar: { price1: "€130", price2: "€140", title1: "الإثنين - الجمعة", title2: "الليالي وعطلات نهاية الأسبوع والأعياد", desc: "زيارة طبية" },
-  no: { price1: "€130", price2: "€140", title1: "Man-Fre", title2: "Netter, Helger og Helligdager", desc: "Legebesøk" },
-  da: { price1: "€130", price2: "€140", title1: "Man-Fre", title2: "Nætter, Weekender & Helligdage", desc: "Lægebesøg" },
-  sv: { price1: "€130", price2: "€140", title1: "Mån-Fre", title2: "Nätter, Helger & Helgdagar", desc: "Läkarbesök" },
-  ru: { price1: "130€", price2: "140€", title1: "Пн-Пт", title2: "Ночи, Выходные и праздники", desc: "Визит врача" },
-  nl: { price1: "€130", price2: "€140", title1: "Ma-Vr", title2: "Nachten, Weekenden & Feestdagen", desc: "Doktersbezoek" },
+const PRICING_TEXT: Record<
+  string,
+  {
+    price1: string;
+    price2: string;
+    price3: string;
+    title1: string;
+    title2: string;
+    title3: string;
+    desc: string;
+    desc3: string;
+  }
+> = {
+  en: {
+    price1: "€130",
+    price2: "€140",
+    price3: "€90",
+    title1: "Mon-Fri",
+    title2: "Nights, Weekends & Holidays",
+    title3: "Express Prescription + Report",
+    desc: "Medical Visit",
+    desc3: "15 Min Online · All Spain",
+  },
+  es: {
+    price1: "130€",
+    price2: "140€",
+    price3: "90€",
+    title1: "Lun-Vie",
+    title2: "Noches, Fines de semana y Festivos",
+    title3: "Receta Express + Informe",
+    desc: "Visita Médica",
+    desc3: "15 Min Online · Toda España",
+  },
+  de: {
+    price1: "130€",
+    price2: "140€",
+    price3: "90€",
+    title1: "Mo-Fr",
+    title2: "Nächte, Wochenenden & Feiertage",
+    title3: "Express-Rezept + Arztbericht",
+    desc: "Hausbesuch",
+    desc3: "15 Min Online · Ganz Spanien",
+  },
+  fr: {
+    price1: "130€",
+    price2: "140€",
+    price3: "90€",
+    title1: "Lun-Ven",
+    title2: "Nuits, Week-ends et Jours fériés",
+    title3: "Ordonnance Express + Rapport",
+    desc: "Visite Médicale",
+    desc3: "15 Min En ligne · Toute l'Espagne",
+  },
+  fi: {
+    price1: "130€",
+    price2: "140€",
+    price3: "90€",
+    title1: "Ma-Pe",
+    title2: "Yöt, Viikonloput & Pyhäpäivät",
+    title3: "Pikaresepti + Lääkärinlausunto",
+    desc: "Lääkärin kotikäynti",
+    desc3: "15 Min Verkossa · Koko Espanja",
+  },
+  ar: {
+    price1: "€130",
+    price2: "€140",
+    price3: "€90",
+    title1: "الإثنين - الجمعة",
+    title2: "الليالي وعطلات نهاية الأسبوع والأعياد",
+    title3: "وصفة طبية سريعة + تقرير طبي",
+    desc: "زيارة طبية",
+    desc3: "15 دقيقة أونلاين · كل إسبانيا",
+  },
+  no: {
+    price1: "€130",
+    price2: "€140",
+    price3: "€90",
+    title1: "Man-Fre",
+    title2: "Netter, Helger og Helligdager",
+    title3: "Ekspress Resept + Legerapport",
+    desc: "Legebesøk",
+    desc3: "15 Min Online · Hele Spania",
+  },
+  da: {
+    price1: "€130",
+    price2: "€140",
+    price3: "€90",
+    title1: "Man-Fre",
+    title2: "Nætter, Weekender & Helligdage",
+    title3: "Ekspres Recept + Lægerapport",
+    desc: "Lægebesøg",
+    desc3: "15 Min Online · Hele Spanien",
+  },
+  sv: {
+    price1: "€130",
+    price2: "€140",
+    price3: "€90",
+    title1: "Mån-Fre",
+    title2: "Nätter, Helger & Helgdagar",
+    title3: "Expressrecept + Läkarintyg",
+    desc: "Läkarbesök",
+    desc3: "15 Min Online · Hela Spanien",
+  },
+  ru: {
+    price1: "130€",
+    price2: "140€",
+    price3: "90€",
+    title1: "Пн-Пт",
+    title2: "Ночи, Выходные и праздники",
+    title3: "Экспресс-рецепт + Медотчет",
+    desc: "Визит врача",
+    desc3: "15 мин онлайн · Вся Испания",
+  },
+  nl: {
+    price1: "€130",
+    price2: "€140",
+    price3: "€90",
+    title1: "Ma-Vr",
+    title2: "Nachten, Weekenden & Feestdagen",
+    title3: "Spoedrecept + Medisch Rapport",
+    desc: "Doktersbezoek",
+    desc3: "15 Min Online · Heel Spanje",
+  },
 };
 
 const BADGE_TEXT: Record<string, string> = {
@@ -197,26 +308,43 @@ export default function Hero({
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center lg:items-start w-full">
             <div className="flex flex-col items-center lg:items-start w-full lg:w-auto">
               {/* Pricing Info */}
-              <div className="hero-fade-in hero-fade-in-delay-4 mb-10 inline-flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8 bg-black/40 backdrop-blur-md rounded-2xl p-4 sm:px-8 sm:py-5 border border-white/20 shadow-2xl">
-                <div className="flex items-center gap-4">
-                  <div className="bg-[#25D366] p-3 rounded-xl shadow-lg shadow-[#25D366]/30 flex justify-center items-center min-w-[5.5rem]">
+              <div className="hero-fade-in hero-fade-in-delay-4 mb-10 inline-flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-4 sm:gap-6 bg-black/40 backdrop-blur-md rounded-2xl p-4 sm:px-6 sm:py-5 border border-white/20 shadow-2xl">
+                <div className="flex items-center gap-3.5">
+                  <div className="bg-[#25D366] p-3 rounded-xl shadow-lg shadow-[#25D366]/30 flex justify-center items-center min-w-[5rem]">
                     <span className="text-2xl font-800 text-white tracking-tight leading-none">{t.price1}</span>
                   </div>
                   <div className="flex flex-col text-left">
-                    <span className="text-white font-600 leading-tight text-lg">{t.title1}</span>
-                    <span className="text-slate-300 text-sm font-500 mt-0.5">{t.desc}</span>
+                    <span className="text-white font-600 leading-tight text-base sm:text-lg">{t.title1}</span>
+                    <span className="text-slate-300 text-xs sm:text-sm font-500 mt-0.5">{t.desc}</span>
                   </div>
                 </div>
                 <div className="hidden sm:block w-px h-12 bg-white/20" />
-                <div className="flex items-center gap-4">
-                  <div className="bg-[#0A6EBD] p-3 rounded-xl shadow-lg shadow-[#0A6EBD]/30 flex justify-center items-center min-w-[5.5rem]">
+                <div className="flex items-center gap-3.5">
+                  <div className="bg-[#0A6EBD] p-3 rounded-xl shadow-lg shadow-[#0A6EBD]/30 flex justify-center items-center min-w-[5rem]">
                     <span className="text-2xl font-800 text-white tracking-tight leading-none">{t.price2}</span>
                   </div>
                   <div className="flex flex-col text-left">
-                    <span className="text-white font-600 leading-tight text-lg">{t.title2}</span>
-                    <span className="text-slate-300 text-sm font-500 mt-0.5">{t.desc}</span>
+                    <span className="text-white font-600 leading-tight text-base sm:text-lg">{t.title2}</span>
+                    <span className="text-slate-300 text-xs sm:text-sm font-500 mt-0.5">{t.desc}</span>
                   </div>
                 </div>
+                <div className="hidden sm:block w-px h-12 bg-white/20" />
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.dispatchEvent(new Event("openTriagePrescription"));
+                  }}
+                  className="flex items-center gap-3.5 text-left group cursor-pointer hover:opacity-95 transition-opacity"
+                >
+                  <div className="bg-amber-500 group-hover:bg-amber-400 transition-colors p-3 rounded-xl shadow-lg shadow-amber-500/30 flex justify-center items-center min-w-[5rem]">
+                    <span className="text-2xl font-800 text-white tracking-tight leading-none">{t.price3}</span>
+                  </div>
+                  <div className="flex flex-col text-left">
+                    <span className="text-white font-600 leading-tight text-base sm:text-lg group-hover:text-amber-300 transition-colors">{t.title3}</span>
+                    <span className="text-amber-300/90 text-xs sm:text-sm font-600 mt-0.5">{t.desc3}</span>
+                  </div>
+                </button>
               </div>
 
               {/* CTA Buttons */}
