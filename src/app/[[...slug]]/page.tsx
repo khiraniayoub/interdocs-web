@@ -265,6 +265,52 @@ export function buildCitySchema(
       availableLanguage: ["English", "Spanish"],
       areaServed: "ES",
     },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: `Medical Services & Online Prescriptions in ${city.name}`,
+      itemListElement: [
+        {
+          "@type": "Offer",
+          price: "90.00",
+          priceCurrency: "EUR",
+          availability: "https://schema.org/InStock",
+          url: canonical,
+          areaServed: { "@type": "Country", name: "Spain" },
+          itemOffered: {
+            "@type": "MedicalProcedure",
+            name: "Express Online Consultation + Official Spanish QR Prescription & Medical Report",
+            description:
+              "15-minute phone or WhatsApp consultation with a licensed doctor in Spain. Includes official Spanish electronic prescription with QR code valid at all 22,000+ pharmacies in Spain and signed medical report with ICD-10 diagnosis for travel insurance reimbursement.",
+          },
+        },
+        {
+          "@type": "Offer",
+          price: "130.00",
+          priceCurrency: "EUR",
+          availability: "https://schema.org/InStock",
+          url: canonical,
+          areaServed: { "@type": "City", name: city.name },
+          itemOffered: {
+            "@type": "MedicalProcedure",
+            name: `Daytime Home & Hotel Doctor Visit in ${city.name} (Mon–Fri 10:00–21:00)`,
+            description: `In-person private doctor visit to your hotel room, apartment or villa in ${city.name} within 30–60 minutes, including physical examination, official Spanish prescription and signed travel insurance medical report.`,
+          },
+        },
+        {
+          "@type": "Offer",
+          price: "140.00",
+          priceCurrency: "EUR",
+          availability: "https://schema.org/InStock",
+          url: canonical,
+          areaServed: { "@type": "City", name: city.name },
+          itemOffered: {
+            "@type": "MedicalProcedure",
+            name: `Night, Weekend & Holiday Home & Hotel Doctor Visit in ${city.name} (24/7)`,
+            description: `24/7 after-hours, night, weekend and public holiday private doctor visit to your hotel or home in ${city.name}, including examination, prescription and itemized travel insurance invoice.`,
+          },
+        },
+      ],
+    },
   };
 }
 
@@ -598,6 +644,54 @@ export default async function Page({
         contactType: "customer service",
         availableLanguage: ["English", "Spanish", "German", "French"],
         areaServed: "ES",
+      },
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "24/7 Doctor Home & Hotel Visits and Express Online Prescriptions in Spain",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            price: "90.00",
+            priceCurrency: "EUR",
+            availability: "https://schema.org/InStock",
+            url: siteUrl,
+            areaServed: { "@type": "Country", name: "Spain" },
+            itemOffered: {
+              "@type": "MedicalProcedure",
+              name: "Express Online Consultation + Official Spanish QR Prescription & Medical Report",
+              description:
+                "15-minute phone or WhatsApp consultation with a licensed doctor in Spain. Includes official Spanish electronic prescription with QR code valid at all 22,000+ pharmacies across Spain and signed medical report with ICD-10 diagnosis for travel insurance reimbursement.",
+            },
+          },
+          {
+            "@type": "Offer",
+            price: "130.00",
+            priceCurrency: "EUR",
+            availability: "https://schema.org/InStock",
+            url: siteUrl,
+            areaServed: { "@type": "AdministrativeArea", name: "Costa del Sol" },
+            itemOffered: {
+              "@type": "MedicalProcedure",
+              name: "Daytime Home & Hotel Doctor Visit (Mon–Fri 10:00–21:00)",
+              description:
+                "In-person English-speaking private doctor visit to your hotel room, apartment or villa in Marbella, Málaga & Costa del Sol within 30–60 minutes, including examination, official Spanish prescription and signed travel insurance medical report.",
+            },
+          },
+          {
+            "@type": "Offer",
+            price: "140.00",
+            priceCurrency: "EUR",
+            availability: "https://schema.org/InStock",
+            url: siteUrl,
+            areaServed: { "@type": "AdministrativeArea", name: "Costa del Sol" },
+            itemOffered: {
+              "@type": "MedicalProcedure",
+              name: "Night, Weekend & Holiday Home & Hotel Doctor Visit (24/7)",
+              description:
+                "24/7 after-hours, night, weekend and public holiday private doctor visit to your hotel or home across the Costa del Sol, including examination, prescription and itemized travel insurance invoice.",
+            },
+          },
+        ],
       },
       sameAs: [
         GOOGLE_MAPS_URL,
