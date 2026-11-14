@@ -283,32 +283,52 @@ export function buildCitySchema(
               "15-minute phone or WhatsApp consultation with a licensed doctor in Spain. Includes official Spanish electronic prescription with QR code valid at all 22,000+ pharmacies in Spain and signed medical report with ICD-10 diagnosis for travel insurance reimbursement.",
           },
         },
-        {
-          "@type": "Offer",
-          price: "130.00",
-          priceCurrency: "EUR",
-          availability: "https://schema.org/InStock",
-          url: canonical,
-          areaServed: { "@type": "City", name: city.name },
-          itemOffered: {
-            "@type": "MedicalProcedure",
-            name: `Daytime Home & Hotel Doctor Visit in ${city.name} (Mon–Fri 10:00–21:00)`,
-            description: `In-person private doctor visit to your hotel room, apartment or villa in ${city.name} within 30–60 minutes, including physical examination, official Spanish prescription and signed travel insurance medical report.`,
-          },
-        },
-        {
-          "@type": "Offer",
-          price: "140.00",
-          priceCurrency: "EUR",
-          availability: "https://schema.org/InStock",
-          url: canonical,
-          areaServed: { "@type": "City", name: city.name },
-          itemOffered: {
-            "@type": "MedicalProcedure",
-            name: `Night, Weekend & Holiday Home & Hotel Doctor Visit in ${city.name} (24/7)`,
-            description: `24/7 after-hours, night, weekend and public holiday private doctor visit to your hotel or home in ${city.name}, including examination, prescription and itemized travel insurance invoice.`,
-          },
-        },
+        ...(city.slug === "nerja"
+          ? []
+          : city.slug === "marbella" || city.slug === "estepona"
+          ? [
+              {
+                "@type": "Offer",
+                price: "140.00",
+                priceCurrency: "EUR",
+                availability: "https://schema.org/InStock",
+                url: canonical,
+                areaServed: { "@type": "City", name: city.name },
+                itemOffered: {
+                  "@type": "MedicalProcedure",
+                  name: `24/7 Home & Hotel Doctor Visit in ${city.name} (Flat Rate)`,
+                  description: `24/7 in-person private doctor visit to your hotel room, apartment or villa in ${city.name} within 30–60 minutes, including physical examination, official Spanish prescription and signed travel insurance medical report.`,
+                },
+              },
+            ]
+          : [
+              {
+                "@type": "Offer",
+                price: "130.00",
+                priceCurrency: "EUR",
+                availability: "https://schema.org/InStock",
+                url: canonical,
+                areaServed: { "@type": "City", name: city.name },
+                itemOffered: {
+                  "@type": "MedicalProcedure",
+                  name: `Daytime Home & Hotel Doctor Visit in ${city.name} (Mon–Fri 10:00–21:00)`,
+                  description: `In-person private doctor visit to your hotel room, apartment or villa in ${city.name} within 30–60 minutes, including physical examination, official Spanish prescription and signed travel insurance medical report.`,
+                },
+              },
+              {
+                "@type": "Offer",
+                price: "140.00",
+                priceCurrency: "EUR",
+                availability: "https://schema.org/InStock",
+                url: canonical,
+                areaServed: { "@type": "City", name: city.name },
+                itemOffered: {
+                  "@type": "MedicalProcedure",
+                  name: `Night, Weekend & Holiday Home & Hotel Doctor Visit in ${city.name} (24/7)`,
+                  description: `24/7 after-hours, night, weekend and public holiday private doctor visit to your hotel or home in ${city.name}, including examination, prescription and itemized travel insurance invoice.`,
+                },
+              },
+            ]),
       ],
     },
   };
@@ -858,9 +878,77 @@ export default async function Page({
               >
                 {city.h1[locale]}
               </h1>
-              <p className="text-lg sm:text-xl text-slate-500 leading-relaxed max-w-2xl mx-auto mb-10">
+              <p className="text-lg sm:text-xl text-slate-500 leading-relaxed max-w-2xl mx-auto mb-8">
                 {city.description[locale]}
               </p>
+
+              {/* City Pricing Bar (excluded on Nerja as requested) */}
+              {city.slug !== "nerja" && (
+                <div className="mb-10 inline-flex flex-col sm:flex-row flex-wrap items-start sm:items-center justify-center gap-4 sm:gap-6 bg-slate-900 rounded-2xl p-4 sm:px-6 sm:py-5 border border-slate-800 shadow-xl mx-auto">
+                  {city.slug === "marbella" || city.slug === "estepona" ? (
+                    <div className="flex items-center gap-3.5">
+                      <div className="bg-[#0A6EBD] p-3 rounded-xl shadow-lg shadow-[#0A6EBD]/30 flex justify-center items-center min-w-[5rem]">
+                        <span className="text-2xl font-800 text-white tracking-tight leading-none">€140</span>
+                      </div>
+                      <div className="flex flex-col text-left">
+                        <span className="text-white font-600 leading-tight text-base sm:text-lg">
+                          24/7 {city.name} Flat Rate
+                        </span>
+                        <span className="text-slate-300 text-xs sm:text-sm font-500 mt-0.5">
+                          Hotel & Home Visit + Report
+                        </span>
+                      </div>
+                    </div>
+                  ) : (
+                    <>
+                      <div className="flex items-center gap-3.5">
+                        <div className="bg-[#25D366] p-3 rounded-xl shadow-lg shadow-[#25D366]/30 flex justify-center items-center min-w-[5rem]">
+                          <span className="text-2xl font-800 text-white tracking-tight leading-none">€130</span>
+                        </div>
+                        <div className="flex flex-col text-left">
+                          <span className="text-white font-600 leading-tight text-base sm:text-lg">Mon–Fri</span>
+                          <span className="text-slate-300 text-xs sm:text-sm font-500 mt-0.5">
+                            Hotel & Home Visit
+                          </span>
+                        </div>
+                      </div>
+                      <div className="hidden sm:block w-px h-12 bg-white/20" />
+                      <div className="flex items-center gap-3.5">
+                        <div className="bg-[#0A6EBD] p-3 rounded-xl shadow-lg shadow-[#0A6EBD]/30 flex justify-center items-center min-w-[5rem]">
+                          <span className="text-2xl font-800 text-white tracking-tight leading-none">€140</span>
+                        </div>
+                        <div className="flex flex-col text-left">
+                          <span className="text-white font-600 leading-tight text-base sm:text-lg">
+                            Nights, Weekends & Holidays
+                          </span>
+                          <span className="text-slate-300 text-xs sm:text-sm font-500 mt-0.5">
+                            24/7 Urgent Visit
+                          </span>
+                        </div>
+                      </div>
+                    </>
+                  )}
+                  <div className="hidden sm:block w-px h-12 bg-white/20" />
+                  <a
+                    href={`https://wa.me/34637255224?text=${encodeURIComponent(`Hello, I need an Express Spanish Prescription + Medical Report (€90) in ${city.name}.`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3.5 text-left group cursor-pointer hover:opacity-95 transition-opacity"
+                  >
+                    <div className="bg-amber-500 group-hover:bg-amber-400 transition-colors p-3 rounded-xl shadow-lg shadow-amber-500/30 flex justify-center items-center min-w-[5rem]">
+                      <span className="text-2xl font-800 text-white tracking-tight leading-none">€90</span>
+                    </div>
+                    <div className="flex flex-col text-left">
+                      <span className="text-white font-600 leading-tight text-base sm:text-lg group-hover:text-amber-300 transition-colors">
+                        Express Prescription + Report
+                      </span>
+                      <span className="text-amber-300/90 text-xs sm:text-sm font-600 mt-0.5">
+                        15 Min Online · All Spain
+                      </span>
+                    </div>
+                  </a>
+                </div>
+              )}
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
@@ -919,10 +1007,21 @@ export default async function Page({
             subtitle={t.services.subtitle}
             items={[...t.services.list]}
           />
+          <ServiceAreas
+            title={t.areas.title}
+            subtitle={t.areas.subtitle}
+            locale={locale}
+          />
           <FAQSection
             title={t.faq.title}
             subtitle={t.faq.subtitle}
             items={[...t.faq.items]}
+          />
+          <BlogSection
+            title={t.blog.title}
+            subtitle={t.blog.subtitle}
+            readMoreLabel={t.blog.readMore}
+            locale={locale}
           />
           <ContactForm
             title={t.contact.title}
