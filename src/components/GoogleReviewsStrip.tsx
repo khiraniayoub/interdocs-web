@@ -191,11 +191,11 @@ function StarsAndGoogleLogo({
   return (
     <div className="flex items-center justify-between pt-2">
       <div className="flex items-center gap-3">
-        <div className="w-10 h-10 rounded-full bg-[#1d9bf0] text-white font-800 text-sm flex items-center justify-center flex-shrink-0 shadow-md">
+        <div className="w-10 h-10 rounded-full bg-[#0A6EBD] text-white font-800 text-sm flex items-center justify-center flex-shrink-0 shadow-sm">
           {initials}
         </div>
         <div className="text-left">
-          <p className="text-white font-700 text-sm leading-tight">{name}</p>
+          <p className="text-slate-900 font-700 text-sm leading-tight">{name}</p>
           <p className="text-slate-400 text-xs mt-0.5">{timeAgo}</p>
         </div>
       </div>
@@ -228,7 +228,7 @@ export default function GoogleReviewsStrip({ locale = "en" }: { locale?: Locale 
 
   return (
     <section
-      className="w-full bg-[#090f1d] py-12 lg:py-16 overflow-hidden border-y border-slate-800/80"
+      className="w-full bg-transparent py-10 lg:py-12 overflow-hidden"
       aria-label="Verified Google Maps Patient Reviews"
     >
       <style>{`
@@ -246,20 +246,24 @@ export default function GoogleReviewsStrip({ locale = "en" }: { locale?: Locale 
         }
       `}</style>
 
-      <div className="relative w-full overflow-hidden py-2">
+      <div className="relative w-full overflow-hidden py-3">
+        {/* Soft fade edges matching InsuranceLogos */}
+        <div className="absolute inset-y-0 left-0 w-12 sm:w-28 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-12 sm:w-28 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+
         <div className="google-reviews-track gap-6 px-4">
           {/* Primary indexable set of 5 reviews (read once by Googlebot in the page's exact language) */}
           {GOOGLE_REVIEWS.map((rev) => (
             <article
               key={`primary-${rev.initials}`}
-              className="w-[320px] sm:w-[370px] flex-shrink-0 rounded-2xl bg-[#111a2e]/95 border border-slate-800 p-6 sm:p-7 shadow-2xl hover:border-[#1d9bf0]/50 transition-all duration-300 flex flex-col justify-between"
+              className="w-[320px] sm:w-[370px] flex-shrink-0 rounded-2xl bg-white/80 backdrop-blur-md border border-slate-200/90 p-6 sm:p-7 shadow-sm hover:shadow-md hover:border-[#0A6EBD]/40 transition-all duration-300 flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center gap-1 mb-4" aria-label="5 out of 5 stars">
                   {[...Array(5)].map((_, sIdx) => (
                     <svg
                       key={sIdx}
-                      className="w-4 h-4 text-[#1d9bf0] fill-current"
+                      className="w-4 h-4 text-[#0A6EBD] fill-current"
                       viewBox="0 0 20 20"
                       aria-hidden="true"
                     >
@@ -267,7 +271,7 @@ export default function GoogleReviewsStrip({ locale = "en" }: { locale?: Locale 
                     </svg>
                   ))}
                 </div>
-                <p className="text-white/95 italic text-sm sm:text-base leading-relaxed mb-6">
+                <p className="text-slate-700 italic text-sm sm:text-base leading-relaxed mb-6">
                   &ldquo;{rev.text[currentLocale] || rev.text.en}&rdquo;
                 </p>
               </div>
@@ -284,21 +288,21 @@ export default function GoogleReviewsStrip({ locale = "en" }: { locale?: Locale 
             {GOOGLE_REVIEWS.map((rev) => (
               <div
                 key={`clone-${rev.initials}`}
-                className="w-[320px] sm:w-[370px] flex-shrink-0 rounded-2xl bg-[#111a2e]/95 border border-slate-800 p-6 sm:p-7 shadow-2xl flex flex-col justify-between"
+                className="w-[320px] sm:w-[370px] flex-shrink-0 rounded-2xl bg-white/80 backdrop-blur-md border border-slate-200/90 p-6 sm:p-7 shadow-sm flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center gap-1 mb-4">
                     {[...Array(5)].map((_, sIdx) => (
                       <svg
                         key={sIdx}
-                        className="w-4 h-4 text-[#1d9bf0] fill-current"
+                        className="w-4 h-4 text-[#0A6EBD] fill-current"
                         viewBox="0 0 20 20"
                       >
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                       </svg>
                     ))}
                   </div>
-                  <p className="text-white/95 italic text-sm sm:text-base leading-relaxed mb-6">
+                  <p className="text-slate-700 italic text-sm sm:text-base leading-relaxed mb-6">
                     &ldquo;{rev.text[currentLocale] || rev.text.en}&rdquo;
                   </p>
                 </div>
@@ -314,12 +318,12 @@ export default function GoogleReviewsStrip({ locale = "en" }: { locale?: Locale 
       </div>
 
       {/* Single clean outbound link button */}
-      <div className="mt-8 flex justify-center px-4">
+      <div className="mt-6 flex justify-center px-4">
         <a
           href={GOOGLE_MAPS_REVIEWS_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-700 text-sm sm:text-base shadow-lg shadow-blue-500/30 transition-all hover:scale-105"
+          className="inline-flex items-center gap-2.5 px-7 py-3 rounded-full bg-[#0A6EBD] hover:bg-[#085a9c] text-white font-700 text-sm sm:text-base shadow-md shadow-blue-500/20 transition-all hover:scale-105"
         >
           <span>{SEE_ALL_REVIEWS_LABEL[currentLocale] || SEE_ALL_REVIEWS_LABEL.en}</span>
           <span aria-hidden="true">→</span>
@@ -328,3 +332,4 @@ export default function GoogleReviewsStrip({ locale = "en" }: { locale?: Locale 
     </section>
   );
 }
+
