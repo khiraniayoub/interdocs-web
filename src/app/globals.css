@@ -82,9 +82,11 @@ nav ol {
   }
 }
 
-.video-kenburns {
-  animation: kenBurns 18s ease-in-out infinite;
-  transform-origin: center center;
+@media (min-width: 640px) {
+  .video-kenburns {
+    animation: kenBurns 18s ease-in-out infinite;
+    transform-origin: center center;
+  }
 }
 
 /* Rotating gradient border */

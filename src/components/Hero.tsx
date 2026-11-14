@@ -244,11 +244,11 @@ export default function Hero({
 
   return (
     <section
-      className="relative overflow-hidden min-h-[85vh] flex flex-col justify-start"
+      className="relative overflow-hidden min-h-[85vh] flex flex-col justify-start bg-[#090f1d]"
       aria-labelledby="hero-heading"
     >
-      {/* Background Videos */}
-      <div className="absolute inset-0 z-0">
+      {/* Background Videos (on mobile capped to top 460px so landscape video isn't zoomed/cropped across 1200px height; on sm+ full height) */}
+      <div className="absolute top-0 left-0 right-0 h-[460px] sm:inset-0 sm:h-full z-0">
         <video
           key={`current-${currentIndex}`}
           ref={currentRef}
@@ -256,7 +256,7 @@ export default function Hero({
           autoPlay
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover video-kenburns"
+          className="absolute inset-0 w-full h-full object-cover object-center video-kenburns"
           style={{ opacity: fading ? 0 : 1, transition: "opacity 0.6s ease" }}
         />
         <video
@@ -266,14 +266,12 @@ export default function Hero({
           muted
           playsInline
           preload="auto"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-center"
           style={{ opacity: fading ? 1 : 0, transition: "opacity 0.6s ease" }}
           aria-hidden="true"
         />
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-black/50" />
-
-
+        {/* Dark overlay + seamless bottom gradient on mobile */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/50 to-[#090f1d] sm:bg-none sm:bg-black/50" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 lg:pt-12 pb-16 w-full">
