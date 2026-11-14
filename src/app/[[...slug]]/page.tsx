@@ -25,6 +25,7 @@ import FAQSection from "@/components/FAQSection";
 import ContactForm from "@/components/ContactForm";
 import BlogSection from "@/components/BlogSection";
 import ReviewsCarousel from "@/components/ReviewsCarousel";
+import GoogleReviewsStrip from "@/components/GoogleReviewsStrip";
 import InsuranceLogos from "@/components/InsuranceLogos";
 import WhatWeTreat from "@/components/WhatWeTreat";
 import Footer from "@/components/Footer";
@@ -264,6 +265,13 @@ export function buildCitySchema(
       contactType: "customer service",
       availableLanguage: ["English", "Spanish"],
       areaServed: "ES",
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5.0",
+      reviewCount: "5",
+      bestRating: "5",
+      worstRating: "1",
     },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
@@ -665,6 +673,13 @@ export default async function Page({
         availableLanguage: ["English", "Spanish", "German", "French"],
         areaServed: "ES",
       },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "5.0",
+        reviewCount: "5",
+        bestRating: "5",
+        worstRating: "1",
+      },
       hasOfferCatalog: {
         "@type": "OfferCatalog",
         name: "24/7 Doctor Home & Hotel Visits and Express Online Prescriptions in Spain",
@@ -768,6 +783,7 @@ export default async function Page({
             locale={locale}
           />
           <InsuranceLogos />
+          <GoogleReviewsStrip locale={locale} />
           <HowItWorks
             title={t.howItWorks.title}
             subtitle={t.howItWorks.subtitle}
@@ -996,6 +1012,7 @@ export default async function Page({
             </div>
           </section>
           <InsuranceLogos />
+          <GoogleReviewsStrip locale={locale} />
           <HowItWorks
             title={t.howItWorks.title}
             subtitle={t.howItWorks.subtitle}
