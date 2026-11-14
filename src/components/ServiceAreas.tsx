@@ -10,18 +10,18 @@ interface ServiceAreasProps {
   locale: Locale;
 }
 
-const PRICE_LABEL: Record<string, { weekday: string; weekend: string; from: string }> = {
-  en: { weekday: "Mon–Fri", weekend: "Nights, Weekends & Holidays", from: "from" },
-  es: { weekday: "Lun–Vie", weekend: "Noches, Fin de semana y Festivos", from: "desde" },
-  de: { weekday: "Mo–Fr",   weekend: "Nächte, Wochenenden & Feiertage", from: "ab"    },
-  fr: { weekday: "Lun–Ven", weekend: "Nuits, Week-ends & Jours Fériés", from: "dès" },
-  fi: { weekday: "Ma–Pe",   weekend: "Yöt, Viikonloput & Pyhäpäivät",  from: "alkaen" },
-  ar: { weekday: "الاثنين–الجمعة", weekend: "الليالي وعطلات نهاية الأسبوع والأعياد", from: "من" },
-  no: { weekday: "Man–Fre", weekend: "Netter, Helger & Helligdager", from: "fra" },
-  da: { weekday: "Man–Fre", weekend: "Nætter, Weekender & Helligdage", from: "fra" },
-  sv: { weekday: "Mån–Fre", weekend: "Nätter, Helger & Helgdagar",  from: "från" },
-  ru: { weekday: "Пн–Пт", weekend: "Ночи, Выходные и Праздники", from: "от" },
-  nl: { weekday: "Ma–Vr", weekend: "Nachten, Weekenden & Feestdagen", from: "vanaf" },
+const PRICE_LABEL: Record<string, { weekday: string; weekend: string; flat247: string; from: string }> = {
+  en: { weekday: "Mon–Fri", weekend: "Nights, Weekends & Holidays", flat247: "24/7 · All Days & Nights", from: "from" },
+  es: { weekday: "Lun–Vie", weekend: "Noches, Fin de semana y Festivos", flat247: "24/7 · Todos los días y noches", from: "desde" },
+  de: { weekday: "Mo–Fr",   weekend: "Nächte, Wochenenden & Feiertage", flat247: "24/7 · Tag, Nacht & Wochenende", from: "ab"    },
+  fr: { weekday: "Lun–Ven", weekend: "Nuits, Week-ends & Jours Fériés", flat247: "24h/24 · Jour, Nuit & Week-end", from: "dès" },
+  fi: { weekday: "Ma–Pe",   weekend: "Yöt, Viikonloput & Pyhäpäivät",  flat247: "24/7 · Kaikki päivät ja yöt", from: "alkaen" },
+  ar: { weekday: "الاثنين–الجمعة", weekend: "الليالي وعطلات نهاية الأسبوع والأعياد", flat247: "24/7 · طوال الأسبوع والليل", from: "من" },
+  no: { weekday: "Man–Fre", weekend: "Netter, Helger & Helligdager", flat247: "24/7 · Alle dager og netter", from: "fra" },
+  da: { weekday: "Man–Fre", weekend: "Nætter, Weekender & Helligdage", flat247: "24/7 · Alle dage og nætter", from: "fra" },
+  sv: { weekday: "Mån–Fre", weekend: "Nätter, Helger & Helgdagar",  flat247: "24/7 · Alla dagar och nätter", from: "från" },
+  ru: { weekday: "Пн–Пт", weekend: "Ночи, Выходные и Праздники", flat247: "24/7 · Будни, ночи и выходные", from: "от" },
+  nl: { weekday: "Ma–Vr", weekend: "Nachten, Weekenden & Feestdagen", flat247: "24/7 · Dag, nacht & weekend", from: "vanaf" },
 };
 
 const ARIA_LABELS: Record<Locale, (name: string) => string> = {
@@ -169,16 +169,31 @@ export default function ServiceAreas({ title, subtitle, locale }: ServiceAreasPr
                       {city.name}
                     </Link>
                   </p>
-                  {/* Weekday price */}
-                  <div className="mb-2">
-                    <span className="text-3xl font-800">€130</span>
-                    <span className="text-white/70 text-sm font-500 ml-2">*</span>
-                    <p className="text-white/70 text-sm mt-0.5">{t.weekday}</p>
-                  </div>
-                  {/* Weekend price pill */}
-                  <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-xs font-600 text-white mt-1">
-                    €140* · {t.weekend}
-                  </div>
+                  {city.slug === "nerja" ? null : city.slug === "marbella" || city.slug === "estepona" ? (
+                    <>
+                      <div className="mb-2">
+                        <span className="text-3xl font-800">€140</span>
+                        <span className="text-white/70 text-sm font-500 ml-2">*</span>
+                        <p className="text-white/70 text-sm mt-0.5">{t.weekday}</p>
+                      </div>
+                      <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-xs font-600 text-white mt-1">
+                        €140* · {t.weekend}
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      {/* Weekday price */}
+                      <div className="mb-2">
+                        <span className="text-3xl font-800">€130</span>
+                        <span className="text-white/70 text-sm font-500 ml-2">*</span>
+                        <p className="text-white/70 text-sm mt-0.5">{t.weekday}</p>
+                      </div>
+                      {/* Weekend price pill */}
+                      <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-xs font-600 text-white mt-1">
+                        €140* · {t.weekend}
+                      </div>
+                    </>
+                  )}
                 </div>
 
                 {/* Hover arrow */}
