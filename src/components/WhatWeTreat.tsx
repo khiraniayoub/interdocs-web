@@ -6,7 +6,7 @@ import type { Locale } from "@/data/content";
 
 export default function WhatWeTreat({ locale }: { locale: Locale }) {
   const t = treatmentsData[locale] || treatmentsData.en;
-  
+
   const [visibleItems, setVisibleItems] = useState<boolean[]>(
     new Array(t.items.length).fill(false)
   );
@@ -28,7 +28,7 @@ export default function WhatWeTreat({ locale }: { locale: Locale }) {
                 next[i] = true;
                 return next;
               });
-            }, i * 150);
+            }, i * 100);
           });
         }
       },
@@ -53,7 +53,7 @@ export default function WhatWeTreat({ locale }: { locale: Locale }) {
           >
             {t.title}
           </h2>
-          <p className="text-lg text-slate-500 max-w-xl mx-auto">
+          <p className="text-lg text-slate-500 max-w-2xl mx-auto">
             {t.subtitle}
           </p>
         </div>
@@ -62,33 +62,53 @@ export default function WhatWeTreat({ locale }: { locale: Locale }) {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
           role="list"
         >
-          {t.items.map((treatment, index) => (
-            <li
-              key={treatment.id}
-              style={{
-                opacity: visibleItems[index] ? 1 : 0,
-                transform: visibleItems[index]
-                  ? "translateY(0) scale(1)"
-                  : "translateY(20px) scale(0.95)",
-                transition:
-                  "opacity 0.5s ease, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)",
-              }}
-              className="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm hover:shadow-xl hover:border-[#0A6EBD]/30 transition-all duration-300 group"
-            >
-              <div
-                className={`w-14 h-14 rounded-xl flex items-center justify-center text-3xl mb-6 ${treatment.color} group-hover:scale-110 transition-transform duration-300`}
-                aria-hidden="true"
+          {t.items.map((treatment, index) => {
+            const isRx = treatment.mode === "rx";
+            return (
+              <li
+                key={treatment.id}
+                onClick={() => {
+                  window.dispatchEvent(
+                    new Event(isRx ? "openTriagePrescription" : "openTriage")
+                  );
+                }}
+                style={{
+                  opacity: visibleItems[index] ? 1 : 0,
+                  transform: visibleItems[index]
+                    ? "translateY(0) scale(1)"
+                    : "translateY(20px) scale(0.95)",
+                  transition:
+                    "opacity 0.5s ease, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)",
+                }}
+                className="bg-white rounded-2xl p-7 sm:p-8 border border-slate-100 shadow-sm hover:shadow-xl hover:border-[#0A6EBD]/30 transition-all duration-300 group flex flex-col justify-between cursor-pointer"
               >
-                {treatment.icon}
-              </div>
-              <p className="font-800 text-xl text-slate-900 mb-3 group-hover:text-[#0A6EBD] transition-colors duration-300">
-                {treatment.title}
-              </p>
-              <p className="text-slate-500 leading-relaxed text-sm">
-                {treatment.desc}
-              </p>
-            </li>
-          ))}
+                <div>
+                  <div
+                    className={`w-14 h-14 rounded-xl flex items-center justify-center text-3xl mb-6 ${treatment.color} group-hover:scale-110 transition-transform duration-300`}
+                    aria-hidden="true"
+                  >
+                    {treatment.icon}
+                  </div>
+                  <p className="font-800 text-xl text-slate-900 mb-3 group-hover:text-[#0A6EBD] transition-colors duration-300">
+                    {treatment.title}
+                  </p>
+                  <p className="text-slate-500 leading-relaxed text-sm mb-5">
+                    {treatment.desc}
+                  </p>
+                </div>
+
+                <div
+                  className={`pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-700 transition-colors ${
+                    isRx
+                      ? "text-amber-600 group-hover:text-amber-700"
+                      : "text-[#0A6EBD]"
+                  }`}
+                >
+                  <span>{isRx ? t.ctaRx : t.ctaVisit}</span>
+                </div>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </section>
