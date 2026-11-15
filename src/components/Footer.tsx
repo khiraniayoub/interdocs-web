@@ -30,9 +30,10 @@ export default function Footer({ disclaimer, rights, locale }: FooterProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24 lg:py-20">
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-12">
           {/* Brand */}
-          <div className="lg:col-span-2 flex flex-col items-center text-center lg:items-start lg:text-left">
+          <div className="lg:col-span-2 flex flex-col items-center text-center lg:items-start lg:text-start">
             <Link
               href={homeHref}
+              dir="ltr"
               className="inline-flex flex-col lg:flex-row items-center gap-3 mb-5"
               aria-label="Urgent Care 24H — 24/7 Private Doctor Costa del Sol"
             >
@@ -260,7 +261,7 @@ export default function Footer({ disclaimer, rights, locale }: FooterProps) {
           </div>
 
           {/* Contact */}
-          <div className="flex flex-col items-center lg:items-start text-center lg:text-left mt-6 lg:mt-0">
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-start mt-6 lg:mt-0">
             <p className="font-700 text-white mb-5 text-sm tracking-wide uppercase">
               Contact
             </p>
@@ -285,7 +286,7 @@ export default function Footer({ disclaimer, rights, locale }: FooterProps) {
                       d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                     />
                   </svg>
-                  {PHONE_NUMBER}
+                  <span dir="ltr">{PHONE_NUMBER}</span>
                 </a>
               </li>
               <li>
@@ -360,7 +361,7 @@ export default function Footer({ disclaimer, rights, locale }: FooterProps) {
           </div>
 
           {/* Service Areas (SEO Hub) */}
-          <div className="flex flex-col items-center lg:items-start text-center lg:text-left mt-6 lg:mt-0">
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-start mt-6 lg:mt-0">
             <p className="font-700 text-white mb-5 text-sm tracking-wide uppercase">
               Service Areas
             </p>

@@ -96,7 +96,7 @@ export default function FAQSection({ title, subtitle, items }: FAQSectionProps) 
                   <button
                     id={itemId}
                     onClick={() => toggle(index)}
-                    className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+                    className="w-full flex items-center justify-between gap-4 px-6 py-5 text-start"
                     aria-expanded={isOpen}
                     aria-controls={answerId}
                   >

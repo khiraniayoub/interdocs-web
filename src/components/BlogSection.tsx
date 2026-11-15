@@ -269,12 +269,36 @@ export default function BlogSection({
               Health Guide
             </span>
             <span className="text-sm text-slate-400">{singlePost.readTime} min read</span>
-            <span className="text-sm text-slate-400">
-              {new Date(singlePost.date).toLocaleDateString(
+            <time
+              dateTime={singlePost.dateModified || singlePost.date}
+              className="text-sm text-slate-400"
+            >
+              {locale === "es"
+                ? "Actualizado: "
+                : locale === "de"
+                ? "Aktualisiert: "
+                : locale === "fr"
+                ? "Mis à jour : "
+                : locale === "fi"
+                ? "Päivitetty: "
+                : locale === "ar"
+                ? "تم التحديث: "
+                : locale === "no"
+                ? "Oppdatert: "
+                : locale === "da"
+                ? "Opdateret: "
+                : locale === "sv"
+                ? "Uppdaterad: "
+                : locale === "ru"
+                ? "Обновлено: "
+                : locale === "nl"
+                ? "Bijgewerkt: "
+                : "Updated: "}
+              {new Date(singlePost.dateModified || singlePost.date).toLocaleDateString(
                 dateLocaleMap[locale] || "en-GB",
                 { day: "numeric", month: "long", year: "numeric" }
               )}
-            </span>
+            </time>
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-800 text-slate-900 leading-[1.15] mb-6">
             {singlePost.title[locale]}

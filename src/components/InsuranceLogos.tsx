@@ -49,6 +49,7 @@ export default function InsuranceLogos() {
       </div>
 
       <div
+        dir="ltr"
         className={`relative overflow-x-hidden transition-all duration-1000 delay-300 ${
           isVisible ? "opacity-100" : "opacity-0"
         }`}

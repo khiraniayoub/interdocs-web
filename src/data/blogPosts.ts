@@ -86,8 +86,8 @@ export const BLOG_POSTS: BlogPost[] = [
       ru: "Полное руководство о том, как вызвать врача в Малаге туристу. Частные клиники, вызов доктора в отель и оформление документов для страховки.",
       nl: "Complete gids over medische zorg in Málaga voor toeristen. Openbare ziekenhuizen, privéklinieken en doktersbezoek aan uw hotel.",
     },
-    date: "2024-06-15",
-    dateModified: "2024-06-15",
+    date: "2026-07-14",
+    dateModified: "2026-10-18",
     readTime: 6,
     content: {
       en: `<h2>Your Options for Medical Care in Málaga</h2>
@@ -233,8 +233,8 @@ export const BLOG_POSTS: BlogPost[] = [
       ru: "Как работает туристическая страховка при вызове частного врача в Испании. Пошаговая инструкция получения компенсации.",
       nl: "Ontdek hoe reisverzekeringen werken voor particuliere medische zorg en hotelbezoeken in Spanje. Stappenplan voor declaraties.",
     },
-    date: "2024-07-02",
-    dateModified: "2024-07-02",
+    date: "2026-07-28",
+    dateModified: "2026-10-24",
     readTime: 5,
     content: {
       en: `<h2>Does Travel Insurance Cover Private Doctors in Spain?</h2>
@@ -380,8 +380,8 @@ export const BLOG_POSTS: BlogPost[] = [
       ru: "Как вызвать англоязычного доктора в отель в Малаге или Марбелье. Быстро, конфиденциально и с возмещением по страховке.",
       nl: "Ontdek hoe u een privédokter op uw hotelkamer in Málaga of Marbella kunt laten komen. Snel, discreet en gedekt door uw verzekering.",
     },
-    date: "2024-07-10",
-    dateModified: "2024-07-10",
+    date: "2026-08-06",
+    dateModified: "2026-10-29",
     readTime: 4,
     content: {
       en: `<h2>Hotel Doctor Service on the Costa del Sol</h2>
@@ -527,8 +527,8 @@ export const BLOG_POSTS: BlogPost[] = [
       ru: "Нужен доктор, говорящий по-английски в Малаге или Марбелье? Частные врачи круглосуточно выезжают в ваш отель или апартаменты.",
       nl: "Arts nodig die Engels spreekt in Málaga of Marbella? Onze privéartsen spreken vloeiend Engels en komen 24/7 naar uw hotel.",
     },
-    date: "2024-07-18",
-    dateModified: "2024-07-18",
+    date: "2026-08-19",
+    dateModified: "2026-11-03",
     readTime: 4,
     content: {
       en: `<h2>Why You Need an English-Speaking Doctor on Holiday</h2>
@@ -629,8 +629,8 @@ export const BLOG_POSTS: BlogPost[] = [
       ru: "Путешествуете с детьми по Коста-дель-Соль? Быстрая медицинская помощь при отите, температуре и отравлениях прямо в номере отеля.",
       nl: "Reist u met kinderen aan de Costa del Sol? Snelle doktersbezoeken voor oorontstekingen, koorts en uitdroging op uw hotelkamer.",
     },
-    date: "2024-08-01",
-    dateModified: "2024-08-01",
+    date: "2026-09-02",
+    dateModified: "2026-11-07",
     readTime: 5,
     content: {
       en: `<h2>Children's Medical Care on Holiday</h2>
@@ -789,8 +789,8 @@ export const BLOG_POSTS: BlogPost[] = [
       ru: "Гид по экстренной медицинской помощи в Малаге и Марбелье. Телефоны 112, 061 и круглосуточный вызов частного доктора на дом.",
       nl: "Complete gids voor spoedgevallen in Málaga en Marbella. Spaanse alarmnummers (112, 061) en particuliere doktersdiensten.",
     },
-    date: "2024-08-12",
-    dateModified: "2024-08-12",
+    date: "2026-09-14",
+    dateModified: "2026-11-10",
     readTime: 5,
     content: {
       en: `<h2>In a Life-Threatening Emergency, Always Call 112</h2>
@@ -909,7 +909,7 @@ export const BLOG_POSTS: BlogPost[] = [
       nl: "Buikgriep of voedselvergiftiging aan de Costa del Sol? Symptomen, hydratatietips en hoe een arts u binnen 30-60 min in uw hotel bezoekt."
   },
   "date": "2026-09-23",
-  "dateModified": "2026-09-23",
+  "dateModified": "2026-11-12",
   "readTime": 5,
   "content": {
     "en": "<h2>Food Poisoning vs. Viral Gastroenteritis: Key Differences</h2>\n<p>Few things ruin a holiday faster than waking up with violent stomach cramps, nausea, and vomiting. When traveling in Spain, tourists frequently wonder whether they have contracted a stomach virus or suffered bacterial food poisoning from dining out.</p>\n<ul>\n<li><strong>Food Poisoning:</strong> Symptoms typically strike suddenly, often within 2 to 8 hours after consuming contaminated seafood, mayonnaise, chicken, or unpasteurised foods. Intense nausea and repetitive vomiting usually dominate the first phase.</li>\n<li><strong>Viral Gastroenteritis:</strong> Often takes 24 to 48 hours to incubate. It frequently includes watery diarrhoea, low-grade fever, muscle aches, and general fatigue.</li>\n</ul>\n\n<h2>Hydration Protocol in the Andalusian Summer Heat</h2>\n<p>The biggest clinical risk of gastroenteritis on the Costa del Sol is <strong>rapid dehydration</strong>. Southern Spain's summer temperatures frequently exceed 30°C (86°F), meaning your body loses fluids and vital mineral salts twice as fast.</p>\n<p>A common mistake is drinking large glasses of plain water, which frequently triggers immediate vomiting. Instead, follow this medical protocol:</p>\n<ul>\n<li><strong>Oral Rehydration Salts (ORS):</strong> Obtain rehydration sachets (suero oral) from a pharmacy. Dissolve in bottled water.</p>\n<li><strong>Micro-sips:</strong> Take only one small tablespoon or sip every 10 to 15 minutes. This allows your stomach lining to absorb fluids without stretching and triggering the gag reflex.</li>\n<li><strong>Avoid:</strong> Coffee, alcoholic beverages, cold dairy products, fruit juices, and greasy fried tapas until you have been symptom-free for at least 24 hours.</li>\n</ul>\n\n<h2>Warning Signs (Red Flags) Requiring Immediate Medical Attention</h2>\n<p>While many mild stomach upsets resolve within 24 hours, you should never ignore the following warning signs:</p>\n<ul>\n<li>Inability to keep liquids down for more than 8 to 12 hours.</li>\n<li>High fever (above 38.5°C / 101.3°F) accompanied by chills or confusion.</li>\n<li>Signs of severe dehydration: dry mouth, dark or absent urine, extreme dizziness upon standing.</li>\n<li>Vulnerable patients: young children, infants, elderly travellers, or individuals with pre-existing kidney conditions.</li>\n<li>Blood or dark material in your stool or vomit.</li>\n</ul>\n\n<h2>Why Calling a Doctor to Your Hotel Room Is the Safest Option</h2>\n<p>When you are suffering from persistent vomiting or diarrhoea, taking a taxi or waiting in a crowded clinic waiting room is miserable and physically exhausting. Our private doctors arrive directly at your hotel room or vacation rental across Málaga, Marbella, Torremolinos, Fuengirola, Benalmádena, and Mijas within 30 to 60 minutes.</p>\n<p>The visiting physician will perform a physical examination, check your hydration levels, administer intramuscular antiemetic medication if necessary to stop nausea, prescribe targeted antibiotics or stomach protectors, and issue an itemized medical invoice and medical report so you can submit your claim to your international travel insurance.</p>",
@@ -992,8 +992,8 @@ export const BLOG_POSTS: BlogPost[] = [
       ru: "Боль в ухе после купания на отдыхе? Диагностика наружного отита отоскопом, капли по рецепту и вызов врача в отель на Коста-дель-Соль.",
       nl: "Oorpijn na het zwemmen op vakantie? Oorzaken van zwemmersoor, risico's bij vliegen en een snelle doktersvisite aan uw hotel."
   },
-  "date": "2026-09-23",
-  "dateModified": "2026-09-23",
+  "date": "2026-10-04",
+  "dateModified": "2026-11-14",
   "readTime": 5,
   "content": {
     "en": "<h2>Why Swimmer's Ear (Otitis Externa) Peaks in Southern Spain</h2>\n<p>Spending hours in swimming pools and warm Mediterranean waters is a highlight of any Costa del Sol holiday. However, repeated water immersion washes away the ear canal's natural protective cerumen (earwax) and alters the acidic pH balance of the delicate skin.</p>\n<p>In warm, humid summer conditions, bacteria (most commonly <em>Pseudomonas aeruginosa</em> and <em>Staphylococcus</em>) quickly multiply, leading to acute <strong>Otitis Externa</strong>, universally known as swimmer's ear.</p>\n\n<h2>Recognizing the Symptoms of Otitis Externa</h2>\n<p>Unlike middle ear infections common in winter colds, swimmer's ear presents with very distinct clinical signs:</p>\n<ul>\n<li><strong>Intense pain on manipulation:</strong> Sharp pain when touching the tragus (the small cartilage flap in front of the ear canal) or gently tugging the earlobe.</li>\n<li><strong>Sensation of blockage or fullness:</strong> Swelling of the ear canal lining creates a muffled hearing sensation.</li>\n<li><strong>Itching and discharge:</strong> Clear, yellowish, or slightly foul-smelling fluid draining onto your pillow.</li>\n<li><strong>Pain radiating to the jaw:</strong> Discomfort when chewing or opening the mouth wide.</li>\n</ul>\n\n<h2>Critical Warning: Flying with an Active Ear Infection</h2>\n<p>One of the most dangerous situations for tourists is boarding a commercial flight with untreated otitis. During ascent and especially descent, cabin atmospheric pressure shifts drastically.</p>\n<p>If swelling obstructs normal pressure equalization, severe <strong>barotrauma</strong> can occur, resulting in excruciating pain, dizziness, and even traumatic perforation of the tympanic membrane (ruptured eardrum). An in-person medical evaluation before flying home is essential to verify eardrum integrity and receive decongestant and anti-inflammatory therapy.</p>\n\n<h2>Medical Treatment: Why Over-the-Counter Painkillers Are Not Enough</h2>\n<p>Oral paracetamol or ibuprofen provides temporary pain relief, but they <strong>do not cure the underlying bacterial or fungal infection</strong> in the canal. Effective treatment requires:</p>\n<ul>\n<li><strong>Otoscopic Examination:</strong> A doctor must look inside the ear canal with an otoscope to confirm the eardrum is intact before administering drops.</li>\n<li><strong>Prescription Ear Drops:</strong> Combination drops containing targeted antibiotics (such as ciprofloxacin) and corticosteroids to rapidly reduce canal swelling.</li>\n<li><strong>Water Protection:</strong> Keeping the ear completely dry during showers and avoiding all swimming until fully cleared by the doctor.</li>\n</ul>\n\n<h2>Fast Relief: Doctor at Your Hotel Room Across Costa del Sol</h2>\n<p>You don't need to endure hours in a Spanish hospital waiting room while suffering from agonizing ear pain. Our private on-call doctors carry professional diagnostic otoscopes and visit your hotel in Málaga, Torremolinos, Benalmádena, Fuengirola, or Marbella within 30 to 60 minutes to diagnose the infection and provide the necessary prescription drops immediately.</p>",
@@ -1076,8 +1076,8 @@ export const BLOG_POSTS: BlogPost[] = [
       ru: "Нужен рецепт в Испании? Экспресс-консультация врача за 90€ + официальный QR-рецепт (действует по всей Испании) и отчет для страховки за 15 минут.",
       nl: "Recept nodig in Spanje? €90 spoedconsult + officieel Spaans QR-recept (geldig in heel Spanje) en medisch rapport voor uw reisverzekering in 15 min."
   },
-  "date": "2026-09-23",
-  "dateModified": "2026-11-14",
+  "date": "2026-10-15",
+  "dateModified": "2026-11-15",
   "readTime": 6,
   "content": {
     "en": "<h2>Express €90 Online Doctor Consultation: Telemedicine Evaluation, Official Spanish QR Prescription & Medical Report in 15 Minutes (Valid Across All of Spain)</h2>\n<p>Don't need an in-person hotel visit? If you need an urgent medical evaluation and prescription for an infection, ear drops, an asthma inhaler, or continuity for lost or forgotten regular medication anywhere in Spain — including the <strong>Costa del Sol (Marbella, Málaga, Benalmádena, Fuengirola), Mallorca, Ibiza, Tenerife, Gran Canaria, Lanzarote, Benidorm, Alicante, Barcelona, or Madrid</strong> — you can book our <strong>€90 Express Online/Phone Doctor Consultation</strong>.</p>\n<p>Within <strong>15 minutes</strong>, a licensed doctor in Spain conducts a telemedicine evaluation of your symptoms or medical history and, when medically indicated, sends directly to your phone via WhatsApp or Email:</p>\n<ul>\n<li><strong>Official Spanish Electronic Prescription (QR Code):</strong> Issued by a licensed physician via Spain's official private electronic prescription system and accepted at all 22,000+ pharmacies across Mainland Spain, the Balearic Islands, and the Canary Islands.</li>\n<li><strong>Signed Official Medical Report & Itemized Invoice (with ICD-10 Diagnosis Code):</strong> Complete clinical documentation required by international travel insurance providers (Bupa, Allianz, AXA, Aviva, Cigna) so you can submit a reimbursement claim according to your policy terms.</li>\n</ul>\n\n<h2>Pharmacy Counter Guide: Common Tourist Medical Needs in Spain (€90 Online Consultation + QR Prescription)</h2>\n<p>Under Spanish healthcare regulations, prescription-only medicines cannot be sold over the counter or dispensed without prior medical evaluation by a licensed physician. Here is how our <strong>15-minute Online Doctor Consultation (€90)</strong> helps tourists across Spain:</p>\n<ul>\n<li><strong>🇬🇧 Can I Use a UK NHS or US/Canadian Prescription in a Spanish Pharmacy?</strong> No. Following Brexit, UK NHS paper prescriptions, NHS App barcodes, and prescriptions issued outside the EU (USA, Canada, Australia) are <strong>not legally valid</strong> in Spanish pharmacies. During a 15-minute teleconsultation, our licensed Spanish doctor reviews your regular medication and issues an Official Spanish QR Prescription.</li>\n<li><strong>🦠 UTI & Cystitis Evaluation (Monurol / Fosfomicina, Ciprofloxacin, Nitrofurantoin):</strong> In Spain, urinary tract infection antibiotics strictly require a doctor's evaluation and official QR prescription. After a 15-minute phone/WhatsApp medical consultation, the doctor sends the QR prescription to your phone if clinically indicated.</li>\n<li><strong>👂 Swimmer's Ear & Eye Infections (Cetraxal Plus / Ciprofloxacin, Tobrex):</strong> Antibiotic and corticosteroid ear/eye drops require prior medical assessment and an official Spanish prescription.</li>\n<li><strong>🫁 Asthma & Allergy Evaluation (Ventolin / Salbutamol, Symbicort):</strong> Left your inhaler on the plane or at home? Following a quick telemedicine review of your respiratory history, our doctor issues the electronic QR prescription required by Spanish pharmacies.</li>\n<li><strong>🦷 Dental, Throat & Sinus Infections (Amoxicillin, Augmentin / Clavulanic Acid, Azithromycin):</strong> Pharmacists in Spain cannot legally dispense oral antibiotics without a doctor's prescription following clinical assessment.</li>\n<li><strong>💊 Continuity of Lost or Forgotten Daily Medication (Blood Pressure, Thyroid / Eutirox, Cholesterol, Diabetes):</strong> If your luggage was delayed or you ran out of regular pills on holiday, our doctor reviews your treatment history and issues a Spanish QR replacement prescription.</li>\n</ul>\n\n<h2>Complete Clinical Documentation for Your Travel Insurance Claim (ICD-10 Medical Report + Invoice)</h2>\n<p>Unlike basic automated apps that only provide a slip without a clinical diagnosis report, our <strong>€90 Express Doctor Consultation</strong> includes both the <strong>Official Spanish QR Prescription</strong> (when medically indicated) and a <strong>Signed Clinical Medical Report with ICD-10 Diagnosis Code + Itemized Invoice</strong>, providing the official medical documentation required to file a claim with your travel insurance provider under your policy conditions.</p>\n\n<h2>How 'Farmacias de Guardia' (24-Hour On-Duty Pharmacies) Work in Spain</h2>\n<p>Unlike many countries where supermarkets or convenience stores sell pharmaceuticals, in Spain medicines can <strong>only be legally sold in licensed pharmacies</strong> (identifiable by a glowing green cross sign).</p>\n<p>Regular pharmacies generally open from 09:30 to 14:00 and 17:00 to 20:30. Outside these hours, on Sundays, and on public holidays, a mandatory rotational system operates called <strong>Farmacias de Guardia</strong> (on-duty pharmacies). Every city and resort town across Spain has designated pharmacies open 24/7 where you can present your official QR prescription on your phone.</p>\n\n<h2>Can an On-Call Doctor Also Visit Your Hotel in Person on the Costa del Sol?</h2>\n<p>Yes. If you are staying in <strong>Málaga, Torremolinos, Benalmádena, Fuengirola, Mijas (€130 Mon–Fri 10:00–21:00 / €140 Nights & Weekends)</strong> or <strong>Marbella and Estepona (€140 24/7 flat rate)</strong> and require a physical examination, our private doctors visit your hotel room, apartment, or villa within 30–60 minutes with full diagnostic equipment, prescription, and travel insurance medical report.</p>",

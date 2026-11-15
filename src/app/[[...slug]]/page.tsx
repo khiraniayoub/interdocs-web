@@ -651,6 +651,7 @@ export default async function Page({
   }
 
   const locale = page.locale;
+  const isRtl = locale === "ar";
   const t = translations[locale];
 
   // ── Home Page ──────────────────────────────────────────
@@ -821,7 +822,7 @@ export default async function Page({
     };
 
     return (
-      <>
+      <div dir={isRtl ? "rtl" : "ltr"} lang={locale}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
@@ -889,7 +890,7 @@ export default async function Page({
           rights={t.footer.rights}
           locale={locale}
         />
-      </>
+      </div>
     );
   }
 
@@ -912,7 +913,7 @@ export default async function Page({
     }
 
     return (
-      <>
+      <div dir={isRtl ? "rtl" : "ltr"} lang={locale}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
@@ -964,7 +965,7 @@ export default async function Page({
                       <div className="bg-[#0A6EBD] p-3 rounded-xl shadow-lg shadow-[#0A6EBD]/30 flex justify-center items-center min-w-[5rem]">
                         <span className="text-2xl font-800 text-white tracking-tight leading-none">€140</span>
                       </div>
-                      <div className="flex flex-col text-left">
+                      <div className="flex flex-col text-start">
                         <span className="text-white font-600 leading-tight text-base sm:text-lg">
                           24/7 {city.name} Flat Rate
                         </span>
@@ -979,7 +980,7 @@ export default async function Page({
                         <div className="bg-[#25D366] p-3 rounded-xl shadow-lg shadow-[#25D366]/30 flex justify-center items-center min-w-[5rem]">
                           <span className="text-2xl font-800 text-white tracking-tight leading-none">€130</span>
                         </div>
-                        <div className="flex flex-col text-left">
+                        <div className="flex flex-col text-start">
                           <span className="text-white font-600 leading-tight text-base sm:text-lg">Mon–Fri</span>
                           <span className="text-slate-300 text-xs sm:text-sm font-500 mt-0.5">
                             Hotel & Home Visit
@@ -991,7 +992,7 @@ export default async function Page({
                         <div className="bg-[#0A6EBD] p-3 rounded-xl shadow-lg shadow-[#0A6EBD]/30 flex justify-center items-center min-w-[5rem]">
                           <span className="text-2xl font-800 text-white tracking-tight leading-none">€140</span>
                         </div>
-                        <div className="flex flex-col text-left">
+                        <div className="flex flex-col text-start">
                           <span className="text-white font-600 leading-tight text-base sm:text-lg">
                             Nights, Weekends & Holidays
                           </span>
@@ -1008,12 +1009,12 @@ export default async function Page({
                     data-triage="rx"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3.5 text-left group cursor-pointer hover:opacity-95 transition-opacity"
+                    className="flex items-center gap-3.5 text-start group cursor-pointer hover:opacity-95 transition-opacity"
                   >
                     <div className="bg-amber-500 group-hover:bg-amber-400 transition-colors p-3 rounded-xl shadow-lg shadow-amber-500/30 flex justify-center items-center min-w-[5rem]">
                       <span className="text-2xl font-800 text-white tracking-tight leading-none">€90</span>
                     </div>
-                    <div className="flex flex-col text-left">
+                    <div className="flex flex-col text-start">
                       <span className="text-white font-600 leading-tight text-base sm:text-lg group-hover:text-amber-300 transition-colors">
                         Online Consultation + Prescription
                       </span>
@@ -1120,7 +1121,7 @@ export default async function Page({
           rights={t.footer.rights}
           locale={locale}
         />
-      </>
+      </div>
     );
   }
 
@@ -1141,7 +1142,7 @@ export default async function Page({
     };
 
     return (
-      <>
+      <div dir={isRtl ? "rtl" : "ltr"} lang={locale}>
         <Header locale={locale} alternateUrls={blogIndexAlternates} />
         <main id="main-content">
           <BlogSection
@@ -1158,7 +1159,7 @@ export default async function Page({
           rights={t.footer.rights}
           locale={locale}
         />
-      </>
+      </div>
     );
   }
 
@@ -1185,7 +1186,7 @@ export default async function Page({
     }
 
     return (
-      <>
+      <div dir={isRtl ? "rtl" : "ltr"} lang={locale}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
@@ -1216,7 +1217,7 @@ export default async function Page({
           rights={t.footer.rights}
           locale={locale}
         />
-      </>
+      </div>
     );
   }
 

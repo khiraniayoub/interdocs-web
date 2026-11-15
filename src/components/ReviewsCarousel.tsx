@@ -469,7 +469,7 @@ export default function ReviewsCarousel({ locale = "en" }: WhyChooseProps) {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          <div className="max-w-2xl text-center lg:text-left mx-auto lg:mx-0">
+          <div className="max-w-2xl text-center lg:text-start mx-auto lg:mx-0">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0A6EBD]/10 border border-[#0A6EBD]/20 text-[#0A6EBD] text-xs font-700 uppercase tracking-wider mb-3">
               <span className="w-2 h-2 rounded-full bg-[#0A6EBD]" />
               {SECTION_STRINGS.badge[currentLocale] || SECTION_STRINGS.badge.en}
@@ -518,7 +518,7 @@ export default function ReviewsCarousel({ locale = "en" }: WhyChooseProps) {
                   />
                 </svg>
               </div>
-              <div className="text-left">
+              <div className="text-start">
                 <p className="font-800 text-slate-900 text-sm leading-tight">
                   {SECTION_STRINGS.trustTitle[currentLocale] || SECTION_STRINGS.trustTitle.en}
                 </p>

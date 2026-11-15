@@ -47,6 +47,11 @@ export default function Header({ locale = "en", alternateUrls }: HeaderProps) {
     return () => window.removeEventListener("hashchange", handleHash);
   }, []);
 
+  useEffect(() => {
+    document.documentElement.lang = locale;
+    document.documentElement.dir = locale === "ar" ? "rtl" : "ltr";
+  }, [locale]);
+
   const getAlternateUrl = (targetCode: string): string => {
     // 1. If explicit alternateUrls was provided for this page
     if (alternateUrls && alternateUrls[targetCode]) {
@@ -234,6 +239,7 @@ export default function Header({ locale = "en", alternateUrls }: HeaderProps) {
           {/* Logo */}
           <Link
             href={localePaths[locale] || "/"}
+            dir="ltr"
             className="flex items-center gap-2.5 sm:gap-3 group flex-shrink-0"
             aria-label="Urgent Care 24H - Home"
           >
@@ -274,7 +280,7 @@ export default function Header({ locale = "en", alternateUrls }: HeaderProps) {
 
           {/* Desktop Nav with guaranteed minimum gap */}
           <nav
-            className="hidden lg:flex items-center gap-3 xl:gap-5 2xl:gap-7 ml-6 xl:ml-10 mr-auto flex-shrink-0"
+            className="hidden lg:flex items-center gap-3 xl:gap-5 2xl:gap-7 ms-6 xl:ms-10 me-auto flex-shrink-0"
             aria-label="Main navigation"
           >
             {links.map((link) => (
@@ -356,7 +362,7 @@ export default function Header({ locale = "en", alternateUrls }: HeaderProps) {
                         </span>
                         <span>{lang.label}</span>
                         {lang.code === locale && (
-                          <span className="ml-auto text-[#0A6EBD] text-xs font-bold">✓</span>
+                          <span className="ms-auto text-[#0A6EBD] text-xs font-bold">✓</span>
                         )}
                       </Link>
                     ))}
@@ -385,7 +391,7 @@ export default function Header({ locale = "en", alternateUrls }: HeaderProps) {
                   d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                 />
               </svg>
-              <span className="hidden 2xl:inline">{PHONE_NUMBER}</span>
+              <span dir="ltr" className="hidden 2xl:inline">{PHONE_NUMBER}</span>
               <span className="2xl:hidden">{t.call}</span>
             </a>
 

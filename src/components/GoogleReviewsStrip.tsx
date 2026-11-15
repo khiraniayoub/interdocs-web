@@ -246,7 +246,7 @@ export default function GoogleReviewsStrip({ locale = "en" }: { locale?: Locale 
         }
       `}</style>
 
-      <div className="relative w-full overflow-hidden py-3">
+      <div dir="ltr" className="relative w-full overflow-hidden py-3">
         {/* Soft fade edges matching InsuranceLogos */}
         <div className="absolute inset-y-0 left-0 w-12 sm:w-28 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
         <div className="absolute inset-y-0 right-0 w-12 sm:w-28 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
@@ -256,6 +256,7 @@ export default function GoogleReviewsStrip({ locale = "en" }: { locale?: Locale 
           {GOOGLE_REVIEWS.map((rev) => (
             <article
               key={`primary-${rev.initials}`}
+              dir={currentLocale === "ar" ? "rtl" : "ltr"}
               className="w-[320px] sm:w-[370px] flex-shrink-0 rounded-2xl bg-white/80 backdrop-blur-md border border-slate-200/90 p-6 sm:p-7 shadow-sm hover:shadow-md hover:border-[#0A6EBD]/40 transition-all duration-300 flex flex-col justify-between"
             >
               <div>
@@ -288,6 +289,7 @@ export default function GoogleReviewsStrip({ locale = "en" }: { locale?: Locale 
             {GOOGLE_REVIEWS.map((rev) => (
               <div
                 key={`clone-${rev.initials}`}
+                dir={currentLocale === "ar" ? "rtl" : "ltr"}
                 className="w-[320px] sm:w-[370px] flex-shrink-0 rounded-2xl bg-white/80 backdrop-blur-md border border-slate-200/90 p-6 sm:p-7 shadow-sm flex flex-col justify-between"
               >
                 <div>

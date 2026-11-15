@@ -390,7 +390,10 @@ export default function FloatingCTA({ locale: propLocale = "en" }: { locale?: st
 
       {/* ── Dedicated Triage Modals: Separate Modal for Home Visit vs Teleconsultation (€90) ── */}
       {isOpen && (
-        <div className="fixed inset-0 z-[10002] flex items-end sm:items-center justify-center p-3 sm:p-4 bg-black/40 backdrop-blur-xs">
+        <div
+          dir={activeLocale === "ar" ? "rtl" : "ltr"}
+          className="fixed inset-0 z-[10002] flex items-end sm:items-center justify-center p-3 sm:p-4 bg-black/40 backdrop-blur-xs"
+        >
           <div
             className="w-full max-w-md bg-white rounded-2xl shadow-2xl border border-slate-100 p-5 mb-16 sm:mb-0 transform transition-all animate-in fade-in slide-in-from-bottom-6 duration-200"
             role="dialog"
@@ -461,6 +464,7 @@ export default function FloatingCTA({ locale: propLocale = "en" }: { locale?: st
 
       {/* ── Desktop Floating Action Cards (lg:flex) ── */}
       <aside
+        dir={activeLocale === "ar" ? "rtl" : "ltr"}
         className="hidden lg:flex fixed bottom-6 right-6 z-50 flex-col gap-3 pointer-events-auto"
         aria-label="Quick contact"
       >
@@ -471,7 +475,7 @@ export default function FloatingCTA({ locale: propLocale = "en" }: { locale?: st
           aria-label={t.whatsapp}
         >
           {whatsappIcon}
-          <div className="flex flex-col text-left">
+          <div className="flex flex-col text-start">
             <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-100 leading-tight">Online 24/7</span>
             <span className="text-sm font-extrabold tracking-wide leading-tight">{t.whatsapp}</span>
           </div>
@@ -485,9 +489,9 @@ export default function FloatingCTA({ locale: propLocale = "en" }: { locale?: st
           <svg className="w-5 h-5 text-sky-200 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
           </svg>
-          <div className="flex flex-col text-left">
+          <div className="flex flex-col text-start">
             <span className="text-[10px] font-bold uppercase tracking-wider text-sky-200 leading-tight">{t.call}</span>
-            <span className="text-sm font-extrabold tracking-wide leading-tight">{PHONE_NUMBER}</span>
+            <span dir="ltr" className="text-sm font-extrabold tracking-wide leading-tight">{PHONE_NUMBER}</span>
           </div>
         </a>
       </aside>

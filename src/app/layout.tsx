@@ -137,8 +137,10 @@ export default async function RootLayout({
   const pathname = headersList.get("x-pathname") ?? headersList.get("x-invoke-path") ?? "/";
   const lang = getLangFromPath(pathname);
 
+  const isRtl = lang === "ar";
+
   return (
-    <html lang={lang} className={outfit.variable} data-scroll-behavior="smooth" translate="no">
+    <html lang={lang} dir={isRtl ? "rtl" : "ltr"} className={outfit.variable} data-scroll-behavior="smooth" translate="no">
       <head>
         <meta name="google" content="notranslate" />
         <meta name="theme-color" content="#0A6EBD" />

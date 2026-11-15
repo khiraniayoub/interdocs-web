@@ -69,7 +69,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
           : `${BASE_URL}/${locale}/blog/${localeSlug}`;
       entries.push({
         url,
-        lastModified: post.date ? new Date(post.date) : new Date(),
+        lastModified: post.dateModified
+          ? new Date(post.dateModified)
+          : post.date
+          ? new Date(post.date)
+          : new Date(),
         changeFrequency: "monthly",
         priority: locale === "en" ? 0.7 : 0.6,
       });

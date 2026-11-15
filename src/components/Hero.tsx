@@ -275,7 +275,7 @@ export default function Hero({
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 lg:pt-12 pb-16 w-full">
-        <div className="max-w-5xl flex flex-col items-center text-center lg:items-start lg:text-left mx-auto lg:mx-0">
+        <div className="max-w-5xl flex flex-col items-center text-center lg:items-start lg:text-start mx-auto lg:mx-0">
           {/* Badge */}
           <div
             className="hero-pop-in inline-flex items-center justify-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full mb-6 border border-white/20 shadow-lg hover:bg-white/20 hover:scale-105 transition-all duration-300 cursor-default"
@@ -311,7 +311,7 @@ export default function Hero({
                   <div className="bg-[#25D366] p-3 rounded-xl shadow-lg shadow-[#25D366]/30 flex justify-center items-center min-w-[5rem]">
                     <span className="text-2xl font-800 text-white tracking-tight leading-none">{t.price1}</span>
                   </div>
-                  <div className="flex flex-col text-left">
+                  <div className="flex flex-col text-start">
                     <span className="text-white font-600 leading-tight text-base sm:text-lg">{t.title1}</span>
                     <span className="text-slate-300 text-xs sm:text-sm font-500 mt-0.5">{t.desc}</span>
                   </div>
@@ -321,7 +321,7 @@ export default function Hero({
                   <div className="bg-[#0A6EBD] p-3 rounded-xl shadow-lg shadow-[#0A6EBD]/30 flex justify-center items-center min-w-[5rem]">
                     <span className="text-2xl font-800 text-white tracking-tight leading-none">{t.price2}</span>
                   </div>
-                  <div className="flex flex-col text-left">
+                  <div className="flex flex-col text-start">
                     <span className="text-white font-600 leading-tight text-base sm:text-lg">{t.title2}</span>
                     <span className="text-slate-300 text-xs sm:text-sm font-500 mt-0.5">{t.desc}</span>
                   </div>
@@ -333,12 +333,12 @@ export default function Hero({
                     e.preventDefault();
                     window.dispatchEvent(new Event("openTriagePrescription"));
                   }}
-                  className="flex items-center gap-3.5 text-left group cursor-pointer hover:opacity-95 transition-opacity"
+                  className="flex items-center gap-3.5 text-start group cursor-pointer hover:opacity-95 transition-opacity"
                 >
                   <div className="bg-amber-500 group-hover:bg-amber-400 transition-colors p-3 rounded-xl shadow-lg shadow-amber-500/30 flex justify-center items-center min-w-[5rem]">
                     <span className="text-2xl font-800 text-white tracking-tight leading-none">{t.price3}</span>
                   </div>
-                  <div className="flex flex-col text-left">
+                  <div className="flex flex-col text-start">
                     <span className="text-white font-600 leading-tight text-base sm:text-lg group-hover:text-amber-300 transition-colors">{t.title3}</span>
                     <span className="text-amber-300/90 text-xs sm:text-sm font-600 mt-0.5">{t.desc3}</span>
                   </div>
@@ -384,17 +384,17 @@ export default function Hero({
                       d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                     />
                   </svg>
-                  <div className="flex flex-col text-left">
+                  <div className="flex flex-col text-start">
                     <span className="text-[11px] uppercase tracking-wider font-bold opacity-80 leading-none">{callLabel}</span>
-                    <span className="text-base sm:text-lg font-800 tracking-wide leading-tight mt-0.5">{PHONE_NUMBER}</span>
+                    <span dir="ltr" className="text-base sm:text-lg font-800 tracking-wide leading-tight mt-0.5">{PHONE_NUMBER}</span>
                   </div>
                 </a>
               </div>
             </div>
 
             {/* Trust Indicators */}
-            <div className="flex flex-col items-center lg:items-start w-full lg:w-auto lg:mt-0 pt-6 lg:pt-0 border-t lg:border-t-0 lg:border-l border-white/20 lg:pl-12">
-              <ul className="space-y-3 text-left inline-block" aria-label="Service features">
+            <div className="flex flex-col items-center lg:items-start w-full lg:w-auto lg:mt-0 pt-6 lg:pt-0 border-t lg:border-t-0 lg:border-s border-white/20 lg:ps-12">
+              <ul className="space-y-3 text-start inline-block" aria-label="Service features">
                 {trustItems.map((item, index) => (
                   <li
                     key={item}
@@ -443,7 +443,7 @@ export default function Hero({
       </div>
 
       {/* Floating Logo Bottom Right */}
-      <div className="hidden sm:flex absolute bottom-2 right-2 sm:bottom-3 sm:right-3 z-20 bg-white/95 backdrop-blur-md px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl sm:rounded-2xl shadow-xl items-center gap-3 border border-white/30">
+      <div dir="ltr" className="hidden sm:flex absolute bottom-2 right-2 sm:bottom-3 sm:right-3 z-20 bg-white/95 backdrop-blur-md px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl sm:rounded-2xl shadow-xl items-center gap-3 border border-white/30">
         <Image
           src="/mi_logo.webp"
           alt="Urgent Care 24H logo"
