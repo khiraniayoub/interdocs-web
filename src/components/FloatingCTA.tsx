@@ -10,231 +10,242 @@ const TRANSLATIONS: Record<string, any> = {
     callMobile: "Call 24/7",
     whatsapp: "WhatsApp Now",
     whatsappMobile: "WhatsApp 24/7",
-    title: "Quick Medical Request",
-    optVisit: "🏨 Doctor Visit (€130/€140)",
-    optRx: "💊 Prescription + Report (€90)",
+    title: "🏨 Request Doctor to Hotel / Home",
+    subVisit: "In-person doctor visit in 30–60 min · Costa del Sol",
+    titleRx: "🩺 Online Consultation + QR Prescription (€90)",
+    subRx: "15-min doctor teleconsultation · Official Spanish QR Prescription + Medical Report · All Spain",
     q1: "1. Where are you staying?",
     q1Rx: "1. Your City / Location in Spain",
-    p1: "Hotel name or address...",
-    p1Rx: "City or pharmacy area (e.g. Marbella, Mallorca, Tenerife)...",
+    p1: "Hotel name, apartment or address...",
+    p1Rx: "City or area in Spain (e.g. Marbella, Mallorca, Tenerife, Madrid)...",
     q2: "2. What are your symptoms?",
-    q2Rx: "2. Medication needed & symptoms",
+    q2Rx: "2. Reason for consultation / symptoms or regular medication",
     p2: "Briefly describe what happens...",
-    p2Rx: "Medication name / symptoms for your prescription & report...",
+    p2Rx: "Describe your symptoms or regular medication for the doctor's evaluation...",
     btn: "Continue to WhatsApp",
-    msg: "Hello, I need a doctor visit.\n\n📍 Location: {location}\n🤒 Symptoms: {symptoms}",
+    msg: "Hello, I need a doctor visit at my hotel/home.\n\n📍 Location: {location}\n🤒 Symptoms: {symptoms}",
     msgRx:
-      "Hello, I need an Express Online Prescription + Medical Report (€90).\n\n📍 Location/City: {location}\n💊 Medication / Symptoms: {symptoms}",
+      "Hello, I would like to book an Express Online Doctor Consultation (€90) for medical evaluation, Official QR Prescription & Medical Report.\n\n📍 City in Spain: {location}\n🩺 Symptoms / Medication to evaluate: {symptoms}",
   },
   es: {
     call: "Llamar Ahora",
     callMobile: "Llamar 24/7",
     whatsapp: "WhatsApp Ahora",
     whatsappMobile: "WhatsApp 24/7",
-    title: "Petición Médica Inmediata",
-    optVisit: "🏨 Visita Médica (130€/140€)",
-    optRx: "💊 Receta QR + Informe (90€)",
+    title: "🏨 Solicitar Médico a Hotel / Domicilio",
+    subVisit: "Visita médica presencial en 30–60 min · Costa del Sol",
+    titleRx: "🩺 Teleconsulta Médica + Receta QR (90€)",
+    subRx: "Valoración médica telemática en 15 min · Receta QR + Informe Médico · Toda España",
     q1: "1. ¿Dónde estás alojado?",
     q1Rx: "1. ¿En qué ciudad de España estás?",
-    p1: "Nombre del hotel o dirección...",
+    p1: "Nombre del hotel, apartamento o dirección...",
     p1Rx: "Ciudad o zona (ej. Marbella, Mallorca, Tenerife, Madrid)...",
     q2: "2. ¿Cuáles son tus síntomas?",
-    q2Rx: "2. Medicación necesaria y síntomas",
+    q2Rx: "2. Motivo de consulta / síntomas o medicación habitual",
     p2: "Describe brevemente qué ocurre...",
-    p2Rx: "Nombre del medicamento o síntomas para tu receta e informe...",
+    p2Rx: "Describe tus síntomas o la medicación que necesitas valorar con el médico...",
     btn: "Continuar a WhatsApp",
     msg: "Hola, necesito un médico a domicilio/hotel.\n\n📍 Ubicación: {location}\n🤒 Síntomas: {symptoms}",
     msgRx:
-      "Hola, necesito una Receta Electrónica Express + Informe Médico (90€).\n\n📍 Ciudad: {location}\n💊 Medicación / Síntomas: {symptoms}",
+      "Hola, quiero solicitar una Teleconsulta Médica Express (90€) para valoración médica, Receta Electrónica QR e Informe Médico.\n\n📍 Ciudad: {location}\n🩺 Síntomas / Medicación a valorar: {symptoms}",
   },
   de: {
     call: "Jetzt anrufen",
     callMobile: "Anrufen 24/7",
     whatsapp: "WhatsApp jetzt",
     whatsappMobile: "WhatsApp 24/7",
-    title: "Schnelle ärztliche Anfrage",
-    optVisit: "🏨 Arztbesuch (130€/140€)",
-    optRx: "💊 Rezept + Bericht (90€)",
+    title: "🏨 Arztbesuch im Hotel / Haus anfordern",
+    subVisit: "Persönlicher Arztbesuch in 30–60 Min · Costa del Sol",
+    titleRx: "🩺 Online-Arztkonsultation + QR-Rezept (90€)",
+    subRx: "Ärztliche Telekonsultation in 15 Min · Offizielles QR-Rezept + Arztbericht · Ganz Spanien",
     q1: "1. Wo übernachten Sie?",
     q1Rx: "1. Stadt / Ort in Spanien",
     p1: "Hotelname oder Adresse...",
     p1Rx: "Stadt oder Ort in Spanien...",
     q2: "2. Was sind Ihre Symptome?",
-    q2Rx: "2. Benötigtes Medikament & Symptome",
+    q2Rx: "2. Grund der Konsultation / Symptome oder Medikament",
     p2: "Beschreiben Sie kurz...",
-    p2Rx: "Medikament / Symptome...",
+    p2Rx: "Symptome oder Medikament für die ärztliche Bewertung...",
     btn: "Weiter zu WhatsApp",
-    msg: "Hallo, ich brauche einen Arzt.\n\n📍 Ort: {location}\n🤒 Symptome: {symptoms}",
+    msg: "Hallo, ich brauche einen Arztbesuch im Hotel/Haus.\n\n📍 Ort: {location}\n🤒 Symptome: {symptoms}",
     msgRx:
-      "Hallo, ich benötige ein Express-Online-Rezept + Arztbericht (90€).\n\n📍 Ort: {location}\n💊 Medikament / Symptome: {symptoms}",
+      "Hallo, ich möchte eine Express-Online-Arztkonsultation (90€) für ärztliche Bewertung, QR-Rezept + Arztbericht buchen.\n\n📍 Ort: {location}\n🩺 Symptome / Medikament: {symptoms}",
   },
   fr: {
     call: "Appeler",
     callMobile: "Appeler 24/7",
     whatsapp: "WhatsApp",
     whatsappMobile: "WhatsApp 24/7",
-    title: "Demande Médicale Rapide",
-    optVisit: "🏨 Visite Médecin (130€/140€)",
-    optRx: "💊 Ordonnance + Rapport (90€)",
+    title: "🏨 Demander un Médecin à l'Hôtel / Domicile",
+    subVisit: "Visite médicale sur place en 30–60 min · Costa del Sol",
+    titleRx: "🩺 Téléconsultation Médicale + Ordonnance QR (90€)",
+    subRx: "Consultation médicale en ligne en 15 min · Ordonnance QR + Rapport · Toute l'Espagne",
     q1: "1. Où séjournez-vous ?",
     q1Rx: "1. Ville en Espagne",
     p1: "Nom de l'hôtel ou adresse...",
-    p1Rx: "Ville ou hôtel en Espagne...",
+    p1Rx: "Ville en Espagne...",
     q2: "2. Quels sont vos symptômes ?",
-    q2Rx: "2. Médicament souhaité et symptômes",
+    q2Rx: "2. Motif de consultation / symptômes ou traitement",
     p2: "Décrivez brièvement...",
-    p2Rx: "Médicament / symptômes...",
+    p2Rx: "Symptômes ou traitement à évaluer par le médecin...",
     btn: "Aller sur WhatsApp",
-    msg: "Bonjour, j'ai besoin d'un médecin.\n\n📍 Lieu : {location}\n🤒 Symptômes : {symptoms}",
+    msg: "Bonjour, j'ai besoin d'un médecin à mon hôtel/domicile.\n\n📍 Lieu : {location}\n🤒 Symptômes : {symptoms}",
     msgRx:
-      "Bonjour, j'ai besoin d'une Ordonnance Express + Rapport Médical (90€).\n\n📍 Ville : {location}\n💊 Médicament / Symptômes : {symptoms}",
+      "Bonjour, je souhaite demander une Téléconsultation Médicale Express (90€) avec évaluation médicale, Ordonnance QR et Rapport Médical.\n\n📍 Ville : {location}\n🩺 Symptômes / Traitement : {symptoms}",
   },
   fi: {
     call: "Soita Nyt",
     callMobile: "Soita 24/7",
     whatsapp: "WhatsApp",
     whatsappMobile: "WhatsApp 24/7",
-    title: "Nopea pyyntö",
-    optVisit: "🏨 Lääkärikäynti (130€/140€)",
-    optRx: "💊 Resepti + Lausunto (90€)",
+    title: "🏨 Tilaa Lääkäri Hotellille / Asunnolle",
+    subVisit: "Lääkärin kotikäynti 30–60 min · Costa del Sol",
+    titleRx: "🩺 Etälääkärikonsultaatio + QR-Resepti (90€)",
+    subRx: "15 min lääkärin etäarviointi · Virallinen QR-resepti + Lääkärinlausunto · Koko Espanja",
     q1: "1. Missä majoitut?",
     q1Rx: "1. Kaupunki Espanjassa",
     p1: "Hotellin nimi tai osoite...",
-    p1Rx: "Kaupunki tai sijainti...",
+    p1Rx: "Kaupunki tai sijainti Espanjassa...",
     q2: "2. Mitkä ovat oireesi?",
-    q2Rx: "2. Tarvittava lääke ja oireet",
+    q2Rx: "2. Konsultaation syy / oireet tai lääkitys",
     p2: "Kuvaile lyhyesti...",
-    p2Rx: "Lääkkeen nimi / oireet...",
+    p2Rx: "Oireet tai lääkitys lääkärin arviointia varten...",
     btn: "Jatka WhatsAppiin",
-    msg: "Hei, tarvitsen lääkäriä.\n\n📍 Sijainti: {location}\n🤒 Oireet: {symptoms}",
+    msg: "Hei, tarvitsen lääkärin käynnin hotellille/asunnolle.\n\n📍 Sijainti: {location}\n🤒 Oireet: {symptoms}",
     msgRx:
-      "Hei, tarvitsen Pikareseptin + Lääkärinlausunnon (90€).\n\n📍 Sijainti: {location}\n💊 Lääke / Oireet: {symptoms}",
+      "Hei, haluan varata Lääkärin Pikakonsultaation (90€) arviointia, QR-reseptiä ja lääkärinlausuntoa varten.\n\n📍 Kaupunki: {location}\n🩺 Oireet / Lääkitys: {symptoms}",
   },
   ar: {
     call: "اتصل الان",
     callMobile: "اتصال 24/7",
     whatsapp: "واتساب",
     whatsappMobile: "واتساب 24/7",
-    title: "طلب طبي سريع",
-    optVisit: "🏨 زيارة طبيب (€130/€140)",
-    optRx: "💊 وصفة + تقرير طبي (€90)",
+    title: "🏨 طلب زيارة طبيب للفندق / المنزل",
+    subVisit: "زيارة طبية خلال 30–60 دقيقة · كوستا ديل سول",
+    titleRx: "🩺 استشارة طبية أونلاين + وصفة QR (€90)",
+    subRx: "تقييم طبي عن بعد خلال 15 دقيقة · وصفة QR رسمية + تقرير طبي · كل إسبانيا",
     q1: "1. أين تقيم؟",
     q1Rx: "1. المدينة في إسبانيا",
     p1: "اسم الفندق أو العنوان...",
-    p1Rx: "المدينة أو الموقع...",
+    p1Rx: "المدينة أو الموقع في إسبانيا...",
     q2: "2. ما هي الأعراض؟",
-    q2Rx: "2. الدواء المطلوب والأعراض",
+    q2Rx: "2. سبب الاستشارة / الأعراض أو الدواء",
     p2: "صف باختصار...",
-    p2Rx: "اسم الدواء أو الأعراض...",
+    p2Rx: "الأعراض أو الدواء لتقييم الطبيب...",
     btn: "متابعة إلى الواتساب",
-    msg: "مرحباً، أحتاج إلى طبيب.\n\n📍 الموقع: {location}\n🤒 الأعراض: {symptoms}",
+    msg: "مرحباً، أحتاج إلى زيارة طبيب للفندق/المنزل.\n\n📍 الموقع: {location}\n🤒 الأعراض: {symptoms}",
     msgRx:
-      "مرحباً، أحتاج إلى وصفة طبية سريعة + تقرير طبي (€90).\n\n📍 الموقع: {location}\n💊 الدواء / الأعراض: {symptoms}",
+      "مرحباً، أود طلب استشارة طبية سريعة أونلاين (€90) للتقييم الطبي وإصدار وصفة QR وتقرير طبي.\n\n📍 المدينة: {location}\n🩺 الأعراض / الدواء: {symptoms}",
   },
   no: {
     call: "Ring nå",
     callMobile: "Ring 24/7",
     whatsapp: "WhatsApp",
     whatsappMobile: "WhatsApp 24/7",
-    title: "Rask forespørsel",
-    optVisit: "🏨 Legebesøk (€130/€140)",
-    optRx: "💊 Resept + Rapport (€90)",
+    title: "🏨 Bestill Lege til Hotell / Bolig",
+    subVisit: "Legebesøk på stedet innen 30–60 min · Costa del Sol",
+    titleRx: "🩺 Online Legekonsultasjon + QR-Resept (€90)",
+    subRx: "15 min legevurdering på telefon/nett · Offisiell QR-resept + Legerapport · Hele Spania",
     q1: "1. Hvor bor du?",
     q1Rx: "1. By / Sted i Spania",
     p1: "Hotellnavn eller adresse...",
     p1Rx: "By eller sted i Spania...",
     q2: "2. Hva er symptomene dine?",
-    q2Rx: "2. Medisin og symptomer",
+    q2Rx: "2. Årsak til konsultasjon / symptomer eller medisin",
     p2: "Beskriv kort...",
-    p2Rx: "Medisin / symptomer...",
+    p2Rx: "Symptomer eller medisin for legens vurdering...",
     btn: "Gå til WhatsApp",
-    msg: "Hei, jeg trenger en lege.\n\n📍 Sted: {location}\n🤒 Symptomer: {symptoms}",
+    msg: "Hei, jeg trenger legebesøk på hotellet/boligen.\n\n📍 Sted: {location}\n🤒 Symptomer: {symptoms}",
     msgRx:
-      "Hei, jeg trenger Ekspress Resept + Medisinsk Rapport (€90).\n\n📍 Sted: {location}\n💊 Medisin / Symptomer: {symptoms}",
+      "Hei, jeg ønsker en Ekspress Online Legekonsultasjon (€90) for medisinsk vurdering, QR-resept og legerapport.\n\n📍 Sted: {location}\n🩺 Symptomer / Medisin: {symptoms}",
   },
   da: {
     call: "Ring nu",
     callMobile: "Ring 24/7",
     whatsapp: "WhatsApp",
     whatsappMobile: "WhatsApp 24/7",
-    title: "Hurtig anmodning",
-    optVisit: "🏨 Lægebesøg (€130/€140)",
-    optRx: "💊 Recept + Rapport (€90)",
+    title: "🏨 Bestil Læge til Hotel / Feriebolig",
+    subVisit: "Lægebesøg inden for 30–60 min · Costa del Sol",
+    titleRx: "🩺 Online Lægekonsultation + QR-Recept (€90)",
+    subRx: "15 min lægevurdering online · Officiel QR-recept + Lægerapport · Hele Spanien",
     q1: "1. Hvor bor du?",
     q1Rx: "1. By i Spanien",
     p1: "Hotelnavn eller adresse...",
     p1Rx: "By eller sted i Spanien...",
     q2: "2. Hvad er dine symptomer?",
-    q2Rx: "2. Medicin og symptomer",
+    q2Rx: "2. Årsag til konsultation / symptomer eller medicin",
     p2: "Beskriv kort...",
-    p2Rx: "Medicin / symptomer...",
+    p2Rx: "Symptomer eller medicin til lægens vurdering...",
     btn: "Gå til WhatsApp",
-    msg: "Hej, jeg har brug for en læge.\n\n📍 Sted: {location}\n🤒 Symptomer: {symptoms}",
+    msg: "Hej, jeg har brug for lægebesøg på mit hotel/feriebolig.\n\n📍 Sted: {location}\n🤒 Symptomer: {symptoms}",
     msgRx:
-      "Hej, jeg har brug for Ekspres Recept + Lægerapport (€90).\n\n📍 Sted: {location}\n💊 Medicin / Symptomer: {symptoms}",
+      "Hej, jeg ønsker en Ekspres Online Lægekonsultation (€90) til medicinsk vurdering, QR-recept og lægerapport.\n\n📍 Sted: {location}\n🩺 Symptomer / Medicin: {symptoms}",
   },
   sv: {
     call: "Ring nu",
     callMobile: "Ring 24/7",
     whatsapp: "WhatsApp",
     whatsappMobile: "WhatsApp 24/7",
-    title: "Snabb begäran",
-    optVisit: "🏨 Läkarbesök (€130/€140)",
-    optRx: "💊 Recept + Läkarintyg (€90)",
+    title: "🏨 Boka Läkare till Hotell / Lägenhet",
+    subVisit: "Läkarbesök på plats inom 30–60 min · Costa del Sol",
+    titleRx: "🩺 Online Läkarbedömning + QR-Recept (€90)",
+    subRx: "15 min läkarkonsultation online · Officiellt QR-recept + Läkarintyg · Hela Spanien",
     q1: "1. Var bor du?",
     q1Rx: "1. Stad i Spanien",
     p1: "Hotellnamn eller adress...",
     p1Rx: "Stad eller plats i Spanien...",
     q2: "2. Vad har du för symptom?",
-    q2Rx: "2. Medicin och symptom",
+    q2Rx: "2. Orsak till konsultation / symptom eller medicin",
     p2: "Beskriv kort...",
-    p2Rx: "Medicin / symptom...",
+    p2Rx: "Symptom eller medicin för läkarens bedömning...",
     btn: "Gå till WhatsApp",
-    msg: "Hej, jag behöver en läkare.\n\n📍 Plats: {location}\n🤒 Symptom: {symptoms}",
+    msg: "Hej, jag behöver läkarbesök på mitt hotell/boende.\n\n📍 Plats: {location}\n🤒 Symptom: {symptoms}",
     msgRx:
-      "Hej, jag behöver Expressrecept + Läkarintyg (€90).\n\n📍 Plats: {location}\n💊 Medicin / Symptom: {symptoms}",
+      "Hej, jag vill boka en Express Online Läkarkonsultation (€90) för medicinsk bedömning, QR-recept och läkarintyg.\n\n📍 Plats: {location}\n🩺 Symptom / Medicin: {symptoms}",
   },
   ru: {
     call: "Позвонить",
     callMobile: "Звонок 24/7",
     whatsapp: "WhatsApp",
     whatsappMobile: "WhatsApp 24/7",
-    title: "Быстрый вызов врача",
-    optVisit: "🏨 Визит врача (130€/140€)",
-    optRx: "💊 Рецепт + Медотчет (90€)",
+    title: "🏨 Вызов врача в отель / на дом",
+    subVisit: "Выезд врача за 30–60 мин · Коста-дель-Соль",
+    titleRx: "🩺 Онлайн-консультация врача + QR-рецепт (90€)",
+    subRx: "Дистанционная консультация врача за 15 мин · Официальный QR-рецепт + Медотчет · Вся Испания",
     q1: "1. Где вы находитесь?",
     q1Rx: "1. Город в Испании",
     p1: "Название отеля или адрес...",
     p1Rx: "Город в Испании...",
     q2: "2. Какие у вас симптомы?",
-    q2Rx: "2. Лекарство и симптомы",
+    q2Rx: "2. Причина консультации / симптомы или препарат",
     p2: "Кратко опишите проблему...",
-    p2Rx: "Название лекарства / симптомы...",
+    p2Rx: "Опишите симптомы или препарат для оценки врачом...",
     btn: "Перейти в WhatsApp",
-    msg: "Здравствуйте, мне нужен врач.\n\n📍 Местоположение: {location}\n🤒 Симптомы: {symptoms}",
+    msg: "Здравствуйте, мне нужен вызов врача в отель/на дом.\n\n📍 Местоположение: {location}\n🤒 Симптомы: {symptoms}",
     msgRx:
-      "Здравствуйте, мне нужен Экспресс-рецепт + Медицинский отчет (90€).\n\n📍 Город: {location}\n💊 Лекарство / Симптомы: {symptoms}",
+      "Здравствуйте, я хочу записаться на Экспресс онлайн-консультацию врача (90€) для медицинской оценки, получения QR-рецепта и медотчета.\n\n📍 Город: {location}\n🩺 Симптомы / Препарат: {symptoms}",
   },
   nl: {
     call: "Bel nu",
     callMobile: "Bellen 24/7",
     whatsapp: "WhatsApp nu",
     whatsappMobile: "WhatsApp 24/7",
-    title: "Snelle doktersaanvraag",
-    optVisit: "🏨 Doktersbezoek (€130/€140)",
-    optRx: "💊 Recept + Rapport (€90)",
+    title: "🏨 Dokter aanvragen in Hotel / Appartement",
+    subVisit: "Persoonlijk doktersbezoek binnen 30–60 min · Costa del Sol",
+    titleRx: "🩺 Online Doktersconsult + QR-Recept (€90)",
+    subRx: "Medisch teleconsult in 15 min · Officieel Spaans QR-recept + Medisch Rapport · Heel Spanje",
     q1: "1. Waar verblijft u?",
     q1Rx: "1. Stad / Locatie in Spanje",
     p1: "Hotelnaam of adres...",
     p1Rx: "Stad of locatie in Spanje...",
     q2: "2. Wat zijn uw symptomen?",
-    q2Rx: "2. Benodigde medicatie & symptomen",
+    q2Rx: "2. Reden voor consult / symptomen of medicatie",
     p2: "Beschrijf kort uw klachten...",
-    p2Rx: "Medicatie / symptomen...",
+    p2Rx: "Symptomen of medicatie ter beoordeling door de arts...",
     btn: "Verder naar WhatsApp",
-    msg: "Hallo, ik heb een dokter nodig.\n\n📍 Locatie: {location}\n🤒 Symptomen: {symptoms}",
+    msg: "Hallo, ik heb een doktersbezoek nodig in mijn hotel/appartement.\n\n📍 Locatie: {location}\n🤒 Symptomen: {symptoms}",
     msgRx:
-      "Hallo, ik heb een Spoedrecept + Medisch Rapport (€90) nodig.\n\n📍 Locatie: {location}\n💊 Medicatie / Symptomen: {symptoms}",
+      "Hallo, ik wil een Spoed Online Doktersconsult (€90) aanvragen voor medische beoordeling, QR-recept en medisch rapport.\n\n📍 Locatie: {location}\n🩺 Symptomen / Medicatie: {symptoms}",
   },
 };
 
@@ -288,6 +299,7 @@ export default function FloatingCTA({ locale: propLocale = "en" }: { locale?: st
 
   const handleWhatsAppClick = (e: React.MouseEvent) => {
     e.preventDefault();
+    setRequestType("visit");
     setIsOpen(!isOpen);
   };
 
@@ -376,7 +388,7 @@ export default function FloatingCTA({ locale: propLocale = "en" }: { locale?: st
         </div>
       </aside>
 
-      {/* ── Triage Modal (Mobile & Desktop) ── */}
+      {/* ── Dedicated Triage Modals: Separate Modal for Home Visit vs Teleconsultation (€90) ── */}
       {isOpen && (
         <div className="fixed inset-0 z-[10002] flex items-end sm:items-center justify-center p-3 sm:p-4 bg-black/40 backdrop-blur-xs">
           <div
@@ -384,14 +396,25 @@ export default function FloatingCTA({ locale: propLocale = "en" }: { locale?: st
             role="dialog"
             aria-modal="true"
           >
-            <div className="flex justify-between items-center mb-4">
-              <div className="flex items-center gap-2">
-                <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></div>
-                <p className="font-800 text-slate-900 text-base">{t.title}</p>
+            <div className="flex justify-between items-start gap-3 mb-4">
+              <div>
+                <div className="flex items-center gap-2">
+                  <div
+                    className={`w-2.5 h-2.5 rounded-full animate-pulse flex-shrink-0 ${
+                      requestType === "rx" ? "bg-amber-500" : "bg-emerald-500"
+                    }`}
+                  ></div>
+                  <p className="font-800 text-slate-900 text-base leading-snug">
+                    {requestType === "rx" ? t.titleRx : t.title}
+                  </p>
+                </div>
+                <p className="text-xs text-slate-500 font-600 mt-1">
+                  {requestType === "rx" ? t.subRx : t.subVisit}
+                </p>
               </div>
               <button
                 onClick={() => setIsOpen(false)}
-                className="text-slate-400 hover:text-slate-600 p-1.5 rounded-lg hover:bg-slate-100 transition-colors"
+                className="text-slate-400 hover:text-slate-600 p-1.5 rounded-lg hover:bg-slate-100 transition-colors flex-shrink-0"
                 aria-label="Close"
               >
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -401,32 +424,6 @@ export default function FloatingCTA({ locale: propLocale = "en" }: { locale?: st
             </div>
 
             <div className="space-y-4">
-              {/* 2-Option Selector: Doctor Visit vs Prescription + Report (€90) */}
-              <div className="grid grid-cols-2 gap-2 p-1 bg-slate-100 rounded-xl">
-                <button
-                  type="button"
-                  onClick={() => setRequestType("visit")}
-                  className={`py-2 px-2.5 rounded-lg text-xs font-700 transition-all text-center cursor-pointer ${
-                    requestType === "visit"
-                      ? "bg-white text-slate-900 shadow-xs border border-slate-200/80"
-                      : "text-slate-600 hover:text-slate-900"
-                  }`}
-                >
-                  {t.optVisit}
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setRequestType("rx")}
-                  className={`py-2 px-2.5 rounded-lg text-xs font-700 transition-all text-center cursor-pointer ${
-                    requestType === "rx"
-                      ? "bg-amber-500 text-white shadow-xs"
-                      : "text-slate-600 hover:text-slate-900"
-                  }`}
-                >
-                  {t.optRx}
-                </button>
-              </div>
-
               <div>
                 <label className="block text-xs font-700 text-slate-600 mb-1.5 uppercase tracking-wider">
                   {requestType === "rx" ? t.q1Rx : t.q1}
