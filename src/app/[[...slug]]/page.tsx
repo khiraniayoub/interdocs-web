@@ -149,9 +149,9 @@ const HOME_META: Record<Locale, { title: string; description: string }> = {
       "Tarvitsetko lääkäriä lähelläsi? Yksityislääkäri vierailee hotellihuoneessasi tai asunnossasi Costa del Solilla 30–60 minuutissa. Kuitit vakuutukseen.",
   },
   ar: {
-    title: "طبيب ورعاية عاجلة بالقرب منك في ماربيلا",
+    title: "طبيب خاص في فندقك في ماربيا وكوستا ديل سول 24/7",
     description:
-      "طبيب خاص يزور غرفتك في الفندق أو شقتك في كوستا ديل سول خلال 30-60 دقيقة. تقارير طبية رسمية لشركات التأمين. اتصل بنا 24/7.",
+      "طبيب خاص يزور غرفتك في الفندق أو شقتك أو فيلتك في ماربيا وكوستا ديل سول خلال 30–60 دقيقة. تنسيق ودعم ترجمة طبية باللغة العربية وتقارير للتأمين 24/7.",
   },
   no: {
     title: "Lege & Akutthjelp i Nærheten i Marbella",
