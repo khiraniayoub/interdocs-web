@@ -412,6 +412,64 @@ export function buildBlogBreadcrumbs(
   };
 }
 
+export function buildPharmacyBlogFaqSchema(locale: Locale) {
+  const isEs = locale === "es";
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: isEs
+          ? "¿Son válidas las recetas del Reino Unido (NHS), EE. UU. o países fuera de la UE en las farmacias de España?"
+          : "Can I use a UK NHS or non-EU prescription in a Spanish pharmacy?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: isEs
+            ? "No. Tras el Brexit, las recetas británicas del NHS y las recetas de EE. UU., Canadá o fuera de la UE no tienen validez legal en las farmacias de España. Mediante nuestra Teleconsulta Express de 90€ (en 15 minutos por teléfono/WhatsApp), un médico colegiado en España emite tu Receta Electrónica Oficial con código QR válida en las 22.000+ farmacias de toda España más el Informe Médico CIE-10 para tu seguro."
+            : "No. Following Brexit, UK NHS paper prescriptions, NHS App barcodes, and non-EU prescriptions (USA, Canada, Australia) are not legally accepted in Spanish pharmacies. Through our €90 Express Online Consultation (15 minutes via phone/WhatsApp), a licensed doctor in Spain issues an Official Spanish Electronic Prescription (QR Code) valid at all 22,000+ pharmacies across Spain, plus a Signed ICD-10 Medical Report for your travel insurance.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: isEs
+          ? "¿Cómo conseguir antibióticos para infección de orina (Monurol / Fosfomicina), otitis (Cetraxal) o inhaladores (Ventolin) en España?"
+          : "How can a tourist get antibiotics for a UTI (Monurol / Fosfomicina), ear drops (Cetraxal), or an inhaler (Ventolin) in Spain?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: isEs
+            ? "En España está prohibida la venta sin receta de antibióticos (Monurol / Fosfomicina, Amoxicilina, Augmentine, Ciprofloxacino), gotas óticas antibióticas (Cetraxal Plus) e inhaladores (Ventolin / Salbutamol). Nuestro médico evalúa tus síntomas en 15 minutos y te envía al móvil la Receta Electrónica Oficial con código QR junto con el Informe Médico para tu seguro (90€)."
+            : "Spanish pharmacies are legally prohibited from selling oral antibiotics (Monurol / Fosfomicina, Amoxicillin, Augmentin, Ciprofloxacin), antibiotic ear/eye drops (Cetraxal Plus, Tobrex), or asthma inhalers (Ventolin / Salbutamol) over the counter. Our doctor evaluates your symptoms in 15 minutes and sends an Official Spanish QR Prescription + Travel Insurance Medical Report directly to your phone (€90).",
+        },
+      },
+      {
+        "@type": "Question",
+        name: isEs
+          ? "¿Qué hago si olvidé o perdí mi medicación habitual de vacaciones en España?"
+          : "What if I lost or forgot my regular medication on holiday in Spain?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: isEs
+            ? "Si la aerolínea extravió tu maleta o olvidaste tu medicación crónica (hipertensión, tiroides / Eutirox, colesterol, diabetes), un médico colegiado revisa tu tratamiento en 15 minutos y te envía por WhatsApp una Receta Oficial Española con código QR válida en cualquier farmacia de Península, Baleares y Canarias (90€)."
+            : "If your luggage was delayed or you forgot your daily medication (blood pressure, thyroid / levothyroxine, cholesterol, diabetes), our licensed Spanish doctor verifies your treatment in 15 minutes and issues an Official Spanish QR Prescription via WhatsApp valid at any pharmacy in Mainland Spain, the Balearic Islands, and the Canary Islands (€90).",
+        },
+      },
+      {
+        "@type": "Question",
+        name: isEs
+          ? "¿El seguro de viaje reembolsa los 90€ de la Receta Electrónica + Informe Médico?"
+          : "Does travel insurance reimburse the €90 Express Prescription and Medical Report in Spain?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: isEs
+            ? "Sí. A diferencia de las apps básicas de 35€–49€ que solo entregan un cupón sin informe clínico y son rechazadas por los seguros, nuestra consulta de 90€ incluye la Receta Oficial QR más el Informe Médico Clínico Firmado con código diagnóstico CIE-10 / ICD-10 y factura detallada para el reembolso del 100% en tu seguro de viaje."
+            : "Yes. Unlike basic €35–€49 prescription apps that only provide a pharmacy slip without a clinical diagnosis report and get rejected by insurers, our €90 consultation includes both the Official Spanish QR Prescription and a Signed Clinical Medical Report with ICD-10 diagnosis code + itemized invoice for 100% reimbursement from your travel insurance.",
+        },
+      },
+    ],
+  };
+}
+
 // ────────────────────────────────────────────────────────────
 // Metadata generation
 // ────────────────────────────────────────────────────────────
@@ -947,6 +1005,7 @@ export default async function Page({
                   <div className="hidden sm:block w-px h-12 bg-white/20" />
                   <a
                     href={`https://wa.me/34637255224?text=${encodeURIComponent(`Hello, I need an Express Spanish Prescription + Medical Report (€90) in ${city.name}.`)}`}
+                    data-triage="rx"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3.5 text-left group cursor-pointer hover:opacity-95 transition-opacity"
@@ -1114,6 +1173,10 @@ export default async function Page({
 
     const articleSchema = buildBlogPostSchema(post, locale, siteUrl, canonical);
     const breadcrumbBlogSchema = buildBlogBreadcrumbs(post, locale, siteUrl, canonical);
+    const pharmacyFaqSchema =
+      post.slug === "24h-pharmacies-prescription-costa-del-sol"
+        ? buildPharmacyBlogFaqSchema(locale)
+        : null;
 
     const blogPostAlternates: Record<string, string> = {};
     for (const [loc, ls] of Object.entries(post.localeSlugs)) {
@@ -1130,6 +1193,12 @@ export default async function Page({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbBlogSchema) }}
         />
+        {pharmacyFaqSchema && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(pharmacyFaqSchema) }}
+          />
+        )}
         <Header locale={locale} alternateUrls={blogPostAlternates} />
         <main id="main-content">
           <BlogSection

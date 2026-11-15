@@ -259,11 +259,30 @@ export default function FloatingCTA({ locale: propLocale = "en" }: { locale?: st
       setRequestType("rx");
       setIsOpen(true);
     };
+    const handleDocumentClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement | null;
+      if (!target) return;
+      const rxTrigger = target.closest("[data-triage='rx']");
+      if (rxTrigger) {
+        e.preventDefault();
+        setRequestType("rx");
+        setIsOpen(true);
+        return;
+      }
+      const visitTrigger = target.closest("[data-triage='visit']");
+      if (visitTrigger) {
+        e.preventDefault();
+        setRequestType("visit");
+        setIsOpen(true);
+      }
+    };
     window.addEventListener("openTriage", handleOpen);
     window.addEventListener("openTriagePrescription", handleOpenRx);
+    document.addEventListener("click", handleDocumentClick);
     return () => {
       window.removeEventListener("openTriage", handleOpen);
       window.removeEventListener("openTriagePrescription", handleOpenRx);
+      document.removeEventListener("click", handleDocumentClick);
     };
   }, []);
 
