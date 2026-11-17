@@ -29,6 +29,12 @@ import GoogleReviewsStrip from "@/components/GoogleReviewsStrip";
 import InsuranceLogos from "@/components/InsuranceLogos";
 import WhatWeTreat from "@/components/WhatWeTreat";
 import Footer from "@/components/Footer";
+import PrescriptionLanding from "@/components/PrescriptionLanding";
+import {
+  PRESCRIPTION_PAGES,
+  getPrescriptionPageBySlug,
+  type PrescriptionPageData,
+} from "@/data/prescriptions";
 
 export const revalidate = 86400;
 
@@ -59,6 +65,11 @@ export function generateStaticParams() {
     }
   }
 
+  // English Online Prescription pages (All Spain Hub + Destinations)
+  for (const p of PRESCRIPTION_PAGES) {
+    paths.push({ slug: [p.slug] });
+  }
+
   // Blog index per locale
   paths.push({ slug: ["blog"] });
   for (const locale of LOCALES) {
@@ -87,12 +98,21 @@ export function generateStaticParams() {
 type PageType =
   | { type: "home"; locale: Locale }
   | { type: "city"; locale: Locale; city: (typeof CITIES)[0] }
+  | { type: "prescription"; locale: "en"; pageData: PrescriptionPageData }
   | { type: "blog-index"; locale: Locale }
   | { type: "blog-post"; locale: Locale; post: (typeof BLOG_POSTS)[0] }
   | { type: "not-found" };
 
 function resolvePage(segments: string[]): PageType {
   if (segments.length === 0) return { type: "home", locale: "en" };
+
+  // English-only Online Prescription landing pages
+  if (segments.length === 1) {
+    const prescriptionPage = getPrescriptionPageBySlug(segments[0]);
+    if (prescriptionPage) {
+      return { type: "prescription", locale: "en", pageData: prescriptionPage };
+    }
+  }
 
   const locale = getLocaleFromPath(segments);
   const slug = getSlugFromPath(segments);
@@ -627,6 +647,39 @@ export async function generateMetadata({
         card: "summary_large_image",
         title: post.title[locale],
         description: post.excerpt[locale],
+        images: [`${siteUrl}/hero.png`],
+      },
+    };
+  }
+
+  if (page.type === "prescription") {
+    const { pageData } = page;
+    const canonical = `${siteUrl}/${pageData.slug}`;
+    return {
+      title: pageData.metaTitle,
+      description: pageData.metaDescription,
+      keywords: pageData.keywords,
+      alternates: {
+        canonical,
+      },
+      openGraph: {
+        title: pageData.metaTitle,
+        description: pageData.metaDescription,
+        url: canonical,
+        type: "website",
+        images: [
+          {
+            url: `${siteUrl}/hero.png`,
+            width: 1200,
+            height: 630,
+            alt: pageData.h1,
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: pageData.metaTitle,
+        description: pageData.metaDescription,
         images: [`${siteUrl}/hero.png`],
       },
     };
@@ -1216,6 +1269,104 @@ export default async function Page({
           disclaimer={t.footer.disclaimer}
           rights={t.footer.rights}
           locale={locale}
+        />
+      </div>
+    );
+  }
+
+  // ── Online Prescription Landing Pages (English · All Spain) ──
+  if (page.type === "prescription") {
+    const { pageData } = page;
+    const canonical = `${SITE_URL}/${pageData.slug}`;
+
+    const medicalWebPageSchema = {
+      "@context": "https://schema.org",
+      "@type": "MedicalWebPage",
+      "@id": `${canonical}#webpage`,
+      url: canonical,
+      name: pageData.h1,
+      description: pageData.metaDescription,
+      inLanguage: "en",
+      about: {
+        "@type": "MedicalBusiness",
+        name: "Urgent Care 24H · Online Doctor & Spanish Prescription Service",
+        telephone: "+34637255224",
+        url: SITE_URL,
+        areaServed: pageData.locationName,
+        availableLanguage: ["English", "Spanish"],
+      },
+    };
+
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: pageData.faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: f.a,
+        },
+      })),
+    };
+
+    const breadcrumbItems = [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      ...(pageData.isHub
+        ? [
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Online Prescription Spain",
+              item: canonical,
+            },
+          ]
+        : [
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Online Prescription Spain",
+              item: `${SITE_URL}/online-prescription-spain`,
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: `Prescription in ${pageData.locationName}`,
+              item: canonical,
+            },
+          ]),
+    ];
+
+    const breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: breadcrumbItems,
+    };
+
+    return (
+      <div dir="ltr" lang="en">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(medicalWebPageSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
+        <Header locale="en" />
+        <main id="main-content">
+          <PrescriptionLanding data={pageData} />
+        </main>
+        <Footer
+          disclaimer={t.footer.disclaimer}
+          rights={t.footer.rights}
+          locale="en"
         />
       </div>
     );

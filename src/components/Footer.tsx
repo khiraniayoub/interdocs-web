@@ -384,8 +384,52 @@ export default function Footer({ disclaimer, rights, locale }: FooterProps) {
                 );
               })}
             </div>
+            {locale === "en" && (
+              <div className="mt-5 pt-4 border-t border-slate-800/80 w-full">
+                <Link
+                  href="/online-prescription-spain"
+                  className="inline-flex items-center gap-1.5 text-xs font-600 text-amber-300 hover:text-amber-200 transition-colors"
+                >
+                  <span>💊</span>
+                  <span>Online Prescriptions · All Spain →</span>
+                </Link>
+              </div>
+            )}
           </div>
         </div>
+
+        {/* All 11 Languages Internal Link Strip (SEO PageRank Distribution) */}
+        <nav
+          aria-label="Languages"
+          className="border-t border-slate-800/80 pt-6 pb-6 flex flex-wrap items-center justify-center lg:justify-start gap-x-4 gap-y-2 text-xs"
+        >
+          {[
+            { code: "en", label: "English", href: "/" },
+            { code: "es", label: "Español", href: "/es" },
+            { code: "de", label: "Deutsch", href: "/de" },
+            { code: "fr", label: "Français", href: "/fr" },
+            { code: "nl", label: "Nederlands", href: "/nl" },
+            { code: "sv", label: "Svenska", href: "/sv" },
+            { code: "no", label: "Norsk", href: "/no" },
+            { code: "da", label: "Dansk", href: "/da" },
+            { code: "fi", label: "Suomi", href: "/fi" },
+            { code: "ru", label: "Русский", href: "/ru" },
+            { code: "ar", label: "العربية", href: "/ar" },
+          ].map((lang) => (
+            <Link
+              key={lang.code}
+              href={lang.href}
+              hrefLang={lang.code}
+              className={`transition-colors ${
+                locale === lang.code
+                  ? "text-white font-700"
+                  : "text-slate-400 hover:text-white"
+              }`}
+            >
+              {lang.label}
+            </Link>
+          ))}
+        </nav>
 
         {/* Bottom bar */}
         <div className="border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">

@@ -124,6 +124,7 @@ export default function Header({ locale = "en", alternateUrls }: HeaderProps) {
   const navLinks = {
     en: [
       { href: "/#services", label: "Services" },
+      { href: "/online-prescription-spain", label: "Prescriptions" },
       { href: "/#areas", label: "Areas" },
       { href: "/blog", label: "Blog" },
       { href: "/colaboradores", label: "Partners" },
@@ -331,44 +332,44 @@ export default function Header({ locale = "en", alternateUrls }: HeaderProps) {
               </button>
 
               {langOpen && (
-                <>
-                  <div
-                    className="fixed inset-0 z-40 bg-black/10 backdrop-blur-[1px]"
-                    onClick={() => setLangOpen(false)}
-                  />
-                  <div
-                    role="listbox"
-                    aria-label="Languages"
-                    className="absolute right-0 mt-2 w-44 bg-white border border-slate-100 rounded-xl shadow-lg overflow-hidden z-50 py-1"
-                  >
-                    {languages.map((lang) => (
-                      <Link
-                        key={lang.code}
-                        href={getAlternateUrl(lang.code)}
-                        role="option"
-                        aria-selected={lang.code === locale}
-                        onClick={() => setLangOpen(false)}
-                        className={`flex items-center gap-3 px-4 py-2.5 text-sm transition-colors duration-200 ${lang.code === locale
-                          ? "bg-[#e8f4fd] hover:bg-[#d6ebfa] text-[#0A6EBD] font-600"
-                          : "text-slate-700 hover:bg-[#f0f7ff] hover:text-[#0A6EBD] font-500"
-                          }`}
-                      >
-                        <span aria-hidden="true" className="w-5 h-5 rounded-full overflow-hidden border border-slate-200 flex-shrink-0 flex items-center justify-center">
-                          <img
-                            src={`https://flagcdn.com/${lang.flagCode}.svg`}
-                            alt={lang.label}
-                            className="w-full h-full object-cover scale-110"
-                          />
-                        </span>
-                        <span>{lang.label}</span>
-                        {lang.code === locale && (
-                          <span className="ms-auto text-[#0A6EBD] text-xs font-bold">✓</span>
-                        )}
-                      </Link>
-                    ))}
-                  </div>
-                </>
+                <div
+                  className="fixed inset-0 z-40 bg-black/10 backdrop-blur-[1px]"
+                  onClick={() => setLangOpen(false)}
+                />
               )}
+              <div
+                role="listbox"
+                aria-label="Languages"
+                className={`absolute right-0 mt-2 w-44 bg-white border border-slate-100 rounded-xl shadow-lg overflow-hidden z-50 py-1 ${
+                  langOpen ? "block" : "hidden"
+                }`}
+              >
+                {languages.map((lang) => (
+                  <Link
+                    key={lang.code}
+                    href={getAlternateUrl(lang.code)}
+                    role="option"
+                    aria-selected={lang.code === locale}
+                    onClick={() => setLangOpen(false)}
+                    className={`flex items-center gap-3 px-4 py-2.5 text-sm transition-colors duration-200 ${lang.code === locale
+                      ? "bg-[#e8f4fd] hover:bg-[#d6ebfa] text-[#0A6EBD] font-600"
+                      : "text-slate-700 hover:bg-[#f0f7ff] hover:text-[#0A6EBD] font-500"
+                      }`}
+                  >
+                    <span aria-hidden="true" className="w-5 h-5 rounded-full overflow-hidden border border-slate-200 flex-shrink-0 flex items-center justify-center">
+                      <img
+                        src={`https://flagcdn.com/${lang.flagCode}.svg`}
+                        alt={lang.label}
+                        className="w-full h-full object-cover scale-110"
+                      />
+                    </span>
+                    <span>{lang.label}</span>
+                    {lang.code === locale && (
+                      <span className="ms-auto text-[#0A6EBD] text-xs font-bold">✓</span>
+                    )}
+                  </Link>
+                ))}
+              </div>
             </div>
 
             <a
