@@ -36,7 +36,7 @@ const PRICING_TEXT: Record<
     title2: "Nights, Weekends & Holidays",
     title3: "Online Consultation + Prescription",
     desc: "Medical Visit",
-    desc3: "15 Min + Report · All Spain",
+    desc3: "15 Min · All Spain",
   },
   es: {
     price1: "130€",
@@ -46,7 +46,7 @@ const PRICING_TEXT: Record<
     title2: "Noches, Fines de semana y Festivos",
     title3: "Teleconsulta + Receta QR",
     desc: "Visita Médica",
-    desc3: "15 Min + Informe · Toda España",
+    desc3: "15 Min · Toda España",
   },
   de: {
     price1: "130€",
@@ -56,7 +56,7 @@ const PRICING_TEXT: Record<
     title2: "Nächte, Wochenenden & Feiertage",
     title3: "Online-Konsultation + QR-Rezept",
     desc: "Hausbesuch",
-    desc3: "15 Min + Bericht · Ganz Spanien",
+    desc3: "15 Min · Ganz Spanien",
   },
   fr: {
     price1: "130€",
@@ -66,7 +66,7 @@ const PRICING_TEXT: Record<
     title2: "Nuits, Week-ends et Jours fériés",
     title3: "Téléconsultation + Ordonnance QR",
     desc: "Visite Médicale",
-    desc3: "15 Min + Rapport · Toute l'Espagne",
+    desc3: "15 Min · Toute l'Espagne",
   },
   fi: {
     price1: "130€",
@@ -76,7 +76,7 @@ const PRICING_TEXT: Record<
     title2: "Yöt, Viikonloput & Pyhäpäivät",
     title3: "Etäkonsultaatio + QR-Resepti",
     desc: "Lääkärin kotikäynti",
-    desc3: "15 Min + Lausunto · Koko Espanja",
+    desc3: "15 Min · Koko Espanja",
   },
   ar: {
     price1: "€130",
@@ -86,7 +86,7 @@ const PRICING_TEXT: Record<
     title2: "الليالي وعطلات نهاية الأسبوع والأعياد",
     title3: "استشارة أونلاين + وصفة QR",
     desc: "زيارة طبية",
-    desc3: "15 دقيقة + تقرير · كل إسبانيا",
+    desc3: "15 دقيقة · كل إسبانيا",
   },
   no: {
     price1: "€130",
@@ -96,7 +96,7 @@ const PRICING_TEXT: Record<
     title2: "Netter, Helger og Helligdager",
     title3: "Online Konsultasjon + QR-Resept",
     desc: "Legebesøk",
-    desc3: "15 Min + Rapport · Hele Spania",
+    desc3: "15 Min · Hele Spania",
   },
   da: {
     price1: "€130",
@@ -106,7 +106,7 @@ const PRICING_TEXT: Record<
     title2: "Nætter, Weekender & Helligdage",
     title3: "Online Konsultation + QR-Recept",
     desc: "Lægebesøg",
-    desc3: "15 Min + Rapport · Hele Spanien",
+    desc3: "15 Min · Hele Spanien",
   },
   sv: {
     price1: "€130",
@@ -116,7 +116,7 @@ const PRICING_TEXT: Record<
     title2: "Nätter, Helger & Helgdagar",
     title3: "Onlinekonsultation + QR-Recept",
     desc: "Läkarbesök",
-    desc3: "15 Min + Intyg · Hela Spanien",
+    desc3: "15 Min · Hela Spanien",
   },
   ru: {
     price1: "130€",
@@ -126,7 +126,7 @@ const PRICING_TEXT: Record<
     title2: "Ночи, Выходные и праздники",
     title3: "Онлайн-консультация + QR-рецепт",
     desc: "Визит врача",
-    desc3: "15 мин + Медотчет · Вся Испания",
+    desc3: "15 мин · Вся Испания",
   },
   nl: {
     price1: "€130",
@@ -136,7 +136,7 @@ const PRICING_TEXT: Record<
     title2: "Nachten, Weekenden & Feestdagen",
     title3: "Online Consult + QR-Recept",
     desc: "Doktersbezoek",
-    desc3: "15 Min + Rapport · Heel Spanje",
+    desc3: "15 Min · Heel Spanje",
   },
 };
 

@@ -16,7 +16,6 @@ const RX_CALLOUT_COPY: Record<
     badge: string;
     title: string;
     desc: string;
-    insuranceHook: string;
     pills: string[];
     btnRx: string;
     btnVisit: string;
@@ -28,9 +27,7 @@ const RX_CALLOUT_COPY: Record<
   en: {
     badge: "🇪🇸 ONLINE DOCTOR CONSULTATION ACROSS ALL SPAIN · 15 MIN TRIAGE",
     title: "🩺 Need an Online Doctor Consultation & Official Prescription in Spain?",
-    desc: "Book an Express Online/Phone Medical Consultation (15 min) with a licensed doctor in Spain. Following clinical evaluation of your symptoms or regular treatment, the doctor issues—when medically indicated—your Official Spanish Electronic Prescription (QR Code valid at all 22,000+ pharmacies in Spain) + Official Medical Report.",
-    insuranceHook:
-      "📋 Complete Travel Insurance Documentation: Includes a Signed Clinical Medical Report (with ICD-10 diagnosis code) and itemized official invoice so you can submit a reimbursement claim to your insurer according to your policy terms.",
+    desc: "Book an Express Online/Phone Medical Consultation (15 min) with a licensed doctor in Spain. Following clinical evaluation of your symptoms or regular treatment, the doctor issues—when medically indicated—your Official Spanish Electronic Prescription (QR Code valid at all 22,000+ pharmacies in Spain).",
     pills: [
       "✓ Consultation for UTI / Ear & Eye Infections",
       "✓ Respiratory, Asthma & Allergy Evaluation",
@@ -42,14 +39,12 @@ const RX_CALLOUT_COPY: Record<
     bottomBadge: "24/7 Medical Care · All Spain & Costa del Sol",
     bottomTitle: "Need an Online Doctor Consultation + QR Prescription (€90) or a Doctor at Your Hotel?",
     bottomDesc:
-      "Book a 15-minute Online Medical Consultation with an Official Spanish QR Prescription + Insurance Medical Report anywhere in Spain (€90), or request an in-person Private Doctor Visit at your hotel or apartment across the Costa del Sol in 30–60 minutes (€130–€140).",
+      "Book a 15-minute Online Medical Consultation with an Official Spanish QR Prescription anywhere in Spain (€90), or request an in-person Private Doctor Visit at your hotel or apartment across the Costa del Sol in 30–60 minutes (€130–€140).",
   },
   es: {
     badge: "🇪🇸 TELECONSULTA MÉDICA EN TODA ESPAÑA · VALORACIÓN EN 15 MIN",
     title: "🩺 ¿Necesitas una consulta médica telemática y receta oficial en España?",
-    desc: "Realiza una Teleconsulta Médica Express (en 15 minutos por teléfono/WhatsApp) con un médico colegiado en España. Tras la valoración clínica de tus síntomas o tratamiento habitual, el médico emite —bajo criterio facultativo— tu Receta Electrónica Oficial Española (Código QR válida en las 22.000+ farmacias de España) + Informe Médico Oficial.",
-    insuranceHook:
-      "📋 Documentación completa para tu Seguro de Viaje: Incluye Informe Médico Clínico firmado (con código diagnóstico CIE-10 / ICD-10) y factura oficial desglosada para que puedas tramitar el reembolso ante tu aseguradora según las condiciones de tu póliza.",
+    desc: "Realiza una Teleconsulta Médica Express (en 15 minutos por teléfono/WhatsApp) con un médico colegiado en España. Tras la valoración clínica de tus síntomas o tratamiento habitual, el médico emite —bajo criterio facultativo— tu Receta Electrónica Oficial Española (Código QR válida en las 22.000+ farmacias de España).",
     pills: [
       "✓ Valoración de infecciones (urinaria, oído, garganta)",
       "✓ Síntomas respiratorios, asma y alergias",
@@ -61,14 +56,12 @@ const RX_CALLOUT_COPY: Record<
     bottomBadge: "Atención Médica 24/7 · Toda España y Costa del Sol",
     bottomTitle: "¿Necesitas una Teleconsulta Médica + Receta QR (90€) o un Médico en tu Hotel?",
     bottomDesc:
-      "Solicita una Teleconsulta Médica Express en 15 minutos con emisión de Receta Electrónica Española QR + Informe Médico válida en toda España (90€), o pide un médico presencial en tu hotel o apartamento en la Costa del Sol en 30–60 minutos (130€–140€).",
+      "Solicita una Teleconsulta Médica Express en 15 minutos con emisión de Receta Electrónica Española QR válida en toda España (90€), o pide un médico presencial en tu hotel o apartamento en la Costa del Sol en 30–60 minutos (130€–140€).",
   },
   de: {
     badge: "🇪🇸 ÄRZTLICHE TELEKONSULTATION IN GANZ SPANIEN · IN 15 MIN",
     title: "🩺 Benötigen Sie eine Online-Arztkonsultation & ein offizielles Rezept in Spanien?",
-    desc: "Buchen Sie eine Express-Online-/Telefonkonsultation (15 Min.) bei einem in Spanien zugelassenen Arzt. Nach ärztlicher Beurteilung Ihrer Symptome oder Dauermedikation stellt der Arzt bei medizinischer Indikation Ihr offizielles spanisches E-Rezept (QR-Code für alle 22.000+ Apotheken in Spanien) + Arztbericht aus.",
-    insuranceHook:
-      "📋 Vollständige Unterlagen für Ihre Reiseversicherung: Inklusive unterschriebenem Arztbericht (mit ICD-10-Diagnosecode) und offizieller Rechnung zur Einreichung bei Ihrer Auslandskrankenversicherung gemäß Ihren Tarifbedingungen.",
+    desc: "Buchen Sie eine Express-Online-/Telefonkonsultation (15 Min.) bei einem in Spanien zugelassenen Arzt. Nach ärztlicher Beurteilung Ihrer Symptome oder Dauermedikation stellt der Arzt bei medizinischer Indikation Ihr offizielles spanisches E-Rezept aus (QR-Code für alle 22.000+ Apotheken in Spanien).",
     pills: [
       "✓ Ärztliche Abklärung bei Harnwegs-, Ohren- & Halsinfektionen",
       "✓ Atemwegs-, Asthma- & Allergiebewertung",
@@ -80,14 +73,12 @@ const RX_CALLOUT_COPY: Record<
     bottomBadge: "24/7 Ärztlicher Dienst · Ganz Spanien & Costa del Sol",
     bottomTitle: "Online-Arztkonsultation + QR-Rezept (90€) oder Privatarzt im Hotel benötigt?",
     bottomDesc:
-      "15-minütige Online-Arztkonsultation inkl. offiziellem spanischen QR-Rezept + Arztbericht in ganz Spanien (90€) oder persönlicher Arztbesuch im Hotel an der Costa del Sol in 30–60 Minuten (130€–140€).",
+      "15-minütige Online-Arztkonsultation inkl. offiziellem spanischen QR-Rezept in ganz Spanien (90€) oder persönlicher Arztbesuch im Hotel an der Costa del Sol in 30–60 Minuten (130€–140€).",
   },
   fr: {
     badge: "🇪🇸 TÉLÉCONSULTATION MÉDICALE DANS TOUTE L'ESPAGNE · EN 15 MIN",
     title: "🩺 Besoin d'une téléconsultation médicale et d'une ordonnance officielle en Espagne ?",
-    desc: "Effectuez une téléconsultation médicale express (15 min par téléphone/WhatsApp) avec un médecin inscrit en Espagne. Après évaluation clinique, le médecin délivre — sur indication médicale — votre ordonnance électronique espagnole officielle (Code QR valable dans les 22 000+ pharmacies d'Espagne) + rapport médical.",
-    insuranceHook:
-      "📋 Dossier complet pour votre assurance voyage : Inclut un rapport médical clinique signé (avec code CIM-10) et une facture officielle détaillée à transmettre à votre assureur selon les conditions de votre contrat.",
+    desc: "Effectuez une téléconsultation médicale express (15 min par téléphone/WhatsApp) avec un médecin inscrit en Espagne. Après évaluation clinique, le médecin délivre — sur indication médicale — votre ordonnance électronique espagnole officielle (Code QR valable dans les 22 000+ pharmacies d'Espagne).",
     pills: [
       "✓ Consultation infections (urinaires, ORL, yeux)",
       "✓ Évaluation respiratoire, asthme et allergies",
@@ -99,14 +90,12 @@ const RX_CALLOUT_COPY: Record<
     bottomBadge: "Soins Médicaux 24h/24 · Toute l'Espagne & Costa del Sol",
     bottomTitle: "Besoin d'une Téléconsultation + Ordonnance QR (90€) ou d'un Médecin à votre Hôtel ?",
     bottomDesc:
-      "Téléconsultation médicale en 15 minutes avec ordonnance officielle espagnole QR + rapport médical dans toute l'Espagne (90€), ou visite médicale à votre hôtel sur la Costa del Sol en 30–60 minutes (130€–140€).",
+      "Téléconsultation médicale en 15 minutes avec ordonnance officielle espagnole QR dans toute l'Espagne (90€), ou visite médicale à votre hôtel sur la Costa del Sol en 30–60 minutes (130€–140€).",
   },
   fi: {
     badge: "🇪🇸 LÄÄKÄRIN ETÄKONSULTAATIO KOKO ESPANJASSA · 15 MIN",
     title: "🩺 Tarvitsetko lääkärin etäkonsultaation ja virallisen reseptin Espanjassa?",
-    desc: "Varaa 15 minuutin etäkonsultaatio puhelimitse/WhatsAppilla Espanjassa laillistetun lääkärin kanssa. Kliinisen arvioinnin jälkeen lääkäri kirjoittaa lääketieteellisin perustein virallisen espanjalaisen sähköisen QR-reseptin (voimassa kaikissa 22 000+ apteekissa) + lääkärinlausunnon.",
-    insuranceHook:
-      "📋 Asiakirjat matkavakuutusta varten: Sisältää allekirjoitetun ICD-10-lääkärinlausunnon ja eritellyn kuitin, jotka voit toimittaa vakuutusyhtiöllesi vakuutusehtojesi mukaisesti.",
+    desc: "Varaa 15 minuutin etäkonsultaatio puhelimitse/WhatsAppilla Espanjassa laillistetun lääkärin kanssa. Kliinisen arvioinnin jälkeen lääkäri kirjoittaa lääketieteellisin perustein virallisen espanjalaisen sähköisen QR-reseptin (voimassa kaikissa 22 000+ apteekissa).",
     pills: [
       "✓ Tulehdusoireiden arviointi (virtsatie, korva, nielu)",
       "✓ Hengitystie-, astma- ja allergiaoireet",
@@ -118,14 +107,12 @@ const RX_CALLOUT_COPY: Record<
     bottomBadge: "24/7 Lääkäripalvelu · Koko Espanja & Costa del Sol",
     bottomTitle: "Tarvitsetko Etäkonsultaation + QR-Reseptin (90€) tai Lääkärin Hotellillesi?",
     bottomDesc:
-      "15 minuutin etälääkärikonsultaatio, virallinen espanjalainen QR-resepti ja lääkärinlausunto koko Espanjassa (90€), tai yksityislääkärin käynti hotellillesi Aurinkorannikolla 30–60 minuutissa (130€–140€).",
+      "15 minuutin etälääkärikonsultaatio ja virallinen espanjalainen QR-resepti koko Espanjassa (90€), tai yksityislääkärin käynti hotellillesi Aurinkorannikolla 30–60 minuutissa (130€–140€).",
   },
   ar: {
     badge: "🇪🇸 استشارة طبية عن بُعد في جميع أنحاء إسبانيا · خلال 15 دقيقة",
     title: "🩺 هل تحتاج إلى استشارة طبية أونلاين ووصفة طبية رسمية في إسبانيا؟",
-    desc: "احجز استشارة طبية سريعة عبر الهاتف/واتساب (15 دقيقة) مع طبيب مرخص في إسبانيا. بعد التقييم الطبي لأعراضك أو علاجك المعتاد، يصدر الطبيب وصفة إسبانية إلكترونية رسمية (رمز QR صالح في أكثر من 22,000 صيدلية في إسبانيا) + تقرير طبي رسمي.",
-    insuranceHook:
-      "📋 مستندات كاملة لتأمين السفر: تشمل تقريراً طبياً موقعاً (برمز التشخيص ICD-10) وفاتورة رسمية مفصلة لتقديمها إلى شركة التأمين الخاصة بك وفقاً لشروط بوليصتك.",
+    desc: "احجز استشارة طبية سريعة عبر الهاتف/واتساب (15 دقيقة) مع طبيب مرخص في إسبانيا. بعد التقييم الطبي لأعراضك أو علاجك المعتاد، يصدر الطبيب وصفة إسبانية إلكترونية رسمية (رمز QR صالح في أكثر من 22,000 صيدلية في إسبانيا).",
     pills: [
       "✓ تقييم الالتهابات (المسالك البولية، الأذن، الحلق)",
       "✓ تقييم أعراض الربو والحساسية",
@@ -137,14 +124,12 @@ const RX_CALLOUT_COPY: Record<
     bottomBadge: "رعاية طبية 24/7 · جميع أنحاء إسبانيا وكوستا ديل سول",
     bottomTitle: "هل تحتاج إلى استشارة أونلاين + وصفة QR (€90) أو طبيب في فندقك؟",
     bottomDesc:
-      "استشارة طبية عن بُعد خلال 15 دقيقة مع وصفة إسبانية رسمية برمز QR وتقرير طبي في كل إسبانيا (€90)، أو زيارة طبيب خاص إلى فندقك في كوستا ديل سول خلال 30–60 دقيقة (€130–€140).",
+      "استشارة طبية عن بُعد خلال 15 دقيقة مع وصفة إسبانية رسمية برمز QR في كل إسبانيا (€90)، أو زيارة طبيب خاص إلى فندقك في كوستا ديل سول خلال 30–60 دقيقة (€130–€140).",
   },
   no: {
     badge: "🇪🇸 ONLINE LEGEKONSULTASJON I HELE SPANIA · 15 MIN",
     title: "🩺 Trenger du en online legekonsultasjon og offisiell resept i Spania?",
-    desc: "Bestill en 15-minutters online/telefonkonsultasjon med en autorisert lege i Spania. Etter medisinsk vurdering av dine symptomer eller faste medisiner utsteder legen på medisinsk grunnlag en offisiell spansk e-resept (QR-kode gyldig på alle 22 000+ apotek i Spania) + legerapport.",
-    insuranceHook:
-      "📋 Komplett dokumentasjon til reiseforsikring: Inkluderer signert klinisk legerapport (med ICD-10-diagnosekode) og spesifisert kvittering som du kan sende inn til forsikringsselskapet ditt i henhold til dine vilkår.",
+    desc: "Bestill en 15-minutters online/telefonkonsultasjon med en autorisert lege i Spania. Etter medisinsk vurdering av dine symptomer eller faste medisiner utsteder legen på medisinsk grunnlag en offisiell spansk e-resept (QR-kode gyldig på alle 22 000+ apotek i Spania).",
     pills: [
       "✓ Vurdering av infeksjoner (UVI, øre, hals)",
       "✓ Luftveis-, astma- og allergivurdering",
@@ -156,14 +141,12 @@ const RX_CALLOUT_COPY: Record<
     bottomBadge: "24/7 Legevakt · Hele Spania & Costa del Sol",
     bottomTitle: "Trenger du Online Konsultasjon + QR-Resept (€90) eller Lege på Hotellet?",
     bottomDesc:
-      "15-minutters online legekonsultasjon med offisiell spansk QR-resept + legerapport i hele Spania (€90), eller privat legebesøk på hotellet på Costa del Sol innen 30–60 minutter (€130–€140).",
+      "15-minutters online legekonsultasjon med offisiell spansk QR-resept i hele Spania (€90), eller privat legebesøk på hotellet på Costa del Sol innen 30–60 minutter (€130–€140).",
   },
   da: {
     badge: "🇪🇸 ONLINE LÆGEKONSULTATION I HELE SPANIEN · 15 MIN",
     title: "🩺 Har du brug for en online lægekonsultation og officiel recept i Spanien?",
-    desc: "Book en 15-minutters online/telefonisk lægekonsultation med en autoriseret læge i Spanien. Efter klinisk vurdering af dine symptomer eller faste medicin udsteder lægen ved medicinsk indikation en officiel spansk e-recept (QR-kode gyldig på alle 22.000+ apoteker i Spanien) + lægerapport.",
-    insuranceHook:
-      "📋 Fuld dokumentation til rejseforsikring: Inkluderer underskrevet klinisk lægerapport (med ICD-10-diagnosekode) og specificeret kvittering til indsendelse til dit forsikringsselskab iht. dine policevilkår.",
+    desc: "Book en 15-minutters online/telefonisk lægekonsultation med en autoriseret læge i Spanien. Efter klinisk vurdering af dine symptomer eller faste medicin udsteder lægen ved medicinsk indikation en officiel spansk e-recept (QR-kode gyldig på alle 22.000+ apoteker i Spanien).",
     pills: [
       "✓ Lægevurdering af infektioner (blære, øre, hals)",
       "✓ Vurdering af astma, luftveje og allergi",
@@ -175,14 +158,12 @@ const RX_CALLOUT_COPY: Record<
     bottomBadge: "24/7 Lægehjælp · Hele Spanien & Costa del Sol",
     bottomTitle: "Brug for Online Konsultation + QR-Recept (€90) eller Læge på Hotellet?",
     bottomDesc:
-      "15-minutters online lægekonsultation med officiel spansk QR-recept + lægerapport i hele Spanien (€90), eller lægebesøg på dit hotel på Costa del Sol inden for 30–60 minutter (€130–€140).",
+      "15-minutters online lægekonsultation med officiel spansk QR-recept i hele Spanien (€90), eller lægebesøg på dit hotel på Costa del Sol inden for 30–60 minutter (€130–€140).",
   },
   sv: {
     badge: "🇪🇸 ONLINE LÄKARKONSULTATION I HELA SPANIEN · 15 MIN",
     title: "🩺 Behöver du en online läkarkonsultation och officiellt recept i Spanien?",
-    desc: "Boka en 15-minuters online-/telefonkonsultation med en legitimerad läkare i Spanien. Efter klinisk bedömning av dina symtom eller ordinarie medicinering utfärdar läkaren vid medicinsk indikation ett officiellt spanskt e-recept (QR-kod giltig på alla 22 000+ apotek i Spanien) + läkarintyg.",
-    insuranceHook:
-      "📋 Fullständig dokumentation för reseförsäkring: Inkluderar signerat kliniskt läkarintyg (med ICD-10-diagnoskod) och specificerat kvitto att skicka till ditt försäkringsbolag enligt dina försäkringsvillkor.",
+    desc: "Boka en 15-minuters online-/telefonkonsultation med en legitimerad läkare i Spanien. Efter klinisk bedömning av dina symtom eller ordinarie medicinering utfärdar läkaren vid medicinsk indikation ett officiellt spanskt e-recept (QR-kod giltig på alla 22 000+ apotek i Spanien).",
     pills: [
       "✓ Läkarbedömning vid infektion (UVI, öra, hals)",
       "✓ Bedömning av astma, luftvägar och allergi",
@@ -194,14 +175,12 @@ const RX_CALLOUT_COPY: Record<
     bottomBadge: "24/7 Läkarvård · Hela Spanien & Costa del Sol",
     bottomTitle: "Behöver du Onlinekonsultation + QR-Recept (€90) eller Läkare till Hotellet?",
     bottomDesc:
-      "15-minuters online läkarkonsultation med officiellt spanskt QR-recept + läkarintyg i hela Spanien (€90), eller läkarbesök på ditt hotell på Costa del Sol inom 30–60 minuter (€130–€140).",
+      "15-minuters online läkarkonsultation med officiellt spanskt QR-recept i hela Spanien (€90), eller läkarbesök på ditt hotell på Costa del Sol inom 30–60 minuter (€130–€140).",
   },
   ru: {
     badge: "🇪🇸 ОНЛАЙН-КОНСУЛЬТАЦИЯ ВРАЧА ПО ВСЕЙ ИСПАНИИ · ЗА 15 МИН",
     title: "🩺 Нужна дистанционная консультация врача и официальный рецепт в Испании?",
-    desc: "Запишитесь на экспресс онлайн/телефонную консультацию (15 минут) с лицензированным врачом в Испании. После клинической оценки ваших симптомов или постоянного лечения врач по медицинским показаниям выписывает официальный испанский электронный рецепт (QR-код для всех 22 000+ аптек Испании) + медицинский отчет.",
-    insuranceHook:
-      "📋 Полный пакет документов для страховой: Включает подписанное медицинское заключение (с кодом диагноза МКБ-10 / ICD-10) и детализированный счет для подачи заявления в вашу страховую компанию согласно условиям полиса.",
+    desc: "Запишитесь на экспресс онлайн/телефонную консультацию (15 минут) с лицензированным врачом в Испании. После клинической оценки ваших симптомов или постоянного лечения врач по медицинским показаниям выписывает официальный испанский электронный рецепт (QR-код для всех 22 000+ аптек Испании).",
     pills: [
       "✓ Консультация при инфекциях (цистит, отит, горло)",
       "✓ Оценка симптомов астмы и аллергии",
@@ -213,14 +192,12 @@ const RX_CALLOUT_COPY: Record<
     bottomBadge: "Медицинская помощь 24/7 · Вся Испания и Коста-дель-Соль",
     bottomTitle: "Нужна онлайн-консультация + QR-рецепт (90€) или визит врача в отель?",
     bottomDesc:
-      "15-минутная онлайн-консультация врача с официальным испанским QR-рецептом и медотчетом по всей Испании (90€) или выезд врача в ваш отель на Коста-дель-Соль за 30–60 минут (130€–140€).",
+      "15-минутная онлайн-консультация врача с официальным испанским QR-рецептом по всей Испании (90€) или выезд врача в ваш отель на Коста-дель-Соль за 30–60 минут (130€–140€).",
   },
   nl: {
     badge: "🇪🇸 ONLINE DOKTERSCONSULT IN HEEL SPANJE · IN 15 MIN",
     title: "🩺 Heeft u een online doktersconsult en officieel recept nodig in Spanje?",
-    desc: "Boek een spoed online/telefonisch consult (15 min) met een in Spanje geregistreerde arts. Na klinische beoordeling van uw klachten of vaste medicatie schrijft de arts op medische indicatie uw officiële Spaanse e-recept uit (QR-code geldig bij alle 22.000+ apotheken in Spanje) + medisch rapport.",
-    insuranceHook:
-      "📋 Volledige documentatie voor uw reisverzekering: Inclusief ondertekend klinisch medisch rapport (met ICD-10-diagnosecode) en gespecificeerde factuur om in te dienen bij uw reisverzekeraar volgens uw polisvoorwaarden.",
+    desc: "Boek een spoed online/telefonisch consult (15 min) met een in Spanje geregistreerde arts. Na klinische beoordeling van uw klachten of vaste medicatie schrijft de arts op medische indicatie uw officiële Spaanse e-recept uit (QR-code geldig bij alle 22.000+ apotheken in Spanje).",
     pills: [
       "✓ Consult bij infecties (blaas, oor, keel)",
       "✓ Beoordeling van astma, luchtwegen & allergie",
@@ -232,7 +209,7 @@ const RX_CALLOUT_COPY: Record<
     bottomBadge: "24/7 Medische Zorg · Heel Spanje & Costa del Sol",
     bottomTitle: "Online Doktersconsult + QR-Recept (€90) of een Dokter op uw Hotelkamer?",
     bottomDesc:
-      "Online doktersconsult van 15 minuten met officieel Spaans QR-recept + medisch rapport in heel Spanje (€90), of een persoonlijk doktersbezoek in uw hotel aan de Costa del Sol binnen 30–60 minuten (€130–€140).",
+      "Online doktersconsult van 15 minuten met officieel Spaans QR-recept in heel Spanje (€90), of een persoonlijk doktersbezoek in uw hotel aan de Costa del Sol binnen 30–60 minuten (€130–€140).",
   },
 };
 
@@ -316,11 +293,8 @@ export default function BlogSection({
           <h2 className="text-xl sm:text-2xl font-800 text-white leading-snug mb-2.5">
             {rxCopy.title}
           </h2>
-          <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-3">
+          <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-4">
             {rxCopy.desc}
-          </p>
-          <p className="text-xs sm:text-sm text-amber-200/95 bg-white/5 border border-white/10 rounded-xl px-3.5 py-2.5 mb-4 leading-relaxed">
-            {rxCopy.insuranceHook}
           </p>
           <div className="flex flex-wrap gap-2 mb-5">
             {rxCopy.pills.map((pill) => (
@@ -334,7 +308,7 @@ export default function BlogSection({
           </div>
           <div className="flex flex-col sm:flex-row gap-3">
             <a
-              href="https://wa.me/34637255224?text=Hello%2C%20I%20need%20an%20Express%20Online%20Prescription%20%2B%20Medical%20Report%20(%E2%82%AC90)."
+              href="https://wa.me/34637255224?text=Hello%2C%20I%20need%20an%20Express%20Online%20Consultation%20%2B%20QR%20Prescription."
               data-triage="rx"
               target="_blank"
               rel="noopener noreferrer"
@@ -480,7 +454,7 @@ export default function BlogSection({
             </p>
             <div className="flex flex-wrap gap-3.5 items-center">
               <a
-                href="https://wa.me/34637255224?text=Hello%2C%20I%20need%20an%20Express%20Online%20Prescription%20%2B%20Medical%20Report%20(%E2%82%AC90)."
+                href="https://wa.me/34637255224?text=Hello%2C%20I%20need%20an%20Express%20Online%20Consultation%20%2B%20QR%20Prescription."
                 data-triage="rx"
                 target="_blank"
                 rel="noopener noreferrer"

@@ -1005,7 +1005,7 @@ export default async function Page({
                   )}
                   <div className="hidden sm:block w-px h-12 bg-white/20" />
                   <a
-                    href={`https://wa.me/34637255224?text=${encodeURIComponent(`Hello, I need an Express Spanish Prescription + Medical Report (€90) in ${city.name}.`)}`}
+                    href={`https://wa.me/34637255224?text=${encodeURIComponent(`Hello, I need an Express Online Consultation + Spanish QR Prescription in ${city.name}.`)}`}
                     data-triage="rx"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -1019,7 +1019,7 @@ export default async function Page({
                         Online Consultation + Prescription
                       </span>
                       <span className="text-amber-300/90 text-xs sm:text-sm font-600 mt-0.5">
-                        15 Min + Report · All Spain
+                        15 Min · All Spain
                       </span>
                     </div>
                   </a>

@@ -13,7 +13,7 @@ const TRANSLATIONS: Record<string, any> = {
     title: "🏨 Request Doctor to Hotel / Home",
     subVisit: "In-person doctor visit in 30–60 min · Costa del Sol",
     titleRx: "🩺 Online Consultation + QR Prescription",
-    subRx: "15-min doctor teleconsultation · Official Spanish QR Prescription + Medical Report · All Spain",
+    subRx: "15-min doctor teleconsultation · Official Spanish QR Prescription · All Spain",
     q1: "1. Where are you staying?",
     q1Rx: "1. Your City / Location in Spain",
     p1: "Hotel name, apartment or address...",
@@ -25,7 +25,7 @@ const TRANSLATIONS: Record<string, any> = {
     btn: "Continue to WhatsApp",
     msg: "Hello, I need a doctor visit at my hotel/home.\n\n📍 Location: {location}\n🤒 Symptoms: {symptoms}",
     msgRx:
-      "Hello, I would like to book an Express Online Doctor Consultation for medical evaluation, Official QR Prescription & Medical Report.\n\n📍 City in Spain: {location}\n🩺 Symptoms / Medication to evaluate: {symptoms}",
+      "Hello, I would like to book an Express Online Doctor Consultation for medical evaluation & Official QR Prescription.\n\n📍 City in Spain: {location}\n🩺 Symptoms / Medication to evaluate: {symptoms}",
   },
   es: {
     call: "Llamar Ahora",
@@ -35,7 +35,7 @@ const TRANSLATIONS: Record<string, any> = {
     title: "🏨 Solicitar Médico a Hotel / Domicilio",
     subVisit: "Visita médica presencial en 30–60 min · Costa del Sol",
     titleRx: "🩺 Teleconsulta Médica + Receta QR",
-    subRx: "Valoración médica telemática en 15 min · Receta QR + Informe Médico · Toda España",
+    subRx: "Valoración médica telemática en 15 min · Receta Electrónica QR · Toda España",
     q1: "1. ¿Dónde estás alojado?",
     q1Rx: "1. ¿En qué ciudad de España estás?",
     p1: "Nombre del hotel, apartamento o dirección...",
@@ -47,7 +47,7 @@ const TRANSLATIONS: Record<string, any> = {
     btn: "Continuar a WhatsApp",
     msg: "Hola, necesito un médico a domicilio/hotel.\n\n📍 Ubicación: {location}\n🤒 Síntomas: {symptoms}",
     msgRx:
-      "Hola, quiero solicitar una Teleconsulta Médica Express para valoración médica, Receta Electrónica QR e Informe Médico.\n\n📍 Ciudad: {location}\n🩺 Síntomas / Medicación a valorar: {symptoms}",
+      "Hola, quiero solicitar una Teleconsulta Médica Express para valoración médica y Receta Electrónica QR.\n\n📍 Ciudad: {location}\n🩺 Síntomas / Medicación a valorar: {symptoms}",
   },
   de: {
     call: "Jetzt anrufen",
@@ -57,7 +57,7 @@ const TRANSLATIONS: Record<string, any> = {
     title: "🏨 Arztbesuch im Hotel / Haus anfordern",
     subVisit: "Persönlicher Arztbesuch in 30–60 Min · Costa del Sol",
     titleRx: "🩺 Online-Arztkonsultation + QR-Rezept",
-    subRx: "Ärztliche Telekonsultation in 15 Min · Offizielles QR-Rezept + Arztbericht · Ganz Spanien",
+    subRx: "Ärztliche Telekonsultation in 15 Min · Offizielles QR-Rezept · Ganz Spanien",
     q1: "1. Wo übernachten Sie?",
     q1Rx: "1. Stadt / Ort in Spanien",
     p1: "Hotelname oder Adresse...",
@@ -69,7 +69,7 @@ const TRANSLATIONS: Record<string, any> = {
     btn: "Weiter zu WhatsApp",
     msg: "Hallo, ich brauche einen Arztbesuch im Hotel/Haus.\n\n📍 Ort: {location}\n🤒 Symptome: {symptoms}",
     msgRx:
-      "Hallo, ich möchte eine Express-Online-Arztkonsultation für ärztliche Bewertung, QR-Rezept + Arztbericht buchen.\n\n📍 Ort: {location}\n🩺 Symptome / Medikament: {symptoms}",
+      "Hallo, ich möchte eine Express-Online-Arztkonsultation für ärztliche Bewertung & QR-Rezept buchen.\n\n📍 Ort: {location}\n🩺 Symptome / Medikament: {symptoms}",
   },
   fr: {
     call: "Appeler",
@@ -79,7 +79,7 @@ const TRANSLATIONS: Record<string, any> = {
     title: "🏨 Demander un Médecin à l'Hôtel / Domicile",
     subVisit: "Visite médicale sur place en 30–60 min · Costa del Sol",
     titleRx: "🩺 Téléconsultation Médicale + Ordonnance QR",
-    subRx: "Consultation médicale en ligne en 15 min · Ordonnance QR + Rapport · Toute l'Espagne",
+    subRx: "Consultation médicale en ligne en 15 min · Ordonnance QR · Toute l'Espagne",
     q1: "1. Où séjournez-vous ?",
     q1Rx: "1. Ville en Espagne",
     p1: "Nom de l'hôtel ou adresse...",
@@ -91,7 +91,7 @@ const TRANSLATIONS: Record<string, any> = {
     btn: "Aller sur WhatsApp",
     msg: "Bonjour, j'ai besoin d'un médecin à mon hôtel/domicile.\n\n📍 Lieu : {location}\n🤒 Symptômes : {symptoms}",
     msgRx:
-      "Bonjour, je souhaite demander une Téléconsultation Médicale Express avec évaluation médicale, Ordonnance QR et Rapport Médical.\n\n📍 Ville : {location}\n🩺 Symptômes / Traitement : {symptoms}",
+      "Bonjour, je souhaite demander une Téléconsultation Médicale Express avec évaluation médicale et Ordonnance QR.\n\n📍 Ville : {location}\n🩺 Symptômes / Traitement : {symptoms}",
   },
   fi: {
     call: "Soita Nyt",
@@ -101,7 +101,7 @@ const TRANSLATIONS: Record<string, any> = {
     title: "🏨 Tilaa Lääkäri Hotellille / Asunnolle",
     subVisit: "Lääkärin kotikäynti 30–60 min · Costa del Sol",
     titleRx: "🩺 Etälääkärikonsultaatio + QR-Resepti",
-    subRx: "15 min lääkärin etäarviointi · Virallinen QR-resepti + Lääkärinlausunto · Koko Espanja",
+    subRx: "15 min lääkärin etäarviointi · Virallinen QR-resepti · Koko Espanja",
     q1: "1. Missä majoitut?",
     q1Rx: "1. Kaupunki Espanjassa",
     p1: "Hotellin nimi tai osoite...",
@@ -113,7 +113,7 @@ const TRANSLATIONS: Record<string, any> = {
     btn: "Jatka WhatsAppiin",
     msg: "Hei, tarvitsen lääkärin käynnin hotellille/asunnolle.\n\n📍 Sijainti: {location}\n🤒 Oireet: {symptoms}",
     msgRx:
-      "Hei, haluan varata Lääkärin Pikakonsultaation arviointia, QR-reseptiä ja lääkärinlausuntoa varten.\n\n📍 Kaupunki: {location}\n🩺 Oireet / Lääkitys: {symptoms}",
+      "Hei, haluan varata Lääkärin Pikakonsultaation arviointia ja QR-reseptiä varten.\n\n📍 Kaupunki: {location}\n🩺 Oireet / Lääkitys: {symptoms}",
   },
   ar: {
     call: "اتصل الان",
@@ -123,7 +123,7 @@ const TRANSLATIONS: Record<string, any> = {
     title: "🏨 طلب زيارة طبيب للفندق / المنزل",
     subVisit: "زيارة طبية خلال 30–60 دقيقة · كوستا ديل سول",
     titleRx: "🩺 استشارة طبية أونلاين + وصفة QR",
-    subRx: "تقييم طبي عن بعد خلال 15 دقيقة · وصفة QR رسمية + تقرير طبي · كل إسبانيا",
+    subRx: "تقييم طبي عن بعد خلال 15 دقيقة · وصفة QR رسمية · كل إسبانيا",
     q1: "1. أين تقيم؟",
     q1Rx: "1. المدينة في إسبانيا",
     p1: "اسم الفندق أو العنوان...",
@@ -135,7 +135,7 @@ const TRANSLATIONS: Record<string, any> = {
     btn: "متابعة إلى الواتساب",
     msg: "مرحباً، أحتاج إلى زيارة طبيب للفندق/المنزل.\n\n📍 الموقع: {location}\n🤒 الأعراض: {symptoms}",
     msgRx:
-      "مرحباً، أود طلب استشارة طبية سريعة أونلاين للتقييم الطبي وإصدار وصفة QR وتقرير طبي.\n\n📍 المدينة: {location}\n🩺 الأعراض / الدواء: {symptoms}",
+      "مرحباً، أود طلب استشارة طبية سريعة أونلاين للتقييم الطبي وإصدار وصفة QR.\n\n📍 المدينة: {location}\n🩺 الأعراض / الدواء: {symptoms}",
   },
   no: {
     call: "Ring nå",
@@ -145,7 +145,7 @@ const TRANSLATIONS: Record<string, any> = {
     title: "🏨 Bestill Lege til Hotell / Bolig",
     subVisit: "Legebesøk på stedet innen 30–60 min · Costa del Sol",
     titleRx: "🩺 Online Legekonsultasjon + QR-Resept",
-    subRx: "15 min legevurdering på telefon/nett · Offisiell QR-resept + Legerapport · Hele Spania",
+    subRx: "15 min legevurdering på telefon/nett · Offisiell QR-resept · Hele Spania",
     q1: "1. Hvor bor du?",
     q1Rx: "1. By / Sted i Spania",
     p1: "Hotellnavn eller adresse...",
@@ -157,7 +157,7 @@ const TRANSLATIONS: Record<string, any> = {
     btn: "Gå til WhatsApp",
     msg: "Hei, jeg trenger legebesøk på hotellet/boligen.\n\n📍 Sted: {location}\n🤒 Symptomer: {symptoms}",
     msgRx:
-      "Hei, jeg ønsker en Ekspress Online Legekonsultasjon for medisinsk vurdering, QR-resept og legerapport.\n\n📍 Sted: {location}\n🩺 Symptomer / Medisin: {symptoms}",
+      "Hei, jeg ønsker en Ekspress Online Legekonsultasjon for medisinsk vurdering og QR-resept.\n\n📍 Sted: {location}\n🩺 Symptomer / Medisin: {symptoms}",
   },
   da: {
     call: "Ring nu",
@@ -167,7 +167,7 @@ const TRANSLATIONS: Record<string, any> = {
     title: "🏨 Bestil Læge til Hotel / Feriebolig",
     subVisit: "Lægebesøg inden for 30–60 min · Costa del Sol",
     titleRx: "🩺 Online Lægekonsultation + QR-Recept",
-    subRx: "15 min lægevurdering online · Officiel QR-recept + Lægerapport · Hele Spanien",
+    subRx: "15 min lægevurdering online · Officiel QR-recept · Hele Spanien",
     q1: "1. Hvor bor du?",
     q1Rx: "1. By i Spanien",
     p1: "Hotelnavn eller adresse...",
@@ -179,7 +179,7 @@ const TRANSLATIONS: Record<string, any> = {
     btn: "Gå til WhatsApp",
     msg: "Hej, jeg har brug for lægebesøg på mit hotel/feriebolig.\n\n📍 Sted: {location}\n🤒 Symptomer: {symptoms}",
     msgRx:
-      "Hej, jeg ønsker en Ekspres Online Lægekonsultation til medicinsk vurdering, QR-recept og lægerapport.\n\n📍 Sted: {location}\n🩺 Symptomer / Medicin: {symptoms}",
+      "Hej, jeg ønsker en Ekspres Online Lægekonsultation til medicinsk vurdering og QR-recept.\n\n📍 Sted: {location}\n🩺 Symptomer / Medicin: {symptoms}",
   },
   sv: {
     call: "Ring nu",
@@ -189,7 +189,7 @@ const TRANSLATIONS: Record<string, any> = {
     title: "🏨 Boka Läkare till Hotell / Lägenhet",
     subVisit: "Läkarbesök på plats inom 30–60 min · Costa del Sol",
     titleRx: "🩺 Online Läkarbedömning + QR-Recept",
-    subRx: "15 min läkarkonsultation online · Officiellt QR-recept + Läkarintyg · Hela Spanien",
+    subRx: "15 min läkarkonsultation online · Officiellt QR-recept · Hela Spanien",
     q1: "1. Var bor du?",
     q1Rx: "1. Stad i Spanien",
     p1: "Hotellnamn eller adress...",
@@ -201,7 +201,7 @@ const TRANSLATIONS: Record<string, any> = {
     btn: "Gå till WhatsApp",
     msg: "Hej, jag behöver läkarbesök på mitt hotell/boende.\n\n📍 Plats: {location}\n🤒 Symptom: {symptoms}",
     msgRx:
-      "Hej, jag vill boka en Express Online Läkarkonsultation för medicinsk bedömning, QR-recept och läkarintyg.\n\n📍 Plats: {location}\n🩺 Symptom / Medicin: {symptoms}",
+      "Hej, jag vill boka en Express Online Läkarkonsultation för medicinsk bedömning och QR-recept.\n\n📍 Plats: {location}\n🩺 Symptom / Medicin: {symptoms}",
   },
   ru: {
     call: "Позвонить",
@@ -211,7 +211,7 @@ const TRANSLATIONS: Record<string, any> = {
     title: "🏨 Вызов врача в отель / на дом",
     subVisit: "Выезд врача за 30–60 мин · Коста-дель-Соль",
     titleRx: "🩺 Онлайн-консультация врача + QR-рецепт",
-    subRx: "Дистанционная консультация врача за 15 мин · Официальный QR-рецепт + Медотчет · Вся Испания",
+    subRx: "Дистанционная консультация врача за 15 мин · Официальный QR-рецепт · Вся Испания",
     q1: "1. Где вы находитесь?",
     q1Rx: "1. Город в Испании",
     p1: "Название отеля или адрес...",
@@ -223,7 +223,7 @@ const TRANSLATIONS: Record<string, any> = {
     btn: "Перейти в WhatsApp",
     msg: "Здравствуйте, мне нужен вызов врача в отель/на дом.\n\n📍 Местоположение: {location}\n🤒 Симптомы: {symptoms}",
     msgRx:
-      "Здравствуйте, я хочу записаться на Экспресс онлайн-консультацию врача для медицинской оценки, получения QR-рецепта и медотчета.\n\n📍 Город: {location}\n🩺 Симптомы / Препарат: {symptoms}",
+      "Здравствуйте, я хочу записаться на Экспресс онлайн-консультацию врача для медицинской оценки и получения QR-рецепта.\n\n📍 Город: {location}\n🩺 Симптомы / Препарат: {symptoms}",
   },
   nl: {
     call: "Bel nu",
@@ -233,7 +233,7 @@ const TRANSLATIONS: Record<string, any> = {
     title: "🏨 Dokter aanvragen in Hotel / Appartement",
     subVisit: "Persoonlijk doktersbezoek binnen 30–60 min · Costa del Sol",
     titleRx: "🩺 Online Doktersconsult + QR-Recept",
-    subRx: "Medisch teleconsult in 15 min · Officieel Spaans QR-recept + Medisch Rapport · Heel Spanje",
+    subRx: "Medisch teleconsult in 15 min · Officieel Spaans QR-recept · Heel Spanje",
     q1: "1. Waar verblijft u?",
     q1Rx: "1. Stad / Locatie in Spanje",
     p1: "Hotelnaam of adres...",
@@ -245,7 +245,7 @@ const TRANSLATIONS: Record<string, any> = {
     btn: "Verder naar WhatsApp",
     msg: "Hallo, ik heb een doktersbezoek nodig in mijn hotel/appartement.\n\n📍 Locatie: {location}\n🤒 Symptomen: {symptoms}",
     msgRx:
-      "Hallo, ik wil een Spoed Online Doktersconsult aanvragen voor medische beoordeling, QR-recept en medisch rapport.\n\n📍 Locatie: {location}\n🩺 Symptomen / Medicatie: {symptoms}",
+      "Hallo, ik wil een Spoed Online Doktersconsult aanvragen voor medische beoordeling en QR-recept.\n\n📍 Locatie: {location}\n🩺 Symptomen / Medicatie: {symptoms}",
   },
 };
 
@@ -311,7 +311,7 @@ export default function FloatingCTA({ locale: propLocale = "en" }: { locale?: st
     const baseGreeting =
       template.split("\n\n")[0] ||
       (requestType === "rx"
-        ? "Hello, I need an Express Online Prescription + Medical Report."
+        ? "Hello, I need an Express Online Consultation + QR Prescription."
         : "Hello, I need a doctor.");
 
     if (loc && sym) {
