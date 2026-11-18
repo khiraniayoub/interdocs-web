@@ -194,7 +194,7 @@ export default function PrescriptionLanding({
                 2
               </div>
               <h3 className="text-lg font-800 text-slate-900 mb-2">
-                Direct Contact from a Spanish Doctor
+                Direct Contact from an English-Speaking Doctor
               </h3>
               <p className="text-sm text-slate-600 leading-relaxed">
                 Our licensed doctor in Spain contacts you directly via phone or
@@ -226,7 +226,7 @@ export default function PrescriptionLanding({
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <h2 className="text-2xl sm:text-3xl font-800 text-slate-900 mb-3">
-              What Can Our Spanish Doctors Evaluate Online?
+              What Can Our English-Speaking Doctors Evaluate Online?
             </h2>
             <p className="text-slate-600 text-sm sm:text-base">
               Built for the most common holiday prescription emergencies faced
