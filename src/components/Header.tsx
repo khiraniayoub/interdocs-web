@@ -235,7 +235,7 @@ export default function Header({ locale = "en", alternateUrls }: HeaderProps) {
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm flex flex-col">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full border-b border-slate-100 lg:border-none">
+      <div className="max-w-[1650px] 2xl:max-w-[1750px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 w-full border-b border-slate-100 lg:border-none">
         <div className="flex items-center justify-between h-20 lg:h-28">
           {/* Logo */}
           <Link
@@ -281,14 +281,14 @@ export default function Header({ locale = "en", alternateUrls }: HeaderProps) {
 
           {/* Desktop Nav with guaranteed minimum gap */}
           <nav
-            className="hidden lg:flex items-center gap-3 xl:gap-5 2xl:gap-7 ms-6 xl:ms-10 me-auto flex-shrink-0"
+            className="hidden lg:flex items-center justify-center gap-4 xl:gap-6 2xl:gap-8 mx-auto flex-shrink-0"
             aria-label="Main navigation"
           >
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="relative text-xs xl:text-sm 2xl:text-base font-600 text-slate-600 hover:text-[#0A6EBD] transition-colors duration-200 after:absolute after:bottom-[-3px] after:left-0 after:h-[2px] after:w-0 after:bg-[#0A6EBD] after:rounded-full after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
+                className="relative text-[15px] xl:text-[16px] 2xl:text-[17px] font-600 text-slate-700 hover:text-[#0A6EBD] transition-colors duration-200 after:absolute after:bottom-[-4px] after:left-0 after:h-[2.5px] after:w-0 after:bg-[#0A6EBD] after:rounded-full after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap"
               >
                 {link.label}
               </Link>
@@ -399,7 +399,7 @@ export default function Header({ locale = "en", alternateUrls }: HeaderProps) {
             <button
               onClick={(e) => { e.preventDefault(); window.dispatchEvent(new Event('openTriage')); }}
               id="header-whatsapp-btn"
-              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#25D366] text-white text-sm font-600 hover:bg-[#1da851] transition-colors duration-200"
+              className="flex items-center gap-1.5 xl:gap-2 px-3.5 xl:px-4 py-2.5 rounded-xl bg-[#25D366] text-white text-xs xl:text-sm font-700 hover:bg-[#1da851] transition-colors duration-200 flex-shrink-0 whitespace-nowrap shadow-xs"
             >
               <svg
                 className="w-4 h-4"
