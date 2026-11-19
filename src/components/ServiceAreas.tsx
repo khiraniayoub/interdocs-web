@@ -10,18 +10,117 @@ interface ServiceAreasProps {
   locale: Locale;
 }
 
-const PRICE_LABEL: Record<string, { weekday: string; weekend: string; flat247: string; from: string }> = {
-  en: { weekday: "Mon–Fri", weekend: "Nights, Weekends & Holidays", flat247: "24/7 · All Days & Nights", from: "from" },
-  es: { weekday: "Lun–Vie", weekend: "Noches, Fin de semana y Festivos", flat247: "24/7 · Todos los días y noches", from: "desde" },
-  de: { weekday: "Mo–Fr",   weekend: "Nächte, Wochenenden & Feiertage", flat247: "24/7 · Tag, Nacht & Wochenende", from: "ab"    },
-  fr: { weekday: "Lun–Ven", weekend: "Nuits, Week-ends & Jours Fériés", flat247: "24h/24 · Jour, Nuit & Week-end", from: "dès" },
-  fi: { weekday: "Ma–Pe",   weekend: "Yöt, Viikonloput & Pyhäpäivät",  flat247: "24/7 · Kaikki päivät ja yöt", from: "alkaen" },
-  ar: { weekday: "الاثنين–الجمعة", weekend: "الليالي وعطلات نهاية الأسبوع والأعياد", flat247: "24/7 · طوال الأسبوع والليل", from: "من" },
-  no: { weekday: "Man–Fre", weekend: "Netter, Helger & Helligdager", flat247: "24/7 · Alle dager og netter", from: "fra" },
-  da: { weekday: "Man–Fre", weekend: "Nætter, Weekender & Helligdage", flat247: "24/7 · Alle dage og nætter", from: "fra" },
-  sv: { weekday: "Mån–Fre", weekend: "Nätter, Helger & Helgdagar",  flat247: "24/7 · Alla dagar och nätter", from: "från" },
-  ru: { weekday: "Пн–Пт", weekend: "Ночи, Выходные и Праздники", flat247: "24/7 · Будни, ночи и выходные", from: "от" },
-  nl: { weekday: "Ma–Vr", weekend: "Nachten, Weekenden & Feestdagen", flat247: "24/7 · Dag, nacht & weekend", from: "vanaf" },
+const PRICE_LABEL: Record<
+  string,
+  {
+    weekday: string;
+    weekend: string;
+    flat247: string;
+    from: string;
+    onlineTitle: string;
+    onlineSubtitle: string;
+    onlinePill: string;
+  }
+> = {
+  en: {
+    weekday: "Mon–Fri",
+    weekend: "Nights, Weekends & Holidays",
+    flat247: "24/7 · All Days & Nights",
+    from: "from",
+    onlineTitle: "Online Doctor",
+    onlineSubtitle: "Official QR Prescription",
+    onlinePill: "24/7 · All Nerja Pharmacies",
+  },
+  es: {
+    weekday: "Lun–Vie",
+    weekend: "Noches, Fin de semana y Festivos",
+    flat247: "24/7 · Todos los días y noches",
+    from: "desde",
+    onlineTitle: "Médico Online",
+    onlineSubtitle: "Receta Oficial con QR",
+    onlinePill: "24/7 · Todas las Farmacias",
+  },
+  de: {
+    weekday: "Mo–Fr",
+    weekend: "Nächte, Wochenenden & Feiertage",
+    flat247: "24/7 · Tag, Nacht & Wochenende",
+    from: "ab",
+    onlineTitle: "Online-Arzt",
+    onlineSubtitle: "Offizielles QR-Rezept",
+    onlinePill: "24/7 · Alle Apotheken in Nerja",
+  },
+  fr: {
+    weekday: "Lun–Ven",
+    weekend: "Nuits, Week-ends & Jours Fériés",
+    flat247: "24h/24 · Jour, Nuit & Week-end",
+    from: "dès",
+    onlineTitle: "Médecin en Ligne",
+    onlineSubtitle: "Ordonnance Officielle QR",
+    onlinePill: "24h/24 · Toutes les Pharmacies",
+  },
+  fi: {
+    weekday: "Ma–Pe",
+    weekend: "Yöt, Viikonloput & Pyhäpäivät",
+    flat247: "24/7 · Kaikki päivät ja yöt",
+    from: "alkaen",
+    onlineTitle: "Etälääkäri",
+    onlineSubtitle: "Virallinen QR-Resepti",
+    onlinePill: "24/7 · Kaikki Nerjan Apteekit",
+  },
+  ar: {
+    weekday: "الاثنين–الجمعة",
+    weekend: "الليالي وعطلات نهاية الأسبوع والأعياد",
+    flat247: "24/7 · طوال الأسبوع والليل",
+    from: "من",
+    onlineTitle: "طبيب أونلاين",
+    onlineSubtitle: "وصفة طبية رسمية QR",
+    onlinePill: "24/7 · جميع صيدليات نيرخا",
+  },
+  no: {
+    weekday: "Man–Fre",
+    weekend: "Netter, Helger & Helligdager",
+    flat247: "24/7 · Alle dager og netter",
+    from: "fra",
+    onlineTitle: "Online Lege",
+    onlineSubtitle: "Offisiell QR-Resept",
+    onlinePill: "24/7 · Alle Apotek i Nerja",
+  },
+  da: {
+    weekday: "Man–Fre",
+    weekend: "Nætter, Weekender & Helligdage",
+    flat247: "24/7 · Alle dage og nætter",
+    from: "fra",
+    onlineTitle: "Online Læge",
+    onlineSubtitle: "Officiel QR-Recept",
+    onlinePill: "24/7 · Alle Apoteker i Nerja",
+  },
+  sv: {
+    weekday: "Mån–Fre",
+    weekend: "Nätter, Helger & Helgdagar",
+    flat247: "24/7 · Alla dagar och nätter",
+    from: "från",
+    onlineTitle: "Onlineläkare",
+    onlineSubtitle: "Officiellt QR-Recept",
+    onlinePill: "24/7 · Alla Apotek i Nerja",
+  },
+  ru: {
+    weekday: "Пн–Пт",
+    weekend: "Ночи, Выходные и Праздники",
+    flat247: "24/7 · Будни, ночи и выходные",
+    from: "от",
+    onlineTitle: "Онлайн-Врач",
+    onlineSubtitle: "Официальный QR-Рецепт",
+    onlinePill: "24/7 · Все Аптеки Нерхи",
+  },
+  nl: {
+    weekday: "Ma–Vr",
+    weekend: "Nachten, Weekenden & Feestdagen",
+    flat247: "24/7 · Dag, nacht & weekend",
+    from: "vanaf",
+    onlineTitle: "Online Arts",
+    onlineSubtitle: "Officieel QR-Recept",
+    onlinePill: "24/7 · Alle Apotheken in Nerja",
+  },
 };
 
 const ARIA_LABELS: Record<Locale, (name: string) => string> = {
@@ -169,7 +268,17 @@ export default function ServiceAreas({ title, subtitle, locale }: ServiceAreasPr
                       {city.name}
                     </Link>
                   </p>
-                  {city.slug === "nerja" ? null : city.slug === "marbella" || city.slug === "estepona" ? (
+                  {city.slug === "nerja" ? (
+                    <>
+                      <div className="mb-2">
+                        <span className="text-xl sm:text-2xl font-800">{t.onlineTitle}</span>
+                        <p className="text-white/80 text-sm mt-0.5">{t.onlineSubtitle}</p>
+                      </div>
+                      <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-xs font-600 text-white mt-1">
+                        {t.onlinePill}
+                      </div>
+                    </>
+                  ) : city.slug === "marbella" || city.slug === "estepona" ? (
                     <>
                       <div className="mb-2">
                         <span className="text-3xl font-800">€140</span>
