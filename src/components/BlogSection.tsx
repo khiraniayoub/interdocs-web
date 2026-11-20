@@ -254,24 +254,24 @@ export default function BlogSection({
               {locale === "es"
                 ? "Actualizado: "
                 : locale === "de"
-                ? "Aktualisiert: "
-                : locale === "fr"
-                ? "Mis à jour : "
-                : locale === "fi"
-                ? "Päivitetty: "
-                : locale === "ar"
-                ? "تم التحديث: "
-                : locale === "no"
-                ? "Oppdatert: "
-                : locale === "da"
-                ? "Opdateret: "
-                : locale === "sv"
-                ? "Uppdaterad: "
-                : locale === "ru"
-                ? "Обновлено: "
-                : locale === "nl"
-                ? "Bijgewerkt: "
-                : "Updated: "}
+                  ? "Aktualisiert: "
+                  : locale === "fr"
+                    ? "Mis à jour : "
+                    : locale === "fi"
+                      ? "Päivitetty: "
+                      : locale === "ar"
+                        ? "تم التحديث: "
+                        : locale === "no"
+                          ? "Oppdatert: "
+                          : locale === "da"
+                            ? "Opdateret: "
+                            : locale === "sv"
+                              ? "Uppdaterad: "
+                              : locale === "ru"
+                                ? "Обновлено: "
+                                : locale === "nl"
+                                  ? "Bijgewerkt: "
+                                  : "Updated: "}
               {new Date(singlePost.dateModified || singlePost.date).toLocaleDateString(
                 dateLocaleMap[locale] || "en-GB",
                 { day: "numeric", month: "long", year: "numeric" }
@@ -344,32 +344,31 @@ export default function BlogSection({
             {locale === "es"
               ? "Compartir este artículo:"
               : locale === "de"
-              ? "Diesen Artikel teilen:"
-              : locale === "fr"
-              ? "Partager cet article :"
-              : locale === "fi"
-              ? "Jaa tämä artikkeli:"
-              : locale === "ar"
-              ? "شارك هذا المقال:"
-              : locale === "no"
-              ? "Del denne artikkelen:"
-              : locale === "da"
-              ? "Del denne artikel:"
-              : locale === "sv"
-              ? "Dela denna artikel:"
-              : locale === "ru"
-              ? "Поделиться статьей:"
-              : locale === "nl"
-              ? "Deel dit artikel:"
-              : "Share this article:"}
+                ? "Diesen Artikel teilen:"
+                : locale === "fr"
+                  ? "Partager cet article :"
+                  : locale === "fi"
+                    ? "Jaa tämä artikkeli:"
+                    : locale === "ar"
+                      ? "شارك هذا المقال:"
+                      : locale === "no"
+                        ? "Del denne artikkelen:"
+                        : locale === "da"
+                          ? "Del denne artikel:"
+                          : locale === "sv"
+                            ? "Dela denna artikel:"
+                            : locale === "ru"
+                              ? "Поделиться статьей:"
+                              : locale === "nl"
+                                ? "Deel dit artikel:"
+                                : "Share this article:"}
           </p>
           <div className="flex flex-wrap items-center gap-2.5">
             <a
               href={`https://api.whatsapp.com/send?text=${encodeURIComponent(
-                `${singlePost.title[locale]} https://www.urgentcare24h.com${
-                  locale === "en"
-                    ? `/blog/${singlePost.localeSlugs[locale]}`
-                    : `/${locale}/blog/${singlePost.localeSlugs[locale]}`
+                `${singlePost.title[locale]} https://www.urgentcare24h.com${locale === "en"
+                  ? `/blog/${singlePost.localeSlugs[locale]}`
+                  : `/${locale}/blog/${singlePost.localeSlugs[locale]}`
                 }`
               )}`}
               target="_blank"
@@ -384,10 +383,9 @@ export default function BlogSection({
             </a>
             <a
               href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-                `https://www.urgentcare24h.com${
-                  locale === "en"
-                    ? `/blog/${singlePost.localeSlugs[locale]}`
-                    : `/${locale}/blog/${singlePost.localeSlugs[locale]}`
+                `https://www.urgentcare24h.com${locale === "en"
+                  ? `/blog/${singlePost.localeSlugs[locale]}`
+                  : `/${locale}/blog/${singlePost.localeSlugs[locale]}`
                 }`
               )}`}
               target="_blank"
@@ -404,10 +402,9 @@ export default function BlogSection({
               href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
                 singlePost.title[locale]
               )}&url=${encodeURIComponent(
-                `https://www.urgentcare24h.com${
-                  locale === "en"
-                    ? `/blog/${singlePost.localeSlugs[locale]}`
-                    : `/${locale}/blog/${singlePost.localeSlugs[locale]}`
+                `https://www.urgentcare24h.com${locale === "en"
+                  ? `/blog/${singlePost.localeSlugs[locale]}`
+                  : `/${locale}/blog/${singlePost.localeSlugs[locale]}`
                 }`
               )}`}
               target="_blank"
@@ -422,10 +419,9 @@ export default function BlogSection({
             </a>
             <a
               href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-                `https://www.urgentcare24h.com${
-                  locale === "en"
-                    ? `/blog/${singlePost.localeSlugs[locale]}`
-                    : `/${locale}/blog/${singlePost.localeSlugs[locale]}`
+                `https://www.urgentcare24h.com${locale === "en"
+                  ? `/blog/${singlePost.localeSlugs[locale]}`
+                  : `/${locale}/blog/${singlePost.localeSlugs[locale]}`
                 }`
               )}`}
               target="_blank"

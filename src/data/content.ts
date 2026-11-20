@@ -42,7 +42,7 @@ export const translations = {
       whatsapp: "WhatsApp",
     },
     hero: {
-      headline: "24/7 Hotel Doctor & Urgent Private GP Visits in Marbella & Costa del Sol",
+      headline: "24/7 Urgent Care & Hotel Doctor Visits in Marbella & Costa del Sol",
       subheadline:
         "English-speaking emergency doctor directly to your hotel room, villa or holiday apartment in 30–60 minutes. Complete medical examination, prescriptions, Fit to Fly certificates and official travel insurance reports.",
       whatsapp: "WhatsApp Now",

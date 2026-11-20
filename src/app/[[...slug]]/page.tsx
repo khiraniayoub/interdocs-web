@@ -144,7 +144,7 @@ function resolvePage(segments: string[]): PageType {
 
 const HOME_META: Record<Locale, { title: string; description: string }> = {
   en: {
-    title: "Doctor Near You in Marbella & Costa del Sol",
+    title: "24/7 Urgent Care & Doctor Near You in Marbella & Costa del Sol",
     description:
       "Urgent care near you: English-speaking private doctor visits your hotel room, villa or apartment in Marbella & Costa del Sol in 30–60 min. Call 24/7.",
   },
@@ -246,9 +246,11 @@ export function buildCitySchema(
     hasMap: GOOGLE_MAPS_URL,
     sameAs: [
       GOOGLE_MAPS_URL,
+      "https://www.trustpilot.com/review/urgentcare24h.com",
       "https://wa.me/34637255224",
       "https://www.instagram.com/urgentcare24h",
       "https://www.instagram.com/interdocsmedical",
+      "https://www.linkedin.com/company/urgentcare24h",
     ],
     areaServed: { "@type": "City", name: city.name },
     availableLanguage: [
@@ -842,6 +844,7 @@ export default async function Page({
       },
       sameAs: [
         GOOGLE_MAPS_URL,
+        "https://www.trustpilot.com/review/urgentcare24h.com",
         "https://wa.me/34637255224",
         "https://www.facebook.com/profile.php?id=61594814065218",
         "https://www.instagram.com/urgentcare24h",
