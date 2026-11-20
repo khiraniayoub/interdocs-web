@@ -3,7 +3,7 @@ import { CITIES, BLOG_POSTS, LOCALES, SITE_URL } from "@/data/content";
 import { PRESCRIPTION_PAGES } from "@/data/prescriptions";
 
 const BASE_URL = SITE_URL;
-const SITE_LAST_MODIFIED = new Date("2026-11-17T00:00:00Z");
+const SITE_LAST_MODIFIED = new Date("2026-11-20T23:00:00Z");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
