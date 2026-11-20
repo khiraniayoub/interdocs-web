@@ -314,7 +314,7 @@ export function buildCitySchema(
         ...(city.slug === "nerja"
           ? []
           : city.slug === "marbella" || city.slug === "estepona"
-          ? [
+            ? [
               {
                 "@type": "Offer",
                 price: "140.00",
@@ -329,7 +329,7 @@ export function buildCitySchema(
                 },
               },
             ]
-          : [
+            : [
               {
                 "@type": "Offer",
                 price: "130.00",
@@ -1314,27 +1314,27 @@ export default async function Page({
       { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
       ...(pageData.isHub
         ? [
-            {
-              "@type": "ListItem",
-              position: 2,
-              name: "Online Prescription Spain",
-              item: canonical,
-            },
-          ]
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Online Prescription Spain",
+            item: canonical,
+          },
+        ]
         : [
-            {
-              "@type": "ListItem",
-              position: 2,
-              name: "Online Prescription Spain",
-              item: `${SITE_URL}/online-prescription-spain`,
-            },
-            {
-              "@type": "ListItem",
-              position: 3,
-              name: `Prescription in ${pageData.locationName}`,
-              item: canonical,
-            },
-          ]),
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Online Prescription Spain",
+            item: `${SITE_URL}/online-prescription-spain`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: `Prescription in ${pageData.locationName}`,
+            item: canonical,
+          },
+        ]),
     ];
 
     const breadcrumbSchema = {

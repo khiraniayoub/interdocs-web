@@ -31,7 +31,7 @@ const PRICING_TEXT: Record<
   en: {
     price1: "€130",
     price2: "€140",
-    price3: "€90",
+    price3: "QR",
     title1: "Mon-Fri",
     title2: "Nights, Weekends & Holidays",
     title3: "Online Consultation + Prescription",
@@ -41,7 +41,7 @@ const PRICING_TEXT: Record<
   es: {
     price1: "130€",
     price2: "140€",
-    price3: "90€",
+    price3: "QR",
     title1: "Lun-Vie",
     title2: "Noches, Fines de semana y Festivos",
     title3: "Teleconsulta + Receta QR",
@@ -51,7 +51,7 @@ const PRICING_TEXT: Record<
   de: {
     price1: "130€",
     price2: "140€",
-    price3: "90€",
+    price3: "QR",
     title1: "Mo-Fr",
     title2: "Nächte, Wochenenden & Feiertage",
     title3: "Online-Konsultation + QR-Rezept",
@@ -61,7 +61,7 @@ const PRICING_TEXT: Record<
   fr: {
     price1: "130€",
     price2: "140€",
-    price3: "90€",
+    price3: "QR",
     title1: "Lun-Ven",
     title2: "Nuits, Week-ends et Jours fériés",
     title3: "Téléconsultation + Ordonnance QR",
@@ -71,7 +71,7 @@ const PRICING_TEXT: Record<
   fi: {
     price1: "130€",
     price2: "140€",
-    price3: "90€",
+    price3: "QR",
     title1: "Ma-Pe",
     title2: "Yöt, Viikonloput & Pyhäpäivät",
     title3: "Etäkonsultaatio + QR-Resepti",
@@ -81,7 +81,7 @@ const PRICING_TEXT: Record<
   ar: {
     price1: "€130",
     price2: "€140",
-    price3: "€90",
+    price3: "QR",
     title1: "الإثنين - الجمعة",
     title2: "الليالي وعطلات نهاية الأسبوع والأعياد",
     title3: "استشارة أونلاين + وصفة QR",
@@ -91,7 +91,7 @@ const PRICING_TEXT: Record<
   no: {
     price1: "€130",
     price2: "€140",
-    price3: "€90",
+    price3: "QR",
     title1: "Man-Fre",
     title2: "Netter, Helger og Helligdager",
     title3: "Online Konsultasjon + QR-Resept",
@@ -101,7 +101,7 @@ const PRICING_TEXT: Record<
   da: {
     price1: "€130",
     price2: "€140",
-    price3: "€90",
+    price3: "QR",
     title1: "Man-Fre",
     title2: "Nætter, Weekender & Helligdage",
     title3: "Online Konsultation + QR-Recept",
@@ -111,7 +111,7 @@ const PRICING_TEXT: Record<
   sv: {
     price1: "€130",
     price2: "€140",
-    price3: "€90",
+    price3: "QR",
     title1: "Mån-Fre",
     title2: "Nätter, Helger & Helgdagar",
     title3: "Onlinekonsultation + QR-Recept",
@@ -121,7 +121,7 @@ const PRICING_TEXT: Record<
   ru: {
     price1: "130€",
     price2: "140€",
-    price3: "90€",
+    price3: "QR",
     title1: "Пн-Пт",
     title2: "Ночи, Выходные и праздники",
     title3: "Онлайн-консультация + QR-рецепт",
@@ -131,7 +131,7 @@ const PRICING_TEXT: Record<
   nl: {
     price1: "€130",
     price2: "€140",
-    price3: "€90",
+    price3: "QR",
     title1: "Ma-Vr",
     title2: "Nachten, Weekenden & Feestdagen",
     title3: "Online Consult + QR-Recept",

@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { BLOG_POSTS, type Locale } from "@/data/content";
+import { BLOG_POSTS, CITIES, type Locale } from "@/data/content";
+import { PRESCRIPTION_PAGES } from "@/data/prescriptions";
 
 interface BlogSectionProps {
   title: string;
@@ -477,6 +478,46 @@ export default function BlogSection({
               >
                 📞 +34 637 255 224
               </a>
+            </div>
+          </div>
+
+          {/* Contextual Internal Links to City Pages (current locale) & All-Spain Prescription Pages */}
+          <div className="mt-8 pt-6 border-t border-[#0A6EBD]/15 grid sm:grid-cols-2 gap-6 text-xs sm:text-sm">
+            <div>
+              <p className="font-800 text-slate-900 mb-2.5">
+                🏨 24/7 Costa del Sol Doctor Visits:
+              </p>
+              <div className="flex flex-wrap gap-1.5">
+                {CITIES.map((c) => {
+                  const cSlug = c.localeSlugs[locale] || c.localeSlugs.en;
+                  const cHref = locale === "en" ? `/${cSlug}` : `/${locale}/${cSlug}`;
+                  return (
+                    <Link
+                      key={c.slug}
+                      href={cHref}
+                      className="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-slate-700 hover:border-[#0A6EBD] hover:text-[#0A6EBD] font-600 transition-colors"
+                    >
+                      {c.name}
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+            <div>
+              <p className="font-800 text-slate-900 mb-2.5">
+                💊 Online Prescription Spain (QR Code):
+              </p>
+              <div className="flex flex-wrap gap-1.5">
+                {PRESCRIPTION_PAGES.map((p) => (
+                  <Link
+                    key={p.slug}
+                    href={`/${p.slug}`}
+                    className="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-slate-700 hover:border-[#0A6EBD] hover:text-[#0A6EBD] font-600 transition-colors"
+                  >
+                    {p.isHub ? "All Spain (QR)" : p.locationName}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </div>
